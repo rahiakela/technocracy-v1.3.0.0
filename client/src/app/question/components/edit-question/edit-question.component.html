@@ -1,0 +1,72 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-card class="tech-edit-question-card" flex>
+
+    <div class="tech-edit-question-container">
+
+      <mat-card-title>
+        <h5><span>Edit Question</span></h5>
+        <mat-divider></mat-divider>
+      </mat-card-title>
+
+      <mat-card-content>
+
+        <form [formGroup]="editQuestionForm" class="tech-edit-question-form">
+          <mat-form-field floatLabel="never">
+            <span matPrefix><strong>Title&nbsp;:&nbsp;</strong></span>
+            <input matInput [formControl]="title" placeholder="specify your question's title here..." aria-label="Title">
+            <mat-error *ngIf="title.invalid">{{getTitleErrorMessage()}}</mat-error>
+          </mat-form-field>
+
+          <div id="richTextEditor" #richTextEditor>
+            <tech-editor
+              [contentId]="getCurrentUser()?._id"
+              [editorType]="'question'"
+              [placeHolder]="'Edit your question here...'"
+              [content]="contentToUpdate"
+              (onEditorContentChange)="editorContentHandler($event)"
+            >
+            </tech-editor>
+            <div *ngIf="editorContent && showContentErrorMessage()">
+              <span style="color: red;">
+                {{
+                  editorContent === '' ? 'Please specify the question content' :
+                  editorContent?.length < 1000 ? 'The question content must be at least 1000 character long' : ''
+                }}
+              </span>
+            </div>
+          </div>
+
+          <mat-form-field floatLabel="never">
+            <span matPrefix><strong>Tag&nbsp;:&nbsp;</strong></span>
+            <input [formControl]="tags" matInput placeholder="specify at least one tag such as java, python and scala etc..." aria-label="Tags">
+            <mat-error *ngIf="tags.invalid">{{getTagErrorMessage()}}</mat-error>
+          </mat-form-field>
+
+          <div style="transform:scale(1.04);-webkit-transform:scale(1.04);transform-origin:0 0;-webkit-transform-origin:0 0;">
+            <re-captcha [formControl]="recaptcha" ngDefaultControl></re-captcha>
+          </div>
+
+          <div *ngIf="loading" class="tech-edit-question-loading">
+            <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+          </div>
+          <div *ngIf="loaded" class="tech-edit-question-message">
+            <span>{{showQuestionSuccessMessage()}}</span>
+          </div>
+          <div *ngIf="error" fxFlexAlign="center" class="tech-edit-question-error">
+            <span style="color: red;">An error has occurred while saving the question.</span>
+          </div>
+        </form>
+
+      </mat-card-content>
+    </div>
+
+    <mat-card-footer style="margin: auto;">
+      <mat-card-actions class="tech-edit-question-card-footer">
+        <button (click)="editQuestion()" [disabled]="enableActionButton()" mat-raised-button color="primary" style="font-size: 20px;">Edit Your Question</button>
+      </mat-card-actions>
+    </mat-card-footer>
+
+  </mat-card>
+
+</div>

@@ -1,0 +1,49 @@
+@import "../../app.component";
+
+/* Comment card */
+.tech-comment-card {
+  padding-top: 10px;
+  margin-bottom: 8px;
+  color: $main-color;
+}
+.tech-card-header-text{
+  margin: -10px 0px 0px 0px;
+}
+.tech-comment-crud-option {
+  margin-left: auto;
+}
+.tech-comment-content{
+  margin-top: -15px;
+  margin-bottom: 0px;
+}
+p {
+  font-size: 15px;
+  color: cadetblue;
+  font-stretch: expanded;
+}
+.tech-pat-icon{
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+button{
+  margin-left: 5px;
+}
+.tech-button{
+  margin-left: 5px;
+  background-color: aliceblue;
+}
+.tech-comment-footer{
+  padding-bottom: 0px;
+  margin-bottom: -30px;
+}
+
+.tech-reply-card {
+  padding-top: 10px;
+  color: $main-color;
+}
+img{
+  margin-bottom: 6px;
+  margin-left: -20px;
+  margin-right: 2px;
+  width: 50%;
+}

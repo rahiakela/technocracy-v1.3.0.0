@@ -1,0 +1,64 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-card *ngIf="!PASS_RESET_SUCCESS" class="tech-pass-reset-card" flex>
+
+    <div class="tech-pass-reset-container">
+
+      <mat-card-title><h3><span>Password Reset</span></h3></mat-card-title>
+
+      <div *ngIf="error | async; let loginError" fxFlexAlign="center" class="tech-pass-reset-error">{{ loginError.error }}</div>
+
+      <p *ngIf="message" class="tech-reset-message">
+          <span>
+            {{message}}
+          </span>
+      </p>
+
+      <form [formGroup]="resetPassForm" class="tech-pass-reset-form">
+        <mat-form-field>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input type="password" [formControl]="password" matInput placeholder="Enter your password" aria-label="Password" [type]="hide ? 'password' : 'text'" style="margin-bottom: 5px;">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input type="password" [formControl]="confirmPassword" matInput placeholder="Confirm password" aria-label="Confirm password" [type]="hide ? 'password' : 'text'" style="margin-bottom: 5px;">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="confirmPassword.invalid">{{getConfirmPasswordErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <button [disabled]="!password.valid || !confirmPassword.valid" (click)="resetPassword()" mat-raised-button color="primary" style="font-size: 20px;">Reset Password</button>
+
+        <div *ngIf="loading | async" class="tech-pass-reset-loading">
+          <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+        </div>
+
+      </form>
+
+    </div>
+
+  </mat-card>
+
+  <mat-card *ngIf="PASS_RESET_SUCCESS" class="tech-pass-reset-success-card" flex>
+
+    <div class="tech-pass-reset-success-container">
+
+      <mat-card-content>
+        <p>
+          <span>Your password has been reset successfully.</span>
+        </p>
+      </mat-card-content>
+
+    </div>
+
+    <mat-card-footer class="tech-pass-reset-success-card-footer">
+      <mat-card-actions class="tech-pass-reset-success-card-footer-action">
+        <button routerLink="/login" mat-button color="primary">
+          Click here to Login
+        </button>
+      </mat-card-actions>
+    </mat-card-footer>
+  </mat-card>
+</div>

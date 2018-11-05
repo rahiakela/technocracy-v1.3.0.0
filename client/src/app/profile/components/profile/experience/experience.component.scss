@@ -1,0 +1,85 @@
+@import "../../../../app.component";
+
+$profile-experience-width: 100%;
+
+.tech-profile-experience-card{
+  margin: auto;
+  color: #007db8;
+}
+h5{
+  margin: auto;
+  color: $main-color;
+}
+.tech-profile-experience-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-profile-experience-container > * {
+  width: $profile-experience-width;
+}
+.tech-exp-label{
+  position: absolute;
+  left: 30px;
+}
+.tech-project-description{
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.tech-profile-experience-form{
+  display: flex;
+  flex-direction: column;
+}
+.tech-edit-option{
+  display: flex;
+  justify-content: flex-end;
+  a:hover {
+    color: #AAAAAA;
+    cursor: pointer;
+  }
+  mat-icon:hover {
+    color: #AAAAAA;
+    cursor: pointer;
+  }
+}
+.tech-profile-experience-loading{
+  padding-top: 10px;
+  margin-left: 140px;
+  color: $main-color;
+}
+
+.tech-profile-experience-message{
+  color: $main-color;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+.tech-profile-experience-error{
+  margin-top: 15px;
+  margin-bottom: -10px;
+}
+.tech-align-center{
+  color: darkgray;
+  margin-left: 100px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.tech-profile-experience-card-footer{
+  margin: auto;
+  padding: 8px 0;
+}
+.mat-form-field{
+  width: 75%;
+}
+
+textarea{
+  height: 35px;
+  border:1px solid #999999;
+  margin-bottom: -6px;
+}
+
+.tech-text-field-length{
+  margin-left: -10px;
+  width: 75%;
+}

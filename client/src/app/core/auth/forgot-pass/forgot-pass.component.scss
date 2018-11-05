@@ -1,0 +1,42 @@
+.tech-forgot-pass-card{
+  margin: auto;
+  width: 315px;
+  /*width: 37%; need to adjust mobile device*/
+  margin-top: 20px;
+}
+.tech-forgot-pass-container {
+  display: flex;
+  flex-direction: column;
+}
+h3{
+  margin-left: 25px;
+}
+span{
+  margin-bottom: 25px;
+  color: darkgray;
+}
+.tech-forgot-pass-form{
+  display: flex;
+  flex-direction: column;
+}
+.tech-forgot-pass-container > * {
+  width: 100%;
+}
+button{
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.tech-forgot-pass-error{
+  margin: auto;
+  color: red;
+  background-color: antiquewhite;
+}
+.tech-forgot-pass-message{
+  margin: auto;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.tech-forgot-pass-loading{
+  margin: auto;
+}

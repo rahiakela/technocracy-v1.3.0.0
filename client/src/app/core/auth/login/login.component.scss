@@ -1,0 +1,72 @@
+@import "../../../app.component";
+
+$login-width: 100%;
+
+.tech-login-card{
+  margin: auto;
+  width: 315px;
+  /*width: 37%; need to adjust mobile device*/
+  margin-top: 20px;
+}
+h3{
+  margin-left: 90px;
+  color: $main-color;
+}
+.tech-login-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-login-container > * {
+  width: $login-width;
+}
+
+.tech-login-form{
+  display: flex;
+  flex-direction: column;
+}
+.tech-login-loading{
+  margin: auto;
+  padding-top: 10px;
+  /*margin-left: 140px;
+  margin-top: 10px;*/
+}
+
+.tech-align-center{
+  color: darkgray;
+  margin-left: 100px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+.tech-social-login{
+  width: $login-width;
+}
+
+.btn-google {
+  width: 150px;
+  font-size: 20px;
+  color: darkgray;
+}
+
+.btn-facebook {
+  width: 150px;
+  height: 38px;
+  font-size: 20px;
+  font-weight: 600;
+  float: right;
+  color: #3b5998;
+}
+.tech-login-card-footer{
+  margin-top: 40px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 15px;
+  padding: 8px 0;
+}
+
+.tech-login-error{
+  margin: auto;
+  color: red;
+  background-color: antiquewhite;
+  /* margin-left: 20px; */
+}

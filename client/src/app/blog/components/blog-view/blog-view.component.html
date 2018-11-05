@@ -1,0 +1,70 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-card class="tech-blog-card">
+    <h4>{{blog?.title}} </h4>
+    <mat-card-header class="tech-blog-card-header">
+      <div mat-card-avatar class="example-header-image"></div>
+      <!--<tech-user-icon [user]="blog.profile.user"></tech-user-icon>-->
+      <mat-card-title>
+        {{blog?.profile?.name}}
+        <small>
+          -{{utilService.getCurrentEmployment(blog?.profile?.employments)?.designation}}
+          @{{utilService.getCurrentEmployment(blog?.profile?.employments)?.company}}
+        </small>
+      </mat-card-title>
+      <mat-card-subtitle style="color: #9594b1;">{{showSkillsWithHashTag(blog?.profile?.skills)}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <div class="tech-inline-share-box">
+      <tech-share [title]="blog?.title" [url]="'https://www.tecknocracy.com/#/blog/5b6c464d5ac110415b54177c'"></tech-share>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content class="tech-card-content">
+      <div [innerHTML]="blog?.content | safeHtml"></div>
+    </mat-card-content>
+
+    <!--Blogger's Profile and skills-->
+    <tech-author [blog]="blog"></tech-author>
+
+    <mat-card-actions>
+      <button (click)="like()" mat-button color="primary">
+        <mat-icon>thumb_up_alt</mat-icon> {{blog?.likes?.length}} Like
+      </button>
+      <button (click)="addComment()" mat-button color="primary">
+        <mat-icon>chat</mat-icon> {{blog?.comments?.length}} Comment
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div *ngIf="utilService.isAuthenticated()" class="tech-comment-editor">
+    <mat-card class="tech-comment-editor-card">
+      <h4><i class="fa fa-pencil-square-o"></i> Write Comment</h4>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <div id="richTextEditor" #richTextEditor>
+          <tech-editor
+            [contentId]="blog?._id"
+            [editorType]="'comment'"
+            [placeHolder]="'Write your comment here...'"
+            [content]="contentToUpdate"
+            (onEditorContentChange)="editorContentHandler($event)"
+          >
+          </tech-editor>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-actions class="tech-comment-editor-card-footer">
+          <mat-checkbox [(ngModel)]="notification" aria-label="Notification">Send me notification when anyone comments!</mat-checkbox>
+          <button class="tech-comment-editor-button" (click)="addComment()" mat-button color="primary">
+            Add my comment
+          </button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+
+  <!--Comment Section-->
+  <tech-comments [comments]="blog?.comments" (onCommentActionTriggered)="commentActionHandler($event)"></tech-comments>
+</div>

@@ -1,0 +1,92 @@
+@import '~@angular/material/theming';
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// define a real custom palette (using http://mcg.mbitson.com)
+$tech-primary-color: (
+  50 : #e0eff6,
+  100 : #b3d8ea,
+  200 : #80bedc,
+  300 : #4da4cd,
+  400 : #2691c3,
+  500 : #007db8,
+  600 : #0075b1,
+  700 : #006aa8,
+  800 : #0060a0,
+  900 : #004d91,
+  A100 : #bddbff,
+  A200 : #8ac0ff,
+  A400 : #57a4ff,
+  A700 : #3d97ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+/* For use in src/lib/core/theming/_palette.scss */
+$tech-accent-color: (
+  50 : #e0f0f8,
+  100 : #b3daed,
+  200 : #80c2e1,
+  300 : #4daad5,
+  400 : #2697cc,
+  500 : #0085c3,
+  600 : #007dbd,
+  700 : #0072b5,
+  800 : #0068ae,
+  900 : #0055a1,
+  A100 : #cbe3ff,
+  A200 : #98c8ff,
+  A400 : #65acff,
+  A700 : #4c9fff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$tech-app-primary: mat-palette($tech-primary-color);
+$tech-app-accent:  mat-palette($tech-accent-color, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$tech-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$tech-app-theme: mat-light-theme($tech-app-primary, $tech-app-accent, $tech-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($tech-app-theme);

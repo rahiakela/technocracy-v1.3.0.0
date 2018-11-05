@@ -1,0 +1,7 @@
+<quill-editor #editor
+              [modules]="editorConfig"
+              [style]="{height: getHeight()}"
+              (onEditorCreated)="onEditorCreated($event)"
+              placeholder="{{placeHolder}}"
+            >
+</quill-editor>

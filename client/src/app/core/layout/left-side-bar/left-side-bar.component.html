@@ -1,0 +1,91 @@
+<mat-card *ngIf="user; else unknownUserTemplate" class="tech-profile-card">
+
+  <mat-card-header>
+    <div *ngIf="utilService.getUserIcon(user) === ''; else userIconTemplate" mat-card-avatar class="tech-profile-image"></div>
+    <ng-template #userIconTemplate>
+      <div>
+        <img class="tech-user-image" mat-card-avatar src="{{utilService.getUserIcon(user)}}">
+      </div>
+    </ng-template>
+
+    <div class="tech-card-header-text">
+      <mat-card-title><h4>{{utilService.getUserName(user)}}</h4></mat-card-title>
+      <mat-card-subtitle style="margin-top: -15px;"><h5>{{utilService.getCurrentEmployment(user?.profile?.employments)?.designation}}</h5></mat-card-subtitle>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p *ngIf="user.profile">
+      {{user?.profile?.description}}
+    </p>
+    <button *ngIf="!user.profile" [routerLink]="['/profile/view', this.user?.profile === undefined ? 'create' : this.user?.profile?._id]" mat-button color="primary" class="tech-update-profile-button">Update Profile</button>
+  </mat-card-content>
+  <mat-card-footer style="padding-bottom: 10px;">
+    <div class="tech-social-link">
+      <a class="tech-social-icon" target="_blank" href="{{user?.profile?.socialLink?.facebook}}">
+        <i class="fa fa-facebook" style="color: #3b5998;"></i>
+      </a>
+      <a class="tech-social-icon" target="_blank" href="{{user?.profile?.socialLink?.twitter}}">
+        <i class="fa fa-twitter" style="color: #00aced;"></i>
+      </a>
+      <a class="tech-social-icon" target="_blank" href="{{user?.profile?.socialLink?.linkedin}}">
+        <i class="fa fa-linkedin" style="color: #007bb6;"></i>
+      </a>
+      <a class="tech-social-icon" target="_blank" href="{{user?.profile?.socialLink?.google}}">
+        <i class="fa fa-google" style="color: #dd4b39;"></i>
+      </a>
+    </div>
+  </mat-card-footer>
+</mat-card>
+
+<ng-template #unknownUserTemplate>
+  <mat-card class="tech-profile-card">
+
+    <mat-card-header>
+      <div mat-card-avatar class="tech-profile-image"></div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <button routerLink="/profile/create" mat-button color="primary" class="tech-update-profile-button">Add Profile</button>
+    </mat-card-content>
+    <mat-card-footer style="padding-bottom: 10px;">
+      <div class="tech-social-link">
+        <a class="tech-social-icon" target="_blank" href="#">
+          <i class="fa fa-facebook" style="color: #3b5998;"></i>
+        </a>
+        <a class="tech-social-icon" target="_blank" href="#">
+          <i class="fa fa-twitter" style="color: #00aced;"></i>
+        </a>
+        <a class="tech-social-icon" target="_blank" href="#">
+          <i class="fa fa-linkedin" style="color: #007bb6;"></i>
+        </a>
+        <a class="tech-social-icon" target="_blank" href="#">
+          <i class="fa fa-google" style="color: #dd4b39;"></i>
+        </a>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+</ng-template>
+
+<mat-list class="tech-nav-list">
+  <ng-container *ngFor="let nav of navList">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title style="color: #007db8;">
+          <mat-icon class="tech-nav-header-icon">{{nav.icon}}</mat-icon>
+          <span class="nav-list-item-text">{{nav.categoryName}}</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list class="tech-nav-sublist" *ngIf="nav.subCategory">
+        <ng-container *ngFor="let subCategory of nav.subCategory">
+          <ng-container> <!--Sub category list-->
+            <mat-list-item (click)="mode === 'over'? start.close() : null" routerLinkActive="mat-icon-active" style="color: #007db8;">
+              <mat-icon mat-list-icon>{{subCategory.icon}}</mat-icon>
+              <span [routerLink]="[subCategory.link, subCategory.params]" mat-line>{{subCategory.subCategoryName}}</span>
+            </mat-list-item>
+          </ng-container>
+        </ng-container>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </ng-container>
+</mat-list>

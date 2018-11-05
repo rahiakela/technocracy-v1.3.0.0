@@ -1,0 +1,71 @@
+<button mat-menu-item routerLink="/home">
+  <mat-icon aria-hidden="true">home</mat-icon>Home
+</button>
+<mat-divider></mat-divider>
+<button mat-menu-item [routerLink]="['profile', 'profile_id']">
+  <mat-icon aria-hidden="true">perm_identity</mat-icon>Profile
+</button>
+
+<!--<button mat-menu-item routerLink="/questions">
+  <mat-icon aria-hidden="true">help</mat-icon>Question
+</button>
+<mat-divider></mat-divider>
+<button mat-menu-item [matMenuTriggerFor]="blogMenu">
+  <mat-icon aria-hidden="true">note</mat-icon>Blog
+</button>
+<button mat-menu-item [matMenuTriggerFor]="questionMenu">
+  <mat-icon aria-hidden="true">help</mat-icon>Question
+</button>
+<button *ngIf="user?.role === 'admin'" mat-menu-item [matMenuTriggerFor]="adminMenu">
+  <mat-icon aria-hidden="true">person</mat-icon>Admin
+</button>
+<button mat-menu-item [matMenuTriggerFor]="networkMenu">
+  <mat-icon aria-hidden="true">group</mat-icon>Network
+</button>-->
+<button mat-menu-item [routerLink]="['settings', 'profile_id']">
+  <mat-icon aria-hidden="true">settings</mat-icon>Settings
+</button>
+<mat-divider></mat-divider>
+<button *ngIf="!user" mat-menu-item routerLink="/login">
+  <i class="fa fa-sign-in"></i> Sign in
+</button>
+<button *ngIf="user" mat-menu-item (click)="signOut($event)">
+  <i class="fa fa-sign-out"></i> Sign out
+</button>
+
+
+<mat-menu #blogMenu="matMenu">
+  <button mat-menu-item [routerLink]="['blog', 'blog_id']">
+    <mat-icon aria-hidden="true">create</mat-icon>Write Blog
+  </button>
+  <button mat-menu-item [routerLink]="['blog', 'profile_id']">
+    <mat-icon aria-hidden="true">note</mat-icon>My Blog
+  </button>
+</mat-menu>
+
+<mat-menu #questionMenu="matMenu">
+  <button mat-menu-item [routerLink]="['question', 'question_id']">
+    <mat-icon aria-hidden="true">create</mat-icon>Ask Question
+  </button>
+  <button mat-menu-item [routerLink]="['question', 'profile_id']">
+    <mat-icon aria-hidden="true">help</mat-icon>My Question
+  </button>
+</mat-menu>
+
+<mat-menu #adminMenu="matMenu">
+  <button mat-menu-item [routerLink]="['pending/blog', 'profile_id']">
+    <mat-icon aria-hidden="true">note</mat-icon>Pending Blog
+  </button>
+  <button mat-menu-item [routerLink]="['pending/question', 'profile_id']">
+    <mat-icon aria-hidden="true">help</mat-icon>Pending Question
+  </button>
+</mat-menu>
+
+<mat-menu #networkMenu="matMenu">
+  <button mat-menu-item [routerLink]="['followers', 'profile_id']">
+    <mat-icon aria-hidden="true">group</mat-icon>Followers
+  </button>
+  <button mat-menu-item [routerLink]="['following', 'profile_id']">
+    <mat-icon aria-hidden="true">group</mat-icon>Following
+  </button>
+</mat-menu>

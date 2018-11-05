@@ -1,0 +1,69 @@
+<div class="main-container" [class.is-mobile-device]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="main-nav mat-elevation-z4">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="drawer.toggle()" class="icon-padding">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <mat-icon class="tech-logo" svgIcon="technocracy"></mat-icon>
+
+      <a mat-button routerLink="/home" style="padding-left: 5px;">
+        <h1 id="tech-app-name">Technocracy</h1>
+        <span id="tech-slogan">Where knowledge is open for everyone!</span>
+      </a>
+
+      <mat-form-field *ngIf="!mobileQuery.matches" floatLabel="never" color="accent" class="tech-search-box">
+        <mat-icon matPrefix style="font-size: 21px;">search</mat-icon>
+        <input type="search" matInput placeholder="search blog or question here" (keyup)="search($event.target.value)">
+      </mat-form-field>
+
+      <span class="flex-spacer"></span>
+
+      <button mat-icon-button>
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="rootMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row *ngIf="mobileQuery.matches">
+      <mat-form-field floatLabel="never" color="accent" class="tech-search-box-xs">
+        <mat-icon matPrefix style="font-size: 21px;">search</mat-icon>
+        <input type="search" matInput placeholder="Search blog or question here" (keyup)="search($event.target.value)">
+      </mat-form-field>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+
+    <!-- Left side nav-->
+    <mat-sidenav #drawer class="mat-elevation-z10"
+                 mode="{{isMobileView?'over':'side'}}"
+                 opened="{{!isMobileView}}" fixedTopGap="64"
+                 disableClose="{{!isMobileView}}"
+                 [fixedInViewport]="mobileQuery.matches" role="navigation"
+                 style="width:270px;">
+      <tech-left-side-bar [user]="user$ | async"></tech-left-side-bar>
+    </mat-sidenav>
+
+    <!-- Right side nav-->
+    <mat-sidenav fxShow fxHide.lt-sm position="end" class="mat-elevation-z10" [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="openCloseSideNav()" fixedTopGap="64" [fixedInViewport]="mobileQuery.matches" role="navigation" style="width:270px;">
+      <tech-right-side-bar [questions]="questions$ | async"></tech-right-side-bar>
+    </mat-sidenav>
+
+    <mat-sidenav-content style="margin-top:55px;">
+      <div style="margin: 10px;">
+        <router-outlet></router-outlet>
+      </div>
+      <div style="height: 64px;"></div>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+  <!--Menu bar-->
+  <mat-menu yPosition="below" [overlapTrigger]="false" #rootMenu="matMenu">
+    <tech-menu-bar [user]="user$ | async" (signOutHandler)="signOut($event)"></tech-menu-bar>
+  </mat-menu>
+
+</div>
+

@@ -1,0 +1,79 @@
+@import "../../../../app.component";
+
+$profile-skills-width: 100%;
+
+.tech-profile-skills-card{
+  margin: auto;
+  color: #007db8;
+}
+h5{
+  margin: auto;
+  color: $main-color;
+}
+.tech-profile-skills-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-profile-skills-container > * {
+  width: $profile-skills-width;
+}
+
+.tech-profile-skills-form{
+  display: flex;
+  flex-direction: column;
+}
+.tech-edit-option{
+  display: flex;
+  justify-content: flex-end;
+  a:hover {
+    color: #AAAAAA;
+    cursor: pointer;
+  }
+  mat-icon:hover {
+    color: #AAAAAA;
+    cursor: pointer;
+  }
+}
+.tech-skill{
+  margin-right: 60px;
+}
+.tech-experience-level{
+  margin-right: 22px;
+}
+.tech-profile-skills-loading{
+  padding-top: 10px;
+  margin-left: 140px;
+  color: $main-color;
+}
+.mat-form-field{
+  width: 75%;
+}
+.tech-skills-label{
+  position: absolute;
+  left: 30px;
+}
+.tech-profile-skills-message{
+  color: $main-color;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+.tech-profile-skills-error{
+  margin-top: 15px;
+  margin-bottom: -10px;
+}
+.tech-align-center{
+  color: darkgray;
+  margin-left: 100px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.tech-profile-skills-card-footer{
+  margin: auto;
+  padding: 8px 0;
+}
+
+textarea{
+  border:1px solid #999999;
+}

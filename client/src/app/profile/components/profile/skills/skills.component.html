@@ -1,0 +1,126 @@
+<mat-card class="tech-profile-skills-card" flex>
+
+    <div class="tech-profile-skills-container">
+
+      <mat-card-content>
+
+        <form *ngIf="!user?.profile?.skills.length > 0 || editable === true" [formGroup]="skillsForm" class="tech-profile-skills-form">
+
+          <mat-grid-list [cols]="breakpoint" rowHeight="8:1" (window:resize)="onResize($event)">
+
+            <mat-grid-tile-header align="center"><span style=" color: #a8c4d2;">Skills Snapshot</span></mat-grid-tile-header>
+
+            <div class="tech-edit-option">
+              <a *ngIf="editable" (click)="hideForm()"><i class="fa fa-close"> Cancel</i></a>
+            </div>
+
+            <div *ngFor="let option of skills">
+              <mat-grid-tile>
+                <label class="tech-skills-label">Skill Set : <span class="tech-secondary-color">{{option.skill}}</span> </label>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <label class="tech-skills-label">Experience: <span class="tech-secondary-color">{{option.experience}}</span></label>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <label class="tech-skills-label">Last Used: <span class="tech-secondary-color">{{option.toDate | date:'dd/MM/yyyy'}}</span></label>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <label class="tech-skills-label">Experience Level: <span class="tech-secondary-color">{{option.experienceLevel}}</span></label><br>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="breakpoint">
+                <mat-divider></mat-divider>
+              </mat-grid-tile>
+            </div>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Skill Set&nbsp;</span>
+                <mat-select [formControl]="skill" placeholder="Select Skill Set" aria-label="SkillSet">
+                  <mat-option *ngFor="let options of skilles" [value]="options.value">{{options.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Experience:  </span>
+                <mat-select [formControl]="experience" placeholder="Select experience" aria-label="Experience">
+                  <mat-option *ngFor="let options of experiences" [value]="options.value">{{options.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Last Used: </span>
+                <input matInput [matDatepicker]="toDatePicker" [formControl]="toDate" placeholder="Choose to date" aria-label="LastUsed">
+                <mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #toDatePicker></mat-datepicker>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Experience Level: </span>
+                <mat-select [formControl]="experienceLevel" placeholder="Select experience level" aria-label="Experience Level">
+                  <mat-option *ngFor="let options of experienceLevels" [value]="options.value">{{options.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+          </mat-grid-list>
+
+          <mat-card-footer style="margin: auto;">
+            <mat-card-actions class="tech-profile-portfolio-card-footer">
+              <button (click)="save()" [disabled]="enableActionButton()" mat-raised-button color="primary">Save</button>
+              <button (click)="addMore()" [disabled]="enableActionButton()" mat-raised-button color="primary">Add More</button>
+              <button (click)="clear()" [disabled]="enableActionButton()" mat-raised-button color="primary">Cancel</button>
+            </mat-card-actions>
+          </mat-card-footer>
+        </form>
+
+        <mat-divider *ngIf="editable"></mat-divider>
+
+        <mat-grid-tile-header *ngIf="user?.profile?.skills || editable" align="center"><span style=" color: #a8c4d2;">Skills Snapshot</span></mat-grid-tile-header>
+
+        <div *ngFor="let option of user.profile.skills">
+          <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
+
+            <div class="tech-edit-option">
+              <mat-icon [matMenuTriggerFor]="menu">settings</mat-icon>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item (click)="showForm(option)" style="color: #007db8;">Edit</button>
+                <button mat-menu-item (click)="showForm()" style="color: #007db8;">Add More</button>
+              </mat-menu>
+            </div>
+
+            <mat-grid-tile>
+              <label class="tech-skills-label">Skill Set : <span class="tech-secondary-color">{{option.skill}}</span> </label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-skills-label">Experience: <span class="tech-secondary-color">{{option.experience}}</span></label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-skills-label">Last Used: <span class="tech-secondary-color">{{option.toDate | date:'dd/MM/yyyy'}}</span></label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-skills-label">Experience Level: <span class="tech-secondary-color">{{option.experienceLevel}}</span></label><br>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="breakpoint">
+              <mat-divider></mat-divider>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+
+      </mat-card-content>
+    </div>
+
+</mat-card>
+
+

@@ -1,0 +1,36 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-card class="tech-forgot-pass-card" flex>
+
+    <div class="tech-forgot-pass-container">
+
+      <mat-card-title>
+        <h3>Forgot Password</h3>
+      </mat-card-title>
+
+      <span>
+        Please enter your email address below and we will send you information to change your password.
+      </span>
+
+      <div *ngIf="error | async; let forgotPassError" fxFlexAlign="center" class="tech-forgot-pass-error">{{ forgotPassError.error }}</div>
+      <div *ngIf="message" class="tech-forgot-pass-message">{{message}}</div>
+
+      <form [formGroup]="forgotPassForm" class="tech-forgot-pass-form">
+        <mat-form-field>
+          <span matPrefix><i class="fa fa-at"></i>&nbsp;</span>
+          <input matInput [formControl]="email" aria-label="Email" placeholder="Your Email Address">
+          <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <button [disabled]="!email.valid" (click)="forgotPassword()" mat-raised-button color="primary">Reset my Password</button>
+
+        <div *ngIf="loading | async" class="tech-forgot-pass-loading">
+          <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+        </div>
+
+      </form>
+
+    </div>
+
+  </mat-card>
+</div>

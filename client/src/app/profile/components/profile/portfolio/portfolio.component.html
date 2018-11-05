@@ -1,0 +1,272 @@
+<mat-card class="tech-profile-portfolio-card">
+
+  <mat-card-content>
+
+    <div class="tech-profile-portfolio-container">
+      <div *ngIf="user?.profile?.portfolio" class="tech-edit-option">
+        <mat-icon *ngIf="!editable" (click)="showForm()">settings</mat-icon>
+        <a *ngIf="editable" (click)="hideForm()"><i class="fa fa-close"> Cancel</i></a>
+      </div>
+
+      <div *ngIf="user?.profile?.portfolio && !editable">
+        <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
+          <mat-grid-tile-header><span style=" color: #a8c4d2;">Portfolio Snapshot</span></mat-grid-tile-header>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>Name: <span style="color: #b3b3bd;">{{user?.profile?.name}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>DOB: <span style="color: #b3b3bd;">{{user?.profile?.portfolio?.dob | date:'dd/MM/yyyy'}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>Gender: <span style="color: #b3b3bd;">{{user?.profile?.portfolio?.gender}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>Phone: <span style="color: #b3b3bd;">{{user?.profile?.portfolio?.phone}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>Email: <span style="color: #b3b3bd;">{{user?.profile?.portfolio?.email}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>Mobile: <span style="color: #b3b3bd;">{{user?.profile?.portfolio?.mobile}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="breakpoint">
+            <div class="tech-profile-portfolio-label" [style.margin-right.px]="isMobileView ? '0' : '50'">
+              <label>About You: <span style="color: #b3b3bd;">{{user?.profile?.description}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+        <mat-grid-list [cols]="breakpoint" rowHeight="12:1">
+          <mat-grid-tile-header><span style=" color: #a8c4d2;">Social Presence</span></mat-grid-tile-header>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>Facebook: <span style="color: #b3b3bd;">{{user?.profile?.portfolio?.socialLink?.facebook}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>Google: <span style="color: #b3b3bd;">{{user?.profile?.portfolio?.socialLink?.google}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>Twitter: <span style="color: #b3b3bd;">{{user?.profile?.portfolio?.socialLink?.twitter}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>LinkedIn: <span style="color: #b3b3bd;">{{user?.profile?.portfolio?.socialLink?.linkedin}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+
+        <mat-grid-list [cols]="breakpoint" rowHeight="12:1">
+          <mat-grid-tile-header><span style=" color: #a8c4d2;">Location Info</span></mat-grid-tile-header>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>Country: <span style="color: #b3b3bd;">{{user?.profile?.country}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <div class="tech-profile-portfolio-label">
+              <label>City: <span style="color: #b3b3bd;">{{user?.profile?.city}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="breakpoint">
+            <div class="tech-profile-portfolio-label" [style.margin-right.px]="isMobileView ? '0' : '50'">
+              <label>Address: <span style="color: #b3b3bd;">{{user?.profile?.address}}</span></label>
+            </div>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+      </div>
+
+      <form *ngIf="!user?.profile?.portfolio || editable === true" [formGroup]="portfolioForm" class="tech-profile-portfolio-form">
+
+        <mat-grid-list [cols]="breakpoint" rowHeight="6:1" (window:resize)="onResize($event)">
+          <mat-grid-tile-header><span style=" color: #a8c4d2;">Portfolio Snapshot</span></mat-grid-tile-header>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>Name<strong style="color: red;">*</strong>&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="name" placeholder="Enter your name" aria-label="Name">
+              <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>DOB<strong style="color: red;">*</strong>&nbsp;:&nbsp;</span>
+              <input matInput [matDatepicker]="picker" [formControl]="dob" placeholder="Choose date of birth" aria-label="DOB">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="dob.invalid">{{getDOBErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>Gender<strong style="color: red;">*</strong>&nbsp;:&nbsp;</span>
+              <mat-select [formControl]="gender" placeholder="Select gender" aria-label="Gender">
+                <mat-option *ngFor="let gender of genders" [value]="gender.value">{{gender.label}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="gender.invalid">{{getGenderErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>Phone&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="phone" type="number" placeholder="Enter your phone number" aria-label="Phone">
+              <mat-error *ngIf="phone.invalid">{{getPhoneErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>Email&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="email" type="email" placeholder="Enter your email address" aria-label="Email">
+              <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>Mobile&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="mobile" type="number" placeholder="Enter your mobile number" aria-label="Mobile">
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="breakpoint">
+            <mat-form-field>
+              <mat-label>About You&nbsp;:&nbsp;</mat-label>
+              <textarea [formControl]="description" style="height: 55px;border: 1px solid #999999;margin-bottom: -6px;"
+                        placeholder="Please describe yourself..."
+                        aria-label="About You"
+                        matInput
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="3">
+              </textarea>
+            </mat-form-field>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+
+        <mat-grid-list [cols]="breakpoint" rowHeight="6:1">
+          <mat-grid-tile-header><span style=" color: #a8c4d2;">Social Presence</span></mat-grid-tile-header>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>Facebook&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="facebook" placeholder="Enter your Facebook profile link" aria-label="Facebook">
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>Google&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="google" placeholder="Enter your Google profile link" aria-label="Google">
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>Twitter&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="twitter" placeholder="Enter your Twitter profile link" aria-label="Twitter">
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>LinkedIn&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="linkedIn" placeholder="Enter your LinkedIn profile link" aria-label="LinkedIn">
+            </mat-form-field>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+
+        <mat-grid-list [cols]="breakpoint" rowHeight="6:1">
+          <mat-grid-tile-header><span style=" color: #a8c4d2;">Location Info</span></mat-grid-tile-header>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>Country&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="country" [matAutocomplete]="auto" placeholder="What's your country" aria-label="Country">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let country of filteredCountries | async" [value]="country.name">
+                  <img class="tech-option-img" aria-hidden [src]="country.url" height="25">
+                  <span>{{country.name}}</span>
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field floatLabel="never">
+              <span matPrefix>City&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="city" placeholder="Enter your city" aria-label="City">
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="breakpoint">
+            <mat-form-field floatLabel="never" class="tech-textField-length">
+              <span matPrefix>Address&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="address" placeholder="Enter your address" aria-label="Address">
+            </mat-form-field>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+
+        <div *ngIf="loading" class="tech-profile-portfolio-loading">
+          <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+        </div>
+        <div *ngIf="loaded" class="tech-profile-portfolio-message">
+          <span>{{showSuccessMessage()}}</span>
+        </div>
+        <div *ngIf="error && action == 'save'" fxFlexAlign="center" class="tech-profile-portfolio-error">
+          <span style="color: red;">An error has occurred while saving the portfolio.</span>
+        </div>
+      </form>
+
+    </div>
+
+  </mat-card-content>
+
+  <mat-card-footer *ngIf="!user?.profile?.portfolio || editable === true" style="margin: auto;">
+    <mat-card-actions class="tech-profile-portfolio-card-footer">
+      <button (click)="save()" [disabled]="enableActionButton()" mat-raised-button color="primary">Save your Portfolio</button>
+      <button (click)="clear()" [disabled]="enableActionButton()" mat-raised-button color="primary">Cancel</button>
+    </mat-card-actions>
+  </mat-card-footer>
+
+</mat-card>
+

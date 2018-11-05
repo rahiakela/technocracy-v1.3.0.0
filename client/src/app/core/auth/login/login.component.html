@@ -1,0 +1,67 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-card class="tech-login-card" flex>
+
+    <div class="tech-login-container">
+
+      <mat-card-title><h3><i class="fa fa-sign-in"></i><span>Login</span></h3></mat-card-title>
+
+      <div *ngIf="error | async; let loginError" fxFlexAlign="center" class="tech-login-error">{{ loginError.error }}</div>
+
+      <form [formGroup]="loginForm" class="tech-login-form">
+        <mat-form-field>
+          <span matPrefix><i class="fa fa-at"></i>&nbsp;</span>
+          <input matInput [formControl]="email" placeholder="Email" aria-label="Email">
+          <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input type="password" [formControl]="password" matInput placeholder="Password" aria-label="Password" [type]="hide ? 'password' : 'text'" style="margin-bottom: 5px;">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <button [disabled]="!email.valid || !password.valid" (click)="login()" mat-raised-button color="primary" style="font-size: 20px;">Login</button>
+
+        <div *ngIf="loading | async" class="tech-login-loading">
+          <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+        </div>
+      </form>
+
+      <span class="example-fill-remaining-space"></span>
+
+      <span class="tech-align-center">or login with</span>
+
+      <div class="tech-social-login">
+        <button mat-raised-button class="btn-google" (click)="loginWithGoogle()">
+          <img src="../../../../assets/img/icons/google.png" style="height: 18px; width: 20px;"> <span style="margin-left: 10px;">Google</span>
+        </button>
+        <button mat-raised-button class="btn-facebook" (click)="loginWithFacebook()">
+          <i class="fa fa-facebook-official"></i> Facebook
+        </button>
+        <!--<button mat-raised-button style="font-size: 20px;">
+          <i class="fa fa-linkedin"></i> Sign in with LinkedIn
+        </button>
+        <button mat-raised-button  style="font-size: 20px;">
+          <i class="fa fa-twitter"></i> Sign in with Twitter
+        </button>-->
+      </div>
+
+    </div>
+
+    <mat-card-footer>
+      <mat-card-actions class="tech-login-card-footer">
+        <button routerLink="/signup" mat-button color="primary">
+          Sign up now
+        </button>
+        <button routerLink="/account/forgot/pass" mat-button color="primary" style="float: right;">
+          Forgot password?
+        </button>
+      </mat-card-actions>
+    </mat-card-footer>
+  </mat-card>
+</div>
+
+
+

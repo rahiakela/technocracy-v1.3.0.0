@@ -1,0 +1,17 @@
+@import "../../../app.component";
+
+h6{
+  margin-bottom: 15px;
+}
+.tech-author-card{
+  background-color: $main-color;
+  color: white;
+}
+.tech-author-card-subtitle{
+  color: burlywood;
+  font-size: 12px;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

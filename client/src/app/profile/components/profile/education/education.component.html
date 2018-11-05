@@ -1,0 +1,253 @@
+<mat-card class="tech-profile-education-card" style="margin-left: auto;">
+
+    <div class="tech-profile-education-container">
+
+      <mat-card-content>
+
+        <form *ngIf="!user?.profile?.degrees.length > 0 || (editDegree)" [formGroup]="degreeForm" class="tech-profile-education-form">
+          <mat-grid-list [cols]="breakpoint" rowHeight="8:1" (window:resize)="onResize($event)">
+
+            <mat-grid-tile-header align="center"><span style="color: #a8c4d2;">Education Snapshot</span></mat-grid-tile-header>
+
+            <div class="tech-edit-option">
+              <a *ngIf="editDegree" (click)="hideDegreeForm()"><i class="fa fa-close"> Cancel</i></a>
+            </div>
+
+            <div *ngFor="let degree of degrees">
+              <mat-grid-tile>
+                <label class="tech-edu-label">Qualification : <span class="tech-secondary-color">{{degree.qualification}}</span> </label>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <label class="tech-edu-label">Passing Year:&nbsp;<span class="tech-secondary-color">{{degree.passingDate | date:'dd/MM/yyyy'}}</span></label>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <label class="tech-edu-label">Institute/University: &nbsp;<span class="tech-secondary-color">{{degree.university}}</span></label>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <label class="tech-edu-label">Specialization:  <span class="tech-secondary-color">{{degree.specialization}}</span></label><br>
+              </mat-grid-tile>
+
+              <mat-grid-tile [colspan]="breakpoint">
+                <mat-divider></mat-divider>
+              </mat-grid-tile>
+            </div>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Qualification: </span>
+                <mat-select [formControl]="qualification" placeholder="Select qualification" aria-label="qualification">
+                  <mat-option *ngFor="let options of qualifications" [value]="options.value">{{options.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Passing Date: </span>
+                <input matInput [matDatepicker]="passingDatePicker" [formControl]="passingDate" placeholder="Select passing year" aria-label="Passing Year">
+                <mat-datepicker-toggle matSuffix [for]="passingDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #passingDatePicker></mat-datepicker>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Institute/University: </span>
+                <mat-select [formControl]="university" placeholder="Select your Industry" aria-label="University">
+                  <mat-option *ngFor="let options of universities" [value]="options.value">{{options.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Specialization: </span>
+                <mat-select [formControl]="specialization" placeholder="Select specialization" aria-label="Specialization">
+                  <mat-option *ngFor="let options of specializations" [value]="options.value">{{options.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+          </mat-grid-list>
+
+          <div *ngIf="loading" class="tech-profile-experience-loading">
+            <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+          </div>
+          <div *ngIf="loaded" class="tech-profile-experience-message">
+            <span>{{showSuccessMessage()}}</span>
+          </div>
+          <div *ngIf="error" fxFlexAlign="center" class="tech-profile-experience-error">
+            <span style="color: red;">An error has occurred while saving the portfolio.</span>
+          </div>
+
+          <mat-card-footer style="margin: auto;">
+            <mat-card-actions class="tech-profile-portfolio-card-footer">
+              <button (click)="save()" [disabled]="enableFirstAddMore()" mat-raised-button color="primary">Save</button>
+              <button (click)="addMoreDegree()" [disabled]="enableFirstAddMore()" mat-raised-button color="primary">Add More</button>
+              <button (click)="clear()" [disabled]="enableFirstAddMore()" mat-raised-button color="primary">Cancel</button>
+            </mat-card-actions>
+          </mat-card-footer>
+        </form>
+
+        <mat-divider *ngIf="editable"></mat-divider>
+
+        <mat-grid-tile-header *ngIf="user?.profile?.degrees.length > 0 || editDegree" align="center"><span style=" color: #a8c4d2;">Education Snapshot</span></mat-grid-tile-header>
+
+        <div *ngFor="let degree of user.profile.degrees">
+          <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
+
+            <div class="tech-edit-option">
+              <mat-icon [matMenuTriggerFor]="menu">settings</mat-icon>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item (click)="showDegreeForm(degree)" style="color: #007db8;">Edit</button>
+                <button mat-menu-item (click)="showDegreeForm()" style="color: #007db8;">Add More</button>
+              </mat-menu>
+            </div>
+
+            <mat-grid-tile>
+              <label class="tech-edu-label">Qualification : <span class="tech-secondary-color">{{degree.qualification}}</span> </label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-edu-label">Passing Year:&nbsp;<span class="tech-secondary-color">{{degree.passingDate | date:'dd/MM/yyyy'}}</span></label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-edu-label">Institute/University: &nbsp;<span class="tech-secondary-color">{{degree.university}}</span></label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-edu-label">Specialization:  <span class="tech-secondary-color">{{degree.specialization}}</span></label><br>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="breakpoint">
+              <mat-divider></mat-divider>
+            </mat-grid-tile>
+
+          </mat-grid-list>
+        </div>
+
+        <form *ngIf="!user?.profile?.certifications.length > 0 || editCertificate === true" [formGroup]="certificationForm" class="tech-profile-education-form">
+          <mat-grid-list [cols]="breakpoint" rowHeight="8:1" (window:resize)="onResize($event)">
+
+            <mat-grid-tile-header align="center"><span style="color: #a8c4d2;">Certification Snapshot</span></mat-grid-tile-header>
+
+            <div class="tech-edit-option">
+              <a *ngIf="editCertificate" (click)="hideCertificationForm()"><i class="fa fa-close"> Cancel</i></a>
+            </div>
+
+            <div *ngFor="let certification of certifications">
+
+              <mat-grid-tile>
+                <label class="tech-edu-label">Certification Name: &nbsp;<span class="tech-secondary-color">{{certification.certification}}</span></label>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <label class="tech-edu-label">Issued By: &nbsp;<span class="tech-secondary-color">{{certification.issuedBy}}</span></label>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <label class="tech-edu-label">Issued Date: &nbsp;<span class="tech-secondary-color">{{certification.issuedDate | date:'dd/MM/yyyy'}}</span></label>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <label class="tech-edu-label">Lifetime Validity: &nbsp;<span class="tech-secondary-color">{{certification.lifetimeValidity}}</span></label>
+              </mat-grid-tile>
+
+              <mat-grid-tile [colspan]="breakpoint">
+                <mat-divider></mat-divider>
+              </mat-grid-tile>
+            </div>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Certification Name: </span>
+                <input matInput [formControl]="certification" placeholder="Enter Certification Name" aria-label="Certification Name">
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Issued By: </span>
+                <input matInput [formControl]="issuedBy" placeholder="Enter Issued By" aria-label="IssuedBy">
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Issued Date: </span>
+                <input matInput [matDatepicker]="issuedDatePicker" [formControl]="issuedDate" placeholder="Select date" aria-label="Issued Date">
+                <mat-datepicker-toggle matSuffix [for]="issuedDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #issuedDatePicker></mat-datepicker>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-checkbox [style.margin-right.px]="isMobileView ? '135' : '155'" [formControl]="lifetimeValidity">Lifetime Validity ?</mat-checkbox>
+            </mat-grid-tile>
+
+          </mat-grid-list>
+
+          <div *ngIf="loading" class="tech-profile-experience-loading">
+            <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+          </div>
+          <div *ngIf="loaded" class="tech-profile-experience-message">
+            <span>{{showSuccessMessage()}}</span>
+          </div>
+          <div *ngIf="error" fxFlexAlign="center" class="tech-profile-experience-error">
+            <span style="color: red;">An error has occurred while saving the portfolio.</span>
+          </div>
+
+          <mat-card-footer style="margin: auto;">
+            <mat-card-actions class="tech-profile-portfolio-card-footer">
+              <button (click)="save()" [disabled]="enableFirstAddMore()" mat-raised-button color="primary">Save</button>
+              <button (click)="addMoreCertification()" [disabled]="enableSecondAddMore()" mat-raised-button color="primary">Add More</button>
+              <button (click)="clear()" [disabled]="enableFirstAddMore()" mat-raised-button color="primary">Cancel</button>
+            </mat-card-actions>
+          </mat-card-footer>
+        </form>
+
+        <mat-divider *ngIf="editCertificate"></mat-divider>
+
+        <div *ngFor="let certification of user.profile.certifications">
+          <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
+
+            <div class="tech-edit-option">
+              <mat-icon [matMenuTriggerFor]="menu">settings</mat-icon>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item (click)="showCertificateForm(certification)" style="color: #007db8;">Edit</button>
+                <button mat-menu-item (click)="showCertificateForm()" style="color: #007db8;">Add More</button>
+              </mat-menu>
+            </div>
+
+            <mat-grid-tile>
+              <label class="tech-edu-label">Certification Name: &nbsp;<span class="tech-secondary-color">{{certification.certification}}</span></label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-edu-label">Issued By: &nbsp;<span class="tech-secondary-color">{{certification.issuedBy}}</span></label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-edu-label">Issued Date: &nbsp;<span class="tech-secondary-color">{{certification.issuedDate | date:'dd/MM/yyyy'}}</span></label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-edu-label">Lifetime Validity: &nbsp;<span class="tech-secondary-color">{{certification.lifetimeValidity ? 'Yes' : 'No'}}</span></label>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="breakpoint">
+              <mat-divider></mat-divider>
+            </mat-grid-tile>
+
+          </mat-grid-list>
+        </div>
+
+      </mat-card-content>
+    </div>
+</mat-card>
+
+

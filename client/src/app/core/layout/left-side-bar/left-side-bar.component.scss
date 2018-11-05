@@ -1,0 +1,37 @@
+@import "../../../app.component";
+
+/* Profile card */
+.tech-profile-card {
+  padding-top: 75px;
+  color: #007db8;
+}
+.tech-profile-image {
+  margin: auto;
+  height: 80px;
+  width: 80px;
+  background-image: url('../../../../assets/img/icons/no-profile.png');
+  background-size: cover;
+}
+.tech-user-image {
+  height: 80px;
+  width: 80px;
+  background-size: cover;
+}
+.tech-card-header-text{
+  margin: 15px 0px 5px -10px;
+  padding: 0px 0px 0px 0px;
+}
+p {
+  font-size: 12px;
+}
+.tech-social-link{
+  margin-left: 25px;
+}
+.tech-social-icon{
+  margin-right: 40px;
+}
+.tech-update-profile-button{
+  top: 8px;
+  margin-left: 50px;
+  background-color: aliceblue;
+}

@@ -1,0 +1,96 @@
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {MatIconRegistry} from "@angular/material";
+import {DomSanitizer} from "@angular/platform-browser";
+import {MediaMatcher} from "@angular/cdk/layout";
+import {Question} from "./shared/models/question-model";
+import {Observable, Subscription} from "rxjs";
+import {select, Store} from "@ngrx/store";
+import * as RootStoreState from "./root-store/root-state";
+import { QuestionSelectors, QuestionActions } from "./root-store/question-store";
+import { AuthSelectors } from './root-store/auth-store';
+import {AuthActions} from './root-store/auth-store';
+import {BlogActions} from './root-store/blog-store';
+import {User} from "./shared/models/user-model";
+import {Router} from "@angular/router";
+import {MediaChange, ObservableMedia} from "@angular/flex-layout";
+
+@Component({
+  selector: 'tech-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent implements OnInit, OnDestroy {
+
+  user$: Observable<User>;
+  questions$: Observable<Question[]>;
+
+  mobileQuery: MediaQueryList;
+
+  isMobileView = false;
+  subscriptionMedia : Subscription;
+
+  width;
+  height;
+  mode = 'side';
+  open = 'true';
+
+  private _mobileQueryListener: () => void;
+
+  constructor(iconRegistry: MatIconRegistry,
+              sanitizer: DomSanitizer,
+              private changeDetectorRef: ChangeDetectorRef,
+              media: MediaMatcher,
+              private store$: Store<RootStoreState.State>,
+              public router: Router,
+              public mobileMedia: ObservableMedia) {
+    iconRegistry.addSvgIcon(
+      'technocracy',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/icons/technocracy.svg')
+    );
+
+    // mobile device detection
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+  }
+
+  ngOnInit() {
+    // fetch logged in user from store
+    this.user$ = this.store$.pipe(select(AuthSelectors.selectAuthenticatedUser));
+    // fetch question list
+    this.questions$ = this.store$.pipe(select(QuestionSelectors.selectQuestionList));
+
+    // ref: https://github.com/angular/material2/issues/1130
+    // https://github.com/angular/flex-layout/wiki/ObservableMedia
+    // Subscribe to the "MediaChange" to responsively change the boolean that will control the state of the sidenav
+    this.isMobileView = (this.mobileMedia.isActive('xs') || this.mobileMedia.isActive('sm'));
+    this.subscriptionMedia = this.mobileMedia.subscribe((change: MediaChange) => {
+      this.isMobileView = (change.mqAlias === 'xs' || change.mqAlias === 'sm');
+    });
+
+    this.store$.dispatch(new QuestionActions.LoadQuestionList());
+  }
+
+  search(query: string) {
+    this.store$.dispatch(new BlogActions.SearchBlog({query}));
+    // if the user searching blog then forward him/her to home page
+    this.router.navigate(['/home']);
+  }
+
+  openCloseSideNav(): string {
+    //this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
+    //this.mobileQuery.addListener(this._mobileQueryListener);
+    return this.mobileQuery.matches ? 'close' : 'open';
+  }
+
+  signOut(event) {
+    this.store$.dispatch(new AuthActions.SignOut({user: null, authenticated: false}));
+    this.router.navigate(['/home']);
+  }
+  ngOnDestroy() {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
+    this.subscriptionMedia.unsubscribe();
+  }
+
+}
+

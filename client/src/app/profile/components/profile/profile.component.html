@@ -1,0 +1,79 @@
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+
+  <mat-card class="tech-profile-card">
+
+    <mat-card-content class="tech-card-content">
+      <div class="tech-profile-detail">
+        <div class="tech-profile-image-upload">
+          <div class="circle">
+            <!-- User Profile Image -->
+            <img #profilePhoto class="profile-pic" src="{{getUserImage() !== '' ? getUserImage() : 'https://s3.amazonaws.com/tecknocracy/images/profiles/no-profile.png'}}" height="150" width="130">
+          </div>
+          <div class="p-image">
+            Update image<i (click)="chooseFile($event)" class="fa fa-camera upload-button pull-right"></i>
+            <input #fileUpload class="file-upload" type="file" (change)="uploadImage($event.target.files)" accept="image/*"/>
+          </div>
+        </div>
+        <div>
+          <h3><strong>{{getUserName()}}</strong></h3>
+          <h6>
+            <strong>
+              {{user?.profile?.city}}
+              <i *ngIf="user?.profile" class="fa fa-dot-circle-o" aria-hidden="true"></i>
+              {{user?.profile?.country}}
+              <i *ngIf="user?.profile" class="fa fa-dot-circle-o" aria-hidden="true"></i>
+              member since {{user?.local?.createdOn | fromNow }}
+            </strong>
+          </h6>
+          <p class="profile-description">
+            {{user?.profile?.description}}
+          </p>
+          <div>
+            <h6><strong>{{utilService.getSkillWithHashTag(user?.profile?.skills)}}</strong></h6>
+          </div>
+        </div>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tech-tab-icon">person</mat-icon>
+        <span class="tech-tab-icon">Portfolio</span>
+      </ng-template>
+      <tech-portfolio [user]="user" [loading]="loading" [loaded]="loaded" [error]="error" (onProfileActionTriggered)="profileActionHandler($event)"></tech-portfolio>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <i class="fa fa-university tech-tab-icon"></i>
+        <span class="tech-tab-icon">Employment</span>
+      </ng-template>
+      <tech-employment [user]="user" [loading]="loading" [loaded]="loaded" [error]="error" (onProfileActionTriggered)="profileActionHandler($event)"></tech-employment>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <i class="fa fa-flag-o tech-tab-icon"></i>
+        <span class="tech-tab-icon">Experience</span>
+      </ng-template>
+      <tech-experience [user]="user" [loading]="loading" [loaded]="loaded" [error]="error" (onProfileActionTriggered)="profileActionHandler($event)"></tech-experience>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <i class="fa fa-flag tech-tab-icon"></i>
+        <span class="tech-tab-icon">Skills</span>
+      </ng-template>
+      <tech-skills [user]="user" [loading]="loading" [loaded]="loaded" [error]="error" (onProfileActionTriggered)="profileActionHandler($event)"></tech-skills>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <i class="fa fa-graduation-cap tech-tab-icon"></i>
+        <span class="tech-tab-icon">Education</span>
+      </ng-template>
+      <tech-education [user]="user" [loading]="loading" [loaded]="loaded" [error]="error" (onProfileActionTriggered)="profileActionHandler($event)"></tech-education>
+    </mat-tab>
+
+  </mat-tab-group>
+
+</div>

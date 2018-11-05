@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tech-custom-theme.scss";
+@import '~font-awesome/css/font-awesome.css';
+
+body {
+  margin: 0;
+}
+.margin-top {
+  margin-top: 16px;
+}
+.horizontal-padding {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.flex-spacer {
+  flex: 1 1 auto;
+}
+
+/* Scroll bar styling*/
+::-webkit-scrollbar {
+  width: 0px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* global image styling */
+img{
+  width: 100%;
+}
+
+/*
+global code syntax wrap styling
+ref: https://stackoverflow.com/questions/47377146/angular-material-5-show-full-text-in-mat-lists-word-wrap
+*/
+pre {
+  word-wrap: break-word !important;
+  /*white-space: pre-wrap !important;*/
+  border: solid #358ccb;
+  border-width: .1em .1em .1em .8em;
+  padding: .2em .6em;
+}
+/*pre{
+  font-family: monospace;
+  background-color: #fff;
+  width: 440em;
+  margin: 4em auto;
+  padding: 0.5em;
+  border-radius: .25em;
+  box-shadow: .1em .1em .5em rgba(0,0,0,.45);
+  line-height: 0;
+  counter-reset: line;
+
+  span {
+    display: block;
+    line-height: 1.5rem;
+
+    &:before {
+      counter-increment: line;
+      content: counter(line);
+      display: inline-block;
+      border-right: 1px solid #ddd;
+      padding: 0 .5em;
+      margin-right: .5em;
+      color: #888
+    }
+  }
+}*/

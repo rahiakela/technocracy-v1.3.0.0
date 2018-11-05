@@ -1,0 +1,74 @@
+@import "../../../../app.component";
+
+$profile-education-width: 100%;
+
+.tech-profile-education-card{
+  margin: auto;
+  color: #007db8;
+}
+h5{
+  margin: auto;
+  color: $main-color;
+}
+.tech-profile-education-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-profile-education-container > * {
+  width: $profile-education-width;
+}
+
+.tech-profile-education-form{
+  display: flex;
+  flex-direction: column;
+}
+.tech-edit-option{
+  display: flex;
+  justify-content: flex-end;
+  a:hover {
+    color: #AAAAAA;
+    cursor: pointer;
+  }
+  mat-icon:hover {
+    color: #AAAAAA;
+    cursor: pointer;
+  }
+}
+.mat-form-field{
+  width: 75%;
+}
+.tech-edu-label{
+  position: absolute;
+  left: 50px;
+}
+.tech-profile-education-loading{
+  padding-top: 10px;
+  margin-left: 140px;
+  color: $main-color;
+}
+
+.tech-profile-education-message{
+  color: $main-color;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+.tech-profile-education-error{
+  margin-top: 15px;
+  margin-bottom: -10px;
+}
+.tech-align-center{
+  color: darkgray;
+  margin-left: 100px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.tech-profile-education-card-footer{
+  margin: auto;
+  padding: 8px 0;
+}
+
+textarea{
+  border:1px solid #999999;
+}

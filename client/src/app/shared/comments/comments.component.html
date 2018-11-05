@@ -1,0 +1,76 @@
+<mat-card *ngFor="let comment of comments" class="tech-comment-card">
+  <mat-card-header>
+    <!--User Icon-->
+    <tech-user-icon [user]="comment?.commentedBy"></tech-user-icon>
+
+    <div class="tech-card-header-text">
+      <mat-card-title><h4>{{getUserName(comment?.commentedBy)}}</h4></mat-card-title>
+      <mat-card-subtitle style="margin-top: -15px;"><span>{{comment?.commentedOn | fromNow}}</span></mat-card-subtitle>
+    </div>
+
+    <div *ngIf="utilService.getCurrentUser()?._id === comment?.commentedBy?._id" class="tech-comment-crud-option">
+      <button (click)="editComment(comment?._id, comment?.content)" mat-button class="tech-button" color="primary" style="min-width: 0px;">
+        <mat-icon class="tech-comment-crud-btn" title="Edit your comment">edit</mat-icon>
+      </button>
+      <button (click)="openConfirmationDialog(comment?._id, 'comment-delete')" mat-button class="tech-button" color="primary" style="min-width: 0px;">
+        <mat-icon  class="tech-comment-crud-edit" title="Delete your comment">delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content class="tech-comment-content">
+    <p [innerHTML]="comment?.content | safeHtml"></p>
+  </mat-card-content>
+
+  <mat-card-footer class="tech-comment-footer">
+    <div class="tech-pat-icon">
+      <button (click)="increaseCommentPatting(comment?._id)" mat-button color="primary">
+        <img src="../../../assets/img/icons/patting.PNG" height="24" width="24">
+        <span>{{comment?.likes?.length > 0 ? comment?.likes?.length : ''}}</span>
+      </button>
+
+      <button (click)="addReply(comment?._id)" mat-button color="primary">
+        <mat-icon>chat</mat-icon> Reply
+      </button>
+    </div>
+
+    <!--Comment's Reply section-->
+    <mat-card *ngFor="let reply of comment?.replies" class="tech-reply-card">
+      <mat-card-header>
+        <!--User Icon-->
+        <tech-user-icon [user]="reply?.repliedBy"></tech-user-icon>
+        <div class="tech-card-header-text">
+          <mat-card-title><h4>{{getUserName(reply?.repliedBy)}}</h4></mat-card-title>
+          <mat-card-subtitle style="margin-top: -15px;"><span>{{reply?.repliedOn | fromNow}}</span></mat-card-subtitle>
+        </div>
+
+        <div *ngIf="utilService.getCurrentUser()?._id === reply?.repliedBy?._id" class="tech-comment-crud-option">
+          <button (click)="editReply(reply?._id, reply?.content)" class="tech-button" mat-button color="primary" style="min-width: 0px;">
+            <mat-icon class="tech-comment-crud-btn" title="Edit your comment">edit</mat-icon>
+          </button>
+          <button (click)="openConfirmationDialog(reply?._id, 'reply-delete')" class="tech-button" mat-button color="primary" style="min-width: 0px;">
+            <mat-icon  class="tech-comment-crud-edit" title="Delete your comment">delete</mat-icon>
+          </button>
+        </div>
+        
+      </mat-card-header>
+
+      <mat-card-content class="tech-comment-content">
+        <p [innerHTML]="reply?.content | safeHtml"></p>
+      </mat-card-content>
+      <mat-card-footer>
+        <div class="tech-pat-icon">
+          <button (click)="increaseReplyPatting(reply?._id, comment?._id)" mat-button color="primary">
+            <img src="../../../assets/img/icons/patting.PNG" height="24" width="24">
+            <span>{{reply?.likes?.length > 0 ? reply?.likes?.length : ''}}</span>
+          </button>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+
+  </mat-card-footer>
+
+</mat-card>
+
+
+.

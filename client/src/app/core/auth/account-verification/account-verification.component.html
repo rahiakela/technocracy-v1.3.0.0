@@ -1,0 +1,73 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-card *ngIf="MAIL_VERIFY_VIEW" class="tech-acc-verify-card" flex>
+
+    <div class="tech-acc-verify-container">
+
+      <mat-card-content>
+        <p *ngIf="!MAIL_ACTIVATE_ERROR_VIEW">
+          <span *ngIf="!MAIL_VERIFIED_VIEW && !MAIL_UPDATED_VIEW">You're almost done! We sent an email verification code to your email account.</span>
+          <span *ngIf="MAIL_VERIFIED_VIEW">Please check your mail account! We have sent again an email verification code to your email account.</span>
+          <span *ngIf="MAIL_UPDATED_VIEW">Please check your mail account! We have sent an email verification code to your updated email account.</span>
+          Please follow the instructions in the mail to activate your account.<br><br>
+          <span>If it doesn't arrive, check your spam folder.</span>
+        </p>
+
+        <p *ngIf="error" class="tech-acc-error">
+          <span>
+            {{error.error}}
+          </span>
+        </p>
+
+      </mat-card-content>
+
+    </div>
+
+    <mat-card-footer *ngIf="!MAIL_ACTIVATE_ERROR_VIEW" class="tech-acc-verify-card-footer">
+      <mat-card-actions class="tech-acc-verify-card-footer-action">
+        <button (click)="resendAccountVerifyCode()" mat-button color="primary">
+          <i class="fa fa-envelope"></i> Resend Activation Email
+        </button>
+        <button (click)="showHideView(false, true)" mat-button color="primary">
+          <i class="fa fa-pencil"></i> Change Email Address
+        </button>
+      </mat-card-actions>
+    </mat-card-footer>
+  </mat-card>
+
+  <mat-card *ngIf="MAIL_UPDATE_VIEW" class="tech-mail-change-card" flex>
+
+    <div class="tech-mail-change-container">
+
+      <mat-card-title>
+        <h3>Update Mail Address</h3>
+      </mat-card-title>
+
+      <span>
+        Provide a new email address and we'll resend to you a email verification code.
+      </span>
+
+      <div *ngIf="error | async; let mailChangeError" fxFlexAlign="center" class="tech-mail-change-error">{{ mailChangeError.error }}</div>
+
+      <form [formGroup]="updateMailForm" class="tech-mail-change-form">
+        <mat-form-field>
+          <span matPrefix><i class="fa fa-at"></i>&nbsp;</span>
+          <input matInput [formControl]="email" aria-label="Email" placeholder="Your Email Address">
+          <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <button [disabled]="!email.valid" (click)="updateEmail()" mat-raised-button color="primary">Update Email Address</button>
+
+        <div *ngIf="loading | async" class="tech-mail-change-loading">
+          <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+        </div>
+
+      </form>
+
+    </div>
+
+  </mat-card>
+</div>
+
+
+

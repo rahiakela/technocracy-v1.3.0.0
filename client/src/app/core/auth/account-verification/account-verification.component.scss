@@ -1,0 +1,46 @@
+
+.tech-acc-verify-card{
+  margin-top: 15px;
+}
+p{
+  font-size: 16px;
+  color: darkgray;
+}
+.tech-acc-verify-card-footer{
+  margin: auto;
+}
+.tech-acc-verify-card-footer-action{
+  margin-left: 0px;
+}
+.tech-mail-change-card{
+  margin: auto;
+  width: 315px;
+  /*width: 37%; need to adjust mobile device*/
+  margin-top: 20px;
+}
+.tech-mail-change-container{
+  display: flex;
+  flex-direction: column;
+}
+.tech-mail-change-container > * {
+  width: 100%;
+}
+button{
+  background-color: aliceblue;
+}
+.tech-mail-change-form{
+  display: flex;
+  flex-direction: column;
+}
+span{
+  margin-bottom: 25px;
+  color: darkgray;
+}
+.tech-acc-error{
+  margin: auto;
+  color: red;
+  background-color: antiquewhite;
+}
+.tech-mail-change-loading{
+  margin: auto;
+}

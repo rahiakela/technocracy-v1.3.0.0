@@ -1,0 +1,44 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-card class="tech-question-card">
+    <mat-card-header class="tech-blog-card-header">
+      <mat-card-title><h4>{{question?.title}} </h4></mat-card-title>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content class="tech-card-content">
+      <div style="overflow-wrap: break-word;">
+        <div [innerHTML]="question?.content | safeHtml"></div>
+      </div>
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+
+    <div class="tech-inline-share-box">
+      <strong>may be someone can have better answer of this question?</strong><br>
+      <tech-share></tech-share>
+    </div>
+
+    <!--Querent's Description and Tags-->
+    <mat-card class="tech-querent-card">
+      <h6>asked {{question?.publishedOn | fromNow }}</h6>
+      <mat-card-header class="tech-author-card-header">
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{getUserName(question?.askedBy)}}</mat-card-title>
+        <mat-card-subtitle style="color: #9594b1;">{{showSkillsWithHashTag(question?.tags)}}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card-actions>
+      <button class="tech-button" mat-button color="primary">
+        <mat-icon>thumb_up_alt</mat-icon> {{question?.likes?.length}} Like
+      </button>
+      <button class="tech-button" mat-button color="primary">
+        <mat-icon>question_answer</mat-icon> {{question?.comments?.length}} Answer
+      </button>
+      <button *ngIf="question?.status === 'draft'" (click)="post(question?._id)" mat-button color="primary">Post Your Question</button>
+      <button [routerLink]="['/question/edit', question?._id]" mat-button color="primary">Edit Your Question</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

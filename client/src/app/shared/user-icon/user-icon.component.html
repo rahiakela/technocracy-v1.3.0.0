@@ -1,0 +1,6 @@
+<div *ngIf="getUserIcon(user) == ''; else userIconTemplate" mat-card-avatar class="tech-no-user-image"></div>
+<ng-template #userIconTemplate>
+  <div mat-card-avatar >
+    <img class="tech-user-image" mat-card-avatar src="{{getUserIcon(user)}}">
+  </div>
+</ng-template>

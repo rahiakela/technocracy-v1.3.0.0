@@ -1,0 +1,55 @@
+@import "../../../app.component";
+
+.tech-pass-reset-card{
+  margin: auto;
+  width: 315px;
+  /*width: 37%; need to adjust mobile device*/
+  margin-top: 20px;
+}
+h3{
+  margin: auto;
+  color: $main-color;
+}
+.tech-pass-reset-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-pass-reset-container > * {
+  width: 100%;
+}
+
+.tech-pass-reset-form{
+  display: flex;
+  flex-direction: column;
+}
+.tech-pass-reset-loading{
+  margin: auto;
+  padding-top: 10px;
+  /*margin-left: 140px;
+  margin-top: 10px;*/
+}
+
+.tech-pass-reset-error{
+  margin: auto;
+  color: red;
+  background-color: antiquewhite;
+  /* margin-left: 20px; */
+}
+.tech-reset-message{
+  margin: auto;
+  color: red;
+  background-color: antiquewhite;
+}
+.tech-pass-reset-success-card{
+  margin-top: 15px;
+}
+.tech-pass-reset-success-container{
+
+}
+.tech-pass-reset-success-card-footer{
+  margin: auto;
+}
+.tech-pass-reset-success-card-footer-action{
+  margin-left: 0px;
+}

@@ -1,0 +1,69 @@
+@import "../../../../app.component";
+
+$profile-employment-width: 100%;
+
+.tech-profile-employment-card{
+  margin: auto;
+  color: #007db8;
+}
+h5{
+  margin: auto;
+  color: $main-color;
+}
+.tech-profile-employment-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-profile-employment-container > * {
+  width: $profile-employment-width;
+}
+.tech-edit-option{
+  display: flex;
+  justify-content: flex-end;
+  a:hover {
+    color: #AAAAAA;
+    cursor: pointer;
+  }
+  mat-icon:hover {
+    color: #AAAAAA;
+    cursor: pointer;
+  }
+}
+.tech-profile-employment-form{
+  display: flex;
+  flex-direction: column;
+}
+.mat-form-field{
+  width: 75%;
+}
+.tech-label{
+  position: absolute;
+  left: 50px;
+}
+.tech-profile-employment-loading{
+  padding-top: 10px;
+  margin-left: 140px;
+  color: $main-color;
+}
+
+.tech-profile-employment-message{
+  color: $main-color;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+.tech-profile-employment-error{
+  margin-top: 15px;
+  margin-bottom: -10px;
+}
+
+.tech-profile-employment-card-footer{
+  margin: auto;
+  padding: 8px 0;
+}
+
+textarea{
+  height: 35px;
+  border:1px solid #999999;
+  margin-bottom: -6px;
+}

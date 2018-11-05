@@ -1,0 +1,42 @@
+@import "../../../app.component";
+
+$my-blog-width: 100%;
+
+.tech-my-blog-card{
+  margin: auto;
+}
+h5{
+  margin: auto;
+  color: $main-color;
+}
+.tech-my-blog-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-my-blog-container > * {
+  width: $my-blog-width;
+}
+
+table {
+  width: 100%;
+  th, td{
+    padding: 10px;
+  }
+}
+.tech-my-blog-spinner{
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#tech-table-header {
+  background-color: #007db8;
+  text-decoration: white;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 98%;
+  margin-left: 10px;
+  margin-bottom: -18px;
+}

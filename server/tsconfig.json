@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "pretty": true,
+    "sourceMap": true,
+    "target": "es2015",
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "lib": ["es5", "es6", "dom"]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

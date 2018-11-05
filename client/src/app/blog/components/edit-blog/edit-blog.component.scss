@@ -1,0 +1,50 @@
+@import "../../../app.component";
+
+$edit-blog-width: 100%;
+
+.tech-edit-blog-card{
+  margin: auto;
+}
+h5{
+  margin: auto;
+  color: $main-color;
+}
+.tech-edit-blog-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-edit-blog-container > * {
+  width: $edit-blog-width;
+}
+
+.tech-edit-blog-form{
+  display: flex;
+  flex-direction: column;
+}
+.tech-edit-blog-loading{
+  padding-top: 10px;
+  margin-left: 140px;
+  color: $main-color;
+}
+
+.tech-edit-blog-message{
+  color: $main-color;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+.tech-edit-blog-error{
+  margin-top: 15px;
+  margin-bottom: -10px;
+}
+.tech-align-center{
+  color: darkgray;
+  margin-left: 100px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.tech-edit-blog-card-footer{
+  margin: auto;
+  padding: 8px 0;
+}

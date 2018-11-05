@@ -1,0 +1,42 @@
+@import "../../../app.component";
+
+.tech-blog-card{
+  margin-bottom: 5px;
+}
+.tech-blog-card-header{
+  color: $main-color;
+}
+h4{
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: $main-color;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+div.tech-inline-share-box {
+  margin: auto;
+}
+
+.tech-card-content{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  line-height: 22px;
+
+}
+
+.tech-comment-editor-card{
+  margin-bottom: 5px;
+}
+.tech-comment-editor-card-footer{
+  margin-left: 23px;
+  margin-right: 20px;
+}
+.tech-comment-editor-button{
+  float: right;
+  background-color: aliceblue;
+}
+

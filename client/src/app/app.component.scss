@@ -1,0 +1,110 @@
+@import "../tech-custom-theme";
+
+$main-color: #007db8;
+
+body{
+  margin: 0;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%  !important;
+  z-index: 5;
+}
+
+.icon-padding {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.is-mobile-device .main-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+.sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.is-mobile-device .sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+.mat-nav-list .mat-list-item.mat-list-item-with-avatar {
+  height: 45px;
+}
+
+.tech-expansion-panel{
+  margin-left: -2px;
+  height: 45px;
+}
+.tech-nav-header-icon{
+  margin-right: 15px;
+  margin-top: -2px;
+}
+.tech-nav-list {
+  padding-top: 0px;
+}
+.tech-logo{
+  height: 45px;
+  width: 45px;
+  margin-left: -7px;
+}
+#tech-app-name{
+  margin-right: 100px;
+  margin-bottom: -18px;
+  margin-top: 9px;
+}
+#tech-slogan{
+  font-size: 12px;
+  margin: 0;
+}
+
+.tech-nav-sublist {
+  margin: -10px 0px -10px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.tech-search-box {
+  width: 50%;
+  /*margin-left: 2.5em;*/
+  margin-top: 0.5em;
+}
+.mat-form-field-infix{
+  margin-bottom: -10px;
+  margin-top: 10px;
+}
+.tech-search-box-xs {
+  width: 90%;
+  margin-left: 0.9em;
+}
+
+.tech-primary-color{
+  color: $main-color;
+}
+.tech-secondary-color{
+  color: darkgray;
+}
+
+hr{
+  height: 2px;
+  margin-top: 0px;
+}
+

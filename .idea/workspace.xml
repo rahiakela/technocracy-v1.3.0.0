@@ -1,0 +1,1469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d0dddec3-1de1-422b-9b41-57ddbf0ee36f" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1513902324">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="285" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="17" />
+          <entry key="project.open.time.11" value="25" />
+          <entry key="project.open.time.112" value="2" />
+          <entry key="project.open.time.12" value="20" />
+          <entry key="project.open.time.124" value="1" />
+          <entry key="project.open.time.13" value="14" />
+          <entry key="project.open.time.14" value="12" />
+          <entry key="project.open.time.15" value="6" />
+          <entry key="project.open.time.16" value="5" />
+          <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="7" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.3" value="6" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.32" value="2" />
+          <entry key="project.open.time.33" value="2" />
+          <entry key="project.open.time.35" value="3" />
+          <entry key="project.open.time.36" value="4" />
+          <entry key="project.open.time.37" value="2" />
+          <entry key="project.open.time.38" value="2" />
+          <entry key="project.open.time.39" value="3" />
+          <entry key="project.open.time.4" value="8" />
+          <entry key="project.open.time.41" value="3" />
+          <entry key="project.open.time.42" value="3" />
+          <entry key="project.open.time.43" value="5" />
+          <entry key="project.open.time.44" value="2" />
+          <entry key="project.open.time.45" value="3" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.47" value="1" />
+          <entry key="project.open.time.48" value="1" />
+          <entry key="project.open.time.49" value="3" />
+          <entry key="project.open.time.5" value="7" />
+          <entry key="project.open.time.50" value="1" />
+          <entry key="project.open.time.51" value="1" />
+          <entry key="project.open.time.52" value="1" />
+          <entry key="project.open.time.53" value="1" />
+          <entry key="project.open.time.56" value="3" />
+          <entry key="project.open.time.59" value="2" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.60" value="1" />
+          <entry key="project.open.time.61" value="1" />
+          <entry key="project.open.time.62" value="1" />
+          <entry key="project.open.time.63" value="1" />
+          <entry key="project.open.time.64" value="3" />
+          <entry key="project.open.time.65" value="2" />
+          <entry key="project.open.time.68" value="1" />
+          <entry key="project.open.time.69" value="1" />
+          <entry key="project.open.time.7" value="21" />
+          <entry key="project.open.time.70" value="1" />
+          <entry key="project.open.time.71" value="1" />
+          <entry key="project.open.time.76" value="1" />
+          <entry key="project.open.time.77" value="1" />
+          <entry key="project.open.time.79" value="1" />
+          <entry key="project.open.time.8" value="38" />
+          <entry key="project.open.time.80" value="1" />
+          <entry key="project.open.time.83" value="1" />
+          <entry key="project.open.time.9" value="26" />
+          <entry key="project.open.time.96" value="1" />
+          <entry key="project.opened" value="297" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="2753754922" value="1" />
+          <entry key="MD" value="2" />
+          <entry key="css" value="9" />
+          <entry key="env" value="5" />
+          <entry key="html" value="353" />
+          <entry key="ico" value="13" />
+          <entry key="js" value="8" />
+          <entry key="json" value="73" />
+          <entry key="md" value="2" />
+          <entry key="scss" value="217" />
+          <entry key="svg" value="9" />
+          <entry key="ts" value="1650" />
+          <entry key="webmanifest" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="9" />
+          <entry key="HTML" value="353" />
+          <entry key="Image" value="13" />
+          <entry key="JSON" value="66" />
+          <entry key="JavaScript" value="8" />
+          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="SCSS" value="217" />
+          <entry key="SVG" value="9" />
+          <entry key="TypeScript" value="1650" />
+          <entry key="tsconfig" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="Angular2LanguageService" value="291" />
+          <entry key="TypeScriptServerServiceImpl" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="24" />
+          <entry key="env" value="5" />
+          <entry key="html" value="10611" />
+          <entry key="js" value="282" />
+          <entry key="json" value="223" />
+          <entry key="md" value="220" />
+          <entry key="scss" value="2361" />
+          <entry key="ts" value="53695" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="31" />
+          <entry key="HTML" value="10672" />
+          <entry key="JSON" value="209" />
+          <entry key="JavaScript" value="289" />
+          <entry key="PLAIN_TEXT" value="225" />
+          <entry key="SCSS" value="2361" />
+          <entry key="TypeScript" value="53620" />
+          <entry key="tsconfig" value="14" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="technocracy-v1.3.0.0" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="95" column="20" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
+                <element signature="n#!!block;n#getProfile#0;n#ProfileController#0" />
+                <element signature="n#!!block;n#updateProfileImage#0;n#ProfileController#0" />
+                <element signature="n#!!block;n#deleteProfile#0;n#ProfileController#0" />
+                <element signature="n#!!block;n#validationError#0;n#ProfileController#0" />
+                <element signature="n#!!block;n#getBakedProfile#0;n#ProfileController#0" />
+                <element signature="n#!!block;n#updateUser#0;n#ProfileController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/controllers/blog.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="139" column="8" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#58#0" expanded="true" />
+                <element signature="n#!!block;n#getBlogs#0;n#BlogController#0" />
+                <element signature="n#!!block;n#getBlog#0;n#BlogController#0" />
+                <element signature="n#!!block;n#getAllPendingBlogs#0;n#BlogController#0" />
+                <element signature="n#!!block;n#saveBlog#0;n#BlogController#0" />
+                <element signature="n#!!block;n#modifyBlog#0;n#BlogController#0" />
+                <element signature="n#!!block;n#editBlog#0;n#BlogController#0" />
+                <element signature="n#!!block;n#deleteBlog#0;n#BlogController#0" />
+                <element signature="n#!!block;n#getTotalBlogStatistics#0;n#BlogController#0" />
+                <element signature="n#!!block;n#getTotalPendingBlogStatistics#0;n#BlogController#0" />
+                <element signature="n#!!block;n#saveBlogLike#0;n#BlogController#0" />
+                <element signature="n#!!block;n#searchBlog#0;n#BlogController#0" />
+                <element signature="n#!!block;n#notFoundError#0;n#BlogController#0" />
+                <element signature="n#!!block;n#validationError#0;n#BlogController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/app.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.scss">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/styles.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="968">
+              <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="97" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>this.prepareActivateToken()</find>
+      <find>this.mailSender</find>
+      <find>authActions</find>
+      <find>AuthStoreSelectors</find>
+      <find>alive</find>
+      <find>this.validationError</find>
+      <find>this.sendQuestionCommentNotification</find>
+      <find>editorContent</find>
+      <find>questionActions</find>
+      <find>blogId</find>
+      <find>login</find>
+      <find>/#</find>
+      <find>contentToUpdate</find>
+      <find>write</find>
+      <find>BLOG</find>
+      <find>Blog</find>
+      <find>blog</find>
+      <find>write-blog</find>
+      <find>profile-portfolio</find>
+      <find>ADD_BLOG</find>
+      <find>utilService</find>
+      <find>storeService</find>
+      <find>user.</find>
+      <find>user.user</find>
+      <find>tech-align-center</find>
+      <find>tech-profile-portfolio-control</find>
+      <find>Islamic Republic of</find>
+      <find>education</find>
+      <find>validity</find>
+      <find>Validity</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>UserUtils</replace>
+      <replace>ActionTypes</replace>
+      <replace>signup</replace>
+      <replace>Technocracy</replace>
+      <replace>'</replace>
+      <replace>forgot-pass</replace>
+      <replace>UserUtils.generateMailActivateToken()</replace>
+      <replace>MailSender</replace>
+      <replace>AuthAction</replace>
+      <replace>AuthSelectors</replace>
+      <replace>CommentController.validationError</replace>
+      <replace>CommentController.sendQuestionCommentNotification</replace>
+      <replace>QuestionActions</replace>
+      <replace>questionId</replace>
+      <replace>blog?</replace>
+      <replace>write-blog</replace>
+      <replace>my</replace>
+      <replace>edit</replace>
+      <replace>QUESTION</replace>
+      <replace>question</replace>
+      <replace>Question</replace>
+      <replace>profile</replace>
+      <replace>profile-portfolio</replace>
+      <replace>storeService</replace>
+      <replace>utilService</replace>
+      <replace>user.user.</replace>
+      <replace>user</replace>
+      <replace>tech-profile-portfolio-label</replace>
+      <replace>issuedDate</replace>
+      <replace>Issued Date</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/client/src/app/core/services/profile.service.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/containers/profile/profile.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/core/layout/left-side-bar/left-side-bar.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/core/home/home.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/blog/components/author/author.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/question/components/question-preview/question-preview.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/question/components/question-view/question-view.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/core/layout/left-side-bar/left-side-bar.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/core/home/home.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/question/components/question-view/question-view.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/core/layout/left-side-bar/left-side-bar.component.scss" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.scss" />
+        <option value="$PROJECT_DIR$/client/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/core/services/util.service.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/experience/experience.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/experience/experience.component.scss" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/employment/employment.component.scss" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/employment/employment.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/skills/skills.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/employment/employment.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/skills/skills.component.scss" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/skills/skills.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/profile-material.module.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/portfolio/portfolio.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/portfolio/portfolio.component.scss" />
+        <option value="$PROJECT_DIR$/client/src/app/core/services/json-load.service.ts" />
+        <option value="$PROJECT_DIR$/client/src/assets/json-data/countries.json" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/portfolio/portfolio.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/education/education.component.scss" />
+        <option value="$PROJECT_DIR$/server/src/controllers/profile-controller.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/education/education.component.ts" />
+        <option value="$PROJECT_DIR$/server/src/models/profile.model.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/shared/models/profile-model.ts" />
+        <option value="$PROJECT_DIR$/version-enhancements.MD" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/education/education.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/experience/experience.component.html" />
+        <option value="$PROJECT_DIR$/server/src/models/blog.model.ts" />
+        <option value="$PROJECT_DIR$/server/src/controllers/blog.controller.ts" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/server/.env" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/profile-routing.module.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/core/services/authentication.guard.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/app.component.scss" />
+        <option value="$PROJECT_DIR$/client/src/index.html" />
+        <option value="$PROJECT_DIR$/client/src/styles.scss" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/client/node_modules" />
+    <handled-path value="$PROJECT_DIR$/server/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/client/package.json" />
+      <path value="$PROJECT_DIR$/mobile/app/package.json" />
+      <path value="$PROJECT_DIR$/mobile/package.json" />
+      <path value="$PROJECT_DIR$/server/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="width" value="981" />
+    <option name="height" value="522" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog-preview" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog-view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/rahi-akela/myworks/technocracy-v1.3.0.0" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="C:\Users\ryaan\Dropbox\technocracy\technocracy-v1.3.0.0\mobile\node_modules\tslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
+    <property name="ts.external.directory.path" value="C:\Users\ryaan\Dropbox\technocracy\technocracy-v1.3.0.0\server\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ryaan\Dropbox\technocracy\technocracy-v1.3.0.0\client\src\assets\menifests" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ryaan\Dropbox\technocracy\technocracy-v1.3.0.0\client\src\assets\css" />
+      <recent name="C:\Users\ryaan\Dropbox\technocracy\technocracy-v1.3.0.0\client\src\assets\js" />
+      <recent name="C:\Users\ryaan\Dropbox\technocracy\technocracy-v1.3.0.0" />
+      <recent name="C:\Users\ryaan\Dropbox\technocracy\technocracy-v1.3.0.0\client\src\assets\json-data" />
+      <recent name="C:\Users\ryaan\Dropbox\technocracy\technocracy-v1.3.0.0\client\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.debug-server">
+    <configuration name="debug-client" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:4200/home" useFirstLineBreakpoints="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="debug-server" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="dist/server.js" working-dir="$PROJECT_DIR$/server">
+      <envs>
+        <env name="NODE_ENV" value="dev" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.debug-client" />
+      <item itemvalue="Node.js.debug-server" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d0dddec3-1de1-422b-9b41-57ddbf0ee36f" name="Default Changelist" comment="" />
+      <created>1533821895317</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1533821895317</updated>
+      <workItem from="1533821899331" duration="3353000" />
+      <workItem from="1533825565279" duration="1752000" />
+      <workItem from="1533909095936" duration="3443000" />
+      <workItem from="1533912768948" duration="2648000" />
+      <workItem from="1533950559939" duration="3528000" />
+      <workItem from="1533954192494" duration="1884000" />
+      <workItem from="1533956177063" duration="2324000" />
+      <workItem from="1533964953726" duration="875000" />
+      <workItem from="1533968597080" duration="1139000" />
+      <workItem from="1533988165959" duration="14813000" />
+      <workItem from="1534040441147" duration="6572000" />
+      <workItem from="1534070739464" duration="8673000" />
+      <workItem from="1534082505426" duration="3712000" />
+      <workItem from="1534086290879" duration="1387000" />
+      <workItem from="1534165358416" duration="8675000" />
+      <workItem from="1534250207911" duration="11216000" />
+      <workItem from="1534299376242" duration="12445000" />
+      <workItem from="1534342082290" duration="1411000" />
+      <workItem from="1534473407034" duration="4672000" />
+      <workItem from="1534512348867" duration="7362000" />
+      <workItem from="1534555507874" duration="5383000" />
+      <workItem from="1534572759648" duration="10204000" />
+      <workItem from="1534641348353" duration="14516000" />
+      <workItem from="1534675357992" duration="3684000" />
+      <workItem from="1534679116077" duration="3801000" />
+      <workItem from="1534683001819" duration="3617000" />
+      <workItem from="1534686729914" duration="3739000" />
+      <workItem from="1534767788967" duration="10317000" />
+      <workItem from="1534860063288" duration="4405000" />
+      <workItem from="1534864595402" duration="2142000" />
+      <workItem from="1534900974736" duration="3804000" />
+      <workItem from="1534904843822" duration="3794000" />
+      <workItem from="1534914726519" duration="4321000" />
+      <workItem from="1534919285826" duration="4495000" />
+      <workItem from="1534923859601" duration="3542000" />
+      <workItem from="1534928426819" duration="2435000" />
+      <workItem from="1534936690721" duration="4513000" />
+      <workItem from="1534941262199" duration="1250000" />
+      <workItem from="1534946414653" duration="4449000" />
+      <workItem from="1534950959615" duration="1021000" />
+      <workItem from="1535025888667" duration="3856000" />
+      <workItem from="1535030462196" duration="2128000" />
+      <workItem from="1535035327446" duration="527000" />
+      <workItem from="1535035935085" duration="2651000" />
+      <workItem from="1535110040846" duration="4445000" />
+      <workItem from="1535114565665" duration="3844000" />
+      <workItem from="1535122907638" duration="773000" />
+      <workItem from="1535161606497" duration="28136000" />
+      <workItem from="1535245193932" duration="3990000" />
+      <workItem from="1535249283523" duration="3133000" />
+      <workItem from="1535253838077" duration="703000" />
+      <workItem from="1535254602812" duration="4238000" />
+      <workItem from="1535288137541" duration="8487000" />
+      <workItem from="1535371951380" duration="11267000" />
+      <workItem from="1535458386674" duration="4415000" />
+      <workItem from="1535462911395" duration="4459000" />
+      <workItem from="1535467479192" duration="2890000" />
+      <workItem from="1535509315783" duration="4182000" />
+      <workItem from="1535513844421" duration="4422000" />
+      <workItem from="1535518406838" duration="623000" />
+      <workItem from="1535551691705" duration="3939000" />
+      <workItem from="1535556178070" duration="3770000" />
+      <workItem from="1535632356137" duration="2177000" />
+      <workItem from="1535636927761" duration="4484000" />
+      <workItem from="1535641480730" duration="2979000" />
+      <workItem from="1535715550023" duration="4457000" />
+      <workItem from="1535720174848" duration="4489000" />
+      <workItem from="1535724734830" duration="4826000" />
+      <workItem from="1535730603383" duration="14000" />
+      <workItem from="1535731029059" duration="1727000" />
+      <workItem from="1535765209867" duration="30256000" />
+      <workItem from="1535851569739" duration="32781000" />
+      <workItem from="1535977269800" duration="10657000" />
+      <workItem from="1536063866872" duration="3684000" />
+      <workItem from="1536067632515" duration="3602000" />
+      <workItem from="1536071307239" duration="2972000" />
+      <workItem from="1536075457501" duration="1753000" />
+      <workItem from="1536151078932" duration="3560000" />
+      <workItem from="1536154717027" duration="3642000" />
+      <workItem from="1536158737309" duration="3337000" />
+      <workItem from="1536235107487" duration="3429000" />
+      <workItem from="1536238596745" duration="3028000" />
+      <workItem from="1536242243143" duration="3573000" />
+      <workItem from="1536245885217" duration="2445000" />
+      <workItem from="1536249732435" duration="321000" />
+      <workItem from="1536322393048" duration="3577000" />
+      <workItem from="1536326056503" duration="3585000" />
+      <workItem from="1536329717158" duration="2876000" />
+      <workItem from="1536333796853" duration="1447000" />
+      <workItem from="1536369623880" duration="3133000" />
+      <workItem from="1536373244766" duration="3642000" />
+      <workItem from="1536377140946" duration="3347000" />
+      <workItem from="1536380894532" duration="1942000" />
+      <workItem from="1536403507119" duration="3442000" />
+      <workItem from="1536407156248" duration="1552000" />
+      <workItem from="1536410798712" duration="3560000" />
+      <workItem from="1536414462168" duration="3573000" />
+      <workItem from="1536418105816" duration="1916000" />
+      <workItem from="1536455399842" duration="2327000" />
+      <workItem from="1536459829474" duration="2433000" />
+      <workItem from="1536463789504" duration="3566000" />
+      <workItem from="1536467441548" duration="3141000" />
+      <workItem from="1536471090684" duration="3622000" />
+      <workItem from="1536474808538" duration="3570000" />
+      <workItem from="1536486586284" duration="3503000" />
+      <workItem from="1536490180452" duration="3564000" />
+      <workItem from="1536493858090" duration="3571000" />
+      <workItem from="1536497506413" duration="903000" />
+      <workItem from="1536501404784" duration="3566000" />
+      <workItem from="1536505358482" duration="1268000" />
+      <workItem from="1536581275344" duration="3479000" />
+      <workItem from="1536584846280" duration="3225000" />
+      <workItem from="1536588498704" duration="3572000" />
+      <workItem from="1536592172127" duration="811000" />
+      <workItem from="1536671877852" duration="3520000" />
+      <workItem from="1536675495731" duration="3568000" />
+      <workItem from="1536679142960" duration="1443000" />
+      <workItem from="1536756608358" duration="3411000" />
+      <workItem from="1536760207395" duration="1827000" />
+      <workItem from="1536763855718" duration="3992000" />
+      <workItem from="1536802178940" duration="3548000" />
+      <workItem from="1536805807177" duration="3585000" />
+      <workItem from="1536809552956" duration="3041000" />
+      <workItem from="1536916495455" duration="2723000" />
+      <workItem from="1536920839523" duration="2047000" />
+      <workItem from="1536924531430" duration="2108000" />
+      <workItem from="1536932090496" duration="2939000" />
+      <workItem from="1536936540935" duration="3035000" />
+      <workItem from="1536982089986" duration="4471000" />
+      <workItem from="1536997823505" duration="4477000" />
+      <workItem from="1537002413656" duration="3338000" />
+      <workItem from="1537006975129" duration="4468000" />
+      <workItem from="1537011524277" duration="4466000" />
+      <workItem from="1537016070115" duration="1542000" />
+      <workItem from="1537022169087" duration="4374000" />
+      <workItem from="1537069346937" duration="4569000" />
+      <workItem from="1537074231491" duration="1805000" />
+      <workItem from="1537093257208" duration="4252000" />
+      <workItem from="1537097766316" duration="4498000" />
+      <workItem from="1537102436982" duration="4380000" />
+      <workItem from="1537106991115" duration="4629000" />
+      <workItem from="1537187152489" duration="4394000" />
+      <workItem from="1537191642396" duration="4463000" />
+      <workItem from="1537196222187" duration="2500000" />
+      <workItem from="1537273563285" duration="4455000" />
+      <workItem from="1537278192971" duration="4493000" />
+      <workItem from="1537282744383" duration="2373000" />
+      <workItem from="1537359692056" duration="4199000" />
+      <workItem from="1537364313819" duration="4413000" />
+      <workItem from="1537368881596" duration="2196000" />
+      <workItem from="1537407865660" duration="4206000" />
+      <workItem from="1537420139151" duration="4411000" />
+      <workItem from="1537424645633" duration="4151000" />
+      <workItem from="1537431157144" duration="3499000" />
+      <workItem from="1537436322910" duration="2853000" />
+      <workItem from="1537441797729" duration="3135000" />
+      <workItem from="1537451082612" duration="4454000" />
+      <workItem from="1537455632420" duration="1724000" />
+      <workItem from="1537533973612" duration="4445000" />
+      <workItem from="1537538513405" duration="4475000" />
+      <workItem from="1537543064659" duration="1220000" />
+      <workItem from="1537582612954" duration="5099000" />
+      <workItem from="1537624428865" duration="3000000" />
+      <workItem from="1537629381589" duration="689000" />
+      <workItem from="1537665456436" duration="3864000" />
+      <workItem from="1537669882888" duration="2562000" />
+      <workItem from="1537672752704" duration="2721000" />
+      <workItem from="1537675550148" duration="3081000" />
+      <workItem from="1537690114350" duration="10927000" />
+      <workItem from="1537798149623" duration="2435000" />
+      <workItem from="1537880062773" duration="4056000" />
+      <workItem from="1537884614935" duration="3907000" />
+      <workItem from="1537965047479" duration="4015000" />
+      <workItem from="1537969587547" duration="4382000" />
+      <workItem from="1537974247366" duration="2623000" />
+      <workItem from="1538054430487" duration="4375000" />
+      <workItem from="1538059085259" duration="2727000" />
+      <workItem from="1538141580154" duration="3854000" />
+      <workItem from="1538146122506" duration="2082000" />
+      <workItem from="1538465583698" duration="205000" />
+      <workItem from="1538465967083" duration="1816000" />
+      <workItem from="1538484228813" duration="2527000" />
+      <workItem from="1538491017580" duration="1400000" />
+      <workItem from="1538581594651" duration="653000" />
+      <workItem from="1538582520039" duration="69000" />
+      <workItem from="1538655224471" duration="4517000" />
+      <workItem from="1538659826227" duration="4243000" />
+      <workItem from="1538664380279" duration="3906000" />
+      <workItem from="1538741831754" duration="4153000" />
+      <workItem from="1538747241963" duration="4804000" />
+      <workItem from="1538752337229" duration="4142000" />
+      <workItem from="1538791713033" duration="18396000" />
+      <workItem from="1538881056020" duration="20778000" />
+      <workItem from="1538919260654" duration="8637000" />
+      <workItem from="1539002220696" duration="7330000" />
+      <workItem from="1539010429006" duration="2334000" />
+      <workItem from="1539088719673" duration="3707000" />
+      <workItem from="1539092621424" duration="3101000" />
+      <workItem from="1539096451660" duration="1991000" />
+      <workItem from="1539174144603" duration="3398000" />
+      <workItem from="1539177685812" duration="3417000" />
+      <workItem from="1539181357406" duration="2929000" />
+      <workItem from="1539184467646" duration="254000" />
+      <workItem from="1539254425320" duration="3494000" />
+      <workItem from="1539258263673" duration="2572000" />
+      <workItem from="1539262451867" duration="2784000" />
+      <workItem from="1539265326431" duration="3615000" />
+      <workItem from="1539269063910" duration="3009000" />
+      <workItem from="1539345215574" duration="2703000" />
+      <workItem from="1539348349597" duration="4582000" />
+      <workItem from="1539353005512" duration="3641000" />
+      <workItem from="1539357015844" duration="1014000" />
+      <workItem from="1539397677792" duration="3747000" />
+      <workItem from="1539401589092" duration="2385000" />
+      <workItem from="1539504818836" duration="866000" />
+      <workItem from="1539508609023" duration="2845000" />
+      <workItem from="1539513932376" duration="2041000" />
+      <workItem from="1539522404253" duration="961000" />
+      <workItem from="1539528470200" duration="2310000" />
+      <workItem from="1539605135200" duration="2538000" />
+      <workItem from="1539610026541" duration="2806000" />
+      <workItem from="1539781651804" duration="3579000" />
+      <workItem from="1539785728658" duration="3322000" />
+      <workItem from="1539830461440" duration="1528000" />
+      <workItem from="1539834092126" duration="3675000" />
+      <workItem from="1539838158407" duration="3570000" />
+      <workItem from="1539852098534" duration="3393000" />
+      <workItem from="1539856680228" duration="3707000" />
+      <workItem from="1539860622009" duration="2663000" />
+      <workItem from="1539922707912" duration="1098000" />
+      <workItem from="1539926381511" duration="4154000" />
+      <workItem from="1539930941383" duration="3154000" />
+      <workItem from="1539944267785" duration="3591000" />
+      <workItem from="1539947915595" duration="2748000" />
+      <workItem from="1539950745055" duration="3175000" />
+      <workItem from="1539954102768" duration="3600000" />
+      <workItem from="1539957768698" duration="2561000" />
+      <workItem from="1540001164035" duration="3779000" />
+      <workItem from="1540005020976" duration="3595000" />
+      <workItem from="1540008768306" duration="1024000" />
+      <workItem from="1540014783809" duration="15260000" />
+      <workItem from="1540086744394" duration="3658000" />
+      <workItem from="1540090819207" duration="3582000" />
+      <workItem from="1540094509221" duration="2108000" />
+      <workItem from="1540098827480" duration="3442000" />
+      <workItem from="1540122824085" duration="2165000" />
+      <workItem from="1540125031214" duration="992000" />
+      <workItem from="1540126801333" duration="3692000" />
+      <workItem from="1540130553849" duration="3614000" />
+      <workItem from="1540135361048" duration="577000" />
+      <workItem from="1540211289129" duration="3520000" />
+      <workItem from="1540215929668" duration="3625000" />
+      <workItem from="1540219633767" duration="3871000" />
+      <workItem from="1540297591288" duration="1702000" />
+      <workItem from="1540299445155" duration="3387000" />
+      <workItem from="1540303297983" duration="1880000" />
+      <workItem from="1540306400150" duration="2408000" />
+      <workItem from="1540383008687" duration="2054000" />
+      <workItem from="1540386692835" duration="4446000" />
+      <workItem from="1540391813946" duration="2177000" />
+      <workItem from="1540470729876" duration="4531000" />
+      <workItem from="1540475407402" duration="3161000" />
+      <workItem from="1540479256112" duration="768000" />
+      <workItem from="1540553045679" duration="3535000" />
+      <workItem from="1540556695628" duration="3598000" />
+      <workItem from="1540560389292" duration="2680000" />
+      <workItem from="1540564094642" duration="3943000" />
+      <workItem from="1540606778568" duration="3311000" />
+      <workItem from="1540612706731" duration="11391000" />
+      <workItem from="1540692108060" duration="3185000" />
+      <workItem from="1540695787726" duration="4526000" />
+      <workItem from="1540700474100" duration="3636000" />
+      <workItem from="1540704260944" duration="3317000" />
+      <workItem from="1540725579073" duration="4044000" />
+      <workItem from="1540730919686" duration="1692000" />
+      <workItem from="1540733496709" duration="3576000" />
+      <workItem from="1540815042448" duration="3486000" />
+      <workItem from="1540818620289" duration="3600000" />
+      <workItem from="1540822276359" duration="3604000" />
+      <workItem from="1540825974442" duration="866000" />
+      <workItem from="1540901921573" duration="3530000" />
+      <workItem from="1540905553180" duration="3603000" />
+      <workItem from="1540909263153" duration="3312000" />
+      <workItem from="1540987970236" duration="3560000" />
+      <workItem from="1540991619912" duration="3611000" />
+      <workItem from="1540995388791" duration="536000" />
+      <workItem from="1540996029770" duration="42000" />
+      <workItem from="1540996195855" duration="95000" />
+      <workItem from="1540996529812" duration="2831000" />
+      <workItem from="1541074451986" duration="7169000" />
+      <workItem from="1541085592192" duration="661000" />
+      <workItem from="1541161281811" duration="10620000" />
+      <workItem from="1541210741899" duration="22131000" />
+      <workItem from="1541294330038" duration="4657000" />
+      <workItem from="1541320462314" duration="12958000" />
+      <workItem from="1541386721001" duration="7338000" />
+      <workItem from="1541407469213" duration="624000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1195038000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21800596" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32569557" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25204584" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49841017" weight="0.38952535" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3285968" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="9" weight="0.24713585" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49841017" weight="0.34042552" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50158983" side_tool="true" weight="0.330373" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/mobile/app/browse/browse-routing.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/app.component.js" />
+        <option value="$PROJECT_DIR$/mobile/app/vendor.js" />
+        <option value="$PROJECT_DIR$/mobile/app/home/home.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/app.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/settings/settings.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/main.js" />
+        <option value="$PROJECT_DIR$/mobile/app/settings/settings-routing.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/app-routing.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/vendor-platform.ios.js" />
+        <option value="$PROJECT_DIR$/mobile/app/featured/featured-routing.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/featured/featured.component.js" />
+        <option value="$PROJECT_DIR$/mobile/app/vendor-platform.android.js" />
+        <option value="$PROJECT_DIR$/mobile/app/featured/featured.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/search/search-routing.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/main.aot.js" />
+        <option value="$PROJECT_DIR$/mobile/app/browse/browse.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/search/search.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/settings/settings.component.js" />
+        <option value="$PROJECT_DIR$/mobile/app/search/search.component.js" />
+        <option value="$PROJECT_DIR$/mobile/app/home/home.component.js" />
+        <option value="$PROJECT_DIR$/mobile/app/home/home-routing.module.js" />
+        <option value="$PROJECT_DIR$/mobile/app/browse/browse.component.js" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/app/root-store/auth-store/auth.reducer.ts</url>
+          <line>67</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>48</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>53</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>49</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>56</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>60</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>304</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>313</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>95</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>88</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>307</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>305</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts</url>
+          <line>308</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>{
+        ...state.entities, // copy everything from entities
+        blogId: {          // override the current blog property
+          originalBlog,    // same sane: copy the everything from entities[blogId]
+          comments: updatedComments // //override entities[blogId].comments
+        }
+      }</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>writtenBy</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>profile.portfolio</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>profile.portfolio.dob</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>profile.country.</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>profile.country.portfolio</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>profile.country.portfolio.dob</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>profile.experiences.push(data.experiences[0])</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>profile.experiences.push(data.experiences)</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>userId</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="68" column="7" selection-start-line="62" selection-start-column="4" selection-end-line="68" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/containers/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/employment/employment.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="118" column="19" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/employment/employment.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/skills/skills.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/skills/skills.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="62" column="28" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/skills/skills.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/employment/employment.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="31" column="1" selection-start-line="20" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/core/services/file-upload.service.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/profile-material.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="40" column="22" lean-forward="true" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/core/services/blog.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1307">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/assets/json-data/countries.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="727" column="30" lean-forward="true" selection-start-line="727" selection-start-column="30" selection-end-line="727" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/assets/json-data/cities.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/core/services/json-load.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="60" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/portfolio/portfolio.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/portfolio/portfolio.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="230" column="26" lean-forward="true" selection-start-line="230" selection-start-column="26" selection-end-line="230" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/portfolio/portfolio.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="141" column="3" lean-forward="true" selection-start-line="141" selection-start-column="3" selection-end-line="141" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/education/education.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/experience/experience.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/education/education.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/version-enhancements.MD">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/shared/models/profile-model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="69" column="32" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/models/profile.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/experience/experience.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="44" column="1" selection-start-line="33" selection-end-line="44" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/models/blog.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/education/education.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/education/education.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/experience/experience.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1870">
+          <caret line="110" column="25" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1802">
+          <caret line="106" column="55" selection-start-line="106" selection-start-column="55" selection-end-line="106" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/profile-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/containers/my-blog/my-blog.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/core/services/authentication.guard.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/core/services/util.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/my-blog/my-blog.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/my-blog/my-blog.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/assets/css/prism.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/assets/js/prism.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/profile-controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="95" column="20" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+            <element signature="n#!!block;n#getProfile#0;n#ProfileController#0" />
+            <element signature="n#!!block;n#updateProfileImage#0;n#ProfileController#0" />
+            <element signature="n#!!block;n#deleteProfile#0;n#ProfileController#0" />
+            <element signature="n#!!block;n#validationError#0;n#ProfileController#0" />
+            <element signature="n#!!block;n#getBakedProfile#0;n#ProfileController#0" />
+            <element signature="n#!!block;n#updateUser#0;n#ProfileController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/blog.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="139" column="8" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+            <element signature="n#!!block;n#getBlogs#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getAllPendingBlogs#0;n#BlogController#0" />
+            <element signature="n#!!block;n#saveBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#modifyBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#editBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#deleteBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getTotalBlogStatistics#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getTotalPendingBlogStatistics#0;n#BlogController#0" />
+            <element signature="n#!!block;n#saveBlogLike#0;n#BlogController#0" />
+            <element signature="n#!!block;n#searchBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#notFoundError#0;n#BlogController#0" />
+            <element signature="n#!!block;n#validationError#0;n#BlogController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="97" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="968">
+          <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

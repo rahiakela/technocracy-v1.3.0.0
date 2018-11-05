@@ -1,0 +1,50 @@
+@import "../../../app.component";
+
+$write-blog-width: 100%;
+
+.tech-write-blog-card{
+  margin: auto;
+}
+h5{
+  margin: auto;
+  color: $main-color;
+}
+.tech-write-blog-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-write-blog-container > * {
+  width: $write-blog-width;
+}
+
+.tech-write-blog-form{
+  display: flex;
+  flex-direction: column;
+}
+.tech-write-blog-loading{
+  padding-top: 10px;
+  margin-left: 140px;
+  color: $main-color;
+}
+
+.tech-write-blog-message{
+  color: $main-color;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+.tech-write-blog-error{
+  margin-top: 15px;
+  margin-bottom: -10px;
+}
+.tech-align-center{
+  color: darkgray;
+  margin-left: 100px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.tech-write-blog-card-footer{
+  margin: auto;
+  padding: 8px 0;
+}

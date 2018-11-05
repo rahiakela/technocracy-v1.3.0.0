@@ -1,0 +1,50 @@
+@import "../../../app.component";
+
+$write-question-width: 100%;
+
+.tech-write-question-card{
+  margin: auto;
+}
+h5{
+  margin: auto;
+  color: $main-color;
+}
+.tech-write-question-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-write-question-container > * {
+  width: $write-question-width;
+}
+
+.tech-write-question-form{
+  display: flex;
+  flex-direction: column;
+}
+.tech-write-question-loading{
+  padding-top: 10px;
+  margin-left: 140px;
+  color: $main-color;
+}
+
+.tech-write-question-message{
+  color: $main-color;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+.tech-write-question-error{
+  margin-top: 15px;
+  margin-bottom: -10px;
+}
+.tech-align-center{
+  color: darkgray;
+  margin-left: 100px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.tech-write-question-card-footer{
+  margin: auto;
+  padding: 8px 0;
+}

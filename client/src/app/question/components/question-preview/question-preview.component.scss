@@ -1,0 +1,35 @@
+@import "../../../app.component";
+
+h4{
+  color: $main-color;
+}
+.tech-question-card{
+  margin-top: -15px;
+  margin-bottom: 5px;
+}
+.tech-card-content{
+  margin-bottom: 0px;
+}
+h6{
+  margin-bottom: 15px;
+  color: darkgray;
+}
+.tech-querent-card{
+  background-color: $main-color;
+  color: white;
+  margin-bottom: 10px;
+}
+.tech-author-card-subtitle{
+  color: burlywood;
+  font-size: 12px;
+}
+strong{
+  color: #989a70;
+}
+.tech-inline-share-box{
+  margin-top: 25px;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

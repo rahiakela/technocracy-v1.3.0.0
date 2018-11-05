@@ -1,0 +1,29 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <div *ngIf="error; let blogError" fxFlexAlign="center" class="tech-blog-error">{{ blogError.error }}</div>
+  <div *ngIf="searching" class="tech-searching-spinner">
+    <mat-spinner [class.show]="searching" [diameter]="30" [strokeWidth]="3"></mat-spinner>
+    <span class="tech-searching-spinner-label">loading blog...</span>
+  </div>
+
+  <mat-card *ngFor="let blog of blogs" class="tech-home-card">
+    <a [routerLink]="['/blog', blog?._id]">
+      <h4>{{blog?.title}} </h4>
+      <mat-card-header class="tech-home-card-header">
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{blog?.profile?.name}}<small>-{{utilService.getCurrentEmployment(blog?.profile?.employments)?.designation}}@{{utilService.getCurrentEmployment(blog?.profile?.employments)?.company}}</small></mat-card-title>
+        <mat-card-subtitle style="color: #9594b1;">{{showSkillsWithHashTag(blog?.profile?.skills)}}</mat-card-subtitle>
+      </mat-card-header>
+    </a>
+    <hr>
+    <mat-card-content class="tech-card-content">
+      <span>
+        <div [innerHTML]="blog?.content.substring(0,600) | safeHtml"></div>
+      </span>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [routerLink]="['/blog', blog?._id]" mat-button color="primary">Read More</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
