@@ -40,7 +40,7 @@
                   <label class="tech-label">Worked upto : <span class="tech-secondary-color">{{employment.toDate | date:'dd/MM/yyyy'}}</span> </label>
                 </mat-grid-tile>
 
-                <mat-grid-tile [colspan]="breakpoint">
+                <mat-grid-tile [colspan]="breakpoint" [rowspan]="isMobileView ? 4 : 2">
                   <label class="tech-label">Achievements : <span class="tech-secondary-color">{{employment.achievement}}</span> </label>
                   <mat-divider style="margin-top: 15px;"></mat-divider>
                 </mat-grid-tile>
@@ -99,10 +99,9 @@
                 </mat-form-field>
               </mat-grid-tile>
 
-              <mat-grid-tile [colspan]="breakpoint">
-                <mat-form-field style="width: 73%;">
-                  <mat-label>Achievements&nbsp;:&nbsp;</mat-label>
-                  <textarea [formControl]="achievement" style="height: 55px;border: 1px solid #999999;margin-bottom: -6px;"
+              <mat-grid-tile [colspan]="breakpoint" [rowspan]="2">
+                <mat-form-field floatLabel="never" [style.width]="isMobileView ? '73%' : '86%'">
+                  <textarea [formControl]="achievement" style="height: 70px;border: 1px solid #999999;margin-bottom: -6px;"
                             placeholder="Please mention your achievements..."
                             aria-label="Achievement"
                             matInput
@@ -144,7 +143,7 @@
 
             <mat-grid-tile-header *ngIf="user?.profile?.employments || editable"><span style=" color: #a8c4d2;">Employment Snapshot</span></mat-grid-tile-header>
 
-            <div *ngFor="let employment of user.profile.employments">
+            <div *ngFor="let employment of user?.profile?.employments">
 
               <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
 

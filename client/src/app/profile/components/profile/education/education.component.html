@@ -96,7 +96,7 @@
 
         <mat-grid-tile-header *ngIf="user?.profile?.degrees.length > 0 || editDegree" align="center"><span style=" color: #a8c4d2;">Education Snapshot</span></mat-grid-tile-header>
 
-        <div *ngFor="let degree of user.profile.degrees">
+        <div *ngFor="let degree of user?.profile?.degrees">
           <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
 
             <div class="tech-edit-option">
@@ -212,7 +212,7 @@
 
         <mat-divider *ngIf="editCertificate"></mat-divider>
 
-        <div *ngFor="let certification of user.profile.certifications">
+        <div *ngFor="let certification of user?.profile?.certifications">
           <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
 
             <div class="tech-edit-option">
