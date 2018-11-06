@@ -37,7 +37,7 @@ export class BlogController {
       .populate({
         // populate profile instance with user
         path: 'profile',
-        component: 'User',
+        populate: { path: 'user', component: 'User' }
       })
       .populate({
         // populate User instance who commented

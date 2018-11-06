@@ -2,7 +2,7 @@
   <mat-icon aria-hidden="true">home</mat-icon>Home
 </button>
 <mat-divider></mat-divider>
-<button mat-menu-item [routerLink]="['profile', 'profile_id']">
+<button mat-menu-item [routerLink]="['profile', user?.profile ? user?.profile?._id : 'create']">
   <mat-icon aria-hidden="true">perm_identity</mat-icon>Profile
 </button>
 
@@ -32,7 +32,6 @@
 <button *ngIf="user" mat-menu-item (click)="signOut($event)">
   <i class="fa fa-sign-out"></i> Sign out
 </button>
-
 
 <mat-menu #blogMenu="matMenu">
   <button mat-menu-item [routerLink]="['blog', 'blog_id']">

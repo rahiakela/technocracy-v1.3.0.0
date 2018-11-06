@@ -195,10 +195,10 @@ export class ProfileController {
                         "company": emp.company,
                         "designation": emp.designation,
                         "industry": emp.industry,
-                        "roles": emp.roles,
+                        "role": emp.role,
                         "fromDate": emp.fromDate,
                         "toDate": emp.toDate,
-                        "achievements": emp.achievements,
+                        "achievement": emp.achievement,
                         "currentEmployer": emp.currentEmployer
                     };
                     employments.push(employment);

@@ -76,4 +76,5 @@ export class ProfileComponent implements OnInit {
       return this.utilService.getUserName(this.user);
     }
   }
+
 }

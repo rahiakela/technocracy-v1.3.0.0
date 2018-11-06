@@ -19,7 +19,17 @@ h4{
 div.tech-inline-share-box {
   margin: auto;
 }
-
+.tech-profile-image {
+  height: 50px;
+  width: 50px;
+  background-image: url('../../../../assets/img/icons/no-profile.png');
+  background-size: cover;
+}
+.tech-user-image {
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+}
 .tech-card-content{
   margin-top: 10px;
   margin-bottom: 0px;

@@ -15,7 +15,12 @@
           </div>
         </div>
         <div>
-          <h3><strong>{{getUserName()}}</strong></h3>
+          <h3>
+            <strong>{{getUserName()}}</strong>
+            <small *ngIf="user?.profile?.employments?.length > 0" style="margin-left: 5px;color: #585c6f;">
+              <i class="fa fa-dot-circle-o" aria-hidden="true"></i> {{utilService.getUserDesignation(user?.profile?.employments)}} @ {{utilService.getUserCompany(user?.profile?.employments)}}
+            </small>
+          </h3>
           <h6>
             <strong>
               {{user?.profile?.city}}

@@ -141,7 +141,7 @@
 
           <mat-divider *ngIf="editable"></mat-divider>
 
-            <mat-grid-tile-header *ngIf="user?.profile?.employments || editable"><span style=" color: #a8c4d2;">Employment Snapshot</span></mat-grid-tile-header>
+            <mat-grid-tile-header *ngIf="user?.profile?.employments?.length > 0 || editable"><span style=" color: #a8c4d2;">Employment Snapshot</span></mat-grid-tile-header>
 
             <div *ngFor="let employment of user?.profile?.employments">
 
@@ -156,7 +156,7 @@
                 </div>
 
                 <mat-grid-tile>
-                  <label class="tech-label">Company : <span class="tech-secondary-color">{{employment.companyName}}</span> </label>
+                  <label class="tech-label">Company : <span class="tech-secondary-color">{{employment.company}}</span> </label>
                 </mat-grid-tile>
 
                 <mat-grid-tile>

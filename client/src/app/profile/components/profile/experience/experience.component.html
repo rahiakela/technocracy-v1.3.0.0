@@ -97,7 +97,7 @@
 
         <mat-divider *ngIf="editable"></mat-divider>
 
-        <mat-grid-tile-header *ngIf="user?.profile?.experiences.length > 0 || (editable === true)" align="center"><span style=" color: #a8c4d2;">Experience Snapshot</span></mat-grid-tile-header>
+        <mat-grid-tile-header *ngIf="user?.profile?.experiences?.length > 0 || (editable === true)" align="center"><span style=" color: #a8c4d2;">Experience Snapshot</span></mat-grid-tile-header>
 
         <div *ngFor="let experience of user?.profile?.experiences">
           <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">

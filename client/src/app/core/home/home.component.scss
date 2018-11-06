@@ -27,7 +27,17 @@ h4{
 .tech-card-content{
   margin-bottom: 0px;
 }
-
+.tech-profile-image {
+  height: 50px;
+  width: 50px;
+  background-image: url('../../../assets/img/icons/no-profile.png');
+  background-size: cover;
+}
+.tech-user-image {
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+}
 .tech-home-card {
   margin-bottom: 2px;
 }

@@ -102,10 +102,12 @@ export class UtilService {
     return '';
   }
 
-  getCurrentEmployment(employments: Employment[]): Employment {
+  getUserDesignation(emploments: Employment[]) {
+    return emploments.length > 0 ? emploments.find(emp => emp.currentEmployer === true).designation : '';
+  }
 
-    return employments ? Object.values(employments)
-      .find(emp => emp.currentEmployer === true): null;
+  getUserCompany(emploments: Employment[]) {
+    return emploments.length > 0 ? emploments.find(emp => emp.currentEmployer === true).company : '';
   }
 
   getUserWithUpdatedImagePath(user: any, imagePath: string): User {

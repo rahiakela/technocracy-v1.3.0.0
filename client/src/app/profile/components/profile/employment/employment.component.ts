@@ -101,7 +101,7 @@ export class EmploymentComponent implements OnInit {
   }
 
   onResize(event) {
-    this.breakpoint = (event.target.innerWidth <= 414) ? 1 : 2;
+    this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
   }
 
   showForm(employment?: Employment) {
