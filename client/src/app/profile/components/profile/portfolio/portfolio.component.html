@@ -220,8 +220,8 @@
           <mat-grid-tile>
             <mat-form-field floatLabel="never">
               <span matPrefix>Country&nbsp;:&nbsp;</span>
-              <input matInput [formControl]="country" [matAutocomplete]="auto" placeholder="What's your country" aria-label="Country">
-              <mat-autocomplete #auto="matAutocomplete">
+              <input matInput [formControl]="country" [matAutocomplete]="countryAutoComplete" placeholder="What's your country" aria-label="Country">
+              <mat-autocomplete #countryAutoComplete="matAutocomplete">
                 <mat-option *ngFor="let country of filteredCountries | async" [value]="country.name">
                   <img class="tech-option-img" aria-hidden [src]="country.url" height="25">
                   <span>{{country.name}}</span>
@@ -233,7 +233,12 @@
           <mat-grid-tile>
             <mat-form-field floatLabel="never">
               <span matPrefix>City&nbsp;:&nbsp;</span>
-              <input matInput [formControl]="city" placeholder="Enter your city" aria-label="City">
+              <input matInput [formControl]="city" [matAutocomplete]="cityAutoComplete" placeholder="Enter your city" aria-label="City">
+              <mat-autocomplete #cityAutoComplete="matAutocomplete">
+                <mat-option *ngFor="let city of filteredCities | async" [value]="city.name">
+                  <span>{{city.name}}</span>
+                </mat-option>
+              </mat-autocomplete>
             </mat-form-field>
           </mat-grid-tile>
 

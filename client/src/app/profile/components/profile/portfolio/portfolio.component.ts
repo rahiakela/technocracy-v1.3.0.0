@@ -82,6 +82,9 @@ export class PortfolioComponent implements OnInit {
   countries: Country[] = [];
   filteredCountries: Observable<Country[]>;
 
+  cities: City[] = [];
+  filteredCities: Observable<City[]>;
+
   // grid responsive settings
   breakpoint: number;
   colSpan: number;
@@ -127,6 +130,19 @@ export class PortfolioComponent implements OnInit {
       .pipe(
         startWith(''),
         map(country => country ? this._filterCountries(country) : this.countries.slice(0, 5))
+      );
+
+    // load cities data from json file
+    this.jsonService.loadCities()
+      .subscribe(cities => {
+        this.cities = cities;
+      });
+
+    // filter cities
+    this.filteredCities = this.city.valueChanges
+      .pipe(
+        startWith(''),
+        map(city => city ? this._filterCities(city) : this.cities.slice(0, 5))
       );
   }
 
@@ -240,6 +256,12 @@ export class PortfolioComponent implements OnInit {
 
     return this.countries.filter(country => country.name.toLowerCase().indexOf(filterValue) === 0);
   }
+
+  private _filterCities(value: string): City[] {
+    const filterValue = value.toLowerCase();
+
+    return this.cities.filter(city => city.name.toLowerCase().indexOf(filterValue) === 0);
+  }
 }
 
 export interface SelectOption {
@@ -254,6 +276,5 @@ export interface Country {
   license: string;*/
 }
 export interface City {
-  label: string;
-  value: string;
+  name: string;
 }

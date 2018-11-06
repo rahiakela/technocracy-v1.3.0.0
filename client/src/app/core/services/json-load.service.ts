@@ -22,4 +22,17 @@ export class JsonLoadService {
         })
       );
   }
+
+  loadCities(): Observable<any[]> {
+    return this.httpClient.get('./assets/json-data/cities.json')
+      .pipe(
+        map((data: any[]) => {
+          let cities: any[] = [];
+          for(let i = 0; i < data.length; i++){
+            cities.push({name: data[i].city});
+          }
+          return cities;
+        })
+      );
+  }
 }
