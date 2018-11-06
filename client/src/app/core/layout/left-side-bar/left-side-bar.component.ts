@@ -13,7 +13,7 @@ export class LeftSideBarComponent implements OnInit, OnChanges {
   @Input()
   user: User;
 
-  navList: NavList[];
+  navList: NavList[] = [];
   // currentUserId: string;
 
   constructor(public utilService: UtilService) {
@@ -77,7 +77,7 @@ export class LeftSideBarComponent implements OnInit, OnChanges {
       };
 
       // Add 'Admin' to 0 index position
-      // this.navList.unshift(adminNavItem);
+      this.navList.push(adminNavItem);
     } /*else {
       // Find the index position of "Admin," then remove it from that position
       this.navList.splice(this.navList[0].categoryName.indexOf('Admin'), 1);

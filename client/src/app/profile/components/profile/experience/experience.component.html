@@ -26,7 +26,7 @@
                 <label class="tech-exp-label">To&nbsp;:&nbsp;<span class="tech-secondary-color">{{experience.toDate | date:'dd/MM/yyyy'}}</span></label>
               </mat-grid-tile>
 
-              <mat-grid-tile [colspan]="breakpoint" class="tech-project-description">
+              <mat-grid-tile [colspan]="breakpoint" class="tech-project-description" [rowspan]="isMobileView ? 4 : 2">
                 <label class="tech-exp-label">Project Description: <span class="tech-secondary-color">{{experience.description}}</span></label><br>
                 <mat-divider style="margin-top: 15px;"></mat-divider>
               </mat-grid-tile>
@@ -58,10 +58,9 @@
               </mat-form-field>
             </mat-grid-tile>
 
-            <mat-grid-tile [colspan]="breakpoint">
-              <mat-form-field>
-                <mat-label>Project Description&nbsp;:&nbsp;</mat-label>
-                <textarea [formControl]="description" style="height: 55px;border: 1px solid #999999;margin-bottom: -6px;"
+            <mat-grid-tile [colspan]="breakpoint" [rowspan]="2">
+              <mat-form-field floatLabel="never" [style.width]="isMobileView ? '73%' : '86%'">
+                <textarea [formControl]="description" style="height: 70px;border: 1px solid #999999;margin-bottom: -6px;"
                           placeholder="Please describe your project..."
                           aria-label="Project Description"
                           matInput
@@ -98,9 +97,9 @@
 
         <mat-divider *ngIf="editable"></mat-divider>
 
-        <mat-grid-tile-header *ngIf="user?.profile?.experiences.length > 0 || (editable === true)" align="center"><span style=" color: #a8c4d2;">Experience Snapshot</span></mat-grid-tile-header>
+        <mat-grid-tile-header *ngIf="user?.profile?.experiences?.length > 0 || (editable === true)" align="center"><span style=" color: #a8c4d2;">Experience Snapshot</span></mat-grid-tile-header>
 
-        <div *ngFor="let experience of user.profile.experiences">
+        <div *ngFor="let experience of user?.profile?.experiences">
           <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
 
             <div class="tech-edit-option">

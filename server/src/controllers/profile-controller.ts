@@ -166,22 +166,22 @@ export class ProfileController {
         switch (data.action) {
             case 'portfolio':
                 profile = {
-                    "name": data.name,
-                    "description": data.description,
-                    "address": data.address,
-                    "city": data.city,
-                    "country": data.country,
+                    "name": data.portfolio.name,
+                    "description": data.portfolio.description,
+                    "address": data.portfolio.address,
+                    "city": data.portfolio.city,
+                    "country": data.portfolio.country,
                     "portfolio": {
-                        "dob": data.dob,
-                        "gender": data.gender,
-                        "phone": data.phone,
-                        "email": data.email,
-                        "mobile": data.mobile,
+                        "dob": data.portfolio.portfolio.dob,
+                        "gender": data.portfolio.portfolio.gender,
+                        "phone": data.portfolio.portfolio.phone,
+                        "email": data.portfolio.portfolio.email,
+                        "mobile": data.portfolio.portfolio.mobile,
                         "socialLink": {
-                            "facebook": data.facebook,
-                            "twitter": data.twitter,
-                            "google": data.google,
-                            "linkedin": data.linkedin,
+                            "facebook": data.portfolio.portfolio.socialLink.facebook,
+                            "twitter": data.portfolio.portfolio.socialLink.twitter,
+                            "google": data.portfolio.portfolio.socialLink.google,
+                            "linkedin": data.portfolio.portfolio.socialLink.linkedin,
                         }
                     },
                     "user": userId
@@ -195,10 +195,10 @@ export class ProfileController {
                         "company": emp.company,
                         "designation": emp.designation,
                         "industry": emp.industry,
-                        "roles": emp.roles,
+                        "role": emp.role,
                         "fromDate": emp.fromDate,
                         "toDate": emp.toDate,
-                        "achievements": emp.achievements,
+                        "achievement": emp.achievement,
                         "currentEmployer": emp.currentEmployer
                     };
                     employments.push(employment);

@@ -3,13 +3,20 @@
   <mat-card class="tech-blog-card">
     <h4>{{blog?.title}} </h4>
     <mat-card-header class="tech-blog-card-header">
-      <div mat-card-avatar class="example-header-image"></div>
-      <!--<tech-user-icon [user]="blog.profile.user"></tech-user-icon>-->
+
+      <div *ngIf="utilService.getUserIcon(blog?.profile?.user) === ''; else userIconTemplate" mat-card-avatar class="tech-profile-image"></div>
+      <ng-template #userIconTemplate>
+        <div>
+          <img class="tech-user-image" mat-card-avatar src="{{utilService.getUserIcon(blog?.profile?.user)}}">
+        </div>
+      </ng-template>
+
       <mat-card-title>
         {{blog?.profile?.name}}
-        <small>
-          - {{utilService.getCurrentEmployment(blog?.profile?.employments)?.designation}}
-          @{{utilService.getCurrentEmployment(blog?.profile?.employments)?.company}}
+        <small style="color: #585c6f;">
+          <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+          {{utilService.getUserDesignation(blog?.profile?.employments)}}
+          @{{utilService.getUserCompany(blog?.profile?.employments)}}
         </small>
       </mat-card-title>
       <mat-card-subtitle style="color: #9594b1;">{{showSkillsWithHashTag(blog?.profile?.skills)}}</mat-card-subtitle>

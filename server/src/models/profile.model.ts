@@ -5,10 +5,10 @@ const employments: Schema = new Schema({
     company: { type: String},
     designation: { type: String},
     industry: { type: String},
-    roles: { type: String},
+    role: { type: String},
     fromDate: { type: Date},
     toDate: { type: Date},
-    achievements: { type: String},
+    achievement: { type: String},
     currentEmployer: {type: Boolean}
 });
 

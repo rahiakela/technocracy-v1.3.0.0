@@ -13,7 +13,6 @@ export function blogReducer(state = initialState, action: Actions): State {
   switch (action.type) {
 
     case ActionTypes.LOAD_BLOG_LIST:
-    case ActionTypes.LOAD_BLOG_LIST_BY_AUTHOR:
     case ActionTypes.SEARCH_BLOG:
     case ActionTypes.LIKE_BLOG:
     case ActionTypes.LIKE_COMMENT:
@@ -25,6 +24,11 @@ export function blogReducer(state = initialState, action: Actions): State {
     case ActionTypes.DELETE_COMMENT:
     case ActionTypes.DELETE_REPLY: {
       return {...state, isLoading: true};
+    }
+
+    case ActionTypes.LOAD_BLOG_LIST_BY_AUTHOR: {
+      // clear previous blog list
+      return {...state, isLoading: true, blogList: []};
     }
 
     // Load blog reducer

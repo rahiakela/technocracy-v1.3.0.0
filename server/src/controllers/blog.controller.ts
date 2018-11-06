@@ -26,7 +26,7 @@ export class BlogController {
 
     const pageNumber: number = req.params[PAGE];
     const pageCount = pageNumber > 0 ? pageNumber : 0;
-    const perPage = 20;
+    const perPage = 50;
 
     // query only published blog in publishedOn descending order with pagination
     Blog.find({})
@@ -37,7 +37,7 @@ export class BlogController {
       .populate({
         // populate profile instance with user
         path: 'profile',
-        component: 'User',
+        populate: { path: 'user', component: 'User' }
       })
       .populate({
         // populate User instance who commented

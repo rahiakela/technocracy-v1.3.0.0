@@ -9,8 +9,8 @@
     </ng-template>
 
     <div class="tech-card-header-text">
-      <mat-card-title><h4>{{utilService.getUserName(user)}}</h4></mat-card-title>
-      <mat-card-subtitle style="margin-top: -15px;"><h5>{{utilService.getCurrentEmployment(user?.profile?.employments)?.designation}}</h5></mat-card-subtitle>
+      <mat-card-title><h4>{{ user?.profile ? user?.profile?.name : utilService.getUserName(user)}}</h4></mat-card-title>
+      <mat-card-subtitle style="margin-top: -15px;"><h5>{{utilService.getUserDesignation(user?.profile?.employments)}}</h5></mat-card-subtitle>
     </div>
   </mat-card-header>
 

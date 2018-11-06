@@ -9,7 +9,7 @@
       </div>
 
       <div *ngIf="user?.profile?.portfolio && !editable">
-        <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
+        <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)" style="height:auto;">
           <mat-grid-tile-header><span style=" color: #a8c4d2;">Portfolio Snapshot</span></mat-grid-tile-header>
 
           <mat-grid-tile>
@@ -48,7 +48,7 @@
             </div>
           </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="breakpoint">
+          <mat-grid-tile [colspan]="breakpoint" [rowspan]="isMobileView ? 4 : 2">
             <div class="tech-profile-portfolio-label" [style.margin-right.px]="isMobileView ? '0' : '50'">
               <label>About You: <span style="color: #b3b3bd;">{{user?.profile?.description}}</span></label>
             </div>
@@ -164,10 +164,10 @@
             </mat-form-field>
           </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="breakpoint">
-            <mat-form-field>
+          <mat-grid-tile [colspan]="breakpoint" [rowspan]="2">
+            <mat-form-field floatLabel="never" [style.width]="isMobileView ? '73%' : '86%'">
               <mat-label>About You&nbsp;:&nbsp;</mat-label>
-              <textarea [formControl]="description" style="height: 55px;border: 1px solid #999999;margin-bottom: -6px;"
+              <textarea [formControl]="description" style="height: 70px;border: 1px solid #999999;margin-bottom: -6px;"
                         placeholder="Please describe yourself..."
                         aria-label="About You"
                         matInput
