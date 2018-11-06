@@ -103,11 +103,11 @@ export class UtilService {
   }
 
   getUserDesignation(emploments: Employment[]) {
-    return emploments.length > 0 ? emploments.find(emp => emp.currentEmployer === true).designation : '';
+    return emploments !== null && emploments.length > 0 ? emploments.find(emp => emp.currentEmployer === true).designation : '';
   }
 
   getUserCompany(emploments: Employment[]) {
-    return emploments.length > 0 ? emploments.find(emp => emp.currentEmployer === true).company : '';
+    return emploments !== null && emploments.length > 0 ? emploments.find(emp => emp.currentEmployer === true).company : '';
   }
 
   getUserWithUpdatedImagePath(user: any, imagePath: string): User {
