@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  REST_URL: 'http://localhost:3000/api',
+  REST_URL: 'https://www.tecknocracy.com/api',
   accessKeyId: 'AKIAJJJ7FYNWI5ETFNNA',
   secretAccessKey: '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',
   Bucket: 'tecknocracy',

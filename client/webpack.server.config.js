@@ -13,7 +13,17 @@ module.exports = {
     filename: '[name].js'
   },
   module: {
-    rules: [{ test: /\.ts$/, loader: 'ts-loader' }]
+    rules: [
+      {
+        test: /\.ts$/, loader: 'ts-loader'
+      },
+      {
+        // Mark files inside `@angular/core` as using SystemJS style dynamic imports.
+        // Removing this will cause deprecation warnings to appear.
+        test: /(\\|\/)@angular(\\|\/)core(\\|\/).+\.js$/,
+        parser: {system: true}
+      }
+    ]
   },
   plugins: [
     // Temporary Fix for issue: https://github.com/angular/angular/issues/11580
