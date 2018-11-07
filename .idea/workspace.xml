@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0dddec3-1de1-422b-9b41-57ddbf0ee36f" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/blog/components/author/author.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog/components/author/author.component.html" afterDir="false" />
@@ -17,6 +18,17 @@
       <change beforePath="$PROJECT_DIR$/client/src/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/webpack.server.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/webpack.server.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/core/services/util.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/core/services/util.service.ts" afterDir="false" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -162,14 +174,143 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="796648959">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.55" value="1" />
+          <entry key="project.open.time.72" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="json" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gitignore" value="12" />
+          <entry key="json" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSON" value="3" />
+          <entry key="PLAIN_TEXT" value="12" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="technocracy-v1.3.0.0" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/package.json">
+=======
+      <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+=======
+        <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="39" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="39" />
+              <folding>
+                <element signature="n#style#0;n#small#0;n#mat-card-title#0;n#mat-card-header#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/client/src/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+=======
+        <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="390">
+              <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+=======
+            <state relative-caret-position="255">
+              <caret line="18" column="67" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
+              <folding>
+                <element signature="n#style#0;n#small#0;n#mat-card-title#0;n#mat-card-header#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/app.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.scss">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/styles.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="850">
+              <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+=======
+        <entry file="file://$PROJECT_DIR$/client/src/app/core/services/util.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.scss">
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
@@ -259,6 +400,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/core/layout/left-side-bar/left-side-bar.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/core/home/home.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/blog/components/author/author.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.ts" />
+=======
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+        <option value="$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/question/components/question-preview/question-preview.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/question/components/question-view/question-view.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/core/home/home.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/question/components/question-view/question-view.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/core/layout/left-side-bar/left-side-bar.component.scss" />
+        <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.scss" />
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
         <option value="$PROJECT_DIR$/client/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/experience/experience.component.ts" />
         <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/skills/skills.component.ts" />
@@ -277,6 +436,14 @@
         <option value="$PROJECT_DIR$/client/src/app/core/services/authentication.guard.ts" />
         <option value="$PROJECT_DIR$/client/src/app/app.component.scss" />
         <option value="$PROJECT_DIR$/client/src/styles.scss" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/client/src/index.html" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/client/package.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+=======
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
         <option value="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-reducer.ts" />
         <option value="$PROJECT_DIR$/client/src/app/core/layout/left-side-bar/left-side-bar.component.ts" />
         <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/employment/employment.component.scss" />
@@ -296,6 +463,7 @@
         <option value="$PROJECT_DIR$/client/src/app/core/layout/menu-bar/menu-bar.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/core/services/util.service.ts" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/client/src/app/blog/components/author/author.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.ts" />
         <option value="$PROJECT_DIR$/client/package.json" />
@@ -310,6 +478,9 @@
         <option value="$PROJECT_DIR$/client/src/manifest.json" />
         <option value="$PROJECT_DIR$/client/src/index.html" />
         <option value="$PROJECT_DIR$/client/webpack.server.config.js" />
+=======
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
       </list>
     </option>
   </component>
@@ -331,10 +502,11 @@
       <path value="$PROJECT_DIR$/server/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="width" value="981" />
-    <option name="height" value="522" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-7" />
+    <option name="y" value="2" />
+    <option name="width" value="1378" />
+    <option name="height" value="733" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -359,33 +531,115 @@
             <path>
               <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+<<<<<<< HEAD
+              <item name="controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+<<<<<<< HEAD
+=======
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+<<<<<<< HEAD
+              <item name="domains" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+<<<<<<< HEAD
+              <item name="mail" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+<<<<<<< HEAD
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="mail" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="template" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
               <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog-preview" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
             </path>
             <path>
               <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog-view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+<<<<<<< HEAD
               <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
+<<<<<<< HEAD
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="core" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+<<<<<<< HEAD
+              <item name="utils" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+=======
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="core" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="services" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
             </path>
           </expand>
           <select />
@@ -781,14 +1035,33 @@
       <workItem from="1541320462314" duration="12958000" />
       <workItem from="1541386721001" duration="7338000" />
       <workItem from="1541407469213" duration="624000" />
+<<<<<<< HEAD
+      <workItem from="1541411853448" duration="1120000" />
+      <workItem from="1541415716655" duration="2772000" />
+      <workItem from="1541436177120" duration="619000" />
+      <workItem from="1541498933926" duration="232000" />
+=======
       <workItem from="1541411853448" duration="8395000" />
+<<<<<<< HEAD
       <workItem from="1541469960132" duration="22780000" />
       <workItem from="1541556814509" duration="10831000" />
+=======
+      <workItem from="1541469960132" duration="9747000" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="1237044000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="1199781000" />
+=======
+    <option name="totallyTimeSpent" value="1213180000" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -994,14 +1267,29 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-reducer.ts">
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.ts">
+=======
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/portfolio/portfolio.component.ts">
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/employment/employment.component.scss">
+=======
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/education/education.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/components/profile/experience/experience.component.ts">
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
@@ -1066,14 +1354,29 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/server/src/models/blog.model.ts">
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/client/src/app/core/services/file-upload.service.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/profile/profile-material.module.ts">
+=======
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/containers/my-blog/my-blog.component.ts">
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/server/src/controllers/blog.controller.ts">
+=======
+    <entry file="file://$PROJECT_DIR$/client/src/app/core/services/authentication.guard.ts">
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
@@ -1263,8 +1566,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/environments/environment.prod.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="34">
           <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+=======
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/client/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.component.scss">
+=======
+    <entry file="file://$PROJECT_DIR$/client/src/app/core/layout/left-side-bar/left-side-bar.component.scss">
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="1" selection-start-line="7" selection-end-line="18" selection-end-column="1" />
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
         </state>
       </provider>
     </entry>
@@ -1324,7 +1650,18 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/client/src/app/app.server.module.ts">
+=======
+    <entry file="file://$PROJECT_DIR$/client/src/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.html">
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -1333,7 +1670,36 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/client/server.ts">
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-816">
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/server.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+=======
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-preview/blog-preview.component.html">
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
@@ -1345,6 +1711,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="612">
           <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
         </state>
@@ -1354,6 +1721,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+=======
+        <state relative-caret-position="249">
+          <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+>>>>>>> f86cfb101f06dff16cee7401a57a77e978ea15a2
+>>>>>>> ce62126900d6cd93634fb2ce67dbf1a292cfcd0a
         </state>
       </provider>
     </entry>
