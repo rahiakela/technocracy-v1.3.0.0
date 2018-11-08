@@ -1,5 +1,5 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {MatIconRegistry} from "@angular/material";
+import {ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {MatIconRegistry, MatSidenav, MatSidenavContent} from "@angular/material";
 import {DomSanitizer} from "@angular/platform-browser";
 import {MediaMatcher} from "@angular/cdk/layout";
 import {Question} from "./shared/models/question-model";
@@ -23,6 +23,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   user$: Observable<User>;
   questions$: Observable<Question[]>;
+
+  authenticatedUser: User;
 
   mobileQuery: MediaQueryList;
 
@@ -69,18 +71,14 @@ export class AppComponent implements OnInit, OnDestroy {
     });
 
     this.store$.dispatch(new QuestionActions.LoadQuestionList());
+
+    this.user$.subscribe(user => this.authenticatedUser = user);
   }
 
   search(query: string) {
     this.store$.dispatch(new BlogActions.SearchBlog({query}));
     // if the user searching blog then forward him/her to home page
     this.router.navigate(['/home']);
-  }
-
-  openCloseSideNav(): string {
-    //this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
-    //this.mobileQuery.addListener(this._mobileQueryListener);
-    return this.mobileQuery.matches ? 'close' : 'open';
   }
 
   signOut(event) {

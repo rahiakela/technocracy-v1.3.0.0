@@ -3,7 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
-  Input,
+  Input, OnDestroy,
   OnInit,
   Output
 } from '@angular/core';
@@ -21,7 +21,7 @@ import {map, startWith} from "rxjs/operators";
   styleUrls: ['./portfolio.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit, OnDestroy {
 
   name = new FormControl('', [Validators.required, Validators.minLength(4)]);
   dob = new FormControl('', [Validators.required]);
@@ -99,11 +99,11 @@ export class PortfolioComponent implements OnInit {
               public mobileMedia: ObservableMedia) {
     // mobile device detection
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
   ngOnInit() {
+    this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
     // ref: https://github.com/angular/material2/issues/1130
     // https://github.com/angular/flex-layout/wiki/ObservableMedia
     // Subscribe to the "MediaChange" to responsively change the boolean that will control the state of the sidenav
@@ -262,6 +262,11 @@ export class PortfolioComponent implements OnInit {
 
     return this.cities.filter(city => city.name.toLowerCase().indexOf(filterValue) === 0);
   }
+
+  ngOnDestroy() {
+    this.changeDetectorRef.detach();
+    this.subscriptionMedia.unsubscribe();
+  }
 }
 
 export interface SelectOption {
@@ -271,9 +276,6 @@ export interface SelectOption {
 export interface Country {
   name: string;
   url: string;
-  /*file_url: string;
-  alpha3: string;
-  license: string;*/
 }
 export interface City {
   name: string;

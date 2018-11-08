@@ -3,7 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
-  Input,
+  Input, OnDestroy,
   OnInit,
   Output
 } from '@angular/core';
@@ -20,7 +20,7 @@ import {User} from "../../../../shared/models/user-model";
   styleUrls: ['./employment.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EmploymentComponent implements OnInit {
+export class EmploymentComponent implements OnInit, OnDestroy {
 
   company = new FormControl('', [Validators.minLength(3)]);
   designation = new FormControl();
@@ -85,11 +85,11 @@ export class EmploymentComponent implements OnInit {
               public mobileMedia: ObservableMedia) {
     // mobile device detection
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
   ngOnInit() {
+    this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
     this.isMobileView = (this.mobileMedia.isActive('xs') || this.mobileMedia.isActive('sm'));
     this.subscriptionMedia = this.mobileMedia.subscribe((change: MediaChange) => {
       this.isMobileView = (change.mqAlias === 'xs' || change.mqAlias === 'sm');
@@ -176,6 +176,11 @@ export class EmploymentComponent implements OnInit {
 
   getCompanyNameErrorMessage() {
     return this.company.hasError('minlength') ? 'Your company name must be at least 3 character long' : '';
+  }
+
+  ngOnDestroy() {
+    this.changeDetectorRef.detach();
+    this.subscriptionMedia.unsubscribe();
   }
  }
 
