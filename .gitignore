@@ -45,3 +45,4 @@
 
 # package lock file
 */package-lock.json
+*/src/environments/**
