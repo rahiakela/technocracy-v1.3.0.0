@@ -43,9 +43,13 @@ global code syntax wrap styling
 ref: https://stackoverflow.com/questions/47377146/angular-material-5-show-full-text-in-mat-lists-word-wrap
 */
 pre {
+  overflow: auto;
   word-wrap: break-word !important;
   /*white-space: pre-wrap !important;*/
   border: solid #358ccb;
   border-width: .1em .1em .1em .4em;
   padding: .2em .6em;
+}
+table{
+  font-size: 14px;
 }

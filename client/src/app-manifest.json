@@ -1,11 +1,15 @@
 {
   "name": "Technocracy",
-  "short_name": "Technocracy",
-  "start_url": "index.html",
+  "short_name": "Technocracy Blog Forum",
+  "description": "Technocracy is an online forum for technocrats where they share his knowledge with like minded people.",
   "theme_color": "#c4c6d5",
   "background_color": "#c4c6d5",
-  "display": "standalone",
-  "description": "Where knowledge is open for everyone!",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/home",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
       "src": "assets/app-icons/favicon-16x16.png",
