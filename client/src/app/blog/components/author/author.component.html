@@ -5,7 +5,7 @@
     <mat-card-header class="tech-author-card-header">
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{blog?.profile?.name}},{{blog?.profile?.city}},{{blog?.profile?.country}}</mat-card-title>
-      <mat-card-subtitle class="tech-author-card-subtitle">Member since {{blog?.profile?.joinedOn | fromNow }}</mat-card-subtitle>
+      <mat-card-subtitle class="tech-author-card-subtitle">Member since {{blog?.profile?.user?.local?.createdOn | fromNow }}</mat-card-subtitle>
       <mat-card-subtitle style="color: #9594b1;">{{showSkillsWithHashTag(blog?.profile?.skills)}}</mat-card-subtitle>
     </mat-card-header>
 

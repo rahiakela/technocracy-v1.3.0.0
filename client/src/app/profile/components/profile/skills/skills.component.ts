@@ -3,7 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
-  Input,
+  Input, OnDestroy,
   OnInit,
   Output
 } from '@angular/core';
@@ -12,7 +12,6 @@ import {MediaMatcher} from "@angular/cdk/layout";
 import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 import {Subscription} from "rxjs";
 import {User} from "../../../../shared/models/user-model";
-import {Experience} from "../experience/experience.component";
 
 @Component({
   selector: 'tech-skills',
@@ -20,7 +19,7 @@ import {Experience} from "../experience/experience.component";
   styleUrls: ['./skills.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent implements OnInit, OnDestroy {
 
   skill = new FormControl();
   toDate = new FormControl();
@@ -61,11 +60,11 @@ export class SkillsComponent implements OnInit {
               public mobileMedia: ObservableMedia) {
     // mobile device detection
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
   ngOnInit() {
+    this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
     this.isMobileView = (this.mobileMedia.isActive('xs') || this.mobileMedia.isActive('sm'));
     this.subscriptionMedia = this.mobileMedia.subscribe((change: MediaChange) => {
       this.isMobileView = (change.mqAlias === 'xs' || change.mqAlias === 'sm');
@@ -138,6 +137,11 @@ export class SkillsComponent implements OnInit {
     if (this.loaded && this.action === 'save') {
       return 'Your skills has been saved.';
     }
+  }
+
+  ngOnDestroy() {
+    this.changeDetectorRef.detach();
+    this.subscriptionMedia.unsubscribe();
   }
 
   skilles: SelectOption[] = [

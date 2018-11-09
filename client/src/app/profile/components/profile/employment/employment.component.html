@@ -6,8 +6,13 @@
 
       <mat-card-content>
 
+<<<<<<< HEAD
         <form *ngIf="!user?.profile?.employments.length > 0 || editable === true" [formGroup]="employmentForm" class="tech-profile-employment-form">
           <mat-grid-list [cols]="breakpoint" rowHeight="8:1" (window:resize)="onResize($event)">
+=======
+          <form *ngIf="user?.profile?.employments?.length === 0 || editable === true" [formGroup]="employmentForm" class="tech-profile-employment-form">
+            <mat-grid-list [cols]="breakpoint" rowHeight="8:1" (window:resize)="onResize($event)">
+>>>>>>> e44d198c0815a8aa026da85c42fdabd6ff0d0a84
 
             <mat-grid-tile-header><span style=" color: #a8c4d2;">Employment Snapshot</span></mat-grid-tile-header>
 

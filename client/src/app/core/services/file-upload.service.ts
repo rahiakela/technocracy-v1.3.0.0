@@ -6,6 +6,23 @@ import { Store} from "@ngrx/store";
 import { RootStoreState} from "../../root-store";
 import { AuthActions } from '../../root-store/auth-store';
 
+/* references
+* 1-https://docs.aws.amazon.com/AmazonS3/latest/user-guide/set-permissions.html
+* 2-https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html
+* 3-https://docs.aws.amazon.com/AmazonS3/latest/user-guide/add-cors-configuration.html
+* ####################CORS configuration##########################
+* <CORSRule>
+*    <AllowedOrigin>*</AllowedOrigin>
+*    <AllowedMethod>PUT</AllowedMethod>
+*    <AllowedMethod>POST</AllowedMethod>
+*    <AllowedMethod>DELETE</AllowedMethod>
+*    <AllowedHeader>*</AllowedHeader>
+*</CORSRule>
+*<CORSRule>
+*    <AllowedOrigin>*</AllowedOrigin>
+*    <AllowedMethod>GET</AllowedMethod>
+*</CORSRule>
+* */
 @Injectable({
   providedIn: 'root'
 })

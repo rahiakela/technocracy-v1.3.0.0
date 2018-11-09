@@ -157,10 +157,14 @@ export class BlogViewComponent implements OnInit, OnChanges {
   }
 
   addMetaTag(blog: Blog) {
+    /*
+    * 1-https://alligator.io/angular/meta-tags/
+    * 2-http://www.talkingdotnet.com/how-to-set-html-meta-tags-using-angular-4/
+    * */
     // setting page's meta tag
     this.meta.updateTag({property: 'og:title', content: this.blog.title});
     this.meta.updateTag({property: 'og:description', content: this.blog.description});
-    this.meta.updateTag({property: 'og:url', content: `https://www.tecknocracy.com/#/blog/${this.blog._id}`});
+    this.meta.updateTag({property: 'og:url', content: `https://www.tecknocracy.com/blog/${this.blog._id}`});
     this.meta.updateTag({property: 'og:image', content: this.blog.image});
     this.meta.updateTag({property: 'og:image:secure_url', content: this.blog.image});
     this.meta.updateTag({property: 'article:published_time', content: this.blog.publishedOn === null ? '' : moment(this.blog.publishedOn, 'YYYYMMDDHHmmss').toString()});

@@ -3,7 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
-  Input,
+  Input, OnDestroy,
   OnInit,
   Output
 } from '@angular/core';
@@ -19,7 +19,7 @@ import {User} from "../../../../shared/models/user-model";
   styleUrls: ['./education.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EducationComponent implements OnInit {
+export class EducationComponent implements OnInit, OnDestroy {
 
   qualification = new FormControl();
   passingDate = new FormControl();
@@ -88,11 +88,11 @@ export class EducationComponent implements OnInit {
               public mobileMedia: ObservableMedia) {
     // mobile device detection
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
   ngOnInit() {
+    this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
     this.isMobileView = (this.mobileMedia.isActive('xs') || this.mobileMedia.isActive('sm'));
     this.subscriptionMedia = this.mobileMedia.subscribe((change: MediaChange) => {
       this.isMobileView = (change.mqAlias === 'xs' || change.mqAlias === 'sm');
@@ -209,6 +209,10 @@ export class EducationComponent implements OnInit {
     }
   }
 
+  ngOnDestroy() {
+    this.changeDetectorRef.detach();
+    this.subscriptionMedia.unsubscribe();
+  }
 }
 export interface SelectOption {
   label: string;

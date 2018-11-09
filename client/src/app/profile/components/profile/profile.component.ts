@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
   @ViewChild('fileUpload') fileUpload: ElementRef;
   @ViewChild('profilePhoto') profilePhoto: ElementRef;
 
-  constructor(private utilService: UtilService,
+  constructor(public utilService: UtilService,
               private fileUploadService: FileUploadService) { }
 
   ngOnInit() {

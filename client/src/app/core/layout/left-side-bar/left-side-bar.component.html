@@ -67,7 +67,7 @@
   </mat-card>
 </ng-template>
 
-<mat-list class="tech-nav-list">
+<!--<mat-list class="tech-nav-list">
   <ng-container *ngFor="let nav of navList">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
@@ -78,8 +78,8 @@
       </mat-expansion-panel-header>
       <mat-nav-list class="tech-nav-sublist" *ngIf="nav.subCategory">
         <ng-container *ngFor="let subCategory of nav.subCategory">
-          <ng-container> <!--Sub category list-->
-            <mat-list-item (click)="mode === 'over'? start.close() : null" routerLinkActive="mat-icon-active" style="color: #007db8;">
+          <ng-container> &lt;!&ndash;Sub category list&ndash;&gt;
+            <mat-list-item (click)="close($event)" routerLinkActive="mat-icon-active" style="color: #007db8;">
               <mat-icon mat-list-icon>{{subCategory.icon}}</mat-icon>
               <span [routerLink]="[subCategory.link, subCategory.params]" mat-line>{{subCategory.subCategoryName}}</span>
             </mat-list-item>
@@ -88,4 +88,4 @@
       </mat-nav-list>
     </mat-expansion-panel>
   </ng-container>
-</mat-list>
+</mat-list>-->

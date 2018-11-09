@@ -18,10 +18,12 @@ export class ShareComponent implements OnInit {
   whatsappButton;
 
   @Input()
-  url: string;
+  data: any;
   @Input()
-  title: string;
+  shareType: string;
 
+  title: string;
+  url: string;
   description: string;
 
   constructor(public share: ShareButtons, private titleService: Title,
@@ -36,8 +38,20 @@ export class ShareComponent implements OnInit {
     this.whatsappButton = new ShareButton(ShareProvider.WHATSAPP, '<i class="fa fa-whatsapp"></i>', 'whatsapp');*/
 
     // setting page title and meta tag description
-    this.titleService.setTitle(this.title);
-    this.meta.addTag({name: 'description', content: this.description});
+    if (this.data) {
+      if (this.shareType === 'blog') {
+        this.url = `https://www.tecknocracy.com/blog/${this.data._id}`;
+      } else {
+        this.url = `https://www.tecknocracy.com/question/${this.data._id}`;
+      }
+      this.title = this.data.title;
+      this.titleService.setTitle(this.data.title);
+      this.description = this.data.description;
+      //console.log('Title:', this.data.title);
+      //console.log('URL:', this.url);
+      //console.log('Description:', this.data.description);
+      this.meta.addTag({name: 'description', content: this.data.description});
+    }
   }
 
 }

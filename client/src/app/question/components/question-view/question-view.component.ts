@@ -172,13 +172,13 @@ export class QuestionViewComponent implements OnInit {
 
   addMetaTag(question: Question) {
     // setting page's meta tag
-    this.meta.updateTag({property: 'og:title', content: this.question.title});
-    this.meta.updateTag({property: 'og:url', content: `https://www.tecknocracy.com/#/blog/${this.question._id}`});
-    this.meta.updateTag({property: 'article:published_time', content: this.question.publishedOn === null ? '' : moment(this.question.publishedOn, 'YYYYMMDDHHmmss').toString()});
-    this.meta.updateTag({property: 'article:modified_time', content: this.question.updatedOn === null ? '' : moment(this.question.updatedOn, 'YYYYMMDDHHmmss').toString()});
+    this.meta.updateTag({property: 'og:title', content: question.title});
+    this.meta.updateTag({property: 'og:url', content: `https://www.tecknocracy.com/question/${question._id}`});
+    this.meta.updateTag({property: 'article:published_time', content: this.question.publishedOn === null ? '' : moment(question.publishedOn, 'YYYYMMDDHHmmss').toString()});
+    this.meta.updateTag({property: 'article:modified_time', content: this.question.updatedOn === null ? '' : moment(question.updatedOn, 'YYYYMMDDHHmmss').toString()});
 
     // adding all blog keywords into  article tag
-    this.question.tags.forEach(tag => {
+    question.tags.forEach(tag => {
       this.meta.addTag({property: 'article:tag', content: tag});
     });
   }

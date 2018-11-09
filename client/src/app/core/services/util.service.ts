@@ -64,6 +64,10 @@ export class UtilService {
 
   getUserName(user: any): string {
 
+    if (user === null || user.local === null) {
+      return '';
+    }
+
     if (user.local.name != null) {
       return user.local.name;
     }

@@ -3,7 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
-  Input,
+  Input, OnDestroy,
   OnInit,
   Output
 } from '@angular/core';
@@ -22,7 +22,7 @@ import {JsonLoadService} from "../../../../core/services/json-load.service";
   styleUrls: ['./employment.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EmploymentComponent implements OnInit {
+export class EmploymentComponent implements OnInit, OnDestroy {
 
   company = new FormControl('', [Validators.minLength(3)]);
   designation = new FormControl();
@@ -92,11 +92,11 @@ export class EmploymentComponent implements OnInit {
               private jsonService: JsonLoadService) {
     // mobile device detection
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
   ngOnInit() {
+    this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
     this.isMobileView = (this.mobileMedia.isActive('xs') || this.mobileMedia.isActive('sm'));
     this.subscriptionMedia = this.mobileMedia.subscribe((change: MediaChange) => {
       this.isMobileView = (change.mqAlias === 'xs' || change.mqAlias === 'sm');
@@ -202,11 +202,19 @@ export class EmploymentComponent implements OnInit {
     return this.company.hasError('minlength') ? 'Your company name must be at least 3 character long' : '';
   }
 
+<<<<<<< HEAD
   private _filterCompanies(value: string): Company[] {
     const filterValue = value.toLowerCase();
     return this.companies.filter(company => company.name.toLowerCase().indexOf(filterValue) === 0);
   }
 }
+=======
+  ngOnDestroy() {
+    this.changeDetectorRef.detach();
+    this.subscriptionMedia.unsubscribe();
+  }
+ }
+>>>>>>> e44d198c0815a8aa026da85c42fdabd6ff0d0a84
 
 export interface SelectOption {
   label: string;

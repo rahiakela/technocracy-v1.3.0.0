@@ -1,12 +1,26 @@
 {
   "name": "Technocracy",
-  "short_name": "Where knowledge is open for everyone!",
+  "short_name": "Technocracy Blog Forum",
+  "description": "Technocracy is an online forum for technocrats where they share his knowledge with like minded people.",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
-  "display": "standalone",
+  "display": "fullscreen",
+  "orientation": "portrait",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/home",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
+    {
+      "src": "assets/icons/icon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
     {
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
