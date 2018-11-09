@@ -11,6 +11,9 @@ import {
 import {UtilService} from "../../../core/services/util.service";
 import {User} from "../../../shared/models/user-model";
 import {FileUploadService} from "../../../core/services/file-upload.service";
+import {JsonLoadService} from "../../../core/services/json-load.service";
+import {map, startWith} from "rxjs/operators";
+import {Company} from "./employment/employment.component";
 
 @Component({
   selector: 'tech-profile',
