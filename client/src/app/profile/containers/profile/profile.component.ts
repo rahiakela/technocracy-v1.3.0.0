@@ -30,9 +30,8 @@ export class ProfileComponent implements OnInit {
 
   constructor(private store$: Store<RootStoreState.State>, private activeRoute: ActivatedRoute) {
     this.activeRoute.params.subscribe(params => {
-      // get blog id from route
+      // get profile id from route
       this.profileId = params['id'];
-      console.log('ProfileId:', this.profileId);
     });
   }
 
