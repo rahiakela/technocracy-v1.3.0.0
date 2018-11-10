@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
     }
 
     const UPLOAD_PATH = `images/profiles/${this.user._id}`;
-    this.fileUploadService.upload(this.profilePhoto, fileToUpload, UPLOAD_PATH);
+    this.fileUploadService.uploadProfileImage(this.profilePhoto, fileToUpload, UPLOAD_PATH);
   }
 
   getUserImage(): string {
