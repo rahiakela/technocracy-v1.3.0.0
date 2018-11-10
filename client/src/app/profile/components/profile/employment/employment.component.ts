@@ -11,8 +11,10 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {SelectOption} from "../portfolio/portfolio.component";
 import {MediaMatcher} from "@angular/cdk/layout";
 import {MediaChange, ObservableMedia} from "@angular/flex-layout";
-import {Subscription} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 import {User} from "../../../../shared/models/user-model";
+import {map, startWith} from "rxjs/operators";
+import {JsonLoadService} from "../../../../core/services/json-load.service";
 
 @Component({
   selector: 'tech-employment',
@@ -71,7 +73,11 @@ export class EmploymentComponent implements OnInit, OnDestroy {
 
   action: string;
   editable = false;
+
   employments: Employment[] = [];
+
+  companies: Company[] = [];
+  filteredCompanies: Observable<Company[]>;
 
   // grid responsive settings
   breakpoint: number;
@@ -82,7 +88,8 @@ export class EmploymentComponent implements OnInit, OnDestroy {
 
   constructor(private changeDetectorRef: ChangeDetectorRef,
               media: MediaMatcher,
-              public mobileMedia: ObservableMedia) {
+              public mobileMedia: ObservableMedia,
+              private jsonService: JsonLoadService) {
     // mobile device detection
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -98,10 +105,27 @@ export class EmploymentComponent implements OnInit, OnDestroy {
       }
     });
     this.breakpoint = this.isMobileView ? 1 : 2;
+
+    // populate form with values
+    //this.populateFormValues();
+
+    //load companies data from json file
+    this.jsonService.loadCompanies()
+      .subscribe(companies=> {
+        this.companies = companies;
+      });
+
+    //filter companies
+   this.filteredCompanies = this.company.valueChanges
+      .pipe(
+        startWith(''),
+        map(company => company ? this._filterCompanies(company) : this.companies.slice(0, 5))
+      );
+
   }
 
   onResize(event) {
-    this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+    this.breakpoint = (event.target.innerWidth <= 414) ? 1 : 2;
   }
 
   showForm(employment?: Employment) {
@@ -178,11 +202,19 @@ export class EmploymentComponent implements OnInit, OnDestroy {
     return this.company.hasError('minlength') ? 'Your company name must be at least 3 character long' : '';
   }
 
+<<<<<<< HEAD
+  private _filterCompanies(value: string): Company[] {
+    const filterValue = value.toLowerCase();
+    return this.companies.filter(company => company.name.toLowerCase().indexOf(filterValue) === 0);
+  }
+}
+=======
   ngOnDestroy() {
     this.changeDetectorRef.detach();
     this.subscriptionMedia.unsubscribe();
   }
  }
+>>>>>>> e44d198c0815a8aa026da85c42fdabd6ff0d0a84
 
 export interface SelectOption {
   label: string;
@@ -198,4 +230,8 @@ export interface Employment {
   toDate: Date,
   achievement: string,
   currentEmployer: boolean
+}
+
+export interface Company {
+  name: string;
 }

@@ -83,7 +83,7 @@ export class WriteQuestionComponent implements OnInit {
 
   getTitleErrorMessage() {
     return this.title.hasError('required') ? 'Please specify question title' :
-      this.title.hasError('minlength') ? 'The question title must be at least 30 character long' :
+      this.title.hasError('minlength') ? 'The question title must be at least 20 character long' :
         '';
   }
 
@@ -93,7 +93,7 @@ export class WriteQuestionComponent implements OnInit {
 
   showContentErrorMessage(): boolean {
     return this.editorContent === '' ? true :
-      this.editorContent.length < 200 ? true :
+      this.editorContent.length < 100 ? true :
         false;
   }
 }

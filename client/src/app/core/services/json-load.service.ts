@@ -35,4 +35,17 @@ export class JsonLoadService {
         })
       );
   }
+
+  loadCompanies(): Observable<any[]> {
+    return this.httpClient.get('./assets/json-data/companies.json')
+      .pipe(
+        map((data: any) => {
+          let companies: any[] = [];
+          for(let i = 0; i < data.companies.length; i++){
+            companies.push({name: data.companies[i]});
+          }
+          return companies;
+        })
+      );
+  }
 }

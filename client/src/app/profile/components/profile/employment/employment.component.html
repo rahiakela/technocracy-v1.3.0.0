@@ -2,193 +2,205 @@
 
   <mat-card class="tech-profile-employment-card" flex>
 
-      <div class="tech-profile-employment-container">
+    <div class="tech-profile-employment-container">
 
-        <mat-card-content>
+      <mat-card-content>
 
+<<<<<<< HEAD
+        <form *ngIf="!user?.profile?.employments.length > 0 || editable === true" [formGroup]="employmentForm" class="tech-profile-employment-form">
+          <mat-grid-list [cols]="breakpoint" rowHeight="8:1" (window:resize)="onResize($event)">
+=======
           <form *ngIf="user?.profile?.employments?.length === 0 || editable === true" [formGroup]="employmentForm" class="tech-profile-employment-form">
             <mat-grid-list [cols]="breakpoint" rowHeight="8:1" (window:resize)="onResize($event)">
+>>>>>>> e44d198c0815a8aa026da85c42fdabd6ff0d0a84
 
-              <mat-grid-tile-header><span style=" color: #a8c4d2;">Employment Snapshot</span></mat-grid-tile-header>
+            <mat-grid-tile-header><span style=" color: #a8c4d2;">Employment Snapshot</span></mat-grid-tile-header>
 
-              <div class="tech-edit-option">
-                <a *ngIf="editable" (click)="hideForm()"><i class="fa fa-close"> Cancel</i></a>
-              </div>
+            <div class="tech-edit-option">
+              <a *ngIf="editable" (click)="hideForm()"><i class="fa fa-close"> Cancel</i></a>
+            </div>
 
-              <div *ngFor="let employment of employments">
-                <mat-grid-tile>
-                  <label class="tech-label">Company : <span class="tech-secondary-color">{{employment.companyName}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Designation : <span class="tech-secondary-color">{{employment.designation}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Industries : <span class="tech-secondary-color">{{employment.industry}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Roles : <span class="tech-secondary-color">{{employment.role}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Worked From : <span class="tech-secondary-color">{{employment.fromDate | date:'dd/MM/yyyy'}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Worked upto : <span class="tech-secondary-color">{{employment.toDate | date:'dd/MM/yyyy'}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile [colspan]="breakpoint" [rowspan]="isMobileView ? 4 : 2">
-                  <label class="tech-label">Achievements : <span class="tech-secondary-color">{{employment.achievement}}</span> </label>
-                  <mat-divider style="margin-top: 15px;"></mat-divider>
-                </mat-grid-tile>
-              </div>
-
+            <div *ngFor="let employment of employments">
               <mat-grid-tile>
-                <mat-form-field floatLabel="never">
-                  <span matPrefix>Company&nbsp;:&nbsp;</span>
-                  <input matInput [formControl]="company" placeholder="Enter your company name" aria-label="CompanyName">
-                  <mat-error *ngIf="company.invalid">{{getCompanyNameErrorMessage()}}</mat-error>
-                </mat-form-field>
+                <label class="tech-label">Company : <span class="tech-secondary-color">{{employment.companyName}}</span> </label>
               </mat-grid-tile>
 
               <mat-grid-tile>
-                <mat-form-field floatLabel="never">
-                  <span matPrefix>Designation&nbsp;:&nbsp;</span>
-                  <mat-select [formControl]="designation" placeholder="Select your designation" aria-label="Designation">
-                    <mat-option *ngFor="let designation of designations" [value]="designation.value">{{designation.label}}</mat-option>
-                  </mat-select>
-                </mat-form-field>
+                <label class="tech-label">Designation : <span class="tech-secondary-color">{{employment.designation}}</span> </label>
               </mat-grid-tile>
 
               <mat-grid-tile>
-                <mat-form-field floatLabel="never">
-                  <span matPrefix>Industries&nbsp;:&nbsp;</span>
-                  <mat-select [formControl]="industry" placeholder="Select industry" aria-label="Industry">
-                    <mat-option *ngFor="let options of industries" [value]="options.value">{{options.label}}</mat-option>
-                  </mat-select>
-                </mat-form-field>
+                <label class="tech-label">Industries : <span class="tech-secondary-color">{{employment.industry}}</span> </label>
               </mat-grid-tile>
 
               <mat-grid-tile>
-                <mat-form-field floatLabel="never" style="width: 73%;">
-                  <span matPrefix>Roles&nbsp;:&nbsp;</span>
-                  <mat-select [formControl]="role" placeholder="Select your role" aria-label="Role">
-                    <mat-option *ngFor="let options of roles" [value]="options.value">{{options.label}}</mat-option>
-                  </mat-select>
-                </mat-form-field>
+                <label class="tech-label">Roles : <span class="tech-secondary-color">{{employment.role}}</span> </label>
               </mat-grid-tile>
 
               <mat-grid-tile>
-                <mat-form-field floatLabel="never" style="width: 73%;">
-                  <span matPrefix>Worked From&nbsp;:&nbsp;</span>
-                  <input matInput [matDatepicker]="fromDatePicker" [formControl]="fromDate" placeholder="Choose date" aria-label="From">
-                  <mat-datepicker-toggle matSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
-                  <mat-datepicker #fromDatePicker></mat-datepicker>
-                </mat-form-field>
+                <label class="tech-label">Worked From : <span class="tech-secondary-color">{{employment.fromDate | date:'dd/MM/yyyy'}}</span> </label>
               </mat-grid-tile>
 
               <mat-grid-tile>
-                <mat-form-field floatLabel="never" style="width: 73%;">
-                  <span matPrefix>Worked upto&nbsp;:&nbsp;</span>
-                  <input matInput [matDatepicker]="toDatePicker" [formControl]="toDate" placeholder="Choose date" aria-label="To">
-                  <mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
-                  <mat-datepicker #toDatePicker></mat-datepicker>
-                </mat-form-field>
+                <label class="tech-label">Worked upto : <span class="tech-secondary-color">{{employment.toDate | date:'dd/MM/yyyy'}}</span> </label>
               </mat-grid-tile>
 
-              <mat-grid-tile [colspan]="breakpoint" [rowspan]="2">
-                <mat-form-field floatLabel="never" [style.width]="isMobileView ? '73%' : '86%'">
-                  <textarea [formControl]="achievement" style="height: 70px;border: 1px solid #999999;margin-bottom: -6px;"
-                            placeholder="Please mention your achievements..."
-                            aria-label="Achievement"
-                            matInput
-                            cdkTextareaAutosize
-                            #autosize="cdkTextareaAutosize"
-                            cdkAutosizeMinRows="1"
-                            cdkAutosizeMaxRows="3">
+              <mat-grid-tile [colspan]="breakpoint">
+                <label class="tech-label">Achievements : <span class="tech-secondary-color">{{employment.achievement}}</span> </label>
+                <mat-divider style="margin-top: 15px;"></mat-divider>
+              </mat-grid-tile>
+            </div>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Company&nbsp;:&nbsp;</span>
+                <input matInput [formControl]="company" [matAutocomplete]="companyAutoComplete" placeholder="Enter your company name" aria-label="CompanyName">
+
+                <mat-autocomplete #companyAutoComplete="matAutocomplete">
+                  <mat-option *ngFor="let company of filteredCompanies | async" [value]="company.name">
+                    <span>{{company.name}}</span>
+                  </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="company.invalid">{{getCompanyNameErrorMessage()}}</mat-error>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Designation&nbsp;:&nbsp;</span>
+                <mat-select [formControl]="designation" placeholder="Select your designation" aria-label="Designation">
+                  <mat-option *ngFor="let designation of designations" [value]="designation.value">{{designation.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never">
+                <span matPrefix>Industries&nbsp;:&nbsp;</span>
+                <mat-select [formControl]="industry" placeholder="Select industry" aria-label="Industry">
+                  <mat-option *ngFor="let options of industries" [value]="options.value">{{options.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never" style="width: 73%;">
+                <span matPrefix>Roles&nbsp;:&nbsp;</span>
+                <mat-select [formControl]="role" placeholder="Select your role" aria-label="Role">
+                  <mat-option *ngFor="let options of roles" [value]="options.value">{{options.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never" style="width: 73%;">
+                <span matPrefix>Worked From&nbsp;:&nbsp;</span>
+                <input matInput [matDatepicker]="fromDatePicker" [formControl]="fromDate" placeholder="Choose date" aria-label="From">
+                <mat-datepicker-toggle matSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #fromDatePicker></mat-datepicker>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field floatLabel="never" style="width: 73%;">
+                <span matPrefix>Worked upto&nbsp;:&nbsp;</span>
+                <input matInput [matDatepicker]="toDatePicker" [formControl]="toDate" placeholder="Choose date" aria-label="To">
+                <mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #toDatePicker></mat-datepicker>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="breakpoint">
+              <mat-form-field style="width: 73%;">
+                <mat-label>Achievements&nbsp;:&nbsp;</mat-label>
+                <textarea [formControl]="achievement" style="height: 55px;border: 1px solid #999999;margin-bottom: -6px;"
+                          placeholder="Please mention your achievements..."
+                          aria-label="Achievement"
+                          matInput
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="1"
+                          cdkAutosizeMaxRows="3">
                   </textarea>
-                </mat-form-field>
-              </mat-grid-tile>
+              </mat-form-field>
+            </mat-grid-tile>
 
-              <mat-grid-tile>
-                <mat-checkbox [formControl]="currentEmployer" style="margin-right: 100px;">Current Employer ?</mat-checkbox>
-              </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-checkbox [formControl]="currentEmployer" style="margin-right: 100px;">Current Employer ?</mat-checkbox>
+            </mat-grid-tile>
 
-            </mat-grid-list>
+          </mat-grid-list>
 
-            <div *ngIf="loading" class="tech-profile-experience-loading">
-              <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
-            </div>
-            <div *ngIf="loaded" class="tech-profile-experience-message">
-              <span>{{showSuccessMessage()}}</span>
-            </div>
-            <div *ngIf="error" fxFlexAlign="center" class="tech-profile-experience-error">
-              <span style="color: red;">An error has occurred while saving the portfolio.</span>
-            </div>
+          <div *ngIf="loading" class="tech-profile-experience-loading">
+            <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+          </div>
+          <div *ngIf="loaded" class="tech-profile-experience-message">
+            <span>{{showSuccessMessage()}}</span>
+          </div>
+          <div *ngIf="error" fxFlexAlign="center" class="tech-profile-experience-error">
+            <span style="color: red;">An error has occurred while saving the portfolio.</span>
+          </div>
 
-            <mat-card-footer style="margin: auto;">
-              <mat-card-actions class="tech-profile-employment-card-footer">
-                <button (click)="save()" [disabled]="enableActionButton()" mat-raised-button color="primary">Save</button>
-                <button (click)="addMore()" [disabled]="enableActionButton()" mat-raised-button color="primary">Add More</button>
-                <button (click)="clear()" [disabled]="enableActionButton()" mat-raised-button color="secondary">Cancel</button>
-              </mat-card-actions>
-            </mat-card-footer>
+          <mat-card-footer style="margin: auto;">
+            <mat-card-actions class="tech-profile-employment-card-footer">
+              <button (click)="save()" [disabled]="enableActionButton()" mat-raised-button color="primary">Save</button>
+              <button (click)="addMore()" [disabled]="enableActionButton()" mat-raised-button color="primary">Add More</button>
+              <button (click)="clear()" [disabled]="enableActionButton()" mat-raised-button color="secondary">Cancel</button>
+            </mat-card-actions>
+          </mat-card-footer>
 
-          </form>
+        </form>
 
-          <mat-divider *ngIf="editable"></mat-divider>
+        <mat-divider *ngIf="editable"></mat-divider>
 
-            <mat-grid-tile-header *ngIf="user?.profile?.employments?.length > 0 || editable"><span style=" color: #a8c4d2;">Employment Snapshot</span></mat-grid-tile-header>
+        <mat-grid-tile-header *ngIf="user?.profile?.employments || editable"><span style=" color: #a8c4d2;">Employment Snapshot</span></mat-grid-tile-header>
 
-            <div *ngFor="let employment of user?.profile?.employments">
+        <div *ngFor="let employment of user.profile.employments">
 
-              <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
+          <mat-grid-list [cols]="breakpoint" rowHeight="12:1" (window:resize)="onResize($event)">
 
-                <div class="tech-edit-option">
-                  <mat-icon [matMenuTriggerFor]="menu">settings</mat-icon>
-                  <mat-menu #menu="matMenu" xPosition="before">
-                    <button mat-menu-item (click)="showForm(employment)" style="color: #007db8;">Edit</button>
-                    <button mat-menu-item (click)="showForm()" style="color: #007db8;">Add More</button>
-                  </mat-menu>
-                </div>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Company : <span class="tech-secondary-color">{{employment.company}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Designation : <span class="tech-secondary-color">{{employment.designation}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Industries : <span class="tech-secondary-color">{{employment.industry}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Roles : <span class="tech-secondary-color">{{employment.role}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Worked From : <span class="tech-secondary-color">{{employment.fromDate | date:'dd/MM/yyyy'}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile>
-                  <label class="tech-label">Worked upto : <span class="tech-secondary-color">{{employment.toDate | date:'dd/MM/yyyy'}}</span> </label>
-                </mat-grid-tile>
-
-                <mat-grid-tile [colspan]="breakpoint">
-                  <label class="tech-label">Achievements : <span class="tech-secondary-color">{{employment.achievement}}</span> </label>
-                  <mat-divider style="margin-top: 15px;"></mat-divider>
-                </mat-grid-tile>
-
-              </mat-grid-list>
+            <div class="tech-edit-option">
+              <mat-icon [matMenuTriggerFor]="menu">settings</mat-icon>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item (click)="showForm(employment)" style="color: #007db8;">Edit</button>
+                <button mat-menu-item (click)="showForm()" style="color: #007db8;">Add More</button>
+              </mat-menu>
             </div>
 
-        </mat-card-content>
-      </div>
+            <mat-grid-tile>
+              <label class="tech-label">Company : <span class="tech-secondary-color">{{employment.companyName}}</span> </label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-label">Designation : <span class="tech-secondary-color">{{employment.designation}}</span> </label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-label">Industries : <span class="tech-secondary-color">{{employment.industry}}</span> </label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-label">Roles : <span class="tech-secondary-color">{{employment.role}}</span> </label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-label">Worked From : <span class="tech-secondary-color">{{employment.fromDate | date:'dd/MM/yyyy'}}</span> </label>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <label class="tech-label">Worked upto : <span class="tech-secondary-color">{{employment.toDate | date:'dd/MM/yyyy'}}</span> </label>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="breakpoint">
+              <label class="tech-label">Achievements : <span class="tech-secondary-color">{{employment.achievement}}</span> </label>
+              <mat-divider style="margin-top: 15px;"></mat-divider>
+            </mat-grid-tile>
+
+          </mat-grid-list>
+        </div>
+
+      </mat-card-content>
+    </div>
 
   </mat-card>
 
