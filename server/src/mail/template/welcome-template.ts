@@ -111,12 +111,12 @@ export class WelcomeMailTemplate {
                                                     <br><br>
                                                     Meet software developers of all skill levels to share resources, learn and form discussions around the world.
                                                     <span>If you have any question in your mind...??</span><br>
-                                                    <a href="https://www.tecknocracy.com/question/ask/new" target="_blank"><strong>Ask here</strong></a>
+                                                    <a href="https://www.tecknocracy.com/question/write/new" target="_blank"><strong>Ask here</strong></a>
 
 
                                                     <br><br><span style="color:#101d69;font-size:25px;font-family:'Proxima Nova Light','Open Sans','Helvetica Neue',Calibri,Helvetica,sans-serif">Become a community author</span>
                                                     <br><br>If you have a knack for explaining things and the drive to help other software developers and new technical guys, our editorial team would love to work with you to publish your content.<br>
-                                                    <a href="https://www.tecknocracy.com/profile?p=new" target="_blank"><strong>Apply here</strong></a>
+                                                    <a href="https://www.tecknocracy.com/profile/create" target="_blank"><strong>Apply here</strong></a>
                                                     <br><br><span style="color:#101d69;font-size:25px;font-family:'Proxima Nova Light','Open Sans','Helvetica Neue',Calibri,Helvetica,sans-serif">Or, just watch and listen!</span>
                                                     <br> <br>Subscribe to Technocracy blog community as a user to get our roundup of whatever happenings and new blog be delivered to your inbox every weeks.
                                                     <br><strong><a href="https://www.tecknocracy.com/subscribe" target="_blank">Subscribe here</a></strong>

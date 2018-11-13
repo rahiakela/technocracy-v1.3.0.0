@@ -202,19 +202,17 @@ export class EmploymentComponent implements OnInit, OnDestroy {
     return this.company.hasError('minlength') ? 'Your company name must be at least 3 character long' : '';
   }
 
-<<<<<<< HEAD
   private _filterCompanies(value: string): Company[] {
     const filterValue = value.toLowerCase();
     return this.companies.filter(company => company.name.toLowerCase().indexOf(filterValue) === 0);
   }
-}
-=======
+
   ngOnDestroy() {
     this.changeDetectorRef.detach();
     this.subscriptionMedia.unsubscribe();
   }
+
  }
->>>>>>> e44d198c0815a8aa026da85c42fdabd6ff0d0a84
 
 export interface SelectOption {
   label: string;

@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 import mongoose = require('mongoose');
 
-mongoose.set('debug', true);
+// mongoose.set('debug', true);
 
 // blog models schema declaration
 export const blogSchema: Schema = new Schema({

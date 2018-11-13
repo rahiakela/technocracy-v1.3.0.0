@@ -11,7 +11,8 @@ export class AppRoute {
         // API base URL
         app.route(this.BASE_URL)
             .get((req: Request, res: Response) => {
-                res.status(200).send({message: 'Welcome to Technocracy REST APIs!!!!'});
+                res.writeHead(200, {"Content-Type": "application/json"});
+                res.json({message: 'Welcome to Technocracy REST APIs!!!!'});
             });
 
         // API URLs for subscription

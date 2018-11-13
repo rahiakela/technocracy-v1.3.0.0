@@ -61,6 +61,7 @@ export class App {
             res: express.Response,
             next: express.NextFunction
         ) {
+            res.writeHead(200, {"Content-Type": "application/json"});
             err.status = 404;
             next(err);
         });

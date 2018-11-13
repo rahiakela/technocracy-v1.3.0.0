@@ -437,16 +437,15 @@ export class AuthController {
                             .save()
                             .then((updatedUser: any) => {
                                 // generate and send a JWT token
-                                const token=user.generateJWT(updatedUser._id, updatedUser.email, updatedUser.name);
+                                const token=updatedUser.generateJWT(updatedUser._id, email, name);
                                 // send welcome mail to user
-                                MailSender.sendMail("welcome-mail", mailOptions.set("recipient", updatedUser.email));
+                                MailSender.sendMail("welcome-mail", mailOptions.set("recipient", email));
                                 updatedUser.jwtToken = token;
-                                res.json({"statusCode": 200, "user": updatedUser});
+                                res.json(updatedUser);
                                 next();
                             })
                             .catch(next);
                     }
-                    next();
                 })
                 .catch(next);
         }
@@ -479,16 +478,15 @@ export class AuthController {
                             .save()
                             .then((updatedUser: any) => {
                                 // generate and send a JWT token
-                                const token=user.generateJWT(updatedUser._id, updatedUser.email, updatedUser.name);
+                                const token=updatedUser.generateJWT(updatedUser._id, email, name);
                                 // send welcome mail to user
-                                MailSender.sendMail("welcome-mail", mailOptions.set("recipient", updatedUser.email));
+                                MailSender.sendMail("welcome-mail", mailOptions.set("recipient", email));
                                 updatedUser.jwtToken = token;
-                                res.json({"statusCode": 200, "user": updatedUser});
+                                res.json(updatedUser);
                                 next();
                             })
                             .catch(next);
                     }
-                    next();
                 })
                 .catch(next);
         }
@@ -521,16 +519,15 @@ export class AuthController {
                             .save()
                             .then((updatedUser: any) => {
                                 // generate and send a JWT token
-                                const token = updatedUser.generateJWT(updatedUser._id, updatedUser.email, updatedUser.name);
+                                const token = updatedUser.generateJWT(updatedUser._id, email, name);
                                 // send welcome mail to user
-                                MailSender.sendMail("welcome-mail", mailOptions.set("recipient", updatedUser.email));
+                                MailSender.sendMail("welcome-mail", mailOptions.set("recipient", email));
                                 updatedUser.jwtToken = token;
-                                res.json({"statusCode": 200, "user": updatedUser});
+                                res.json(updatedUser);
                                 next();
                             })
                             .catch(next);
                     }
-                    next();
                 })
                 .catch(next);
         }

@@ -137,10 +137,6 @@ export class BlogViewComponent implements OnInit, OnChanges {
     this.onBlogActionTriggered.emit(this.blogContent);
   }
 
-  showSkillsWithHashTag(tags: Skill[]) {
-    return tags !== null ? this.utilService.getSkillWithHashTag(tags): '';
-  }
-
   resetBlogContent() {
     this.blogContent = {
       action: '',
@@ -150,6 +146,10 @@ export class BlogViewComponent implements OnInit, OnChanges {
       content: '',
       notification: false
     };
+  }
+
+  formatDate(submitDate: Date) {
+    return moment(submitDate).format('LLL');
   }
 
   public setTitle( newTitle: string) {
