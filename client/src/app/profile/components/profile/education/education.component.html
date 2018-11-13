@@ -4,7 +4,7 @@
 
       <mat-card-content>
 
-        <form *ngIf="user?.profile?.degrees?.length === 0 || (editDegree)" [formGroup]="degreeForm" class="tech-profile-education-form">
+        <form *ngIf="!user?.profile || user?.profile?.degrees?.length === 0 || editDegree" [formGroup]="degreeForm" class="tech-profile-education-form">
           <mat-grid-list [cols]="breakpoint" rowHeight="8:1" (window:resize)="onResize($event)">
 
             <mat-grid-tile-header align="center"><span style="color: #a8c4d2;">Education Snapshot</span></mat-grid-tile-header>
@@ -130,7 +130,7 @@
           </mat-grid-list>
         </div>
 
-        <form *ngIf="user?.profile?.certifications?.length === 0 || editCertificate === true" [formGroup]="certificationForm" class="tech-profile-education-form">
+        <form *ngIf="!user?.profile || user?.profile?.certifications?.length === 0 || editCertificate === true" [formGroup]="certificationForm" class="tech-profile-education-form">
           <mat-grid-list [cols]="breakpoint" rowHeight="8:1" (window:resize)="onResize($event)">
 
             <mat-grid-tile-header align="center"><span style="color: #a8c4d2;">Certification Snapshot</span></mat-grid-tile-header>

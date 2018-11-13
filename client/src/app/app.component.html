@@ -171,8 +171,12 @@
           <mat-nav-list class="tech-nav-sublist">
             <ng-container> <!--Settings sub category list-->
               <mat-list-item (click)="isMobileView ? drawer.toggle() : false" routerLinkActive="mat-icon-active" style="color: #007db8;">
+                <mat-icon mat-list-icon>delete</mat-icon>
+                <span (click)="clearUserCache()" mat-line>Clear application cache</span>
+                <!--
                 <mat-icon mat-list-icon>settings</mat-icon>
                 <span [routerLink]="['/settings', 'view']" mat-line>Settings</span>
+                -->
               </mat-list-item>
             </ng-container>
           </mat-nav-list>

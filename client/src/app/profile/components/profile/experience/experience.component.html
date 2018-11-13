@@ -4,7 +4,7 @@
 
       <mat-card-content>
 
-        <form *ngIf="user?.profile?.experiences?.length === 0 || editable === true" [formGroup]="experienceForm" class="tech-profile-experience-form">
+        <form *ngIf="!user?.profile || user?.profile?.experiences?.length === 0 || editable === true" [formGroup]="experienceForm" class="tech-profile-experience-form">
           <mat-grid-list [cols]="breakpoint" rowHeight="8:1" (window:resize)="onResize($event)">
 
             <mat-grid-tile-header align="center"><span style=" color: #a8c4d2;">Experience Snapshot</span></mat-grid-tile-header>

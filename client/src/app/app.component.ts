@@ -85,6 +85,11 @@ export class AppComponent implements OnInit, OnDestroy {
     this.store$.dispatch(new AuthActions.SignOut({user: null, authenticated: false}));
     this.router.navigate(['/home']);
   }
+
+  clearUserCache() {
+    localStorage.removeItem('user');
+  }
+
   ngOnDestroy() {
     this.mobileQuery.removeListener(this._mobileQueryListener);
     this.subscriptionMedia.unsubscribe();

@@ -417,7 +417,7 @@ export class AuthController {
                         // generate and send a JWT token
                         const token=user.generateJWT(user._id, user.facebook.email, user.facebook.name);
                         user.jwtToken = token;
-                        res.json({"statusCode":200, 'user': user});
+                        res.json(user);
                     } else { //if not found then create new facebook user
                         //Create a new facebook user instance and set its properties
                         let userInfoToUpdate = {
@@ -458,7 +458,7 @@ export class AuthController {
                         // generate and send a JWT token
                         const token=user.generateJWT(user._id, user.google.email, user.google.name);
                         user.jwtToken = token;
-                        res.json({"statusCode": 200, 'user': user});
+                        res.json(user);
                     }else { //if not found then create new google user
                         //Create a new google user instance and set its properties
                         let userInfoToUpdate = {
@@ -499,7 +499,7 @@ export class AuthController {
                         // generate and send a JWT token
                         const token=user.generateJWT(user._id, user.linkedin.email, user.linkedin.name);
                         user.jwtToken = token;
-                        res.json({"statusCode": 200, "user": user});
+                        res.json(user);
                     }else { //if not found then create new linkedin user
                         //Create a new linkedin user instance and set its properties
                         let userInfoToUpdate = {
