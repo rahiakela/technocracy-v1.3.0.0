@@ -151,16 +151,19 @@ export class BlogController {
    * @response: return json Blog[] array
    */
   public getAllPendingBlogs(req: Request, res: Response, next: NextFunction) {
+
     // query all pending blog
-    Blog.find({ status: 'pending' })
+      Blog.find({})
+      .where('status').equals('pending')
+      .sort('-createdOn')
       .populate({
         // populate profile instance with user
         path: 'profile',
-        populate: { path: 'user', component: 'User' },
+        populate: { path: 'user', component: 'User' }
       })
       .exec()
       .then(blogs => {
-        res.json(blogs.map(blog => blog.toObject()));
+        res.json(blogs);
         next();
       })
       .catch(next);

@@ -24,6 +24,7 @@ export const blogAdapter: EntityAdapter<Blog> = createEntityAdapter<Blog>({
 export interface State extends EntityState<Blog>{
   selectedBlogId: string;
   blogList?: Blog[];
+  pendingBlogList?: Blog[];
   isLoading?: boolean;
   loaded?: boolean;
   error?: any;
@@ -37,6 +38,7 @@ export interface State extends EntityState<Blog>{
 export const initialState: State = blogAdapter.getInitialState({
   selectedBlogId: null,
   blogList: [],
+  pendingBlogList: [],
   isLoading: false,
   loaded: false,
   error: null

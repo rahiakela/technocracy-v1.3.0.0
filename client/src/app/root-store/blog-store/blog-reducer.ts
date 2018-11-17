@@ -31,6 +31,11 @@ export function blogReducer(state = initialState, action: Actions): State {
       return {...state, isLoading: true, blogList: []};
     }
 
+    case ActionTypes.LOAD_PENDING_BLOG_LIST: {
+      // clear previous blog list
+      return {...state, isLoading: true, pendingBlogList: []};
+    }
+
     // Load blog reducer
     case ActionTypes.LOAD_BLOG: {
       return {
@@ -64,13 +69,24 @@ export function blogReducer(state = initialState, action: Actions): State {
       }
     }
 
+    case ActionTypes.LOAD_PENDING_BLOG_LIST_SUCCESS: {
+      return {
+        ...state,
+        pendingBlogList: Object.assign({}, state.pendingBlogList, action.payload.blogs),
+        isLoading: false,
+        loaded: true
+      }
+    }
+
     case ActionTypes.LOAD_BLOG_SUCCESS: {
       return {...state, isLoading: false};
     }
 
     case ActionTypes.ADD_BLOG_SUCCESS: {
+      const blogList = Object.assign(state.blogList, action.payload.blog);
       return {
-        ...blogAdapter.addOne(action.payload.blog, state),
+        ...state,
+        blogList: blogList,
         isLoading: false,
         loaded: true
       };
@@ -249,6 +265,7 @@ export function blogReducer(state = initialState, action: Actions): State {
     // Blog failure reducer
     case ActionTypes.LOAD_BLOG_LIST_FAILURE:
     case ActionTypes.LOAD_BLOG_LIST_BY_AUTHOR_FAILURE:
+    case ActionTypes.LOAD_PENDING_BLOG_LIST_FAILURE:
     case ActionTypes.LOAD_BLOG_FAILURE:
     case ActionTypes.ADD_BLOG_FAILURE:
     case ActionTypes.EDIT_BLOG_FAILURE:

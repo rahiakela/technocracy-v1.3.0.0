@@ -57,7 +57,7 @@ export class MyBlogComponent implements OnInit {
   blogActionHandler(data : any) {
     switch (data.action) {
       case 'post':
-        this.store$.dispatch(new BlogActions.ModifyBlog({blogId: data.blogId, actionType: 'pending'}));
+        this.store$.dispatch(new BlogActions.ModifyBlog({data: {blogId: data.blogId, actionType: 'pending'}}));
         break;
       case 'delete':
         this.store$.dispatch(new BlogActions.RemoveBlog({blogId: data.blogId}));

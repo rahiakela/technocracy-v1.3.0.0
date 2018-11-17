@@ -27,6 +27,10 @@ export class BlogService {
     return this.sendRequest('GET', `${this.REST_URL}/blog/all/${writtenBy}`);
   }
 
+  loadPendingBlogList(): Observable<any> {
+    return this.sendRequest('GET', `${this.REST_URL}/blog/all/pending/list`);
+  }
+
   addBlog(blog: any): Observable<Blog> {
     return this.sendRequest('POST', `${this.REST_URL}/blog/${blog.profileId}/${blog.action}`, blog);
   }

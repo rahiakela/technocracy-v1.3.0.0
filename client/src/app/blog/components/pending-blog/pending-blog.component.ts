@@ -8,18 +8,18 @@ import {
   Output,
   ViewChild
 } from '@angular/core';
-import {Blog} from '../../../shared/models/blog-model';
-import * as moment from 'moment';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import {Blog} from "../../../shared/models/blog-model";
+import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
+import * as moment from "moment";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'tech-my-blog',
-  templateUrl: './my-blog.component.html',
-  styleUrls: ['./my-blog.component.scss'],
+  selector: 'tech-pending-blog',
+  templateUrl: './pending-blog.component.html',
+  styleUrls: ['./pending-blog.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MyBlogComponent implements OnInit, OnChanges {
+export class PendingBlogComponent implements OnInit, OnChanges {
 
   @Input()
   blogList: Blog[] = [];
@@ -33,15 +33,12 @@ export class MyBlogComponent implements OnInit, OnChanges {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  status: string;
+  author: string;
   title: string;
 
-  constructor(private router: Router) {
-
-  }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-
   }
 
   ngOnChanges() {
@@ -61,31 +58,33 @@ export class MyBlogComponent implements OnInit, OnChanges {
 
   preview() {
     const blog = this.getSelectedBlog(this.title);
-    this.router.navigate(['blog/preview', blog._id, 'myblog']);
+    this.router.navigate(['blog/preview', blog._id, 'pending']);
   }
 
-  edit() {
-    const blog = this.getSelectedBlog(this.title);
-    this.router.navigate(['blog/edit', blog._id]);
-  }
-
-  post() {
+  publish() {
     this.onBlogActionTriggered.emit({
-      action: 'post',
+      action: 'published',
       blogId: this.getSelectedBlog(this.title)._id
     });
   }
 
-  delete() {
+  holdOn() {
     this.onBlogActionTriggered.emit({
-      action: 'delete',
+      action: 'on_hold',
+      blogId: this.getSelectedBlog(this.title)._id
+    });
+  }
+
+  reject() {
+    this.onBlogActionTriggered.emit({
+      action: 'rejected',
       blogId: this.getSelectedBlog(this.title)._id
     });
   }
 
   onRowClicked(row) {
     // console.log('Row clicked: ', row);
-    this.status = row.status;
+    this.author = row.author;
     this.title = row.title;
   }
 
