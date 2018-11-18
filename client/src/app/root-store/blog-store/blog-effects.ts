@@ -96,7 +96,7 @@ export class BlogEffects {
     ofType<BlogActions.ModifyBlog>(BlogActions.ActionTypes.MODIFY_BLOG),
     switchMap(action =>
       this.blogService
-        .modifyBlog(action.payload.data.blogId, action.payload.data.actionType)
+        .modifyBlog(action.payload.data.blogId, action.payload.data.action)
         .pipe(
           map(blog => new BlogActions.ModifyBlogSuccess({blog: blog})),
           catchError(error => observableOf(new BlogActions.ModifyBlogFailure({error})))

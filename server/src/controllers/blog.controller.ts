@@ -311,9 +311,11 @@ export class BlogController {
             MailSender.sendMail("post-blog", mailOptions.set("recipient", process.env.ADMIN_MAIL_ID));
             break;
           case 'on_hold':
+              // send blog on hold mail notification to author
             MailSender.sendMail("on-hold-blog", mailOptions.set("recipient", blog.profile.user));
             break;
           case 'rejected':
+            // send blog reject mail notification to author
             MailSender.sendMail("rejected-blog", mailOptions.set("recipient", blog.profile.user));
             break;
         }

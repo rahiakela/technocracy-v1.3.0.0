@@ -33,7 +33,7 @@ export class BlogPreviewComponent implements OnInit {
     // get selected blog review using blog id based on preview type
     if (this.blogId) {
       switch (this.previewType) {
-        case 'myblog':
+        case 'my-blog':
           this.store$.pipe(select(BlogSelectors.selectBlogListWrittenByAuthor))
             .subscribe(blogList => {
               this.blog = Object.values(blogList).find(blog => blog._id === this.blogId);
@@ -46,15 +46,11 @@ export class BlogPreviewComponent implements OnInit {
             });
           break;
       }
-      /*this.store$.pipe(select(BlogSelectors.selectBlogListWrittenByAuthor))
-        .subscribe(blogList => {
-          this.blog = Object.values(blogList).find(blog => blog._id === this.blogId);
-        });*/
     }
   }
 
   // handle blog actions such as post and delete
   blogActionHandler(data : any) {
-    this.store$.dispatch(new BlogActions.ModifyBlog({data: {blogId: data.blogId, actionType: 'pending'}}));
+    this.store$.dispatch(new BlogActions.ModifyBlog({data: {blogId: data.blogId, action: 'pending'}}));
   }
 }

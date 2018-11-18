@@ -24,6 +24,7 @@ export const questionAdapter: EntityAdapter<Question> = createEntityAdapter<Ques
 export interface State extends EntityState<Question>{
   selectedQuestionId: string;
   questionList?: Question[];
+  pendingQuestionList?: Question[];
   isLoading?: boolean;
   loaded?: boolean;
   error?: any;
@@ -38,6 +39,7 @@ export interface State extends EntityState<Question>{
 export const initialState: State = questionAdapter.getInitialState({
   selectedQuestionId: null,
   questionList: [],
+  pendingQuestionList: [],
   isLoading: false,
   loaded: false,
   error: null

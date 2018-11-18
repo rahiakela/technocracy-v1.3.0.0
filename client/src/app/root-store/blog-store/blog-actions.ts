@@ -11,8 +11,8 @@ export enum ActionTypes {
   LOAD_BLOG_FAILURE       = '[Blog] Load Blog Failure',
   LOAD_BLOG_SUCCESS       = '[Blog] Load Blog Success',
 
-  LOAD_BLOG_LIST_BY_AUTHOR = '[Blog] Load Blog List Written by Author',
-  LOAD_BLOG_LIST_BY_AUTHOR_FAILURE = '[Blog] Load Blog List Written by Author Failure',
+  LOAD_BLOG_LIST_BY_AUTHOR          = '[Blog] Load Blog List Written by Author',
+  LOAD_BLOG_LIST_BY_AUTHOR_FAILURE  = '[Blog] Load Blog List Written by Author Failure',
   LOAD_BLOG_LIST_BY_AUTHOR_SUCCESS  = '[Blog] Load Blog List Written by Author Success',
 
   LOAD_PENDING_BLOG_LIST          = '[Blog] Load Pending Blog List',

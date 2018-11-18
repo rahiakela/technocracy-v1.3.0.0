@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
 import {Blog} from "../../../shared/models/blog-model";
 import {UtilService} from "../../../core/services/util.service";
 import {Skill} from "../../../shared/models/profile-model";
+import * as moment from "moment";
 
 @Component({
   selector: 'tech-blog-preview',
@@ -28,7 +29,7 @@ export class BlogPreviewComponent implements OnInit {
     });
   }
 
-  showSkillsWithHashTag(tags: Skill[]) {
-    return tags !== null ? this.utilService.getSkillWithHashTag(tags): '';
+  formatDate(submitDate: Date) {
+    return moment(submitDate).format('LLL');
   }
 }

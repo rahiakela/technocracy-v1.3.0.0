@@ -5,6 +5,8 @@ import { MailActivateTemplate } from './template/mail-activate-template';
 import { PasswordResetTemplate } from './template/password-reset-template';
 import { ProdErrorTemplate } from './template/prod-error-template';
 import { QuestionPostMailTemplate } from './template/question-post-template';
+import { QuestionOnHoldMailTemplate } from './template/question-onhold-template';
+import { QuestionRejectedMailTemplate } from './template/question-rejected-template';
 import { QuestionPublishMailTemplate } from './template/question-publish-template';
 import { SubscribedMailTemplate } from './template/subscribed-template';
 import { WelcomeMailTemplate } from './template/welcome-template';
@@ -71,8 +73,7 @@ export class MailSender {
         break;
       case 'publish-blog':
         htmlContent = BlogPublishMailTemplate.getBlogPublishMailTemplate(
-          mailOption.get('blog'),
-            UserUtils.getUserEmail(mailOption.get("recipient"))
+          mailOption.get('blog'), UserUtils.getUserEmail(mailOption.get("recipient"))
         );
         fromContent = 'Technocracy Blog <editors@tecknocracy.com>';
         subject = mailOption.get('blog').title;
@@ -80,18 +81,33 @@ export class MailSender {
         break;
       case 'post-question':
         htmlContent = QuestionPostMailTemplate.getQuestionPostMailTemplate(
-          mailOption.get('question'),
-            UserUtils.getUserName(mailOption.get('user'))
+          mailOption.get('question'), UserUtils.getUserName(mailOption.get('user'))
         );
         fromContent = 'Technocracy Question <editors@tecknocracy.com>';
         subject = '[New post] ' + mailOption.get('question').title;
         toMailId = 'editors@tecknocracy.com';
         break;
+      case 'on-hold-question':
+        htmlContent = QuestionOnHoldMailTemplate.getQuestionOnHoldMailTemplate(
+            mailOption.get('question'), recipient, UserUtils.getUserName(mailOption.get('recipient'))
+        );
+        fromContent = 'Technocracy Question <editors@tecknocracy.com>';
+        subject = `[Question On Hold] ${mailOption.get('question').title}`;
+        toMailId = UserUtils.getUserEmail(recipient);
+        break;
+      case 'rejected-question':
+        htmlContent = QuestionRejectedMailTemplate.getQuestionRejectedMailTemplate(
+            mailOption.get('question'), recipient, UserUtils.getUserName(mailOption.get('recipient'))
+        );
+        fromContent = 'Technocracy Question <editors@tecknocracy.com>';
+        subject = `[Question Rejected] ${mailOption.get('question').title}`;
+        toMailId = UserUtils.getUserEmail(recipient);
+        break;
       case 'publish-question':
         htmlContent = QuestionPublishMailTemplate.getQuestionPublishMailTemplate(
           mailOption.get('question'),
           recipient,
-          UserUtils.getUserName(mailOption.get('question').askedBy[0])
+          UserUtils.getUserName(mailOption.get('question').askedBy)
         );
         fromContent = 'Technocracy Question <editors@tecknocracy.com>';
         subject = mailOption.get('question').title;

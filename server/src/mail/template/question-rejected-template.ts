@@ -1,16 +1,16 @@
+import * as moment from 'moment';
 import { DateTimeUtils } from '../../utils/data-time-util';
 import {UserUtils} from "../../utils/user-utils";
-import * as moment from 'moment';
 
-export class BlogRejectedMailTemplate {
+export class QuestionRejectedMailTemplate {
 
-    public static getRejectedBlogMailTemplate(blog: any, recipient: any, writtenBy: string): string {
+    public static getQuestionRejectedMailTemplate(question: any, recipient: any, askedByUser: string): string {
         let content = `
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-                <title>Technocracy Blog</title>
+                <title>Technocracy Question</title>
                 <style type="text/css">
                     body {
                         padding-top: 0 !important;
@@ -39,6 +39,7 @@ export class BlogRejectedMailTemplate {
                     div,p,ul,h2{
                         margin:0;
                     }
+            
             
                     a.link1{
                         color:#698EC3;
@@ -226,7 +227,7 @@ export class BlogRejectedMailTemplate {
                                                                             <td align='left' valign='top' >
                                                                                 <div class="contentEditableContainer contentTextEditable" style='display:inline-block;'>
                                                                                     <div class="contentEditable" >
-                                                                                        <h3 style="font-size: x-large; color: #f0f8ff;">Technocracy Blog</h3>
+                                                                                        <h3 style="font-size: x-large; color: #f0f8ff;">Technocracy Question</h3>
                                                                                     </div>
                                                                                 </div>
                                                                             </td>
@@ -281,8 +282,8 @@ export class BlogRejectedMailTemplate {
                                                                                                     <div class="contentEditableContainer contentTextEditable">
                                                                                                         <div class="contentEditable">
                                                                                                             <br/>
-                                                                                                            <p>Hey <strong>${writtenBy}</strong>,</p>
-                                                                                                            <p>This blog is just written by you on ${moment(blog.createdOn).format('LLLL')} but your blog is not approved due some ambiguas and inappropriate content, so please review and edit your blog and submit it again.</p>
+                                                                                                            <p>Hey <strong>${askedByUser}</strong>,</p>
+                                                                                                            <p>Thanks for using <strong>Technocracy</strong>. This question is just asked by you on ${moment(question.createdOn).format('LLLL')} but your question is not approved due some ambiguas and inappropriate content, so please review and edit your question and submit it again.</p>
                                                                                                             <br/>
                                                                                                         </div>
                                                                                                     </div>
@@ -315,7 +316,7 @@ export class BlogRejectedMailTemplate {
                                                             <td style='border-bottom-left-radius:3px;border-bottom-right-radius:3px;' align='left'>
                                                                 <div class="contentEditableContainer contentTextEditable" style='display:inline-block;'>
                                                                     <div class="contentEditable" >
-                                                                        <h4 style="color: #007db8; font-family: inherit;"><a href="https://www.tecknocracy.com/blog/${blog._id}" style="text-decoration: none;color: currentColor;">${blog.title}</a></h4>
+                                                                        <h4 style="color: #007db8; font-family: inherit;"><a href="https://www.tecknocracy.com/question/${question._id}" style="text-decoration: none;color: currentColor;">${question.title}</a></h4>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -339,7 +340,7 @@ export class BlogRejectedMailTemplate {
                                                                         <div class="contentEditableContainer contentTextEditable">
                                                                             <div class="contentEditable">
                                                                                 <p >
-                                                                                    ${UserUtils.decodeHTML(blog.content.substring(0, 300))}
+                                                                                    ${question.content.length > 299 ? UserUtils.decodeHTML(question.content.substring(0,300)) : UserUtils.decodeHTML(question.content)}
                                                                                 </p>
                                                                             </div>
                                                                         </div>
@@ -349,7 +350,7 @@ export class BlogRejectedMailTemplate {
                                                                     <td align='right' valign='top'>
                                                                         <div class="contentEditableContainer contentTextEditable">
                                                                             <div class="contentEditable" >
-                                                                                <a target='_blank' href="http://www.tecknocracy.com/blog/${blog._id}" class='link1'>Read more →</a>
+                                                                                <a target='_blank' href="http://www.tecknocracy.com/question/${question._id}" class='link1'>Review it →</a>
                                                                             </div>
                                                                         </div>
                                                                     </td>
@@ -483,7 +484,7 @@ export class BlogRejectedMailTemplate {
                                                             <td valign='top' align='center'>
                                                                 <div class="contentEditableContainer contentTextEditable">
                                                                     <div class="contentEditable" >
-                                                                        <p style='color:#A8B0B6; font-size:13px;line-height: 16px;'>This email was sent to <a href="mailto:${UserUtils.getUserName(recipient)}" target=\\\\"_blank\\\\">${UserUtils.getUserName(recipient)}</a> when you signed up on technocracy.com Please add us to your contacts to ensure the newsletters land in your inbox.
+                                                                        <p style='color:#A8B0B6; font-size:13px;line-height: 16px;'>This email was sent to <a href="mailto:${UserUtils.getUserName(recipient)}" target=\\"_blank\\">${UserUtils.getUserName(recipient)}</a> when you signed up on technocracy.com Please add us to your contacts to ensure the newsletters land in your inbox.
                                                                         </p>
                                                                     </div>
                                                                 </div>

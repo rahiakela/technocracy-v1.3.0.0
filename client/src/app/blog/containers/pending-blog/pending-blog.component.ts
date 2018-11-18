@@ -19,10 +19,10 @@ import {Blog} from "../../../shared/models/blog-model";
 })
 export class PendingBlogComponent implements OnInit {
 
-  public blogList$: Observable<Blog[]>;
-  public loading$: Observable<boolean>;
-  public loaded$: Observable<boolean>;
-  public error$: Observable<any>;
+  blogList$: Observable<Blog[]>;
+  loading$: Observable<boolean>;
+  loaded$: Observable<boolean>;
+  error$: Observable<any>;
 
   constructor(private store$: Store<RootStoreState.State>) { }
 

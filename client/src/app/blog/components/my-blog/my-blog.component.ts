@@ -61,7 +61,7 @@ export class MyBlogComponent implements OnInit, OnChanges {
 
   preview() {
     const blog = this.getSelectedBlog(this.title);
-    this.router.navigate(['blog/preview', blog._id, 'myblog']);
+    this.router.navigate(['blog/preview', blog._id, 'my-blog']);
   }
 
   edit() {

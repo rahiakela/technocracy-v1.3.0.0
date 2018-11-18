@@ -12,7 +12,7 @@ export class QuestionRoute {
         app.route(`${this.Q_BASE_URL}/:page`).get(this.questionController.getQuestions);
         app.route(`${this.Q_BASE_URL}/:questionId/load`).get(this.questionController.getQuestion);
         app.route(`${this.Q_BASE_URL}/all/:askedBy`).get(authToken.verifyToken, this.questionController.getQuestionsAskedByUser);
-        app.route(`${this.Q_BASE_URL}/all/pending`).get(authToken.verifyToken, this.questionController.getAllPendingQuestions);
+        app.route(`${this.Q_BASE_URL}/all/pending/list`).get(authToken.verifyToken, this.questionController.getAllPendingQuestions);
         app.route(`${this.Q_BASE_URL}/:askedBy/:actionType`).post(authToken.verifyToken, this.questionController.saveQuestion);
         app.route(`${this.Q_BASE_URL}/:questionId/:actionType`).put(authToken.verifyToken, this.questionController.modifyQuestion);
         app.route(`${this.Q_BASE_URL}/:questionId`).put(authToken.verifyToken, this.questionController.editQuestion)

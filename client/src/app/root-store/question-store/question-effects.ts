@@ -66,6 +66,19 @@ export class QuestionEffects {
   );
 
   @Effect()
+  loadPendingQuestionList$: Observable<Action> = this.actions$.pipe(
+    ofType<QuestionActions.LoadPendingQuestionList>(QuestionActions.ActionTypes.LOAD_PENDING_QUESTION_LIST),
+    switchMap(() =>
+      this.questionService
+        .loadPendingQuestionList()
+        .pipe(
+          map(questions => new QuestionActions.LoadPendingQuestionListSuccess({questions})),
+          catchError(error => observableOf(new QuestionActions.LoadPendingQuestionListFailure({error})))
+        )
+    )
+  );
+
+  @Effect()
   addQuestion$: Observable<Action> = this.actions$.pipe(
     ofType<QuestionActions.AddQuestion>(QuestionActions.ActionTypes.ADD_QUESTION),
     switchMap(action =>
@@ -83,7 +96,7 @@ export class QuestionEffects {
     ofType<QuestionActions.ModifyQuestion>(QuestionActions.ActionTypes.MODIFY_QUESTION),
     switchMap(action =>
       this.questionService
-        .modifyQuestion(action.payload.questionId, action.payload.actionType)
+        .modifyQuestion(action.payload.data.questionId, action.payload.data.action)
         .pipe(
           map(question => new QuestionActions.ModifyQuestionSuccess({question: question})),
           catchError(error => observableOf(new QuestionActions.ModifyQuestionFailure({error})))

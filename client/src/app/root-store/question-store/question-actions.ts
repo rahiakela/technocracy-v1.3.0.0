@@ -15,9 +15,13 @@ export enum ActionTypes {
   ADD_QUESTION_FAILURE        = '[Question] Add Question Failure',
   ADD_QUESTION_SUCCESS        = '[Question] Add Question Success',
 
-  LOAD_QUESTION_LIST_ASKED_BY_USER = '[Question] Load Question List asked by User',
-  LOAD_QUESTION_LIST_ASKED_BY_USER_FAILURE = '[Question] Load Question List asked by User Failure',
+  LOAD_QUESTION_LIST_ASKED_BY_USER          = '[Question] Load Question List asked by User',
+  LOAD_QUESTION_LIST_ASKED_BY_USER_FAILURE  = '[Question] Load Question List asked by User Failure',
   LOAD_QUESTION_LIST_ASKED_BY_USER_SUCCESS  = '[Question] Load Question List asked by User Success',
+
+  LOAD_PENDING_QUESTION_LIST          = '[Question] Load Pending Question List',
+  LOAD_PENDING_QUESTION_LIST_FAILURE  = '[Question] Load Pending Question List Failure',
+  LOAD_PENDING_QUESTION_LIST_SUCCESS  = '[Question] Load Pending Question List Success',
 
   MODIFY_QUESTION             = '[Question] Modify Question',
   MODIFY_QUESTION_FAILURE     = '[Question] Modify Question Failure',
@@ -122,6 +126,20 @@ export class LoadQuestionListAskedByUserSuccess implements Action{
   constructor(public payload: {questions: Question[]}) {}
 }
 
+export class LoadPendingQuestionList  implements Action{
+  readonly type = ActionTypes.LOAD_PENDING_QUESTION_LIST;
+}
+export class LoadPendingQuestionListFailure implements Action{
+  readonly type = ActionTypes.LOAD_PENDING_QUESTION_LIST_FAILURE;
+
+  constructor(public payload:{ error: string}) {}
+}
+export class LoadPendingQuestionListSuccess implements Action{
+  readonly type = ActionTypes.LOAD_PENDING_QUESTION_LIST_SUCCESS;
+
+  constructor(public payload: {questions: Question[]}) {}
+}
+
 export class AddQuestion  implements Action{
   readonly type = ActionTypes.ADD_QUESTION;
 
@@ -141,7 +159,7 @@ export class AddQuestionSuccess implements Action{
 export class ModifyQuestion  implements Action{
   readonly type = ActionTypes.MODIFY_QUESTION;
 
-  constructor(public payload: {questionId: string, actionType: string}) {}
+  constructor(public payload: {data: any}) {}
 }
 export class ModifyQuestionFailure implements Action{
   readonly type = ActionTypes.MODIFY_QUESTION_FAILURE;
@@ -359,6 +377,9 @@ export type Actions = LoadQuestionList
   | LoadQuestionListAskedByUser
   | LoadQuestionListAskedByUserSuccess
   | LoadQuestionListAskedByUserFailure
+  | LoadPendingQuestionList
+  | LoadPendingQuestionListSuccess
+  | LoadPendingQuestionListFailure
   | AddQuestion
   | AddQuestionFailure
   | AddQuestionSuccess

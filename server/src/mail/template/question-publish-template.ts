@@ -1,14 +1,12 @@
 import * as moment from 'moment';
-import { Question } from '../../domains/question';
-import { User } from '../../domains/user';
 import { DateTimeUtils } from '../../utils/data-time-util';
 import {UserUtils} from "../../utils/user-utils";
 
 export class QuestionPublishMailTemplate {
 
   public static getQuestionPublishMailTemplate(
-    question: Question,
-    recipient: User,
+    question: any,
+    recipient: any,
     askedByUser: string
   ): string {
     let content = `
@@ -296,7 +294,7 @@ export class QuestionPublishMailTemplate {
                                                                                                     <div class="contentEditable">
         `;
     // send different notification content to the user who has asked the question
-    if (recipient._id.toString() === question.askedBy[0]._id.toString()) {
+    if (recipient._id.toString() === question.askedBy._id.toString()) {
       content += `
                                                                                                         <br/>
                                                                                                         <p>Hey <strong>${UserUtils.getUserName(
@@ -352,7 +350,7 @@ export class QuestionPublishMailTemplate {
                                                         <td style='border-bottom-left-radius:3px;border-bottom-right-radius:3px;' align='left'>
                                                             <div class="contentEditableContainer contentTextEditable" style='display:inline-block;'>
                                                                 <div class="contentEditable" >
-                                                                    <h4 style="color: #007db8; font-family: inherit;"><a href="https://www.tecknocracy.com/#/question/${
+                                                                    <h4 style="color: #007db8; font-family: inherit;"><a href="https://www.tecknocracy.com/question/${
                                                                       question._id
                                                                     }" style="text-decoration: none;color: currentColor;">${
       question.title
@@ -392,7 +390,7 @@ export class QuestionPublishMailTemplate {
                                                                 <td align='right' valign='top'>
                                                                     <div class="contentEditableContainer contentTextEditable">
                                                                         <div class="contentEditable" >
-                                                                            <a target='_blank' href="http://www.tecknocracy.com/#/question/${
+                                                                            <a target='_blank' href="http://www.tecknocracy.com/question/${
                                                                               question._id
                                                                             }" class='link1'>Read more →</a>
                                                                         </div>
@@ -530,7 +528,7 @@ export class QuestionPublishMailTemplate {
                                                             </div>
                                                             <div class="contentEditableContainer contentTextEditable">
                                                                 <div class="contentEditable" >
-                                                                    <a target='_blank' href='https://www.tecknocracy.com/#/unsubscribe' style='line-height:19px;color:#CCCCCC; font-size:13px;'>Unsubscribe</a>
+                                                                    <a target='_blank' href='https://www.tecknocracy.com/unsubscribe' style='line-height:19px;color:#CCCCCC; font-size:13px;'>Unsubscribe</a>
                                                                 </div>
                                                             </div>
                                                         </td>

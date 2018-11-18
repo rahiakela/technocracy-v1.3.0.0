@@ -92,9 +92,7 @@ export function blogReducer(state = initialState, action: Actions): State {
       };
     }
 
-    case ActionTypes.MODIFY_BLOG_SUCCESS:
-    case ActionTypes.EDIT_BLOG_SUCCESS:
-    case ActionTypes.REMOVE_BLOG_SUCCESS:  {
+    case ActionTypes.EDIT_BLOG_SUCCESS:  {
       const updatedBlogList = Object.values(state.blogList)
         .map(blog => {
           if (blog._id === action.payload.blog._id) {
@@ -102,6 +100,41 @@ export function blogReducer(state = initialState, action: Actions): State {
           }
           return blog;
         });
+
+      return {
+        ...state,
+        blogList: updatedBlogList,
+        isLoading: false,
+        loaded: true
+      };
+    }
+
+    case ActionTypes.MODIFY_BLOG_SUCCESS: {
+      const updatedBlogList = Object.values(state.blogList)
+        .map(blog => {
+          if (blog._id === action.payload.blog._id) {
+            return blog = action.payload.blog;
+          }
+          return blog;
+        });
+
+      // filtering pending blog list for pending status only
+      const updatedPendingBlogList = Object.values(state.pendingBlogList)
+        .filter(blog => blog._id !== action.payload.blog._id);
+
+      return {
+        ...state,
+        blogList: updatedBlogList,
+        pendingBlogList: updatedPendingBlogList,
+        isLoading: false,
+        loaded: true
+      };
+    }
+
+    case ActionTypes.REMOVE_BLOG_SUCCESS:  {
+
+      const updatedBlogList = Object.values(state.blogList)
+        .filter(blog => blog._id !== action.payload.blog._id);
 
       return {
         ...state,

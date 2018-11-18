@@ -26,7 +26,16 @@
       <mat-card-header class="tech-author-card-header">
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{getUserName(question?.askedBy)}}</mat-card-title>
-        <mat-card-subtitle style="color: #9594b1;">{{showSkillsWithHashTag(question?.tags)}}</mat-card-subtitle>
+
+        <mat-card-subtitle style="color: #9594b1;">
+        <span *ngFor="let tag of question?.tags">
+          <i class="fa fa-tag" aria-hidden="true">{{tag}}</i>
+        </span>
+        </mat-card-subtitle>
+        <mat-card-subtitle style="color: #c1bbcc;">
+          Last Updated: {{question?.updatedOn ? formatDate(question?.updatedOn) : formatDate(question?.createdOn)}}
+        </mat-card-subtitle>
+
       </mat-card-header>
     </mat-card>
 

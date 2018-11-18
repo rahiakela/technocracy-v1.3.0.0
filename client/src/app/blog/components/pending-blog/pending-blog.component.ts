@@ -29,11 +29,10 @@ export class PendingBlogComponent implements OnInit, OnChanges {
   onBlogActionTriggered = new EventEmitter<any>();
 
   dataSource: MatTableDataSource<BlogElement>;
-  displayedColumns: string[] = ['position', 'title', 'status', 'createdOn', 'star'];
+  displayedColumns: string[] = ['position', 'title', 'createdOn', 'star'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  author: string;
   title: string;
 
   constructor(private router: Router) { }
@@ -43,9 +42,10 @@ export class PendingBlogComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     let i = 0;
-    const ELEMENT_DATA: BlogElement[] = Object.values(this.blogList).map((blog: any) => {
-      return {position: ++i, title: blog.title, status: blog.status, createdOn: blog.createdOn}
-    });
+    const ELEMENT_DATA: BlogElement[] = Object.values(this.blogList)
+      .map((blog: any) => {
+        return {position: ++i, title: blog.title, createdOn: blog.createdOn}
+      });
 
     this.dataSource = new MatTableDataSource<BlogElement>(ELEMENT_DATA);
     this.dataSource.paginator = this.paginator;
@@ -84,7 +84,6 @@ export class PendingBlogComponent implements OnInit, OnChanges {
 
   onRowClicked(row) {
     // console.log('Row clicked: ', row);
-    this.author = row.author;
     this.title = row.title;
   }
 
@@ -98,8 +97,7 @@ export class PendingBlogComponent implements OnInit, OnChanges {
 }
 
 export interface BlogElement {
-  title: string;
   position: number;
+  title: string;
   createdOn: Date;
-  status: string;
 }
