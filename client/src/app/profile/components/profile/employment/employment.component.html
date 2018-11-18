@@ -47,25 +47,29 @@
             </div>
 
             <mat-grid-tile>
-              <mat-form-field floatLabel="never">
-                <span matPrefix>Company&nbsp;:&nbsp;</span>
-                <input matInput [formControl]="company" [matAutocomplete]="companyAutoComplete" placeholder="Enter your company name" aria-label="CompanyName">
+            <mat-form-field floatLabel="never">
+              <span matPrefix>Company&nbsp;:&nbsp;</span>
+              <input matInput [formControl]="company" [matAutocomplete]="companyAutoComplete" placeholder="Enter your company name" aria-label="CompanyName">
 
-                <mat-autocomplete #companyAutoComplete="matAutocomplete">
-                  <mat-option *ngFor="let company of filteredCompanies | async" [value]="company.name">
-                    <span>{{company.name}}</span>
-                  </mat-option>
-                </mat-autocomplete>
-                <mat-error *ngIf="company.invalid">{{getCompanyNameErrorMessage()}}</mat-error>
-              </mat-form-field>
-            </mat-grid-tile>
+              <mat-autocomplete #companyAutoComplete="matAutocomplete">
+                <mat-option *ngFor="let company of filteredCompanies | async" [value]="company.name">
+                  <span>{{company.name}}</span>
+                </mat-option>
+              </mat-autocomplete>
+              <mat-error *ngIf="company.invalid">{{getCompanyNameErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
 
             <mat-grid-tile>
               <mat-form-field floatLabel="never">
                 <span matPrefix>Designation&nbsp;:&nbsp;</span>
-                <mat-select [formControl]="designation" placeholder="Select your designation" aria-label="Designation">
-                  <mat-option *ngFor="let designation of designations" [value]="designation.name">{{designation.name}}</mat-option>
-                </mat-select>
+                <input matInput [formControl]="designation" [matAutocomplete]="designationAutoComplete" placeholder="Enter your designation" aria-label="Designation">
+
+                <mat-autocomplete #designationAutoComplete="matAutocomplete">
+                  <mat-option *ngFor="let designation of filteredDesignations | async" [value]="designation.name">
+                    <span>{{designation.name}}</span>
+                  </mat-option>
+                </mat-autocomplete>
               </mat-form-field>
             </mat-grid-tile>
 
