@@ -17,7 +17,7 @@
 
             <div *ngFor="let employment of employments">
               <mat-grid-tile>
-                <label class="tech-label">Company : <span class="tech-secondary-color">{{employment.companyName}}</span> </label>
+                <label class="tech-label">Company : <span class="tech-secondary-color">{{employment.company}}</span> </label>
               </mat-grid-tile>
 
               <mat-grid-tile>
@@ -64,7 +64,7 @@
               <mat-form-field floatLabel="never">
                 <span matPrefix>Designation&nbsp;:&nbsp;</span>
                 <mat-select [formControl]="designation" placeholder="Select your designation" aria-label="Designation">
-                  <mat-option *ngFor="let designation of designations" [value]="designation.value">{{designation.label}}</mat-option>
+                  <mat-option *ngFor="let designation of designations" [value]="designation.name">{{designation.name}}</mat-option>
                 </mat-select>
               </mat-form-field>
             </mat-grid-tile>
@@ -163,7 +163,7 @@
             </div>
 
             <mat-grid-tile>
-              <label class="tech-label">Company : <span class="tech-secondary-color">{{employment.companyName}}</span> </label>
+              <label class="tech-label">Company : <span class="tech-secondary-color">{{employment.company}}</span> </label>
             </mat-grid-tile>
 
             <mat-grid-tile>

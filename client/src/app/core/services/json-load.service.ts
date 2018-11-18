@@ -48,4 +48,17 @@ export class JsonLoadService {
         })
       );
   }
+
+  loadDesignations(): Observable<any[]> {
+    return this.httpClient.get('./assets/json-data/profession.json')
+      .pipe(
+        map((data: any) => {
+          let designations: any[] = [];
+          for(let i = 0; i < data.designations.length; i++){
+            designations.push({name: data.designations[i]});
+          }
+          return designations;
+        })
+      );
+  }
 }

@@ -56,10 +56,10 @@ export class EmploymentComponent implements OnInit, OnDestroy {
   onProfileActionTriggered = new EventEmitter<any>();
 
 
-  designations: SelectOption[] = [
+  /*designations: SelectOption[] = [
     {label: 'Software Engineer', value: 'Software Engineer'},
     {label: 'Sr. Software Engineer', value: 'Sr. Software Engineer'}
-  ];
+  ];*/
 
   industries: SelectOption[] = [
     {label: 'IT/Computer Software', value: 'IT/Computer Software'},
@@ -78,6 +78,9 @@ export class EmploymentComponent implements OnInit, OnDestroy {
 
   companies: Company[] = [];
   filteredCompanies: Observable<Company[]>;
+
+  designations: Designation[] = [];
+  filteredDesignations: Observable<Designation[]>;
 
   // grid responsive settings
   breakpoint: number;
@@ -122,6 +125,18 @@ export class EmploymentComponent implements OnInit, OnDestroy {
         map(company => company ? this._filterCompanies(company) : this.companies.slice(0, 5))
       );
 
+   //load designations data from json file
+    this.jsonService.loadDesignations()
+      .subscribe(designations => {
+        this.designations = designations;
+      });
+
+    //filter designation
+     this.filteredDesignations = this.designation.valueChanges
+       .pipe(
+         startWith(''),
+         map(designation => designation ? this._filterDesignations(designation) : this.designations.slice(0,5))
+       );
   }
 
   onResize(event) {
@@ -207,6 +222,11 @@ export class EmploymentComponent implements OnInit, OnDestroy {
     return this.companies.filter(company => company.name.toLowerCase().indexOf(filterValue) === 0);
   }
 
+  private _filterDesignations(value: string): Designation[] {
+    const filterValue = value.toLowerCase();
+    return this.designations.filter(designations => designations.name.toLowerCase().indexOf(filterValue) === 0);
+  }
+
   ngOnDestroy() {
     this.changeDetectorRef.detach();
     this.subscriptionMedia.unsubscribe();
@@ -231,5 +251,8 @@ export interface Employment {
 }
 
 export interface Company {
+  name: string;
+}
+export interface Designation {
   name: string;
 }
