@@ -54,10 +54,40 @@ export function questionReducer(state = initialState, action: Actions): State {
       return questionAdapter.addAll(action.payload.questions, {...state, isLoading: false, error: null});
     }
 
+    // Load question reducer written by author
+    case ActionTypes.LOAD_QUESTION_LIST_ASKED_BY_USER: {
+      // clear previous question list
+      return {
+        ...state,
+        questionList: [],
+        isLoading: true,
+        error: null
+      };
+    }
     case ActionTypes.LOAD_QUESTION_LIST_ASKED_BY_USER_SUCCESS:  {
       return {
         ...state,
         questionList: Object.assign({}, state.questionList, action.payload.questions),
+        isLoading: false,
+        loaded: true
+      };
+    }
+
+    // Load pending question list reducer
+    case ActionTypes.LOAD_PENDING_QUESTION_LIST: {
+      // clear previous question list
+      return {
+        ...state,
+        pendingQuestionList: [],
+        isLoading: true,
+        error: null
+      };
+    }
+    // Load pending question list reducer success
+    case ActionTypes.LOAD_PENDING_QUESTION_LIST_SUCCESS: {
+      return {
+        ...state,
+        pendingQuestionList: Object.assign({}, state.pendingQuestionList, action.payload.questions),
         isLoading: false,
         loaded: true
       };
@@ -76,9 +106,7 @@ export function questionReducer(state = initialState, action: Actions): State {
       };
     }
 
-    case ActionTypes.MODIFY_QUESTION_SUCCESS:
-    case ActionTypes.EDIT_QUESTION_SUCCESS:
-    case ActionTypes.REMOVE_QUESTION_SUCCESS: {
+    case ActionTypes.EDIT_QUESTION_SUCCESS: {
       const updatedQuestionList = Object.values(state.questionList)
         .map(question => {
           if (question._id === action.payload.question._id) {
@@ -86,6 +114,40 @@ export function questionReducer(state = initialState, action: Actions): State {
           }
           return question;
         });
+
+      return {
+        ...state,
+        questionList: updatedQuestionList,
+        isLoading: false,
+        loaded: true
+      };
+    }
+
+    case ActionTypes.MODIFY_QUESTION_SUCCESS: {
+
+      const updatedQuestionList = Object.values(state.questionList)
+        .map(question => {
+          if (question._id === action.payload.question._id) {
+            return question = action.payload.question;
+          }
+          return question;
+        });
+
+      const updatedPendingQuestionList = Object.values(state.pendingQuestionList)
+        .filter(question => question._id !== action.payload.question._id);
+
+      return {
+        ...state,
+        questionList: updatedQuestionList,
+        pendingQuestionList: updatedPendingQuestionList,
+        isLoading: false,
+        loaded: true
+      };
+    }
+
+    case ActionTypes.REMOVE_QUESTION_SUCCESS: {
+      const updatedQuestionList = Object.values(state.questionList)
+        .filter(question => question._id !== action.payload.question._id);
 
       return {
         ...state,
@@ -244,6 +306,8 @@ export function questionReducer(state = initialState, action: Actions): State {
 
     // Question failure reducer
     case ActionTypes.LOAD_QUESTION_LIST_FAILURE:
+    case ActionTypes.LOAD_QUESTION_LIST_ASKED_BY_USER_FAILURE:
+    case ActionTypes.LOAD_PENDING_QUESTION_LIST_FAILURE:
     case ActionTypes.LOAD_QUESTION_FAILURE:
     case ActionTypes.ADD_QUESTION_FAILURE:
     case ActionTypes.EDIT_QUESTION_FAILURE:

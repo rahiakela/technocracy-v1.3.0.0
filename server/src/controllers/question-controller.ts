@@ -140,6 +140,7 @@ export class QuestionController {
     public getAllPendingQuestions(req: Request, res: Response, next: NextFunction) {
         //query all pending question
         Question.find({"status": "pending"})
+            .sort('-createdOn')
             .populate("askedBy")    // populate user instance
             .exec()
             .then((questions) => {
@@ -271,7 +272,7 @@ export class QuestionController {
                     break;
                 case 'pending':
                     // send new question post mail notification to editors
-                    MailSender.sendMail("save-question", mailOptions.set("recipient", process.env.ADMIN_MAIL_ID));
+                    MailSender.sendMail("post-question", mailOptions.set("recipient", process.env.ADMIN_MAIL_ID));
                     break;
                 case 'on_hold':
                     MailSender.sendMail("on-hold-question", mailOptions.set("recipient", question.askedBy));

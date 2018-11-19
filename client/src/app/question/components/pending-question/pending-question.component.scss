@@ -1,0 +1,42 @@
+@import "../../../app.component";
+
+$pending-question-width: 100%;
+
+.tech-pending-question-card{
+  margin: auto;
+}
+h5{
+  margin: auto;
+  color: $main-color;
+}
+.tech-pending-question-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-pending-question-container > * {
+  width: $pending-question-width;
+}
+
+table {
+  width: 100%;
+  th, td{
+    padding: 10px;
+  }
+}
+.tech-pending-question-spinner{
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#tech-table-header {
+  background-color: #007db8;
+  text-decoration: white;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 98%;
+  margin-left: 10px;
+  margin-bottom: -18px;
+}

@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: ':id', component: BlogViewComponent },
   {path: 'write/new', component: WriteBlogComponent, canActivate: [AuthenticationGuard]},
   {path: 'list/view', component: MyBlogComponent, canActivate: [AuthenticationGuard]},
-  {path: 'preview/:id', component: BlogPreviewComponent},
+  {path: 'preview/:id/:type', component: BlogPreviewComponent},
   {path: 'edit/:id', component: EditBlogComponent},
   {path: 'pending/view', component: PendingBlogComponent, canActivate: [AuthenticationGuard]}
 ];

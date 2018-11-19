@@ -6,14 +6,16 @@ import {MyQuestionComponent} from "./containers/my-question/my-question.componen
 import {AuthenticationGuard} from "../core/services/authentication.guard";
 import {QuestionPreviewComponent} from "./containers/question-preview/question-preview.component";
 import {EditQuestionComponent} from "./containers/edit-question/edit-question.component";
+import {PendingQuestionComponent} from "./containers/pending-question/pending-question.component";
 
 const routes: Routes = [
   {path: '', redirectTo: ':id', pathMatch: 'full'},
   {path: ':id', component: QuestionViewContainerComponent},
   {path: 'write/new', component: WriteQuestionComponent, canActivate: [AuthenticationGuard]},
   {path: 'list/view', component: MyQuestionComponent, canActivate: [AuthenticationGuard]},
-  {path: 'preview/:id', component: QuestionPreviewComponent},
-  {path: 'edit/:id', component: EditQuestionComponent}
+  {path: 'preview/:id/:type', component: QuestionPreviewComponent},
+  {path: 'edit/:id', component: EditQuestionComponent},
+  {path: 'pending/view', component: PendingQuestionComponent}
 ];
 
 @NgModule({

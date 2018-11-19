@@ -3,6 +3,7 @@ import {Question} from "../../../shared/models/question-model";
 import {UtilService} from "../../../core/services/util.service";
 import {User} from "../../../shared/models/user-model";
 import {Skill} from "../../../shared/models/profile-model";
+import * as moment from "moment";
 
 @Component({
   selector: 'tech-question-preview',
@@ -30,8 +31,8 @@ export class QuestionPreviewComponent implements OnInit {
     });
   }
 
-  showSkillsWithHashTag(tags: Skill[]) {
-    return tags !== null ? this.utilService.getSkillWithHashTag(tags): '';
+  formatDate(submitDate: Date) {
+    return moment(submitDate).format('LLL');
   }
 
   getUserName(user: User): string {

@@ -1,11 +1,10 @@
 import * as moment from 'moment';
-import { Question } from '../../domains/question';
 import { DateTimeUtils } from '../../utils/data-time-util';
 import {UserUtils} from "../../utils/user-utils";
 
 export class QuestionPostMailTemplate {
 
-  public static getQuestionPostMailTemplate(question: Question, askedByUser: string): string {
+  public static getQuestionPostMailTemplate(question: any, askedByUser: string): string {
     let content = `
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -328,7 +327,7 @@ export class QuestionPostMailTemplate {
                                                         <td style='border-bottom-left-radius:3px;border-bottom-right-radius:3px;' align='left'>
                                                             <div class="contentEditableContainer contentTextEditable" style='display:inline-block;'>
                                                                 <div class="contentEditable" >
-                                                                    <h4 style="color: #007db8; font-family: inherit;"><a href="https://www.tecknocracy.com/#/question/${
+                                                                    <h4 style="color: #007db8; font-family: inherit;"><a href="https://www.tecknocracy.com/question/${
                                                                       question._id
                                                                     }?q=preview" style="text-decoration: none;color: currentColor;">${
       question.title
@@ -366,7 +365,7 @@ export class QuestionPostMailTemplate {
                                                                 <td align='right' valign='top'>
                                                                     <div class="contentEditableContainer contentTextEditable">
                                                                         <div class="contentEditable" >
-                                                                            <a target='_blank' href="http://www.tecknocracy.com/#/question/${
+                                                                            <a target='_blank' href="http://www.tecknocracy.com/question/${
                                                                               question._id
                                                                             }?q=preview" class='link1'>Review it →</a>
                                                                         </div>
@@ -504,7 +503,7 @@ export class QuestionPostMailTemplate {
                                                             </div>
                                                             <div class="contentEditableContainer contentTextEditable">
                                                                 <div class="contentEditable" >
-                                                                    <a target='_blank' href='https://www.tecknocracy.com/#/unsubscribe' style='line-height:19px;color:#CCCCCC; font-size:13px;'>Unsubscribe</a>
+                                                                    <a target='_blank' href='https://www.tecknocracy.com/unsubscribe' style='line-height:19px;color:#CCCCCC; font-size:13px;'>Unsubscribe</a>
                                                                 </div>
                                                             </div>
                                                         </td>

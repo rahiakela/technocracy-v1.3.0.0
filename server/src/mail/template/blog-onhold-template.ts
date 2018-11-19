@@ -282,7 +282,7 @@ export class BlogOnHoldMailTemplate {
                                                                                                         <div class="contentEditable">
                                                                                                             <br/>
                                                                                                             <p>Hey <strong>${writtenBy}</strong>,</p>
-                                                                                                            <p>Thanks for using <strong>Technocracy</strong>.This blog is written by you on ${moment(blog.createdOn).format('LLLL')} and I want to inform you that your blog has been put on hold for some further clarification, so please have patience, we will keep you updated about your blog.</p>
+                                                                                                            <p>This blog is written by you on ${moment(blog.createdOn).format('LLLL')} and I want to inform you that your blog has been put on hold for some further clarification, so please have patience, we will keep you updated about your blog.</p>
                                                                                                             <br/>
                                                                                                         </div>
                                                                                                     </div>

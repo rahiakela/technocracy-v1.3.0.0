@@ -151,16 +151,19 @@ export class BlogController {
    * @response: return json Blog[] array
    */
   public getAllPendingBlogs(req: Request, res: Response, next: NextFunction) {
+
     // query all pending blog
-    Blog.find({ status: 'pending' })
+      Blog.find({})
+      .where('status').equals('pending')
+      .sort('-createdOn')
       .populate({
         // populate profile instance with user
         path: 'profile',
-        populate: { path: 'user', component: 'User' },
+        populate: { path: 'user', component: 'User' }
       })
       .exec()
       .then(blogs => {
-        res.json(blogs.map(blog => blog.toObject()));
+        res.json(blogs);
         next();
       })
       .catch(next);
@@ -308,9 +311,11 @@ export class BlogController {
             MailSender.sendMail("post-blog", mailOptions.set("recipient", process.env.ADMIN_MAIL_ID));
             break;
           case 'on_hold':
+              // send blog on hold mail notification to author
             MailSender.sendMail("on-hold-blog", mailOptions.set("recipient", blog.profile.user));
             break;
           case 'rejected':
+            // send blog reject mail notification to author
             MailSender.sendMail("rejected-blog", mailOptions.set("recipient", blog.profile.user));
             break;
         }

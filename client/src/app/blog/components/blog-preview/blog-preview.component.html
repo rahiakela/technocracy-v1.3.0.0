@@ -19,7 +19,16 @@
           @{{utilService.getUserCompany(blog?.profile?.employments)}}
         </small>
       </mat-card-title>
-      <mat-card-subtitle style="color: #9594b1;">{{showSkillsWithHashTag(blog?.profile?.skills)}}</mat-card-subtitle>
+
+      <mat-card-subtitle style="color: #9594b1;">
+        <span *ngFor="let tag of blog?.tags">
+          <i class="fa fa-tag" aria-hidden="true">{{tag}}</i>
+        </span>
+      </mat-card-subtitle>
+      <mat-card-subtitle style="color: #c1bbcc;">
+        Last Updated: {{blog?.updatedOn ? formatDate(blog?.updatedOn) : formatDate(blog?.createdOn)}}
+      </mat-card-subtitle>
+
     </mat-card-header>
 
     <mat-divider></mat-divider>

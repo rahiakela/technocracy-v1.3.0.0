@@ -50,7 +50,7 @@ export class MyQuestionComponent implements OnInit {
   questionActionHandler(data : any) {
     switch (data.action) {
       case 'post':
-        this.store$.dispatch(new QuestionActions.ModifyQuestion({questionId: data.questionId, actionType: 'pending'}));
+        this.store$.dispatch(new QuestionActions.ModifyQuestion({data}));
         break;
       case 'delete':
         this.store$.dispatch(new QuestionActions.RemoveQuestion({questionId: data.questionId}));

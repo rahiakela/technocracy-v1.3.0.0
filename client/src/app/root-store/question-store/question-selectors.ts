@@ -17,6 +17,9 @@ export const getSelectedQuestionId  = (state: State): string => state.selectedQu
 // Returns the question list written by author state.
 export const getQuestionList  = (state: State): Question[] => state.questionList;
 
+// Returns the pending question list state.
+export const getPendingQuestionList  = (state: State): Question[] => state.pendingQuestionList;
+
 // Returns the question state.
 export const selectQuestionState: MemoizedSelector<object, State> = createFeatureSelector('question');
 
@@ -53,3 +56,6 @@ export const selectQuestionIsLoaded: MemoizedSelector<object, boolean> = createS
 
 // Returns the question list written by author.
 export const selectQuestionListAskedByUser: MemoizedSelector<object, Question[]> = createSelector(selectQuestionState, getQuestionList);
+
+// Returns the pending question list.
+export const selectPendingQuestionList: MemoizedSelector<object, Question[]> = createSelector(selectQuestionState, getPendingQuestionList);

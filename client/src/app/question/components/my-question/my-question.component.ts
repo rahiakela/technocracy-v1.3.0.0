@@ -61,7 +61,7 @@ export class MyQuestionComponent implements OnInit, OnChanges {
 
   preview() {
     const question = this.getSelectedQuestion(this.title);
-    this.router.navigate(['question/preview', question._id]);
+    this.router.navigate(['question/preview', question._id, 'my-question']);
   }
 
   edit() {

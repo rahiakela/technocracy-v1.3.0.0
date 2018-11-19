@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BlogService} from '../../core/services/blog.service';
 import {Actions, Effect, ofType} from '@ngrx/effects';
-import {asyncScheduler, empty, Observable, of as observableOf} from 'rxjs';
+import {asyncScheduler, Observable, empty ,of as observableOf} from 'rxjs';
 import {Action} from '@ngrx/store';
 import * as BlogActions from './blog-actions';
 import * as BlogSelectors from './blog-selectors';
@@ -25,7 +25,7 @@ export class BlogEffects {
         .getBlogs(0)
         .pipe(
           map(blogs => new BlogActions.LoadBlogListSuccess({blogs})),
-          catchError(error => observableOf(new BlogActions.LoadBlogListFailure({error})))
+          catchError((error: any) => observableOf(new BlogActions.LoadBlogListFailure({error})))
         )
     )
   );
@@ -66,6 +66,19 @@ export class BlogEffects {
   );
 
   @Effect()
+  loadPendingBlogList$: Observable<Action> = this.actions$.pipe(
+    ofType<BlogActions.LoadPendingBlogList>(BlogActions.ActionTypes.LOAD_PENDING_BLOG_LIST),
+    switchMap(() =>
+      this.blogService
+        .loadPendingBlogList()
+        .pipe(
+          map(blogs => new BlogActions.LoadPendingBlogListSuccess({blogs})),
+          catchError(error => observableOf(new BlogActions.LoadPendingBlogListFailure({error})))
+        )
+    )
+  );
+
+  @Effect()
   addBlog$: Observable<Action> = this.actions$.pipe(
     ofType<BlogActions.AddBlog>(BlogActions.ActionTypes.ADD_BLOG),
     switchMap(action =>
@@ -83,7 +96,7 @@ export class BlogEffects {
     ofType<BlogActions.ModifyBlog>(BlogActions.ActionTypes.MODIFY_BLOG),
     switchMap(action =>
       this.blogService
-        .modifyBlog(action.payload.blogId, action.payload.actionType)
+        .modifyBlog(action.payload.data.blogId, action.payload.data.action)
         .pipe(
           map(blog => new BlogActions.ModifyBlogSuccess({blog: blog})),
           catchError(error => observableOf(new BlogActions.ModifyBlogFailure({error})))
@@ -99,7 +112,7 @@ export class BlogEffects {
         .editBlog(action.payload.blogId, action.payload.blog)
         .pipe(
           map(blog => new BlogActions.EditBlogSuccess({blog: blog})),
-          catchError(error => observableOf(new BlogActions.EditBlogFailure({error})))
+          catchError((error: any) => observableOf(new BlogActions.EditBlogFailure({error})))
         )
     )
   );

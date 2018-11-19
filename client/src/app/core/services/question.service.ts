@@ -26,6 +26,10 @@ export class QuestionService {
     return this.sendRequest('GET', `${this.REST_URL}/question/all/${askedBy}`);
   }
 
+  loadPendingQuestionList(): Observable<Question[]> {
+    return this.sendRequest('GET', `${this.REST_URL}/question/all/pending/list`);
+  }
+
   addQuestion(question: any): Observable<Question> {
     return this.sendRequest('POST', `${this.REST_URL}/question/${question.askedBy}/${question.actionType}`, question);
   }

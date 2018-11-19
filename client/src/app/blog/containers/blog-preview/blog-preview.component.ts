@@ -17,28 +17,40 @@ export class BlogPreviewComponent implements OnInit {
   public blog: Blog;
 
   blogId: string;
+  previewType: string;
 
   constructor(private store$: Store<RootStoreState.State>, private activeRoute: ActivatedRoute) {
     this.activeRoute.params.subscribe(params => {
       // get blog id from route
       this.blogId = params['id'];
+      this.previewType = params['type'];
       // dispatch blog preview action using blog id
       this.store$.dispatch(new BlogActions.PreviewBlog({blogId: this.blogId}));
     });
   }
 
   ngOnInit() {
-    // get selected blog review using blog id
+    // get selected blog review using blog id based on preview type
     if (this.blogId) {
-      this.store$.pipe(select(BlogSelectors.selectBlogListWrittenByAuthor))
-        .subscribe(blogList => {
-          this.blog = Object.values(blogList).find(blog => blog._id === this.blogId);
-        });
+      switch (this.previewType) {
+        case 'my-blog':
+          this.store$.pipe(select(BlogSelectors.selectBlogListWrittenByAuthor))
+            .subscribe(blogList => {
+              this.blog = Object.values(blogList).find(blog => blog._id === this.blogId);
+            });
+          break;
+        case 'pending':
+          this.store$.pipe(select(BlogSelectors.selectPendingBlogList))
+            .subscribe(pendingBlogList => {
+              this.blog = Object.values(pendingBlogList).find(blog => blog._id === this.blogId);
+            });
+          break;
+      }
     }
   }
 
   // handle blog actions such as post and delete
   blogActionHandler(data : any) {
-    this.store$.dispatch(new BlogActions.ModifyBlog({blogId: data.blogId, actionType: 'pending'}));
+    this.store$.dispatch(new BlogActions.ModifyBlog({data: {blogId: data.blogId, action: 'pending'}}));
   }
 }

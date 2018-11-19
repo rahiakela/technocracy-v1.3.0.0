@@ -31,6 +31,11 @@ export function blogReducer(state = initialState, action: Actions): State {
       return {...state, isLoading: true, blogList: []};
     }
 
+    case ActionTypes.LOAD_PENDING_BLOG_LIST: {
+      // clear previous blog list
+      return {...state, isLoading: true, pendingBlogList: []};
+    }
+
     // Load blog reducer
     case ActionTypes.LOAD_BLOG: {
       return {
@@ -64,21 +69,30 @@ export function blogReducer(state = initialState, action: Actions): State {
       }
     }
 
+    case ActionTypes.LOAD_PENDING_BLOG_LIST_SUCCESS: {
+      return {
+        ...state,
+        pendingBlogList: Object.assign({}, state.pendingBlogList, action.payload.blogs),
+        isLoading: false,
+        loaded: true
+      }
+    }
+
     case ActionTypes.LOAD_BLOG_SUCCESS: {
       return {...state, isLoading: false};
     }
 
     case ActionTypes.ADD_BLOG_SUCCESS: {
+      const blogList = Object.assign(state.blogList, action.payload.blog);
       return {
-        ...blogAdapter.addOne(action.payload.blog, state),
+        ...state,
+        blogList: blogList,
         isLoading: false,
         loaded: true
       };
     }
 
-    case ActionTypes.MODIFY_BLOG_SUCCESS:
-    case ActionTypes.EDIT_BLOG_SUCCESS:
-    case ActionTypes.REMOVE_BLOG_SUCCESS:  {
+    case ActionTypes.EDIT_BLOG_SUCCESS:  {
       const updatedBlogList = Object.values(state.blogList)
         .map(blog => {
           if (blog._id === action.payload.blog._id) {
@@ -86,6 +100,41 @@ export function blogReducer(state = initialState, action: Actions): State {
           }
           return blog;
         });
+
+      return {
+        ...state,
+        blogList: updatedBlogList,
+        isLoading: false,
+        loaded: true
+      };
+    }
+
+    case ActionTypes.MODIFY_BLOG_SUCCESS: {
+      const updatedBlogList = Object.values(state.blogList)
+        .map(blog => {
+          if (blog._id === action.payload.blog._id) {
+            return blog = action.payload.blog;
+          }
+          return blog;
+        });
+
+      // filtering pending blog list for pending status only
+      const updatedPendingBlogList = Object.values(state.pendingBlogList)
+        .filter(blog => blog._id !== action.payload.blog._id);
+
+      return {
+        ...state,
+        blogList: updatedBlogList,
+        pendingBlogList: updatedPendingBlogList,
+        isLoading: false,
+        loaded: true
+      };
+    }
+
+    case ActionTypes.REMOVE_BLOG_SUCCESS:  {
+
+      const updatedBlogList = Object.values(state.blogList)
+        .filter(blog => blog._id !== action.payload.blog._id);
 
       return {
         ...state,
@@ -249,6 +298,7 @@ export function blogReducer(state = initialState, action: Actions): State {
     // Blog failure reducer
     case ActionTypes.LOAD_BLOG_LIST_FAILURE:
     case ActionTypes.LOAD_BLOG_LIST_BY_AUTHOR_FAILURE:
+    case ActionTypes.LOAD_PENDING_BLOG_LIST_FAILURE:
     case ActionTypes.LOAD_BLOG_FAILURE:
     case ActionTypes.ADD_BLOG_FAILURE:
     case ActionTypes.EDIT_BLOG_FAILURE:

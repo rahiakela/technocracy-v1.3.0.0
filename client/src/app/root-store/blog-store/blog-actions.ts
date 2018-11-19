@@ -11,9 +11,13 @@ export enum ActionTypes {
   LOAD_BLOG_FAILURE       = '[Blog] Load Blog Failure',
   LOAD_BLOG_SUCCESS       = '[Blog] Load Blog Success',
 
-  LOAD_BLOG_LIST_BY_AUTHOR = '[Blog] Load Blog List Written by Author',
-  LOAD_BLOG_LIST_BY_AUTHOR_FAILURE = '[Blog] Load Blog List Written by Author Failure',
+  LOAD_BLOG_LIST_BY_AUTHOR          = '[Blog] Load Blog List Written by Author',
+  LOAD_BLOG_LIST_BY_AUTHOR_FAILURE  = '[Blog] Load Blog List Written by Author Failure',
   LOAD_BLOG_LIST_BY_AUTHOR_SUCCESS  = '[Blog] Load Blog List Written by Author Success',
+
+  LOAD_PENDING_BLOG_LIST          = '[Blog] Load Pending Blog List',
+  LOAD_PENDING_BLOG_LIST_FAILURE  = '[Blog] Load Pending Blog List Failure',
+  LOAD_PENDING_BLOG_LIST_SUCCESS  = '[Blog] Load Pending Blog List Success',
 
   ADD_BLOG                = '[Blog] Add Blog',
   ADD_BLOG_FAILURE        = '[Blog] Add Blog Failure',
@@ -126,6 +130,20 @@ export class LoadBlogListByAuthorSuccess implements Action{
   constructor(public payload: {blogs: Blog[]}) {}
 }
 
+export class LoadPendingBlogList  implements Action{
+  readonly type = ActionTypes.LOAD_PENDING_BLOG_LIST;
+}
+export class LoadPendingBlogListFailure implements Action{
+  readonly type = ActionTypes.LOAD_PENDING_BLOG_LIST_FAILURE;
+
+  constructor(public payload:{ error: string}) {}
+}
+export class LoadPendingBlogListSuccess implements Action{
+  readonly type = ActionTypes.LOAD_PENDING_BLOG_LIST_SUCCESS;
+
+  constructor(public payload: {blogs: Blog[]}) {}
+}
+
 export class AddBlog  implements Action{
   readonly type = ActionTypes.ADD_BLOG;
 
@@ -145,7 +163,7 @@ export class AddBlogSuccess implements Action{
 export class ModifyBlog  implements Action{
   readonly type = ActionTypes.MODIFY_BLOG;
 
-  constructor(public payload: {blogId: string, actionType: string}) {}
+  constructor(public payload: {data: any}) {}
 }
 export class ModifyBlogFailure implements Action{
   readonly type = ActionTypes.MODIFY_BLOG_FAILURE;
@@ -379,6 +397,9 @@ export type Actions = LoadBlogList
   | LoadBlogListByAuthor
   | LoadBlogListByAuthorSuccess
   | LoadBlogListByAuthorFailure
+  | LoadPendingBlogList
+  | LoadPendingBlogListSuccess
+  | LoadPendingBlogListFailure
   | AddBlog
   | AddBlogFailure
   | AddBlogSuccess
