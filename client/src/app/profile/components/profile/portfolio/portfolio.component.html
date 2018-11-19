@@ -167,7 +167,7 @@
           <mat-grid-tile [colspan]="breakpoint" [rowspan]="2">
             <mat-form-field floatLabel="never" [style.width]="isMobileView ? '73%' : '86%'">
               <mat-label>About You&nbsp;:&nbsp;</mat-label>
-              <textarea [formControl]="description" style="height: 70px;border: 1px solid #999999;margin-bottom: -6px;"
+              <textarea [formControl]="description" style="height: 70px;border: 1px solid #999999;margin-bottom: -6px;max-height: max-content;"
                         placeholder="Please describe yourself..."
                         aria-label="About You"
                         matInput
