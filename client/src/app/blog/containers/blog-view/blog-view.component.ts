@@ -1,18 +1,17 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
 import {Blog} from '../../../shared/models/blog-model';
 import {select, Store} from '@ngrx/store';
 import {RootStoreState} from '../../../root-store';
 import {BlogSelectors, BlogActions} from '../../../root-store/blog-store';
 import {AuthSelectors} from '../../../root-store/auth-store';
 import {ActivatedRoute} from '@angular/router';
-import {User} from "../../../shared/models/user-model";
+import {User} from '../../../shared/models/user-model';
 
 @Component({
   selector: 'tech-blog-view-container',
   template: `
     <tech-blog-view 
-      [blog]="blog$ | async"
+      [blog]="blog"
       (onBlogActionTriggered)="blogActionHandler($event)"
     >
     </tech-blog-view>
@@ -20,7 +19,7 @@ import {User} from "../../../shared/models/user-model";
   styles: []
 })
 export class BlogViewComponent implements OnInit, OnChanges {
-  blog$: Observable<Blog>;
+  blog: Blog;
 
   blogId: string;
   authenticatedUser: User;
@@ -36,7 +35,19 @@ export class BlogViewComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     // select blog using blog id
-    this.blog$ = this.store$.pipe(select(BlogSelectors.selectBlogById));
+    this.store$.pipe(select(BlogSelectors.selectBlogById))
+      .subscribe(blog => {
+        // if the blog is not already loaded then loading blog data from route resolver
+        if (blog) {
+            this.blog = blog;
+        } else {
+          this.activeRoute.params.subscribe(params => {
+            // loading blog data from route resolver
+            this.blog = this.activeRoute.snapshot.data['blog'];
+            // console.log('Blog:', this.blog);
+          });
+        }
+      });
 
     // select authenticated user
     this.store$.pipe(select(AuthSelectors.selectAuthenticatedUser))
@@ -45,7 +56,19 @@ export class BlogViewComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     // select blog using blog id
-    this.blog$ = this.store$.pipe(select(BlogSelectors.selectBlogById));
+    this.store$.pipe(select(BlogSelectors.selectBlogById))
+      .subscribe(blog => {
+        // if the blog is not already loaded then loading blog data from route resolver
+        if (blog) {
+          this.blog = blog;
+        } else {
+          this.activeRoute.params.subscribe(params => {
+            // loading blog data from route resolver
+            this.blog = this.activeRoute.snapshot.data['blog'];
+            // console.log('Blog:', this.blog);
+          });
+        }
+      });
   }
 
   // handle blog actions such as like, comment and reply and dispatch action to store

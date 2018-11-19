@@ -7,10 +7,11 @@ import {AuthenticationGuard} from "../core/services/authentication.guard";
 import {QuestionPreviewComponent} from "./containers/question-preview/question-preview.component";
 import {EditQuestionComponent} from "./containers/edit-question/edit-question.component";
 import {PendingQuestionComponent} from "./containers/pending-question/pending-question.component";
+import {QuestionResolver} from './resolver/question-resolver';
 
 const routes: Routes = [
   {path: '', redirectTo: ':id', pathMatch: 'full'},
-  {path: ':id', component: QuestionViewContainerComponent},
+  {path: ':id', component: QuestionViewContainerComponent, resolve: {question: QuestionResolver}},
   {path: 'write/new', component: WriteQuestionComponent, canActivate: [AuthenticationGuard]},
   {path: 'list/view', component: MyQuestionComponent, canActivate: [AuthenticationGuard]},
   {path: 'preview/:id/:type', component: QuestionPreviewComponent},

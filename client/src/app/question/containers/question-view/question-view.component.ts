@@ -1,7 +1,6 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {RootStoreState} from '../../../root-store';
-import {Observable} from 'rxjs';
 import {Question} from '../../../shared/models/question-model';
 import {ActivatedRoute} from "@angular/router";
 import {QuestionActions, QuestionSelectors} from "../../../root-store/question-store";
@@ -12,14 +11,14 @@ import {AuthSelectors} from '../../../root-store/auth-store';
   selector: 'tech-question-view-container',
   template: `
     <tech-question-view 
-      [question]="question$ | async"
+      [question]="question"
       (onQuestionActionTriggered)="questionActionHandler($event)"
     ></tech-question-view>
   `
 })
 export class QuestionViewContainerComponent implements OnInit, OnChanges {
 
-  question$: Observable<Question>;
+  question: Question;
 
   questionId: string;
   authenticatedUser: User;
@@ -36,7 +35,19 @@ export class QuestionViewContainerComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     // select question using question id
-    this.question$ = this.store$.pipe(select(QuestionSelectors.selectQuestionById));
+    this.store$.pipe(select(QuestionSelectors.selectQuestionById))
+      .subscribe(question => {
+        // if the question is not already loaded then loading question data from route resolver
+        if (question) {
+          this.question = question;
+        } else {
+          this.activeRoute.params.subscribe(params => {
+            // loading question data from route resolver
+            this.question = this.activeRoute.snapshot.data['question'];
+            // console.log('Question:', this.question);
+          });
+        }
+      });
 
     // select authenticated user
     this.store$.pipe(select(AuthSelectors.selectAuthenticatedUser))
@@ -45,7 +56,19 @@ export class QuestionViewContainerComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     // select question using question id
-    this.question$ = this.store$.pipe(select(QuestionSelectors.selectQuestionById));
+    this.store$.pipe(select(QuestionSelectors.selectQuestionById))
+      .subscribe(question => {
+        // if the question is not already loaded then loading question data from route resolver
+        if (question) {
+          this.question = question;
+        } else {
+          this.activeRoute.params.subscribe(params => {
+            // loading question data from route resolver
+            this.question = this.activeRoute.snapshot.data['question'];
+            // console.log('Question:', this.question);
+          });
+        }
+      });
   }
 
   // handle question actions such as like, comment and reply and dispatch action to store
