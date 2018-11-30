@@ -12,6 +12,7 @@ import {RECAPTCHA_SETTINGS, RecaptchaModule, RecaptchaSettings} from "ng-recaptc
 import {RecaptchaFormsModule} from "ng-recaptcha/forms";
 import { BlogPreviewComponent } from './components/blog-preview/blog-preview.component';
 import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
+import {AdsenseModule} from "ng2-adsense";
 
 // ref: https://www.npmjs.com/package/ng-recaptcha
 const GLOBAL_RECAPTCHA_SETTINGS: RecaptchaSettings = { siteKey: '6LdMVz4UAAAAAClv3WheCRrgtoDyPUtFfGhikGu4' };
@@ -22,6 +23,9 @@ const GLOBAL_RECAPTCHA_SETTINGS: RecaptchaSettings = { siteKey: '6LdMVz4UAAAAACl
     FormsModule,
     ReactiveFormsModule,
     RecaptchaModule.forRoot(),
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-1462231592237712'
+    }),
     RecaptchaFormsModule,
     BlogRoutingModule,
     SharedModule,

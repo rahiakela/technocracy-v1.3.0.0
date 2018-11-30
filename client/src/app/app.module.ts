@@ -13,7 +13,6 @@ import {isPlatformBrowser} from "@angular/common";
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { RootStoreModule } from './root-store';
-import {MatCheckboxModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -29,8 +28,7 @@ import {MatCheckboxModule} from "@angular/material";
     RootStoreModule,
     SharedModule,
     CoreModule,
-    AppMaterialModule,
-    MatCheckboxModule
+    AppMaterialModule
   ],
   providers: [
     // httpInterceptorProviders

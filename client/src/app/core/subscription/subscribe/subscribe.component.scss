@@ -1,0 +1,50 @@
+@import "../../../app.component";
+
+$subscribe-width: 100%;
+
+.tech-subscribe-card{
+  /*margin: auto;
+  width: 315px;*/
+  /*width: 37%; need to adjust mobile device*/
+  margin-top: 20px;
+}
+h4{
+  color: $main-color;
+}
+.tech-subscribe-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-subscribe-container > * {
+  width: $subscribe-width;
+}
+
+.tech-card-content{
+  margin: 0 8px;
+}
+
+.tech-subscribe-form{
+  display: flex;
+  flex-direction: column;
+}
+.tech-subscribe-loading{
+  margin: auto;
+  padding-top: 10px;
+  /*margin-left: 140px;
+  margin-top: 10px;*/
+}
+
+.tech-align-center{
+  color: darkgray;
+  margin-left: 100px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.tech-subscribe-error{
+  margin: auto;
+  color: red;
+  background-color: antiquewhite;
+  /* margin-left: 20px; */
+}

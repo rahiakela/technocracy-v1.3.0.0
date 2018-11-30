@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {AppMaterialModule} from '../app-material.module';
-import {SERVICES} from './services';
 import {HttpClientModule} from '@angular/common/http';
 import {SharedModule} from '../shared/shared.module';
 import {BrowserModule} from '@angular/platform-browser';
@@ -30,6 +29,8 @@ import {
   SocialLoginModule
 } from "angularx-social-login";
 import {UserAuthObserver} from "./observer/user-auth-observer";
+import {SubscribeComponent} from "./subscription/subscribe/subscribe.component";
+import {UnsubscribeComponent} from "./subscription/unsubscribe/unsubscribe.component";
 
 // ref: https://www.npmjs.com/package/ng-recaptcha
 const GLOBAL_RECAPTCHA_SETTINGS: RecaptchaSettings = { siteKey: '6LdMVz4UAAAAAClv3WheCRrgtoDyPUtFfGhikGu4' };
@@ -42,7 +43,7 @@ export function socialConfig() {
     },
     {
       id: FacebookLoginProvider.PROVIDER_ID,
-      provider: new FacebookLoginProvider('156942918183512')
+      provider: new FacebookLoginProvider('538035956660855')
     },
     /*{
       id: LinkedInLoginProvider.PROVIDER_ID,
@@ -81,7 +82,9 @@ export function socialConfig() {
     MenuBarComponent,
     AccountVerificationComponent,
     AccountActivateComponent,
-    ResetPassComponent
+    ResetPassComponent,
+    SubscribeComponent,
+    UnsubscribeComponent
   ],
   // Mat Dialog entry components config
   entryComponents: [SignupComponent, TermsAndConditionsComponent, PrivacyPolicyComponent],

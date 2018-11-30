@@ -150,4 +150,14 @@ export class UtilService {
     }
     return;
   }
+
+  // ref: https://ourcodeworld.com/articles/read/376/how-to-strip-html-from-a-string-extract-only-text-content-in-javascript
+  stripedHtml(html) {
+    if (html) {
+      const stripedHtml = html.replace(/<[^>]+>/g, '');
+      const decodedStripedHtml = this.decodeHTML(stripedHtml);
+      return decodedStripedHtml;
+    }
+    return;
+  }
 }

@@ -8,6 +8,8 @@ import {ForgotPassComponent} from "./core/auth/forgot-pass/forgot-pass.component
 import {AccountVerificationComponent} from "./core/auth/account-verification/account-verification.component";
 import {AccountActivateComponent} from "./core/auth/account-activate/account-activate.component";
 import {ResetPassComponent} from "./core/auth/reset-pass/reset-pass.component";
+import {SubscribeComponent} from "./core/subscription/subscribe/subscribe.component";
+import {UnsubscribeComponent} from "./core/subscription/unsubscribe/unsubscribe.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path: 'account/activated', component: AccountActivateComponent },
   {path: 'account/forgot/pass', component: ForgotPassComponent },
   {path: 'account/reset/pass', component: ResetPassComponent },
+  {path: 'subscribe', component: SubscribeComponent },
+  {path: 'unsubscribe', component: UnsubscribeComponent },
   {path: 'blog', loadChildren: './blog/blog.module#BlogModule'}, //lazy load blog module
   {path: 'question', loadChildren: './question/question.module#QuestionModule'}, //lazy load question module
   {path: 'profile', loadChildren: './profile/profile.module#ProfileModule'}, //lazy load profile module

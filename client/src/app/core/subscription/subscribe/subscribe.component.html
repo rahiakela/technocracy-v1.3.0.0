@@ -1,0 +1,54 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-card class="tech-subscribe-card">
+
+    <div *ngIf="subscribed">
+      <mat-card-header class="tech-subscribe-card-header">
+        <mat-card-title>
+          <h4>Thanks for subscribing Technocracy Blog Community!</h4>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="tech-card-content">
+        <p>Keep an eye on your email for our next blog.</p>
+        <mat-divider></mat-divider>
+        <div style="margin-top: 20px;">
+          <tech-share [shareType]="'subscribe'" [data]="subscription"></tech-share>
+        </div>
+        <p class="text-center">Spread the word, let your friends know about <strong>Technocracy Blog Forum!</strong></p>
+      </mat-card-content>
+    </div>
+
+    <div *ngIf="!subscribed">
+      <mat-card-header class="tech-subscribe-card-header">
+        <mat-card-title>
+          <h4>Subscribe for Technocracy Blog Community!</h4>
+        </mat-card-title>
+        <mat-card-subtitle style="color: #9594b1;">
+          <p>Get our round up of technical blog and questionnaires and these technical happenings delivered to your inbox once you subscribed.</p>
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content class="tech-card-content">
+        <form [formGroup]="subscribeForm" class="tech-subscribe-form">
+          <mat-form-field>
+            <input matInput [formControl]="email" placeholder="Enter your email here" aria-label="Email">
+            <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+          </mat-form-field>
+
+          <div style="margin-left: 150px;">
+            <div *ngIf="loading" class="tech-subscribe-loading">
+              <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+            </div>
+            <div *ngIf="error" fxFlexAlign="center" class="tech-subscribe-error">
+              <span style="color: red;">An error has occurred while saving your subscription.</span>
+            </div>
+          </div>
+
+          <button (click)="subscribe()" [disabled]="!email.valid" mat-raised-button color="primary">Subscribe</button>
+        </form>
+      </mat-card-content>
+    </div>
+
+  </mat-card>
+</div>

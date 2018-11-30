@@ -41,8 +41,10 @@ export class ShareComponent implements OnInit {
     if (this.data) {
       if (this.shareType === 'blog') {
         this.url = `https://www.tecknocracy.com/blog/${this.data._id}`;
-      } else {
+      } else if (this.shareType === 'question') {
         this.url = `https://www.tecknocracy.com/question/${this.data._id}`;
+      } else {
+        this.url = `https://www.tecknocracy.com`;
       }
       this.title = this.data.title;
       this.titleService.setTitle(this.data.title);
