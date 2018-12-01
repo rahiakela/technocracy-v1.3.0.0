@@ -52,7 +52,8 @@ export class BlogViewComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-
+    // add meta tag into page header
+    this.addMetaTag();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -61,15 +62,6 @@ export class BlogViewComponent implements OnInit, OnChanges {
     // console.log('prev value: ', blog.previousValue);
     // console.log('got name: ', blog.currentValue);
     this.blog = blog.currentValue;
-  }
-
-  blogSoloView() {
-    if (this.blog !== undefined) {
-      // setting page title
-      this.setTitle(this.blog.title);
-      // add meta tag description etc.
-      this.addMetaTag(this.blog);
-    }
   }
 
   like() {
@@ -152,27 +144,38 @@ export class BlogViewComponent implements OnInit, OnChanges {
     return moment(submitDate).format('LLL');
   }
 
-  public setTitle( newTitle: string) {
-    this.titleService.setTitle( newTitle );
-  }
+  addMetaTag() {
+    if (this.blog) {
+      // SEO metadata
+      this.titleService.setTitle(this.blog.title);
+      this.meta.addTag({name: 'description', content: this.blog.description});
 
-  addMetaTag(blog: Blog) {
-    /*
-    * 1-https://alligator.io/angular/meta-tags/
-    * 2-http://www.talkingdotnet.com/how-to-set-html-meta-tags-using-angular-4/
-    * */
-    // setting page's meta tag
-    this.meta.updateTag({property: 'og:title', content: this.blog.title});
-    this.meta.updateTag({property: 'og:description', content: this.blog.description});
-    this.meta.updateTag({property: 'og:url', content: `https://www.tecknocracy.com/blog/${this.blog._id}`});
-    this.meta.updateTag({property: 'og:image', content: this.blog.image});
-    this.meta.updateTag({property: 'og:image:secure_url', content: this.blog.image});
-    this.meta.updateTag({property: 'article:published_time', content: this.blog.publishedOn === null ? '' : moment(this.blog.publishedOn, 'YYYYMMDDHHmmss').toString()});
-    this.meta.updateTag({property: 'article:modified_time', content: this.blog.updatedOn === null ? '' : moment(this.blog.updatedOn, 'YYYYMMDDHHmmss').toString()});
+      /*
+      * 1-https://alligator.io/angular/meta-tags/
+      * 2-http://www.talkingdotnet.com/how-to-set-html-meta-tags-using-angular-4/
+      * */
+      // setting page's meta tag
+      this.meta.updateTag({property: 'og:title', content: this.blog.title});
+      this.meta.updateTag({property: 'og:description', content: this.blog.description});
+      this.meta.updateTag({property: 'og:url', content: `https://www.tecknocracy.com/blog/${this.blog._id}`});
+      this.meta.updateTag({property: 'og:image', content: this.blog.image});
+      this.meta.updateTag({property: 'og:image:secure_url', content: 'https://s3.amazonaws.com/tecknocracy/images/technocracy.png'});
+      this.meta.updateTag({property: 'article:published_time', content: this.blog.publishedOn === null ? '' : moment(this.blog.publishedOn, 'YYYYMMDDHHmmss').toString()});
+      this.meta.updateTag({property: 'article:modified_time', content: this.blog.updatedOn === null ? '' : moment(this.blog.updatedOn, 'YYYYMMDDHHmmss').toString()});
 
-    // adding all blog keywords into  article tag
-    this.blog.tags.forEach(tag => {
-      this.meta.addTag({property: 'article:tag', content: tag});
-    });
+      // adding all blog keywords into  article tag
+      this.blog.tags.forEach(tag => {
+        this.meta.addTag({property: 'article:tag', content: tag});
+      });
+
+      // Twitter metadata
+      // this.meta.addTag({name: 'twitter:card', content: 'summary'});
+      // this.meta.addTag({name: 'twitter:site', content: '@tecknocracy_inc'});
+      this.meta.updateTag({name: 'twitter:title', content: this.blog.title});
+      this.meta.updateTag({name: 'twitter:description', content: this.blog.description});
+      this.meta.updateTag({name: 'twitter:text:description', content: this.blog.content.length > 300 ? this.utilService.stripedHtml(this.blog.content.substring(0, 300)) : this.utilService.stripedHtml(this.blog.content)});
+      this.meta.updateTag({name: 'twitter:url', content: `https://www.tecknocracy.com/blog/${this.blog._id}`});
+      this.meta.updateTag({name: 'twitter:image', content: this.blog.image});
+    }
   }
 }

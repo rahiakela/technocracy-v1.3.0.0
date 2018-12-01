@@ -55,7 +55,8 @@ export class QuestionViewComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // add meta tag into page header
+    this.addMetaTag(this.question);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -64,22 +65,6 @@ export class QuestionViewComponent implements OnInit {
     // console.log('prev value: ', question.previousValue);
     // console.log('got name: ', question.currentValue);
     this.question = question.currentValue;
-  }
-
-  questionSoloView() {
-    if (this.question !== undefined) {
-      // this.comments = this.question.comments;
-      // this.totalLikes = this.question.likes !== undefined ? this.question.likes.length : 0;
-      // this.totalComments = this.question.comments !== undefined ? this.question.comments.length : 0;
-      // this.totalVoteUp = this.question.voteUp !== undefined ? this.question.voteUp.length : 0;
-      // this.totalVoteDown = this.question.voteDown !== undefined ? this.question.voteDown.length : 0;
-      // this.currentUserId = this.question.askedBy !== undefined ? this.question.askedBy._id : '';
-
-      // setting page title
-      this.setTitle(this.question.title);
-      // setting meta tags
-      this.addMetaTag(this.question);
-    }
   }
 
   like() {
@@ -166,20 +151,31 @@ export class QuestionViewComponent implements OnInit {
     };
   }
 
-  public setTitle( newTitle: string) {
-    this.titleService.setTitle( newTitle );
-  }
-
   addMetaTag(question: Question) {
-    // setting page's meta tag
-    this.meta.updateTag({property: 'og:title', content: question.title});
-    this.meta.updateTag({property: 'og:url', content: `https://www.tecknocracy.com/question/${question._id}`});
-    this.meta.updateTag({property: 'article:published_time', content: this.question.publishedOn === null ? '' : moment(question.publishedOn, 'YYYYMMDDHHmmss').toString()});
-    this.meta.updateTag({property: 'article:modified_time', content: this.question.updatedOn === null ? '' : moment(question.updatedOn, 'YYYYMMDDHHmmss').toString()});
+    if (this.question) {
+      // SEO metadata
+      this.titleService.setTitle(this.question.title);
+      this.meta.addTag({name: 'description', content: question.title});
 
-    // adding all blog keywords into  article tag
-    question.tags.forEach(tag => {
-      this.meta.addTag({property: 'article:tag', content: tag});
-    });
+      // setting page's meta tag
+      this.meta.updateTag({property: 'og:title', content: question.title});
+      this.meta.updateTag({property: 'og:url', content: `https://www.tecknocracy.com/question/${question._id}`});
+      this.meta.updateTag({property: 'article:published_time', content: this.question.publishedOn === null ? '' : moment(question.publishedOn, 'YYYYMMDDHHmmss').toString()});
+      this.meta.updateTag({property: 'article:modified_time', content: this.question.updatedOn === null ? '' : moment(question.updatedOn, 'YYYYMMDDHHmmss').toString()});
+
+      // adding all blog keywords into  article tag
+      question.tags.forEach(tag => {
+        this.meta.addTag({property: 'article:tag', content: tag});
+      });
+
+      // Twitter metadata
+      // this.meta.addTag({name: 'twitter:card', content: 'summary'});
+      // this.meta.addTag({name: 'twitter:site', content: '@tecknocracy_inc'});
+      this.meta.updateTag({name: 'twitter:title', content: question.title});
+      this.meta.updateTag({name: 'twitter:description', content: question.content.length > 150 ? this.utilService.stripedHtml(question.content.substring(0, 150)) : this.utilService.stripedHtml(question.content)});
+      this.meta.updateTag({name: 'twitter:text:description', content: question.content.length > 150 ? this.utilService.stripedHtml(question.content.substring(0, 150)) : this.utilService.stripedHtml(question.content)});
+      this.meta.updateTag({name: 'twitter:url', content: `https://www.tecknocracy.com/question/${question._id}`});
+      // this.meta.addTag({name: 'twitter:image', content: 'https://s3.amazonaws.com/tecknocracy/images/technocracy.png'});
+    }
   }
 }
