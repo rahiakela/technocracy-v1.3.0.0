@@ -26,6 +26,10 @@ export function authReducer(state = initialState, action: Actions): State {
     case ActionTypes.UPDATE_PROFILE_PHOTO:
       return {...state, isLoading: true};
 
+    case ActionTypes.SUBSCRIBE_EMAIL_NOTIFICATION:
+    case ActionTypes.UNSUBSCRIBE_EMAIL_NOTIFICATION:
+      return {...state, isLoading: true, subscribed: false, error: null};
+
     case ActionTypes.LOGIN_SUCCESS:
     case ActionTypes.SAVE_SOCIAL_USER_SUCCESS:
     case ActionTypes.UPDATE_PROFILE_PHOTO_SUCCESS:
@@ -72,6 +76,15 @@ export function authReducer(state = initialState, action: Actions): State {
       };
     }
 
+    case ActionTypes.SUBSCRIBE_EMAIL_NOTIFICATION_SUCCESS:
+    case ActionTypes.UNSUBSCRIBE_EMAIL_NOTIFICATION_SUCCESS: {
+      return {
+        ...state,
+        subscribed: action.payload.subscribed,
+        isLoading: false
+      }
+    }
+
     case ActionTypes.LOGIN_FAILURE:
     case ActionTypes.SIGN_UP_FAILURE:
     case ActionTypes.RE_VERIFY_EMAIL_FAILURE:
@@ -91,6 +104,10 @@ export function authReducer(state = initialState, action: Actions): State {
 
     case ActionTypes.AUTHENTICATED_FAILURE:
       return {...state, error: action.payload.error.message, isLoading: false};
+
+    case ActionTypes.SUBSCRIBE_EMAIL_NOTIFICATION_FAILURE:
+    case ActionTypes.UNSUBSCRIBE_EMAIL_NOTIFICATION_FAILURE:
+      return {...state, error: action.payload.error, subscribed: false, isLoading: false};
 
     default:
       return state;

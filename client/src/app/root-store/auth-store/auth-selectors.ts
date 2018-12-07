@@ -32,6 +32,11 @@ const getActivatedUserState = (state: State): any => state.activatedUser;
  */
 export const isAuthenticated = (state: State) => state.authenticated;
 
+/**
+ * Return the subscribed user state
+ */
+export const isSubscribed = (state: State) => state.subscribed;
+
 export const selectAuthState: MemoizedSelector<object, State> = createFeatureSelector<State>('user');
 
 export const selectAuthError: MemoizedSelector<object, any> = createSelector(selectAuthState, getError);
@@ -56,3 +61,7 @@ export const selectActivatedUser: MemoizedSelector<object, User> = createSelecto
  */
 export const selectIsAuthenticated: MemoizedSelector<object, boolean> = createSelector(selectAuthState, isAuthenticated);
 
+/**
+ * Returns true if the user is subscribed
+ */
+export const selectIsSubscribed: MemoizedSelector<object, boolean> = createSelector(selectAuthState, isSubscribed);

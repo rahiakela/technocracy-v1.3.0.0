@@ -8,27 +8,36 @@ import {APP_ID, Inject, NgModule, PLATFORM_ID} from '@angular/core';
 
 import {environment} from "../environments/environment";
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppComponent, SubscriptionDialog} from './app.component';
 import {isPlatformBrowser} from "@angular/common";
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { RootStoreModule } from './root-store';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CookieModule} from "ngx-cookie";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SubscriptionDialog
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'technocracy-v1.3.0'}),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
+    CookieModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     RootStoreModule,
     SharedModule,
     CoreModule,
     AppMaterialModule
+  ],
+  entryComponents: [
+    SubscriptionDialog
   ],
   providers: [
     // httpInterceptorProviders

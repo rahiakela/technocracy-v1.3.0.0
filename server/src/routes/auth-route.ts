@@ -18,5 +18,9 @@ export class AuthRoute {
         app.route(`${this.AUTH_BASE_URL}/reactivate`).put(this.authController.reactivate);
         app.route(`${this.AUTH_BASE_URL}/forgot/pass`).put(this.authController.forgotPassword);
         app.route(`${this.AUTH_BASE_URL}/reset/pass`).put(this.authController.resetPassword);
+
+        // Auth API URLs for email notification
+        app.route(`${this.AUTH_BASE_URL}/subscribe`).put(this.authController.subscribe);
+        app.route(`${this.AUTH_BASE_URL}/unsubscribe`).put(this.authController.unsubscribe);
     }
 }

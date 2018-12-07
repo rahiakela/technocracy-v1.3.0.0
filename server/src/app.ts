@@ -2,13 +2,14 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as mongoose from 'mongoose';
 import * as cors from 'cors';
+import * as errorHandler from 'errorhandler';
+
 import {AppRoute} from './routes/app-route';
 import {BlogRoute} from './routes/blog-route';
 import {QuestionRoute} from './routes/question-route';
 import {AuthRoute} from "./routes/auth-route";
 import {ProfileRoute} from "./routes/profile-route";
 import {AuthToken} from "./auth/auth-token";
-import * as errorHandler from 'errorhandler';
 import {CommentRoute} from "./routes/comment-route";
 
 // Load environment variables from .env file, where API keys and passwords are configured.
@@ -20,6 +21,7 @@ require('./models/profile.model');
 require('./models/user.model');
 require('./models/question.model');
 require('./models/comment.model');
+require('./models/subscription.model');
 
 export class App {
 

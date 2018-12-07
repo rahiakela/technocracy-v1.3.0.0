@@ -1,0 +1,31 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-card class="tech-subscribe-card">
+      
+      <img src="https://s3.amazonaws.com/tecknocracy/images/tech-blog-logo.jpg" height="200">
+
+      <mat-card-header class="tech-subscribe-card-header">
+        <mat-card-title>
+          <h4>Subscribe for Technocracy Blog Forum!</h4>
+        </mat-card-title>
+        <mat-card-subtitle style="color: #9594b1;">
+          <p>Get our round up of technical blog and questionnaires and these technical happenings delivered to your inbox once you subscribed.</p>
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content class="tech-card-content">
+        <form [formGroup]="subscribeForm" class="tech-subscribe-form">
+          <mat-form-field style="width: 100%;">
+            <input matInput [formControl]="email" placeholder="Enter your email here" aria-label="Email">
+            <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+          </mat-form-field>
+
+          <button [disabled]="!email.valid" [mat-dialog-close]="email.value" cdkFocusInitial mat-raised-button color="primary" style="width: 100%;margin-bottom: 10px;">Subscribe</button>
+
+          <span><small>You can update your subscription preferences at any time.</small></span>
+        </form>
+      </mat-card-content>
+
+  </mat-card>
+</div>
+

@@ -4,6 +4,7 @@ import 'reflect-metadata';
 import 'localstorage-polyfill';
 
 import { enableProdMode } from '@angular/core';
+import { renderModuleFactory } from '@angular/platform-server';
 
 import * as express from 'express';
 import { join } from 'path';
@@ -32,13 +33,20 @@ global['localStorage'] = localStorage;
 // Our index.html we'll use as our template
 const template = readFileSync(join(DIST_FOLDER, 'browser', 'index.html')).toString();
 
-// Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
-app.engine('html', ngExpressEngine({
-  bootstrap: AppServerModuleNgFactory,
-  providers: [
-    provideModuleMap(LAZY_MODULE_MAP)
-  ]
-}));
+// ref: https://github.com/angular/angular-cli/wiki/stories-universal-rendering
+app.engine('html', (_, options, callback) => {
+  renderModuleFactory(AppServerModuleNgFactory, {
+    // Our index.html
+    document: template,
+    url: options.req.url,
+    // DI so that we can get lazy-loading to work differently (since we need it to just instantly render it)
+    extraProviders: [
+      provideModuleMap(LAZY_MODULE_MAP)
+    ]
+  }).then(html => {
+    callback(null, html);
+  });
+});
 
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
@@ -49,15 +57,13 @@ app.get('/api/*', (req, res) => {
 });
 
 // Server static files from /browser
-app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
-  maxAge: '1y'
-}));
+app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
 
-// All regular routes use the Universal engine
+// All regular api use the Universal engine
 app.get('*', (req, res) => {
   // update it with providers for 'REQUEST' and 'RESPONSE' for Cookies support
   // ref: https://github.com/salemdar/ngx-cookie
-  res.render('index', {
+  res.render(join(DIST_FOLDER, 'browser', 'index.html'), {
     req,
     res,
     providers: [
@@ -66,6 +72,9 @@ app.get('*', (req, res) => {
     ]
   });
 });
+/*app.get('/index.html', (req, res) => {
+  res.render(join(DIST_FOLDER, 'browser', 'index.html'), { req });
+});*/
 
 // Start up the Node server
 app.listen(PORT, () => {

@@ -8,6 +8,7 @@ export interface State {
   user?: User | null;
   activatedUser?: User | null;
   authenticated?: boolean; // boolean if user is authenticated
+  subscribed: boolean; // boolean if user is subscribed for email notification
   isLoading: boolean;
   loaded: boolean;
   message?: any;
@@ -22,6 +23,7 @@ export interface State {
 export const initialState: State = {
   user: null,
   activatedUser: null,
+  subscribed: false,
   isLoading: false,
   loaded: false,
   message: null,

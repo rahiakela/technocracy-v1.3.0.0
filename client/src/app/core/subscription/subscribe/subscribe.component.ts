@@ -27,10 +27,20 @@ export class SubscribeComponent implements OnInit {
   constructor(private store$: Store<RootStoreState.State>) { }
 
   ngOnInit() {
+    // get isLoading from store
+    this.loading = this.store$.pipe(select(AuthSelectors.selectAuthIsLoading));
+    // get error from store
+    this.error = this.store$.pipe(select(AuthSelectors.selectAuthError));
+
+    // subscribe to get subscribed success
+    this.store$.pipe(select(AuthSelectors.selectIsSubscribed))
+      .subscribe(subscribed => this.subscribed = subscribed);
+
   }
 
   subscribe() {
-
+    // dispatch subscribe action by passing payload
+    this.store$.dispatch(new AuthActions.SubscribeEmailNotification({email: this.email.value}));
   }
 
   getEmailErrorMessage() {

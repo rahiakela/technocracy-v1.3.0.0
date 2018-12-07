@@ -69,7 +69,8 @@ export class SubscribedMailTemplate {
                                             <td class="m_2760232353335187221w22" width="41" style="font-size:1px;line-height:1px">&nbsp;</td>
                                             <td class="m_2760232353335187221mktEditable m_2760232353335187221content m_2760232353335187221mktEditable m_2760232353335187221content" id="m_2760232353335187221edit_text_1" style="font-family:'Proxima Nova',Calibri,Helvetica,sans-serif;font-size:16px;color:#505050;text-align:left;line-height:25.6px;font-weight:normal;text-transform:none">
                                                 <h3>Thanks for subscribing Technocracy Blog Community!</h3>
-                                                <p>Keep an eye on your email for the next blog.</p>
+                                              
+                                                <p>Your subscription is confirmed.Please enjoy, and keep an eye on your email for our next blog.</p>
                                             </td>
                                             <td class="m_2760232353335187221w22" width="41" style="font-size:1px;line-height:1px">&nbsp;</td>
                                         </tr>
@@ -256,7 +257,7 @@ export class SubscribedMailTemplate {
                                                             </div>
                                                             <div class="contentEditableContainer contentTextEditable">
                                                                 <div class="contentEditable" >
-                                                                    <a target='_blank' href='https://www.tecknocracy.com/#/unsubscribe' style='line-height:19px;color:#CCCCCC; font-size:13px;'>Unsubscribe</a>
+                                                                    <a target='_blank' href='https://www.tecknocracy.com/unsubscribe' style='line-height:19px;color:#CCCCCC; font-size:13px;'>Unsubscribe</a>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -285,7 +286,7 @@ export class SubscribedMailTemplate {
         </div>
 
         <p style="text-align:center"><font face="'Proxima Nova', 'Open Sans', 'Helvetica Neue', Calibri, Helvetica, sans-serif" size="1">
-            This email was sent to <a href="mailto:${recipient}" target="_blank">${recipient}</a>. If you no longer wish to receive these emails you may <a href="http://www.tecknocracy.com/#/unsubscribe" target="_blank">unsubscribe</a> at any time.
+            This email was sent to <a href="mailto:${recipient}" target="_blank">${recipient}</a>. If you no longer wish to receive these emails you may <a href="http://www.tecknocracy.com/unsubscribe" target="_blank">unsubscribe</a> at any time.
         </font> </p><div class="yj6qo"></div><div class="adL">
     </div></div><div class="adL">
     </div></div></div>

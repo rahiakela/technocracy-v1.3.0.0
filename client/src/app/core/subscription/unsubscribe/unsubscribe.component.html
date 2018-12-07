@@ -17,11 +17,11 @@
 
         <p *ngIf="unsubscribed">You have un-subscribed successfully from Technocracy Blog Community.</p>
 
-        <div style="margin-left: 150px;">
-          <div *ngIf="loading" class="tech-unsubscribe-loading">
+        <div>
+          <div *ngIf="loading | async" class="tech-unsubscribe-loading">
             <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
           </div>
-          <div *ngIf="error" fxFlexAlign="center" class="tech-unsubscribe-error">
+          <div *ngIf="error | async" fxFlexAlign="center" class="tech-unsubscribe-error">
             <span style="color: red;">An error has occurred while saving your subscription.</span>
           </div>
         </div>

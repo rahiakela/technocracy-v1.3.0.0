@@ -55,6 +55,14 @@ export class AuthService {
     });
   }
 
+  subscribe(email: string): Observable<any> {
+    return this.sendRequest('PUT', `${this.REST_URL}/auth/subscribe`, {email: email});
+  }
+
+  unsubscribe(email: string): Observable<any> {
+    return this.sendRequest('PUT', `${this.REST_URL}/auth/unsubscribe`, {email: email});
+  }
+
   private sendRequest(verb: string, url: string, body?: any, params?: any): Observable<any> {
 
     let headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' })

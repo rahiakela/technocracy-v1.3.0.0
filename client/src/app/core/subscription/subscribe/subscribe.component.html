@@ -10,7 +10,8 @@
       </mat-card-header>
 
       <mat-card-content class="tech-card-content">
-        <p>Keep an eye on your email for our next blog.</p>
+        <p>Your subscription is confirmed, please check your email for the welcome message.</p>
+        <p>Please enjoy, and keep an eye on your email for our next blog.</p>
         <mat-divider></mat-divider>
         <div style="margin-top: 20px;">
           <tech-share [shareType]="'subscribe'" [data]="subscription"></tech-share>
@@ -36,11 +37,11 @@
             <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
           </mat-form-field>
 
-          <div style="margin-left: 150px;">
-            <div *ngIf="loading" class="tech-subscribe-loading">
+          <div>
+            <div *ngIf="loading | async" class="tech-subscribe-loading">
               <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
             </div>
-            <div *ngIf="error" fxFlexAlign="center" class="tech-subscribe-error">
+            <div *ngIf="error | async" fxFlexAlign="center" class="tech-subscribe-error">
               <span style="color: red;">An error has occurred while saving your subscription.</span>
             </div>
           </div>

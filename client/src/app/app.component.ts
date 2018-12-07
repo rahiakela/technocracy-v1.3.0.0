@@ -1,5 +1,5 @@
-import {ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {MatIconRegistry, MatSidenav, MatSidenavContent} from "@angular/material";
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {MatDialog, MatDialogRef, MatIconRegistry} from "@angular/material";
 import {DomSanitizer} from "@angular/platform-browser";
 import {MediaMatcher} from "@angular/cdk/layout";
 import {Question} from "./shared/models/question-model";
@@ -13,6 +13,8 @@ import {BlogActions} from './root-store/blog-store';
 import {User} from "./shared/models/user-model";
 import {Router} from "@angular/router";
 import {MediaChange, ObservableMedia} from "@angular/flex-layout";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {CookieService} from "ngx-cookie";
 
 @Component({
   selector: 'tech-root',
@@ -43,6 +45,8 @@ export class AppComponent implements OnInit, OnDestroy {
               private changeDetectorRef: ChangeDetectorRef,
               media: MediaMatcher,
               private store$: Store<RootStoreState.State>,
+              public dialog: MatDialog,
+              private cookieService: CookieService,
               public router: Router,
               public mobileMedia: ObservableMedia) {
     iconRegistry.addSvgIcon(
@@ -73,6 +77,14 @@ export class AppComponent implements OnInit, OnDestroy {
     this.store$.dispatch(new QuestionActions.LoadQuestionList());
 
     this.user$.subscribe(user => this.authenticatedUser = user);
+
+    // open subscription dialog after 30 seconds if the visiting user's info is not present into cookies
+    setTimeout(() => {
+      const userCookies = this.cookieService.get('TECH_U_SUB');
+      if (!userCookies) {
+        this.openDialog();
+      }
+    }, 30000);
   }
 
   search(query: string) {
@@ -93,6 +105,43 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.mobileQuery.removeListener(this._mobileQueryListener);
     this.subscriptionMedia.unsubscribe();
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(SubscriptionDialog, {
+      width: '600px'
+    });
+
+    dialogRef.afterClosed().subscribe(email => {
+      console.log('Result: ', email);
+      // dispatch subscribe action by passing payload
+      this.store$.dispatch(new AuthActions.SubscribeEmailNotification({email: email}));
+      // set the visiting user's info into cookies with 2 days expiry date
+      let expireDate: Date = new Date();
+      this.cookieService.put('TECH_U_SUB', email, {
+        expires: expireDate.setDate(expireDate.getDate() + 2).toString()
+      });
+      console.log('Expiry Date:', expireDate);
+    });
+  }
+}
+
+@Component({
+  selector: 'tech-subscription-dialog',
+  templateUrl: './core/subscription/popup/subscription-dialog.html',
+  styleUrls: ['./core/subscription/popup/subscription-dialog.scss']
+})
+export class SubscriptionDialog{
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+  subscribeForm = new FormGroup({email: this.email});
+
+  constructor(public dialogRef: MatDialogRef<SubscriptionDialog>) {}
+
+  getEmailErrorMessage() {
+    return this.email.hasError('required') ? 'Please provide your email id' :
+      this.email.hasError('email') ? 'Email id must contain @ character' :
+        '';
   }
 
 }

@@ -2,9 +2,10 @@ import {MailSender} from '../mail/mail.sender';
 import {NextFunction, Request, Response} from "express";
 import * as crypto from 'crypto';
 import {User} from "../models/user.model";
+import {Subscription} from "../models/subscription.model";
 import {DateTimeUtils} from "../utils/data-time-util";
-import {Error} from "mongoose";
 import {UserUtils} from "../utils/user-utils";
+import {Blog} from "../models/blog.model";
 
 /**
  * @class AuthController: Define authentication related operation like login, register and password reset etc.
@@ -25,7 +26,7 @@ export class AuthController {
 
         //Validate that required fields have been supplied
         if(!email && !password){
-            this.validationError(res, next, 'email', 'password');
+            AuthController.validationError(res, next, 'email', 'password');
         }
 
         // find the user into database and verify password
@@ -77,7 +78,7 @@ export class AuthController {
 
         //Respond with an error status if not all required fields are found
         if(!username || !mailId || !password){
-            this.validationError(res, next, username, mailId, password);
+            AuthController.validationError(res, next, username, mailId, password);
         }
 
         User.findOne({"local.email": mailId})
@@ -136,7 +137,7 @@ export class AuthController {
 
         //Respond with an error status if not all required fields are found
         if(!verifyToken){
-            this.validationError(res, next, verifyToken);
+            AuthController.validationError(res, next, verifyToken);
         }
 
         const mailOptions = new Map<string, any>();
@@ -201,7 +202,7 @@ export class AuthController {
 
         //Respond with an error status if not all required fields are found
         if(!mailId){
-            this.validationError(res, next, mailId);
+            AuthController.validationError(res, next, mailId);
         }
 
         User.findOne({"local.email": mailId})
@@ -243,7 +244,7 @@ export class AuthController {
 
         //Respond with an error status if not all required fields are found
         if(!newMailId && !oldMailId){
-            this.validationError(res, next, newMailId, oldMailId);
+            AuthController.validationError(res, next, newMailId, oldMailId);
         }
 
         User.findOne({"local.email" : oldMailId})
@@ -287,7 +288,7 @@ export class AuthController {
 
         //Respond with an error status if not all required fields are found
         if(!email){
-            this.validationError(res, next, email);
+            AuthController.validationError(res, next, email);
         }
 
         User.findOne({"local.email": email})
@@ -338,7 +339,7 @@ export class AuthController {
 
         //Respond with an error status if not all required fields are found
         if(!token){
-            this.validationError(res, next, token);
+            AuthController.validationError(res, next, token);
         }
 
         const mailOptions = new Map<string, any>();
@@ -406,7 +407,7 @@ export class AuthController {
 
         //Validate that required fields have been supplied
         if(!email || !name || !uid){
-            this.validationError(res, next, 'email', 'name', 'uid');
+            AuthController.validationError(res, next, 'email', 'name', 'uid');
         }
 
         if(provider === 'FACEBOOK'){
@@ -533,6 +534,87 @@ export class AuthController {
         }
     }
 
+    /**
+    *  Save/Update the user subscription information if they are already registered otherwise add his subscription information in subscription document.
+    * @response: return json of saved or updated user
+    */
+    public subscribe(req: Request, res: Response, next: NextFunction) {
+      let email = req.body.email;
+
+      //Validate that required fields have been supplied
+      if(!email ){
+        AuthController.validationError(res, next, 'email');
+      }
+
+      // search user in database against mail id
+      User.find({"local.email": email})
+        .then((user: any) => { // search user using email in local sub document
+          if (user.length > 0) {
+            AuthController.updateUserSubscription(res, email, user[0]._id, 'Y', next);
+          } else {
+            // search user using email in facebook sub document
+            User.find({"facebook.email": email})
+              .then((user: any) => {
+                if (user.length > 0) {
+                  AuthController.updateUserSubscription(res, email, user[0]._id, 'Y', next);
+                } else {
+                  // search user using email in google sub document
+                  User.find({"google.email": email})
+                    .then((user: any) => {
+                      if (user.length > 0) {
+                        AuthController.updateUserSubscription(res, email, user[0]._id, 'Y', next);
+                      } else { // otherwise save un-registered user subscription
+                        AuthController.updateUnRegisteredUserSubscription(req, res, email, 'Y', next);
+                      }
+                    });
+                }
+              });
+          }
+        })
+        .catch(next);
+
+    }
+
+    /**
+     *  Update the user un-subscription information if they are already registered otherwise update his un-subscription information in subscription document.
+     * @response: return json of saved or updated user
+     */
+    public unsubscribe(req: Request, res: Response, next: NextFunction) {
+      let email = req.body.email;
+
+      //Validate that required fields have been supplied
+      if(!email ){
+        AuthController.validationError(res, next, 'email');
+      }
+
+      // search user in database against mail id
+      User.find({"local.email": email})
+        .then((user: any) => { // search user using email in local sub document
+          if (user.length > 0) {
+            AuthController.updateUserSubscription(res, email, user[0]._id, 'N', next);
+          } else {
+            // search user using email in facebook sub document
+            User.find({"facebook.email": email})
+              .then((user: any) => {
+                if (user.length > 0) {
+                  AuthController.updateUserSubscription(res, email, user[0]._id, 'N', next);
+                } else {
+                  // search user using email in google sub document
+                  User.find({"google.email": email})
+                    .then((user: any) => {
+                      if (user.length > 0) {
+                        AuthController.updateUserSubscription(res, email, user[0]._id, 'N', next);
+                      } else { // otherwise save un-registered user subscription
+                        AuthController.updateUnRegisteredUserSubscription(req, res, email, 'N', next);
+                      }
+                    });
+                }
+              });
+          }
+        })
+        .catch(next);
+    }
+
     private getUserDetailsFromRequest(req: Request): any {
         let user;
         if(req.body.provider === 'FACEBOOK') {
@@ -571,13 +653,72 @@ export class AuthController {
         return user;
     }
 
-    private notFoundError(res: Response, next: NextFunction) {
-        res.sendStatus(404);
+    private static updateUserSubscription(res, email, userId, valueToUpdate, next: NextFunction) {
+
+      const mailOptions = new Map<string, any>();
+
+      //Update UserModel to MongoDB
+      User.findOneAndUpdate(
+        {
+          _id: userId, // query criteria
+        },
+        {    // data to update
+          'subscription': valueToUpdate
+        },
+        {
+          new: true, // options: return updated one
+        }
+      )
+      .then(() => {
+        // send welcome subscription mail to user otherwise not
+        if (valueToUpdate == 'Y') {
+          MailSender.sendMail('subscribed', mailOptions.set('recipient', email));
+        }
+        res.json(User);
         next();
-        return;
+      })
+      .catch(next);
     }
 
-    private validationError(res: Response, next: NextFunction, ...params: string[]) {
+    private static updateUnRegisteredUserSubscription(req, res, email, valueToUpdate, next: NextFunction) {
+
+      Subscription.find({"email": email})
+        .then((subscription: any) => {
+          if(subscription.length > 0) {
+            Subscription.findOneAndUpdate(
+              { _id: subscription[0]._id }, // query criteria
+              {
+                notification: valueToUpdate
+              }, // data to update
+              { new: true } // options: return updated one
+            )
+            .then(updatedSubscription => {
+              res.json(true);
+              next();
+            });
+          } else {
+            let newSubscription = new Subscription();
+            let subscriptionToSave = {
+              email: email,
+              ipAddress: req.connection.remoteAddress,
+              notification: valueToUpdate
+            };
+            Object.assign(newSubscription, subscriptionToSave)
+              .save()
+              .then(savedSubscription => {
+                // send welcome subscription mail to user otherwise not
+                MailSender.sendMail('subscribed', new Map<string, any>().set('recipient', email));
+                res.json(true);
+                next();
+              });
+          }
+        })
+        .catch(next);
+
+
+    }
+
+    private static validationError(res: Response, next: NextFunction, ...params: string[]) {
         res.json({
             statusCode: 400,
             message: `Fields ${params} must be required`,

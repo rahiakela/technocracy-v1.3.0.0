@@ -216,4 +216,36 @@ export class AuthEffects {
     )
   );
 
+  /**
+   * Subscribe email notification.
+   */
+  @Effect()
+  subscribeEmailNotificationEffect$: Observable<Action> = this.actions$.pipe(
+    ofType<AuthAction.SubscribeEmailNotification>(AuthAction.ActionTypes.SUBSCRIBE_EMAIL_NOTIFICATION),
+    switchMap(action =>
+      this.authService
+        .subscribe(action.payload.email)
+        .pipe(
+          map(subscribed => new AuthAction.SubscribeEmailNotificationSuccess({subscribed: subscribed})),
+          catchError(error => observableOf(new AuthAction.SubscribeEmailNotificationFailure({error})))
+        )
+    )
+  );
+
+  /**
+   * Un-Subscribe email notification.
+   */
+  @Effect()
+  unSubscribeEmailNotificationEffect$: Observable<Action> = this.actions$.pipe(
+    ofType<AuthAction.UnSubscribeEmailNotification>(AuthAction.ActionTypes.UNSUBSCRIBE_EMAIL_NOTIFICATION),
+    switchMap(action =>
+      this.authService
+        .unsubscribe(action.payload.email)
+        .pipe(
+          map(subscribed => new AuthAction.UnSubscribeEmailNotificationSuccess({subscribed: subscribed})),
+          catchError(error => observableOf(new AuthAction.UnSubscribeEmailNotificationFailure({error})))
+        )
+    )
+  );
+
 }

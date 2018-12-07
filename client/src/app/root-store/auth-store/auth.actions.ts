@@ -59,6 +59,14 @@ export enum ActionTypes {
   UPDATE_PROFILE_PHOTO   = '[users] Update Profile Photo',
   UPDATE_PROFILE_PHOTO_FAILURE = '[users] Update Profile Photo Failure',
   UPDATE_PROFILE_PHOTO_SUCCESS = '[users] Update Profile Photo Success',
+
+  SUBSCRIBE_EMAIL_NOTIFICATION         = '[users] Subscribe Email Notification',
+  SUBSCRIBE_EMAIL_NOTIFICATION_FAILURE = '[users] Subscribe Email Notification Failure',
+  SUBSCRIBE_EMAIL_NOTIFICATION_SUCCESS = '[users] Subscribe Email Notification Success',
+
+  UNSUBSCRIBE_EMAIL_NOTIFICATION         = '[users] Un-Subscribe Email Notification',
+  UNSUBSCRIBE_EMAIL_NOTIFICATION_FAILURE = '[users] Un-Subscribe Email Notification Failure',
+  UNSUBSCRIBE_EMAIL_NOTIFICATION_SUCCESS = '[users] Un-Subscribe Email Notification Success',
 }
 
 /**
@@ -292,6 +300,44 @@ export class UpdateProfileSuccess implements Action {
 }
 
 /**
+ * Subscribe Email Notification Actions
+ */
+export class SubscribeEmailNotification implements Action {
+  readonly type = ActionTypes.SUBSCRIBE_EMAIL_NOTIFICATION;
+
+  constructor(public payload: {email: string}) {}
+}
+export class SubscribeEmailNotificationFailure implements Action {
+  readonly type = ActionTypes.SUBSCRIBE_EMAIL_NOTIFICATION_FAILURE;
+
+  constructor(public payload: { error: any }) {}
+}
+export class SubscribeEmailNotificationSuccess implements Action {
+  readonly type = ActionTypes.SUBSCRIBE_EMAIL_NOTIFICATION_SUCCESS;
+
+  constructor(public payload: { subscribed: boolean }) {}
+}
+
+/**
+ * Un-Subscribe Email Notification Actions
+ */
+export class UnSubscribeEmailNotification implements Action {
+  readonly type = ActionTypes.UNSUBSCRIBE_EMAIL_NOTIFICATION;
+
+  constructor(public payload: {email: string}) {}
+}
+export class UnSubscribeEmailNotificationFailure implements Action {
+  readonly type = ActionTypes.UNSUBSCRIBE_EMAIL_NOTIFICATION_FAILURE;
+
+  constructor(public payload: { error: any }) {}
+}
+export class UnSubscribeEmailNotificationSuccess implements Action {
+  readonly type = ActionTypes.UNSUBSCRIBE_EMAIL_NOTIFICATION_SUCCESS;
+
+  constructor(public payload: { subscribed: boolean }) {}
+}
+
+/**
  * User Profile Photo Update Actions: Update the user profile photo
  */
 export class UpdateProfilePhoto implements Action {
@@ -309,6 +355,7 @@ export class UpdateProfilePhotoSuccess implements Action {
 
   constructor(public payload: { user: User }) {}
 }
+
 /**
  * Export a type alias of all actions in this action group
  * so that reducers can easily compose action types
