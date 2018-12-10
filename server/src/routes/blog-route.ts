@@ -1,6 +1,6 @@
 import {Application} from 'express';
 import {BlogController} from '../controllers/blog.controller';
-import {AuthToken} from "../auth/auth-token";
+import {AuthToken} from '../auth/auth-token';
 
 export class BlogRoute {
     BLOG_BASE_URL = '/api/blog';

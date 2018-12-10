@@ -1,6 +1,6 @@
 import {Application} from 'express';
 import {QuestionController} from '../controllers/question-controller';
-import {AuthToken} from "../auth/auth-token";
+import {AuthToken} from '../auth/auth-token';
 
 export class QuestionRoute {
     Q_BASE_URL = '/api/question';

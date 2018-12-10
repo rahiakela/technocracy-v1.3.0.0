@@ -1,6 +1,6 @@
-import {ProfileController} from "../controllers/profile-controller";
-import {Application} from "express";
-import {AuthToken} from "../auth/auth-token";
+import {ProfileController} from '../controllers/profile-controller';
+import {Application} from 'express';
+import {AuthToken} from '../auth/auth-token';
 
 export class ProfileRoute {
     PROFILE_BASE_URL = '/api/profile';

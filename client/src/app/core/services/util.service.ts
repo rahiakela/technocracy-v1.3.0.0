@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {User} from '../../shared/models/user-model';
-import {select, Store} from "@ngrx/store";
-import { RootStoreState} from "../../root-store";
+import {select, Store} from '@ngrx/store';
+import { RootStoreState} from '../../root-store';
 import { AuthSelectors } from '../../root-store/auth-store';
-import {Employment, Skill} from "../../shared/models/profile-model";
+import {Employment, Skill} from '../../shared/models/profile-model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class UtilService {
   }
 
   isAuthenticated(): boolean {
-    let isAuthenticated: boolean = false;
+    let isAuthenticated = false;
     // select authenticated user from store
     this.store$.pipe(select(AuthSelectors.selectAuthenticatedUser))
       .subscribe(user => {
@@ -51,7 +51,7 @@ export class UtilService {
   }
 
   getSkillWithHashTag(skills: Skill[]) {
-    let skillSet: string = '';
+    let skillSet = '';
 
     if (skills !== null && skills.length >0) {
       skills.forEach(value => {

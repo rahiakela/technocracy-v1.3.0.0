@@ -11,7 +11,7 @@
     "serve": "npm run build && nodemon ./dist/server.js",
     "prod": "npm run build && npm run start",
     "start": "nodemon ./dist/server.js",
-    "test": "mocha --reporter spec --compilers ts:ts-node/register 'test/**/*.spec.ts'"
+    "test": "mocha --reporter spec --compilers ts:ts-node/register src/**/*.spec.ts"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {User} from "../../shared/models/user-model";
-import {Observable} from "rxjs";
-import {environment} from "../../../environments/environment";
-import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {SocialUser} from "angularx-social-login";
+import {User} from '../../shared/models/user-model';
+import {Observable} from 'rxjs';
+import {environment} from '../../../environments/environment';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {SocialUser} from 'angularx-social-login';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +31,7 @@ export class AuthService {
   }
 
   updateEmail(newMailId: string, oldMailId: string): Observable<any> {
-    return this.sendRequest('PUT', `${this.REST_URL}/auth/activate`, {newEmail: newMailId, oldEmail: oldMailId});
+    return this.sendRequest('PUT', `${this.REST_URL}/auth/mail/update`, {newEmail: newMailId, oldEmail: oldMailId});
   }
 
   forgotPassword(emailId: string): Observable<any> {
@@ -65,12 +65,12 @@ export class AuthService {
 
   private sendRequest(verb: string, url: string, body?: any, params?: any): Observable<any> {
 
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' })
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' });
 
     return this.http.request(verb, url, {
       headers: headers,
       body: body,
-      responseType: "json",
+      responseType: 'json',
       params: new HttpParams({fromString: params})
     });
     // .catch((error: Response) => throwError(`Network Error: ${error.statusText} (${error.status})`));

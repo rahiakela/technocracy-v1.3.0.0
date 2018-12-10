@@ -339,7 +339,7 @@ export class BlogSaveMailTemplate {
                                                                     <div class="contentEditableContainer contentTextEditable">
                                                                         <div class="contentEditable">
                                                                             <p >
-                                                                                ${UserUtils.decodeHTML(blog.content.substring(0,300))}
+                                                                                ${blog.content.description}
                                                                             </p>
                                                                         </div>
                                                                     </div>

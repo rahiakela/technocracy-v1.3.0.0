@@ -1,6 +1,6 @@
-import {CommentController} from "../controllers/comment-controller";
-import {Application} from "express";
-import {AuthToken} from "../auth/auth-token";
+import {CommentController} from '../controllers/comment-controller';
+import {Application} from 'express';
+import {AuthToken} from '../auth/auth-token';
 
 export class CommentRoute {
     COMMENT_BASE_URL = '/api/comment';
