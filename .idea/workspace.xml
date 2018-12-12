@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ced5e199-ceca-4922-9619-0012011a3a65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml-model/blog-classification/documents/angular-documents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml-model/blog-classification/documents/hibernate-documents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml-model/blog-classification/documents/ml-documents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml-model/blog-classification/documents/node-documents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml-model/blog-classification/documents/python-documents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml-model/blog-classification/documents/spring-documents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-effects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-effects.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/environments/environment.prod.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml-model/blog-classification/documents/ml-documents.js" beforeDir="false" afterPath="$PROJECT_DIR$/ml-model/blog-classification/documents/ml-documents.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controllers/blog.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/blog.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/auth.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/auth.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/blog.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/blog.spec.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/client/node_modules/" />
     <ignored path="$PROJECT_DIR$/server/node_modules/" />
@@ -31,22 +25,51 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/controllers/blog.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="486" column="36" lean-forward="true" selection-start-line="486" selection-start-column="36" selection-end-line="486" selection-end-column="36" />
+            <state relative-caret-position="2925">
+              <caret line="322" column="23" lean-forward="true" selection-start-line="322" selection-start-column="23" selection-end-line="322" selection-end-column="23" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
                 <element signature="n#!!block;n#getBlogs#0;n#BlogController#0" />
                 <element signature="n#!!block;n#getBlog#0;n#BlogController#0" />
-                <element signature="n#!!block;n#getBlogListWrittenByAuthor#0;n#BlogController#0" />
                 <element signature="n#!!block;n#getAllPendingBlogs#0;n#BlogController#0" />
-                <element signature="n#!!block;n#saveBlog#0;n#BlogController#0" />
-                <element signature="n#!!block;n#modifyBlog#0;n#BlogController#0" />
                 <element signature="n#!!block;n#editBlog#0;n#BlogController#0" />
                 <element signature="n#!!block;n#deleteBlog#0;n#BlogController#0" />
                 <element signature="n#!!block;n#getTotalBlogStatistics#0;n#BlogController#0" />
                 <element signature="n#!!block;n#getTotalPendingBlogStatistics#0;n#BlogController#0" />
-                <element signature="n#!!block;n#saveBlogLike#0;n#BlogController#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/test/blog.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="40" column="18" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/routes/blog-route.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="15" column="55" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/documents/angular-documents.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="82" column="2" lean-forward="true" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -55,16 +78,34 @@
         <entry file="file://$PROJECT_DIR$/ml-model/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/documents/hibernate-documents.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1190">
+              <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js">
+        <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/documents/ml-documents.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <caret line="14" column="209" selection-start-line="14" selection-start-column="209" selection-end-line="14" selection-end-column="209" />
             </state>
           </provider>
         </entry>
@@ -108,18 +149,18 @@
         <option value="$PROJECT_DIR$/server/src/routes/comment-route.ts" />
         <option value="$PROJECT_DIR$/server/src/routes/profile-route.ts" />
         <option value="$PROJECT_DIR$/server/src/routes/question-route.ts" />
-        <option value="$PROJECT_DIR$/server/src/test/blog.spec.ts" />
-        <option value="$PROJECT_DIR$/server/src/test/auth.spec.ts" />
-        <option value="$PROJECT_DIR$/server/src/controllers/blog.controller.ts" />
         <option value="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-effects.ts" />
         <option value="$PROJECT_DIR$/ml-model/blog-classification/documents/python-documents.js" />
         <option value="$PROJECT_DIR$/ml-model/blog-classification/documents/spring-documents.js" />
         <option value="$PROJECT_DIR$/ml-model/blog-classification/documents/node-documents.js" />
-        <option value="$PROJECT_DIR$/ml-model/blog-classification/documents/ml-documents.js" />
         <option value="$PROJECT_DIR$/ml-model/package.json" />
         <option value="$PROJECT_DIR$/ml-model/blog-classification/documents/angular-documents.js" />
         <option value="$PROJECT_DIR$/ml-model/blog-classification/documents/hibernate-documents.js" />
         <option value="$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js" />
+        <option value="$PROJECT_DIR$/server/src/test/auth.spec.ts" />
+        <option value="$PROJECT_DIR$/server/src/controllers/blog.controller.ts" />
+        <option value="$PROJECT_DIR$/server/src/test/blog.spec.ts" />
+        <option value="$PROJECT_DIR$/ml-model/blog-classification/documents/ml-documents.js" />
       </list>
     </option>
   </component>
@@ -154,6 +195,13 @@
               <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
               <item name="ml-model" type="462c0819:PsiDirectoryNode" />
               <item name="blog-classification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="ml-model" type="462c0819:PsiDirectoryNode" />
+              <item name="blog-classification" type="462c0819:PsiDirectoryNode" />
+              <item name="documents" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,12 +257,12 @@
       <workItem from="1544355914709" duration="11742000" />
       <workItem from="1544444918705" duration="4018000" />
       <workItem from="1544534920976" duration="9087000" />
-      <workItem from="1544617028105" duration="3979000" />
+      <workItem from="1544617028105" duration="7994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55423000" />
+    <option name="totallyTimeSpent" value="59438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -232,7 +280,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.27708703" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.41207814" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -485,34 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/test/auth.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#313#701#0" />
-            <element signature="e#807#4128#0" />
-            <element signature="e#4225#5036#0" />
-            <element signature="e#5135#5966#0" />
-            <element signature="e#6058#6433#0" />
-            <element signature="e#6526#6900#0" />
-            <element signature="e#6995#7367#0" />
-            <element signature="e#7475#7770#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/test/blog.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/server.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -528,16 +548,6 @@
           <caret line="147" column="89" selection-start-line="147" selection-start-column="84" selection-end-line="147" selection-end-column="89" />
           <folding>
             <element signature="e#0#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/routes/blog-route.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="77" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -578,58 +588,96 @@
     <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/documents/node-documents.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/documents/ml-documents.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/controllers/blog.controller.ts">
+    <entry file="file://$PROJECT_DIR$/server/src/test/auth.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="486" column="36" lean-forward="true" selection-start-line="486" selection-start-column="36" selection-end-line="486" selection-end-column="36" />
+        <state relative-caret-position="1054">
+          <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
-            <element signature="n#!!block;n#getBlogs#0;n#BlogController#0" />
-            <element signature="n#!!block;n#getBlog#0;n#BlogController#0" />
-            <element signature="n#!!block;n#getBlogListWrittenByAuthor#0;n#BlogController#0" />
-            <element signature="n#!!block;n#getAllPendingBlogs#0;n#BlogController#0" />
-            <element signature="n#!!block;n#saveBlog#0;n#BlogController#0" />
-            <element signature="n#!!block;n#modifyBlog#0;n#BlogController#0" />
-            <element signature="n#!!block;n#editBlog#0;n#BlogController#0" />
-            <element signature="n#!!block;n#deleteBlog#0;n#BlogController#0" />
-            <element signature="n#!!block;n#getTotalBlogStatistics#0;n#BlogController#0" />
-            <element signature="n#!!block;n#getTotalPendingBlogStatistics#0;n#BlogController#0" />
-            <element signature="n#!!block;n#saveBlogLike#0;n#BlogController#0" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#313#701#0" />
+            <element signature="e#807#4128#0" />
+            <element signature="e#4225#5036#0" />
+            <element signature="e#5135#5966#0" />
+            <element signature="e#6058#6433#0" />
+            <element signature="e#6526#6900#0" />
+            <element signature="e#6995#7367#0" />
+            <element signature="e#7475#7770#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/documents/hibernate-documents.js">
+    <entry file="file://$PROJECT_DIR$/ml-model/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="67" column="36" lean-forward="true" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
+        <state relative-caret-position="238">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/routes/blog-route.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="55" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/blog.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2925">
+          <caret line="322" column="23" lean-forward="true" selection-start-line="322" selection-start-column="23" selection-end-line="322" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+            <element signature="n#!!block;n#getBlogs#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getAllPendingBlogs#0;n#BlogController#0" />
+            <element signature="n#!!block;n#editBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#deleteBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getTotalBlogStatistics#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getTotalPendingBlogStatistics#0;n#BlogController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/test/blog.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="40" column="18" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/documents/angular-documents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="81" column="28" lean-forward="true" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+        <state relative-caret-position="648">
+          <caret line="82" column="2" lean-forward="true" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/blog-classifier-model.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ml-model/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/documents/hibernate-documents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/documents/ml-documents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="209" selection-start-line="14" selection-start-column="209" selection-end-line="14" selection-end-column="209" />
         </state>
       </provider>
     </entry>

@@ -6,6 +6,7 @@ chai.use(chaiHttp);
 
 const BASE_URL = 'http://localhost:3000/api/auth';
 const expect = chai.expect;
+/*
 
 describe('Auth API[/api/auth] Test Suite', () => {
 
@@ -203,4 +204,5 @@ describe('Auth API[/api/auth] Test Suite', () => {
         done();
     });
 });
+*/
 

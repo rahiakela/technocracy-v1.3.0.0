@@ -230,7 +230,7 @@ export class BlogController {
                       if (action === 'post') {
                           mailOptions.set('blog', savedBlog);
                           // send new blog post mail notification to editors
-                          MailSender.sendMail("post-blog", mailOptions.set("recipient", process.env.ADMIN_MAIL_ID));
+                          MailSender.sendMail('post-blog', mailOptions.set('recipient', process.env.ADMIN_MAIL_ID));
                       }
                       res.json(savedBlog);
                       next();
@@ -300,7 +300,7 @@ export class BlogController {
                 users.forEach(user => {
                   if (user._id.toString() !== blog.toString()) {
                     // don't send this notification to the profile who has written this blog
-                    MailSender.sendMail("publish-blog", mailOptions.set("recipient", user));
+                    MailSender.sendMail('publish-blog', mailOptions.set('recipient', user));
                   }
                 });
               })
@@ -308,15 +308,15 @@ export class BlogController {
             break;
           case 'pending':
             // send new blog post mail notification to editors
-            MailSender.sendMail("post-blog", mailOptions.set("recipient", process.env.ADMIN_MAIL_ID));
+            MailSender.sendMail('post-blog', mailOptions.set('recipient', process.env.ADMIN_MAIL_ID));
             break;
           case 'on_hold':
               // send blog on hold mail notification to author
-            MailSender.sendMail("on-hold-blog", mailOptions.set("recipient", blog.profile.user));
+            MailSender.sendMail('on-hold-blog', mailOptions.set('recipient', blog.profile.user));
             break;
           case 'rejected':
             // send blog reject mail notification to author
-            MailSender.sendMail("rejected-blog", mailOptions.set("recipient", blog.profile.user));
+            MailSender.sendMail('rejected-blog', mailOptions.set('recipient', blog.profile.user));
             break;
         }
 
@@ -438,7 +438,7 @@ export class BlogController {
 
     Blog.findById(blogId)
         .then((blog: any) => {
-          let savedLikedByUser = blog.likes.filter(like => like === likedBy);
+          const savedLikedByUser = blog.likes.filter(like => like === likedBy);
           // if user does not like this blog then update user's like otherwise not
           if (savedLikedByUser.length === 0) {
               Blog.findOneAndUpdate(
@@ -469,8 +469,8 @@ export class BlogController {
                         },
                     },
                 })
-                .then(blog => {
-                    res.json(blog);
+                .then(savedBlog => {
+                    res.json(savedBlog);
                     next();
                 })
                 .catch(next);
