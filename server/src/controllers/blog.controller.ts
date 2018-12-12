@@ -499,7 +499,7 @@ export class BlogController {
     Blog.find({ $text: { $search: query } })
       .where('status')
       .equals('published')
-      .limit(10)
+      .limit(100)
       .skip(0)
       .sort('-publishedOn')
       .populate({

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BlogService} from '../../core/services/blog.service';
 import {Actions, Effect, ofType} from '@ngrx/effects';
-import {asyncScheduler, Observable, empty ,of as observableOf} from 'rxjs';
+import {asyncScheduler, Observable, empty, of as observableOf} from 'rxjs';
 import {Action} from '@ngrx/store';
 import * as BlogActions from './blog-actions';
 import * as BlogSelectors from './blog-selectors';
@@ -41,9 +41,9 @@ export class BlogEffects {
           return this.blogService
             .loadBlog(blogId)
             .pipe(
-              map(blog => new BlogActions.LoadBlogSuccess({blog: blog})),
+              map(result => new BlogActions.LoadBlogSuccess({blog: result})),
               catchError(error => observableOf(new BlogActions.LoadBlogFailure({error})))
-            )
+            );
         } else {
           return observableOf(new BlogActions.LoadBlogSuccess({blog: blog}));
         }
@@ -131,30 +131,6 @@ export class BlogEffects {
   );
 
   @Effect()
-  searchBlog$ = ({debounce = 300, scheduler = asyncScheduler} = {}): Observable<Action> => this.actions$
-    .pipe(
-      ofType<BlogActions.SearchBlog>(BlogActions.ActionTypes.SEARCH_BLOG),
-      debounceTime(debounce, scheduler),
-      map(action => action.payload.query),
-      switchMap(query => {
-        if (query === '') {
-          return empty();
-        }
-
-        const nextSearch$ = this.actions$.pipe(
-          ofType(BlogActions.ActionTypes.SEARCH_BLOG),
-          skip(1)
-        );
-
-        return this.blogService.searchBlog(query).pipe(
-          takeUntil(nextSearch$),
-          map((blogs: Blog[]) => new BlogActions.SearchBlogSuccess({filteredBlogs: blogs})),
-          catchError(err => observableOf(new BlogActions.SearchBlogFailure(err)))
-        );
-      })
-    );
-
-  @Effect()
   likeBlog$: Observable<Action> = this.actions$.pipe(
     ofType<BlogActions.LikeBlog>(BlogActions.ActionTypes.LIKE_BLOG),
     switchMap(action =>
@@ -194,9 +170,9 @@ export class BlogEffects {
   editComment: Observable<Action> = this.actions$.pipe(
     ofType<BlogActions.UpdateComment>(BlogActions.ActionTypes.UPDATE_COMMENT),
     switchMap(action =>
-      this.blogService.editCommentReply(action.payload.commentId, 'comment' ,action.payload.content)
+      this.blogService.editCommentReply(action.payload.commentId, 'comment', action.payload.content)
         .pipe(
-          map(comment => new BlogActions.UpdateCommentSuccess({blogId: action.payload.blogId ,comment: comment})),
+          map(comment => new BlogActions.UpdateCommentSuccess({blogId: action.payload.blogId, comment: comment})),
           catchError(error => observableOf(new BlogActions.UpdateCommentFailure({error})))
         )
     )
@@ -208,7 +184,7 @@ export class BlogEffects {
     switchMap(action =>
       this.blogService.deleteComment(action.payload.commentId)
         .pipe(
-          map(isDeleted => new BlogActions.DeleteCommentSuccess({blogId: action.payload.blogId ,commentId: action.payload.commentId})),
+          map(isDeleted => new BlogActions.DeleteCommentSuccess({blogId: action.payload.blogId, commentId: action.payload.commentId})),
           catchError(error => observableOf(new BlogActions.DeleteCommentFailure({error})))
         )
     )
@@ -238,7 +214,7 @@ export class BlogEffects {
         .pipe(
           map(comment => new BlogActions.AddReplySuccess({blogId: action.payload.blogId, comment: comment})),
           catchError(error => observableOf(new BlogActions.AddReplyFailure({error})))
-        )
+        );
     })
   );
 
@@ -248,7 +224,7 @@ export class BlogEffects {
     switchMap(action =>
       this.blogService.editCommentReply(action.payload.replyId , 'reply', action.payload.content)
         .pipe(
-          map(reply => new BlogActions.UpdateReplySuccess({blogId: action.payload.blogId ,reply: reply})),
+          map(reply => new BlogActions.UpdateReplySuccess({blogId: action.payload.blogId, reply: reply})),
           catchError(error => observableOf(new BlogActions.UpdateReplyFailure({error})))
         )
     )
@@ -268,4 +244,30 @@ export class BlogEffects {
         )
     )
   );
+
+  @Effect()
+  searchBlog$ = ({debounce = 300, scheduler = asyncScheduler} = {}): Observable<Action> => this.actions$
+    .pipe(
+      ofType<BlogActions.SearchBlog>(BlogActions.ActionTypes.SEARCH_BLOG),
+      debounceTime(debounce, scheduler),
+      map(action => action.payload.query),
+      switchMap(query => {
+          if (query === '') {
+            return empty();
+          }
+
+          const nextSearch$ = this.actions$.pipe(
+            ofType(BlogActions.ActionTypes.SEARCH_BLOG),
+            skip(1)
+          );
+
+          return this.blogService.searchBlog(query).pipe(
+            takeUntil(nextSearch$),
+            map((blogs: Blog[]) => new BlogActions.SearchBlogSuccess({filteredBlogs: blogs})),
+            catchError(err => observableOf(new BlogActions.SearchBlogFailure(err)))
+          );
+        }
+      )
+    )
 }
+

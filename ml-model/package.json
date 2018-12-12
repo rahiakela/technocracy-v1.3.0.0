@@ -1,0 +1,28 @@
+{
+  "name": "ml-model",
+  "version": "1.0.0",
+  "description": "This project will be used to create machine learning model for Technocracy.",
+  "main": "blog-classifier.js",
+  "scripts": {
+    "build-blog-classifier": "node ./blog-classification/blog-classifier.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahiakela/technocracy-v1.3.0.0.git"
+  },
+  "keywords": [
+    "Document Classification",
+    "Machine Learning",
+    "Naive Bayes"
+  ],
+  "author": "Rahi Akela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahiakela/technocracy-v1.3.0.0/issues"
+  },
+  "homepage": "https://github.com/rahiakela/technocracy-v1.3.0.0#readme",
+  "dependencies": {
+    "bayes-classifier": "0.0.5"
+  }
+}
