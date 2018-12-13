@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   REST_URL: 'http://localhost:3000/api',
-  accessKeyId: '',
-  secretAccessKey: '',
+  accessKeyId: 'AKIAIA7MED6VTT7KJL7Q',
+  secretAccessKey: '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',
   Bucket: 'tecknocracy',
   CLOUD_IMAGE_PATH: 'https://s3.amazonaws.com/tecknocracy',
   TINYMCE_API_KEY: 'sih8li4gqn3my2tprguwkz32a2hkakah8q55suzv2eubyiig'
