@@ -3,8 +3,8 @@ import {environment} from '../../../environments/environment';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Blog} from '../../shared/models/blog-model';
 import {Observable} from 'rxjs';
-import {UtilService} from "./util.service";
-import {Comment, Reply} from "../../shared/models/comment-model";
+import {UtilService} from './util.service';
+import {Comment, Reply} from '../../shared/models/comment-model';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +44,7 @@ export class BlogService {
   }
 
   deleteBlog(blogId: string): Observable<Blog> {
-    return this.sendRequest('DELETE',`${this.REST_URL}/blog/${blogId}`, '');
+    return this.sendRequest('DELETE', `${this.REST_URL}/blog/${blogId}`, '');
   }
 
   publishBlog(blog: Blog, profileId: string, actionType: string): Observable<Blog> {
@@ -53,6 +53,10 @@ export class BlogService {
 
   searchBlog(query: string): Observable<Blog[]> {
     return this.sendRequest('GET', `${this.REST_URL}/blog/search/${query}`);
+  }
+
+  getRelatedBlog(title: string): Observable<Blog[]> {
+    return this.sendRequest('PUT', `${this.REST_URL}/blog/predict/classification`, {title: title});
   }
 
   like(blogId: string, likedBy: string): Observable<Blog> {
@@ -102,15 +106,15 @@ export class BlogService {
     // add JWT token with request headers
     const authToken = this.utilService.getAuthToken();
     if (authToken) {
-      headers = new HttpHeaders({ 'x-access-token': authToken, 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' })
+      headers = new HttpHeaders({ 'x-access-token': authToken, 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' });
     } else {
-      headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' })
+      headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' });
     }
 
     return this.http.request(verb, url, {
       headers: headers,
       body: body,
-      responseType: "json",
+      responseType: 'json',
       params: new HttpParams({fromString: params})
     });
       // .catch((error: Response) => throwError(`Network Error: ${error.statusText} (${error.status})`));

@@ -4,6 +4,10 @@ import {Blog} from '../models/blog.model';
 import {Reply} from '../models/comment.model';
 import {MailSender} from '../mail/mail.sender';
 
+// load classifier and model
+const BayesClassifier = require('bayes-classifier');
+const classifierModel = '../../blog-classifier-model.json';
+
 /**
  * @class BlogController: Define blog related operation like fetching/saving/updating blog and blog related statistics etc.
  * @param req {Request} The express request object.
@@ -21,7 +25,7 @@ export class BlogController {
     // verify the id parameter exists
     const PAGE = 'page';
     if (req.params[PAGE] === undefined) {
-      this.notFoundError(res, next);
+      BlogController.notFoundError(res, next);
     }
 
     const pageNumber: number = req.params[PAGE];
@@ -73,7 +77,7 @@ export class BlogController {
     // Validate that required fields have been supplied
     const PARAM_ID = 'blogId';
     if (req.params[PARAM_ID] === undefined) {
-      this.notFoundError(res, next);
+      BlogController.notFoundError(res, next);
     }
 
     // get blog id from request
@@ -110,7 +114,7 @@ export class BlogController {
       .then(blog => {
         // verify blog was found
         if (blog === null) {
-          this.notFoundError(res, next);
+          BlogController.notFoundError(res, next);
         }
         // send json of blog object
         res.json(blog);
@@ -127,7 +131,7 @@ export class BlogController {
     // verify the profile id parameter exists
     const PARAM_ID = 'writtenBy';
     if (req.params[PARAM_ID] === undefined) {
-      this.validationError(res, next, PARAM_ID);
+      BlogController.validationError(res, next, PARAM_ID);
     }
 
     const writtenBy = req.params[PARAM_ID];
@@ -186,7 +190,7 @@ export class BlogController {
 
       // Validate that required fields have been supplied
       if (!profileId || !title || !content) {
-          this.validationError(res, next, profileId, title, content);
+          BlogController.validationError(res, next, profileId, title, content);
       }
 
       // prepare status and date type accordingly to action type
@@ -252,7 +256,7 @@ export class BlogController {
     let blogToUpdate = {};
 
     if (!blogId && !actionType) {
-      this.validationError(res, next, blogId, actionType);
+      BlogController.validationError(res, next, blogId, actionType);
     }
 
     // prepare status and date type accordingly to action type
@@ -337,7 +341,7 @@ export class BlogController {
     const tags = req.body.tags;
 
     if (!blogId && !title && !content) {
-      this.validationError(res, next, blogId, title, content);
+      BlogController.validationError(res, next, blogId, title, content);
     }
 
     Blog.findOneAndUpdate(
@@ -375,7 +379,7 @@ export class BlogController {
 
     // Validate that required fields have been supplied
     if (!blogId) {
-      this.validationError(res, next, blogId);
+      BlogController.validationError(res, next, blogId);
     }
 
     Blog.findOneAndUpdate(
@@ -433,7 +437,7 @@ export class BlogController {
 
     // Validate that required fields have been supplied
     if (!blogId && !likedBy) {
-      this.validationError(res, next, blogId, likedBy);
+      BlogController.validationError(res, next, blogId, likedBy);
     }
 
     Blog.findById(blogId)
@@ -492,61 +496,91 @@ export class BlogController {
 
     // Validate that required fields have been supplied
     if (query.length < 1) {
-      this.validationError(res, next, query);
+      BlogController.validationError(res, next, query);
     }
 
     // query only published blog in publishedOn descending order with pagination
-    Blog.find({ $text: { $search: query } })
-      .where('status')
-      .equals('published')
-      .limit(100)
-      .skip(0)
-      .sort('-publishedOn')
-      .populate({
-        // populate profile instance with profile
-        path: 'profile',
-        populate: {
-          path: 'user',
-          component: 'User',
-        },
-      })
-      .populate({
-        // populate comment list instance
-        path: 'comments',
-        populate: {
-          // populate User instance
-          path: 'commentedBy',
-          component: 'User',
-        },
-      })
-      .populate({
-        path: 'comments',
-        populate: {
-          // populate Replys instance
-          path: 'replies',
-          component: 'Reply',
-          populate: {
-            // populate user who has reply
-            path: 'repliedBy',
-            component: 'User',
-          },
-        },
-      })
-      .exec()
-      .then(blogs => {
-        res.json(blogs);
-        next();
-      })
-      .catch(next);
+    BlogController.queryBlog(query, 100, res, next);
   }
 
-  private notFoundError(res: Response, next: NextFunction) {
+  /**
+  * Get related blog after classifying it using machine learning model by passing blog title and then query the classified term.
+  * @response: return json blog array
+  */
+  public getRelatedBlog(req: Request, res: Response, next: NextFunction) {
+      const title = req.body.title;
+
+      // Validate that required fields have been supplied
+      if (title.length < 1) {
+          BlogController.validationError(res, next, title);
+      }
+
+      // restore classifier from model
+      const blogClassifier = new BayesClassifier();
+      const storedClassifier = require(classifierModel);
+      blogClassifier.restore(storedClassifier);
+
+      // predict the term by calling classify method of classifier
+      const predictedTerm = blogClassifier.classify(title);
+
+      // query related blog using predicted term
+      BlogController.queryBlog(predictedTerm, 20, res, next);
+  }
+
+  // query only published blog in publishedOn descending order with pagination
+  private static queryBlog(term: string, limit: number, res: Response, next: NextFunction) {
+
+      Blog.find({ $text: { $search: term } })
+          .where('status')
+          .equals('published')
+          .limit(limit)
+          .skip(0)
+          .sort('-publishedOn')
+          .populate({
+              // populate profile instance with profile
+              path: 'profile',
+              populate: {
+                  path: 'user',
+                  component: 'User',
+              },
+          })
+          .populate({
+              // populate comment list instance
+              path: 'comments',
+              populate: {
+                  // populate User instance
+                  path: 'commentedBy',
+                  component: 'User',
+              },
+          })
+          .populate({
+              path: 'comments',
+              populate: {
+                  // populate Replys instance
+                  path: 'replies',
+                  component: 'Reply',
+                  populate: {
+                      // populate user who has reply
+                      path: 'repliedBy',
+                      component: 'User',
+                  },
+              },
+          })
+          .exec()
+          .then(blogs => {
+              res.json(blogs);
+              // next();
+          })
+          .catch(next);
+  }
+
+  private static notFoundError(res: Response, next: NextFunction) {
     res.sendStatus(404);
     next();
     return;
   }
 
-  private validationError(res: Response, next: NextFunction, ...params: string[]) {
+  private static validationError(res: Response, next: NextFunction, ...params: string[]) {
     res.json({
       statusCode: 400,
       message: `Fields ${params} must be required`,

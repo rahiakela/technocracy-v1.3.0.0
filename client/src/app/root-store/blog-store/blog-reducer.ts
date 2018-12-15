@@ -36,6 +36,10 @@ export function blogReducer(state = initialState, action: Actions): State {
       return {...state, isLoading: true, pendingBlogList: []};
     }
 
+    case ActionTypes.GET_RELATED_BLOG: {
+      return {...state, isLoading: true, relatedBlogList: []};
+    }
+
     // Load blog reducer
     case ActionTypes.LOAD_BLOG: {
       return {
@@ -66,7 +70,7 @@ export function blogReducer(state = initialState, action: Actions): State {
         blogList: Object.assign({}, state.blogList, action.payload.blogs),
         isLoading: false,
         loaded: true
-      }
+      };
     }
 
     case ActionTypes.LOAD_PENDING_BLOG_LIST_SUCCESS: {
@@ -75,7 +79,7 @@ export function blogReducer(state = initialState, action: Actions): State {
         pendingBlogList: Object.assign({}, state.pendingBlogList, action.payload.blogs),
         isLoading: false,
         loaded: true
-      }
+      };
     }
 
     case ActionTypes.LOAD_BLOG_SUCCESS: {
@@ -146,6 +150,12 @@ export function blogReducer(state = initialState, action: Actions): State {
 
     case ActionTypes.SEARCH_BLOG_SUCCESS:  {
       return blogAdapter.addAll(action.payload.filteredBlogs, {...state, isLoading: false});
+    }
+
+    case ActionTypes.GET_RELATED_BLOG_SUCCESS: {
+      return blogAdapter.addAll(action.payload.predictedBlogs,
+        {...state, relatedBlogList: action.payload.predictedBlogs , isLoading: false}
+        );
     }
 
     case ActionTypes.LIKE_BLOG_SUCCESS:
@@ -304,6 +314,7 @@ export function blogReducer(state = initialState, action: Actions): State {
     case ActionTypes.EDIT_BLOG_FAILURE:
     case ActionTypes.REMOVE_BLOG_FAILURE:
     case ActionTypes.SEARCH_BLOG_FAILURE:
+    case ActionTypes.GET_RELATED_BLOG_FAILURE:
     case ActionTypes.LIKE_BLOG_FAILURE:
     case ActionTypes.LIKE_COMMENT_FAILURE:
     case ActionTypes.LIKE_REPLY_FAILURE:

@@ -1,20 +1,21 @@
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef, MatIconRegistry} from "@angular/material";
-import {DomSanitizer} from "@angular/platform-browser";
-import {MediaMatcher} from "@angular/cdk/layout";
-import {Question} from "./shared/models/question-model";
-import {Observable, Subscription} from "rxjs";
-import {select, Store} from "@ngrx/store";
-import * as RootStoreState from "./root-store/root-state";
-import { QuestionSelectors, QuestionActions } from "./root-store/question-store";
+import {MatDialog, MatDialogRef, MatIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
+import {MediaMatcher} from '@angular/cdk/layout';
+import {Question} from './shared/models/question-model';
+import {Blog} from './shared/models/blog-model';
+import {Observable, Subscription} from 'rxjs';
+import {select, Store} from '@ngrx/store';
+import * as RootStoreState from './root-store/root-state';
+import { QuestionSelectors, QuestionActions } from './root-store/question-store';
+import {BlogSelectors, BlogActions} from './root-store/blog-store';
 import { AuthSelectors } from './root-store/auth-store';
 import {AuthActions} from './root-store/auth-store';
-import {BlogActions} from './root-store/blog-store';
-import {User} from "./shared/models/user-model";
-import {Router} from "@angular/router";
-import {MediaChange, ObservableMedia} from "@angular/flex-layout";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {CookieService} from "ngx-cookie";
+import {User} from './shared/models/user-model';
+import {Router} from '@angular/router';
+import {MediaChange, ObservableMedia} from '@angular/flex-layout';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CookieService} from 'ngx-cookie';
 
 @Component({
   selector: 'tech-root',
@@ -25,13 +26,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
   user$: Observable<User>;
   questions$: Observable<Question[]>;
+  relatedBlog$: Observable<Blog[]>;
 
   authenticatedUser: User;
 
   mobileQuery: MediaQueryList;
 
   isMobileView = false;
-  subscriptionMedia : Subscription;
+  subscriptionMedia: Subscription;
 
   width;
   height;
@@ -65,10 +67,12 @@ export class AppComponent implements OnInit, OnDestroy {
     this.user$ = this.store$.pipe(select(AuthSelectors.selectAuthenticatedUser));
     // fetch question list
     this.questions$ = this.store$.pipe(select(QuestionSelectors.selectQuestionList));
+    // get related blog list
+    this.relatedBlog$ = this.store$.pipe(select(BlogSelectors.selectRelatedBlogList));
 
     // ref: https://github.com/angular/material2/issues/1130
     // https://github.com/angular/flex-layout/wiki/ObservableMedia
-    // Subscribe to the "MediaChange" to responsively change the boolean that will control the state of the sidenav
+    // Subscribe to the 'MediaChange' to responsively change the boolean that will control the state of the sidenav
     this.isMobileView = (this.mobileMedia.isActive('xs') || this.mobileMedia.isActive('sm'));
     this.subscriptionMedia = this.mobileMedia.subscribe((change: MediaChange) => {
       this.isMobileView = (change.mqAlias === 'xs' || change.mqAlias === 'sm');
@@ -108,20 +112,18 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(SubscriptionDialog, {
+    const dialogRef = this.dialog.open(SubscriptionDialogComponent, {
       width: '600px'
     });
 
     dialogRef.afterClosed().subscribe(email => {
-      console.log('Result: ', email);
       // dispatch subscribe action by passing payload
       this.store$.dispatch(new AuthActions.SubscribeEmailNotification({email: email}));
       // set the visiting user's info into cookies with 2 days expiry date
-      let expireDate: Date = new Date();
+      const expireDate: Date = new Date();
       this.cookieService.put('TECH_U_SUB', email, {
         expires: expireDate.setDate(expireDate.getDate() + 2).toString()
       });
-      console.log('Expiry Date:', expireDate);
     });
   }
 }
@@ -131,12 +133,12 @@ export class AppComponent implements OnInit, OnDestroy {
   templateUrl: './core/subscription/popup/subscription-dialog.html',
   styleUrls: ['./core/subscription/popup/subscription-dialog.scss']
 })
-export class SubscriptionDialog{
+export class SubscriptionDialogComponent {
 
   email = new FormControl('', [Validators.required, Validators.email]);
   subscribeForm = new FormGroup({email: this.email});
 
-  constructor(public dialogRef: MatDialogRef<SubscriptionDialog>) {}
+  constructor(public dialogRef: MatDialogRef<SubscriptionDialogComponent>) {}
 
   getEmailErrorMessage() {
     return this.email.hasError('required') ? 'Please provide your email id' :

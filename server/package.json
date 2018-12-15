@@ -14,6 +14,7 @@
     "test": "mocha --reporter spec --compilers ts:ts-node/register src/**/*.spec.ts"
   },
   "dependencies": {
+    "bayes-classifier": "0.0.5",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "core-js": "^2.5.7",

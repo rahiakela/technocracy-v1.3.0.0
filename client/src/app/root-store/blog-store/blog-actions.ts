@@ -1,6 +1,6 @@
 import {Action} from '@ngrx/store';
 import {Blog} from '../../shared/models/blog-model';
-import {Comment, Reply} from "../../shared/models/comment-model";
+import {Comment, Reply} from '../../shared/models/comment-model';
 
 export enum ActionTypes {
   LOAD_BLOG_LIST          = '[Blog] Load Blog List',
@@ -42,6 +42,10 @@ export enum ActionTypes {
   SEARCH_BLOG             = '[Blog] Search Blog',
   SEARCH_BLOG_FAILURE     = '[Blog] Search Blog Failure',
   SEARCH_BLOG_SUCCESS     = '[Blog] Search Blog Success',
+
+  GET_RELATED_BLOG             = '[Blog] Get Related Blog',
+  GET_RELATED_BLOG_FAILURE     = '[Blog] Get Related Blog Failure',
+  GET_RELATED_BLOG_SUCCESS     = '[Blog] Get Related Blog Success',
 
   LIKE_BLOG               = '[Blog] Like Blog',
   LIKE_BLOG_FAILURE       = '[Blog] Like Blog Failure',
@@ -85,140 +89,140 @@ export enum ActionTypes {
  * payload. Expressing actions as classes enables powerful
  * type checking in reducer functions.
  */
-export class LoadBlogList  implements Action{
+export class LoadBlogList  implements Action {
   readonly type = ActionTypes.LOAD_BLOG_LIST;
 }
-export class LoadBlogListFailure implements Action{
+export class LoadBlogListFailure implements Action {
   readonly type = ActionTypes.LOAD_BLOG_LIST_FAILURE;
 
-  constructor(public payload:{ error: string}) {}
+  constructor(public payload: { error: string}) {}
 }
-export class LoadBlogListSuccess implements Action{
+export class LoadBlogListSuccess implements Action {
   readonly type = ActionTypes.LOAD_BLOG_LIST_SUCCESS;
 
   constructor(public payload: {blogs: Blog[]}) {}
 }
 
-export class LoadBlog  implements Action{
+export class LoadBlog  implements Action {
   readonly type = ActionTypes.LOAD_BLOG;
 
   constructor(public payload: {blogId: string}) {}
 }
-export class LoadBlogFailure implements Action{
+export class LoadBlogFailure implements Action {
   readonly type = ActionTypes.LOAD_BLOG_FAILURE;
 
-  constructor(public payload:{ error: string}) {}
+  constructor(public payload: { error: string}) {}
 }
-export class LoadBlogSuccess implements Action{
+export class LoadBlogSuccess implements Action {
   readonly type = ActionTypes.LOAD_BLOG_SUCCESS;
 
   constructor(public payload: { blog: Blog}) {}
 }
 
-export class LoadBlogListByAuthor  implements Action{
+export class LoadBlogListByAuthor  implements Action {
   readonly type = ActionTypes.LOAD_BLOG_LIST_BY_AUTHOR;
   constructor(public payload: {writtenBy: string}) {}
 }
-export class LoadBlogListByAuthorFailure implements Action{
+export class LoadBlogListByAuthorFailure implements Action {
   readonly type = ActionTypes.LOAD_BLOG_LIST_BY_AUTHOR_FAILURE;
 
-  constructor(public payload:{ error: string}) {}
+  constructor(public payload: { error: string}) {}
 }
-export class LoadBlogListByAuthorSuccess implements Action{
+export class LoadBlogListByAuthorSuccess implements Action {
   readonly type = ActionTypes.LOAD_BLOG_LIST_BY_AUTHOR_SUCCESS;
 
   constructor(public payload: {blogs: Blog[]}) {}
 }
 
-export class LoadPendingBlogList  implements Action{
+export class LoadPendingBlogList  implements Action {
   readonly type = ActionTypes.LOAD_PENDING_BLOG_LIST;
 }
-export class LoadPendingBlogListFailure implements Action{
+export class LoadPendingBlogListFailure implements Action {
   readonly type = ActionTypes.LOAD_PENDING_BLOG_LIST_FAILURE;
 
-  constructor(public payload:{ error: string}) {}
+  constructor(public payload: { error: string}) {}
 }
-export class LoadPendingBlogListSuccess implements Action{
+export class LoadPendingBlogListSuccess implements Action {
   readonly type = ActionTypes.LOAD_PENDING_BLOG_LIST_SUCCESS;
 
   constructor(public payload: {blogs: Blog[]}) {}
 }
 
-export class AddBlog  implements Action{
+export class AddBlog  implements Action {
   readonly type = ActionTypes.ADD_BLOG;
 
   constructor(public payload: {blog: any}) {}
 }
-export class AddBlogFailure implements Action{
+export class AddBlogFailure implements Action {
   readonly type = ActionTypes.ADD_BLOG_FAILURE;
 
-  constructor(public payload:{ error: string}) {}
+  constructor(public payload: { error: string}) {}
 }
-export class AddBlogSuccess implements Action{
+export class AddBlogSuccess implements Action {
   readonly type = ActionTypes.ADD_BLOG_SUCCESS;
 
   constructor(public payload: { blog: Blog}) {}
 }
 
-export class ModifyBlog  implements Action{
+export class ModifyBlog  implements Action {
   readonly type = ActionTypes.MODIFY_BLOG;
 
   constructor(public payload: {data: any}) {}
 }
-export class ModifyBlogFailure implements Action{
+export class ModifyBlogFailure implements Action {
   readonly type = ActionTypes.MODIFY_BLOG_FAILURE;
 
-  constructor(public payload:{ error: string}) {}
+  constructor(public payload: { error: string}) {}
 }
-export class ModifyBlogSuccess implements Action{
+export class ModifyBlogSuccess implements Action {
   readonly type = ActionTypes.MODIFY_BLOG_SUCCESS;
 
   constructor(public payload: { blog: Blog}) {}
 }
 
-export class PreviewBlog  implements Action{
+export class PreviewBlog  implements Action {
   readonly type = ActionTypes.PREVIEW_BLOG;
 
   constructor(public payload: {blogId: string}) {}
 }
-export class PreviewBlogFailure implements Action{
+export class PreviewBlogFailure implements Action {
   readonly type = ActionTypes.PREVIEW_BLOG_FAILURE;
 
-  constructor(public payload:{ error: string}) {}
+  constructor(public payload: { error: string}) {}
 }
-export class PreviewBlogSuccess implements Action{
+export class PreviewBlogSuccess implements Action {
   readonly type = ActionTypes.PREVIEW_BLOG_SUCCESS;
 
   constructor(public payload: { blog: Blog}) {}
 }
 
-export class EditBlog  implements Action{
+export class EditBlog  implements Action {
   readonly type = ActionTypes.EDIT_BLOG;
 
   constructor(public payload: {blogId: string, blog: Blog}) {}
 }
-export class EditBlogFailure implements Action{
+export class EditBlogFailure implements Action {
   readonly type = ActionTypes.EDIT_BLOG_FAILURE;
 
-  constructor(public payload:{ error: string}) {}
+  constructor(public payload: { error: string}) {}
 }
-export class EditBlogSuccess implements Action{
+export class EditBlogSuccess implements Action {
   readonly type = ActionTypes.EDIT_BLOG_SUCCESS;
 
   constructor(public payload: { blog: Blog}) {}
 }
 
-export class RemoveBlog  implements Action{
+export class RemoveBlog  implements Action {
   readonly type = ActionTypes.REMOVE_BLOG;
 
   constructor(public payload: {blogId: string}) {}
 }
-export class RemoveBlogFailure implements Action{
+export class RemoveBlogFailure implements Action {
   readonly type = ActionTypes.REMOVE_BLOG_FAILURE;
 
-  constructor(public payload:{ error: string}) {}
+  constructor(public payload: { error: string}) {}
 }
-export class RemoveBlogSuccess implements Action{
+export class RemoveBlogSuccess implements Action {
   readonly type = ActionTypes.REMOVE_BLOG_SUCCESS;
 
   constructor(public payload: {blog: Blog}) {}
@@ -236,6 +240,22 @@ export class SearchBlogSuccess implements Action {
 }
 export class SearchBlogFailure implements Action {
   readonly type = ActionTypes.SEARCH_BLOG_FAILURE;
+
+  constructor(public payload: { error: string}) {}
+}
+
+export class GetRelatedBlog implements Action {
+  readonly type = ActionTypes.GET_RELATED_BLOG;
+
+  constructor(public payload: {title: string}) {}
+}
+export class GetRelatedBlogSuccess implements Action {
+  readonly type = ActionTypes.GET_RELATED_BLOG_SUCCESS;
+
+  constructor(public payload: {predictedBlogs: Blog[]}) {}
+}
+export class GetRelatedBlogFailure implements Action {
+  readonly type = ActionTypes.GET_RELATED_BLOG_FAILURE;
 
   constructor(public payload: { error: string}) {}
 }
@@ -415,6 +435,9 @@ export type Actions = LoadBlogList
   | SearchBlog
   | SearchBlogSuccess
   | SearchBlogFailure
+  | GetRelatedBlog
+  | GetRelatedBlogSuccess
+  | GetRelatedBlogFailure
   | LikeBlog
   | LikeBlogSuccess
   | LikeBlogFailure

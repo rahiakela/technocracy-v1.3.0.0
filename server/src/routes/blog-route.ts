@@ -13,6 +13,7 @@ export class BlogRoute {
         app.route(`${this.BLOG_BASE_URL}/:page`).get(this.blogController.getBlogs);
         app.route(`${this.BLOG_BASE_URL}/:blogId/load`).get(this.blogController.getBlog);
         app.route(`${this.BLOG_BASE_URL}/search/:query`).get(this.blogController.searchBlog);
+        app.route(`${this.BLOG_BASE_URL}/predict/classification`).put(this.blogController.getRelatedBlog);
         app.route(`${this.BLOG_BASE_URL}/all/:writtenBy`).get(authToken.verifyToken, this.blogController.getBlogListWrittenByAuthor);
         app.route(`${this.BLOG_BASE_URL}/all/pending/list`).get(authToken.verifyToken, this.blogController.getAllPendingBlogs);
         app.route(`${this.BLOG_BASE_URL}/:profileId/:actionType`).post(authToken.verifyToken, this.blogController.saveBlog);

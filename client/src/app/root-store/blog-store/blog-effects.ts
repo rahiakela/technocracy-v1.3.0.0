@@ -246,6 +246,20 @@ export class BlogEffects {
   );
 
   @Effect()
+  getRelatedBlogList$: Observable<Action> = this.actions$.pipe(
+    ofType<BlogActions.GetRelatedBlog>(BlogActions.ActionTypes.GET_RELATED_BLOG),
+    map(action => action.payload.title),
+    switchMap(title =>
+      this.blogService
+        .getRelatedBlog(title)
+        .pipe(
+          map(blogs => new BlogActions.GetRelatedBlogSuccess({predictedBlogs: blogs})),
+          catchError((error: any) => observableOf(new BlogActions.GetRelatedBlogFailure({error})))
+        )
+    )
+  );
+
+  @Effect()
   searchBlog$ = ({debounce = 300, scheduler = asyncScheduler} = {}): Observable<Action> => this.actions$
     .pipe(
       ofType<BlogActions.SearchBlog>(BlogActions.ActionTypes.SEARCH_BLOG),
