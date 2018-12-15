@@ -65,15 +65,18 @@ export class BlogViewComponent implements OnInit, OnChanges {
         // if the blog is not already loaded then loading blog data from route resolver
         if (blog) {
           this.blog = blog;
-          // this.loadRelatedBlog(this.blog.title);
         } else {
           this.activeRoute.params.subscribe(params => {
             // loading blog data from route resolver
             this.blog = this.activeRoute.snapshot.data['blog'];
-            // this.loadRelatedBlog(this.blog.title);
           });
         }
       });
+
+    // get related blog list
+    if (this.blog) {
+      this.loadRelatedBlog(this.blog.title);
+    }
   }
 
   loadRelatedBlog(title: string) {

@@ -2,33 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ced5e199-ceca-4922-9619-0012011a3a65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/app/shared/ad-sense/ad-sense.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/shared/ad-sense/ad-sense.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/shared/ad-sense/ad-sense.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/shared/ad-sense/ad-sense.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml-model/blog-classification/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/blog-classifier-model.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/blog/containers/blog-view/blog-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog/containers/blog-view/blog-view.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/core/services/blog.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/core/services/blog.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/question/components/question-view/question-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/question/components/question-view/question-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-effects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-effects.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-selectors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-state.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shared/shared.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/blog.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/blog.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/routes/blog-route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes/blog-route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/blog.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/blog.spec.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/client/node_modules/" />
     <ignored path="$PROJECT_DIR$/server/node_modules/" />
@@ -44,10 +23,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="17" column="53" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/blog/containers/blog-view/blog-view.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/controllers/blog.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="510" column="34" selection-start-line="510" selection-start-column="29" selection-end-line="510" selection-end-column="34" />
+            <state relative-caret-position="-17">
+              <caret line="526" column="44" selection-start-line="526" selection-start-column="31" selection-end-line="526" selection-end-column="44" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
                 <element signature="n#!!block;n#getBlogs#0;n#BlogController#0" />
@@ -66,35 +66,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/app/blog/containers/blog-view/blog-view.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="56" column="44" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-state.ts">
+        <entry file="file://$PROJECT_DIR$/client/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="38" column="64" lean-forward="true" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
+            <state relative-caret-position="152">
+              <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
               <folding>
-                <element signature="e#0#77#0" expanded="true" />
+                <element signature="n#mat-list#0;n#mat-sidenav#0;n#mat-sidenav-container#0;n#div#0;n#!!top" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-effects.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="253" column="30" lean-forward="true" selection-start-line="253" selection-start-column="30" selection-end-line="253" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -102,11 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="72" column="60" lean-forward="true" selection-start-line="72" selection-start-column="60" selection-end-line="72" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#78#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -114,10 +90,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+            <state relative-caret-position="299">
+              <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
               <folding>
-                <element signature="e#0#55#0" expanded="true" />
+                <element signature="e#0#80#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/controllers/auth-controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-289">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state relative-caret-position="85">
+              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#mat-card-header#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -149,18 +137,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="92" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/core/services/blog.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -236,12 +212,12 @@
         <option value="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-actions.ts" />
         <option value="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-reducer.ts" />
         <option value="$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-effects.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/core/services/blog.service.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/blog/containers/blog-view/blog-view.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/client/src/app/core/services/blog.service.ts" />
         <option value="$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.html" />
-        <option value="$PROJECT_DIR$/client/src/app/blog/containers/blog-view/blog-view.component.ts" />
       </list>
     </option>
   </component>
@@ -330,15 +306,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -354,6 +321,24 @@
             <path>
               <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="ml-model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="ml-model" type="462c0819:PsiDirectoryNode" />
+              <item name="blog-classification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="ml-model" type="462c0819:PsiDirectoryNode" />
+              <item name="blog-classification" type="462c0819:PsiDirectoryNode" />
+              <item name="documents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -361,6 +346,13 @@
               <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
@@ -434,18 +426,17 @@
       <workItem from="1544696538364" duration="4059000" />
       <workItem from="1544713882757" duration="1660000" />
       <workItem from="1544788062555" duration="9235000" />
-      <workItem from="1544851676107" duration="9880000" />
+      <workItem from="1544851676107" duration="15032000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84654000" />
+    <option name="totallyTimeSpent" value="89806000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24880762" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24880762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -457,7 +448,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.28774422" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.28774422" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -508,9 +499,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mobile/app/browse/browse.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/documents/node-documents.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -651,13 +639,6 @@
     <entry file="file://$PROJECT_DIR$/server/blog-classifier-model.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/dist/controllers/blog.controller.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -717,16 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-selectors.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/routes/blog-route.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -737,70 +708,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/controllers/blog.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="510" column="34" selection-start-line="510" selection-start-column="29" selection-end-line="510" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-            <element signature="n#!!block;n#getBlogs#0;n#BlogController#0" />
-            <element signature="n#!!block;n#getBlog#0;n#BlogController#0" />
-            <element signature="n#!!block;n#getBlogListWrittenByAuthor#0;n#BlogController#0" />
-            <element signature="n#!!block;n#getAllPendingBlogs#0;n#BlogController#0" />
-            <element signature="n#!!block;n#saveBlog#0;n#BlogController#0" />
-            <element signature="n#!!block;n#modifyBlog#0;n#BlogController#0" />
-            <element signature="n#!!block;n#editBlog#0;n#BlogController#0" />
-            <element signature="n#!!block;n#deleteBlog#0;n#BlogController#0" />
-            <element signature="n#!!block;n#getTotalBlogStatistics#0;n#BlogController#0" />
-            <element signature="n#!!block;n#getTotalPendingBlogStatistics#0;n#BlogController#0" />
-            <element signature="n#!!block;n#saveBlogLike#0;n#BlogController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-effects.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="253" column="30" lean-forward="true" selection-start-line="253" selection-start-column="30" selection-end-line="253" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-state.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="38" column="64" lean-forward="true" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="201" column="39" lean-forward="true" selection-start-line="201" selection-start-column="39" selection-end-line="201" selection-end-column="39" />
-          <folding>
-            <element signature="n#mat-list#0;n#mat-sidenav#0;n#mat-sidenav-container#0;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/core/services/blog.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -822,32 +735,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.html">
+    <entry file="file://$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-state.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state relative-caret-position="287">
+          <caret line="38" column="64" lean-forward="true" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
           <folding>
-            <element signature="n#style#0;n#mat-card-header#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-effects.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="253" column="30" lean-forward="true" selection-start-line="253" selection-start-column="30" selection-end-line="253" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/containers/blog-view/blog-view.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/root-store/blog-store/blog-selectors.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/auth-controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
+          <folding>
+            <element signature="n#mat-list#0;n#mat-sidenav#0;n#mat-sidenav-container#0;n#div#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="72" column="60" lean-forward="true" selection-start-line="72" selection-start-column="60" selection-end-line="72" selection-end-column="60" />
+        <state relative-caret-position="170">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
+            <element signature="e#0#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/blog/containers/blog-view/blog-view.component.ts">
+    <entry file="file://$PROJECT_DIR$/client/src/app/core/layout/right-side-bar/right-side-bar.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="56" column="44" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
+        <state relative-caret-position="85">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
+            <element signature="n#style#0;n#mat-card-header#0;n#mat-card#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/blog.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="526" column="44" selection-start-line="526" selection-start-column="31" selection-end-line="526" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+            <element signature="n#!!block;n#getBlogs#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getBlogListWrittenByAuthor#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getAllPendingBlogs#0;n#BlogController#0" />
+            <element signature="n#!!block;n#saveBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#modifyBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#editBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#deleteBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getTotalBlogStatistics#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getTotalPendingBlogStatistics#0;n#BlogController#0" />
+            <element signature="n#!!block;n#saveBlogLike#0;n#BlogController#0" />
           </folding>
         </state>
       </provider>

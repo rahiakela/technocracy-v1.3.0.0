@@ -7,10 +7,9 @@ import {Blog} from './shared/models/blog-model';
 import {Observable, Subscription} from 'rxjs';
 import {select, Store} from '@ngrx/store';
 import * as RootStoreState from './root-store/root-state';
-import { QuestionSelectors, QuestionActions } from './root-store/question-store';
-import {BlogSelectors, BlogActions} from './root-store/blog-store';
 import { AuthSelectors } from './root-store/auth-store';
 import {AuthActions} from './root-store/auth-store';
+import {BlogActions} from './root-store/blog-store';
 import {User} from './shared/models/user-model';
 import {Router} from '@angular/router';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
@@ -25,8 +24,6 @@ import {CookieService} from 'ngx-cookie';
 export class AppComponent implements OnInit, OnDestroy {
 
   user$: Observable<User>;
-  questions$: Observable<Question[]>;
-  relatedBlog$: Observable<Blog[]>;
 
   authenticatedUser: User;
 
@@ -65,10 +62,6 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // fetch logged in user from store
     this.user$ = this.store$.pipe(select(AuthSelectors.selectAuthenticatedUser));
-    // fetch question list
-    this.questions$ = this.store$.pipe(select(QuestionSelectors.selectQuestionList));
-    // get related blog list
-    this.relatedBlog$ = this.store$.pipe(select(BlogSelectors.selectRelatedBlogList));
 
     // ref: https://github.com/angular/material2/issues/1130
     // https://github.com/angular/flex-layout/wiki/ObservableMedia
@@ -77,8 +70,6 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscriptionMedia = this.mobileMedia.subscribe((change: MediaChange) => {
       this.isMobileView = (change.mqAlias === 'xs' || change.mqAlias === 'sm');
     });
-
-    this.store$.dispatch(new QuestionActions.LoadQuestionList());
 
     this.user$.subscribe(user => this.authenticatedUser = user);
 
@@ -117,13 +108,15 @@ export class AppComponent implements OnInit, OnDestroy {
     });
 
     dialogRef.afterClosed().subscribe(email => {
-      // dispatch subscribe action by passing payload
-      this.store$.dispatch(new AuthActions.SubscribeEmailNotification({email: email}));
-      // set the visiting user's info into cookies with 2 days expiry date
-      const expireDate: Date = new Date();
-      this.cookieService.put('TECH_U_SUB', email, {
-        expires: expireDate.setDate(expireDate.getDate() + 2).toString()
-      });
+      if (email) {
+        // dispatch subscribe action by passing payload
+        this.store$.dispatch(new AuthActions.SubscribeEmailNotification({email: email}));
+        // set the visiting user's info into cookies with 2 days expiry date
+        const expireDate: Date = new Date();
+        this.cookieService.put('TECH_U_SUB', email, {
+          expires: expireDate.setDate(expireDate.getDate() + 2).toString()
+        });
+      }
     });
   }
 }

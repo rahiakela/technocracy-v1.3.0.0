@@ -189,7 +189,7 @@
     <!--                   right side nav bar                            -->
     <!-- =============================================================== -->
     <mat-sidenav fxShow fxHide.lt-sm fxHide.lt-md position="end" class="mat-elevation-z10" [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="mobileQuery.matches ? 'close' : 'open'" fixedTopGap="64" [fixedInViewport]="mobileQuery.matches" role="navigation" style="width:270px;">
-      <tech-right-side-bar [relatedBlog]="relatedBlog$ | async" [questions]="questions$ | async"></tech-right-side-bar>
+      <tech-right-side-bar></tech-right-side-bar>
     </mat-sidenav>
 
     <!-- =============================================================== -->

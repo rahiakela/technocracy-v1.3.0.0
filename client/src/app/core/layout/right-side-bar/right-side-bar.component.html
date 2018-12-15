@@ -1,9 +1,9 @@
-<div *ngIf="relatedBlog.length > 0; else questionsTemplate">
+<div *ngIf="relatedBlogs?.length > 0; else questionsTemplate">
   <mat-toolbar class="tech-right-toolbar">
     <span class="tech-primary-color">Related Blog</span>
   </mat-toolbar>
 
-  <mat-card *ngFor="let blog of relatedBlog" class="tech-right-card">
+  <mat-card *ngFor="let blog of relatedBlogs" class="tech-right-card">
     <mat-card-header style="margin-top: -35px;margin-bottom: -30px;margin-left: -20px;">
       <div class="tech-right-card-item">
         <mat-card-title>
@@ -27,7 +27,7 @@
     <span class="tech-primary-color">Latest Question</span>
   </mat-toolbar>
 
-  <mat-card *ngFor="let question of questions" class="tech-right-card">
+  <mat-card *ngFor="let question of questions$ | async" class="tech-right-card">
     <mat-card-header style="margin-top: -35px;margin-bottom: -30px;margin-left: -20px;">
       <div class="tech-right-card-item">
         <mat-card-title>
