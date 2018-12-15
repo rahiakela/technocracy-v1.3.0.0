@@ -1,5 +1,5 @@
-import {createEntityAdapter, EntityAdapter, EntityState} from "@ngrx/entity";
-import {Blog} from "../../shared/models/blog-model";
+import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity';
+import {Blog} from '../../shared/models/blog-model';
 
 /**
  * createEntityAdapter creates an object of many helper
@@ -21,10 +21,11 @@ export const blogAdapter: EntityAdapter<Blog> = createEntityAdapter<Blog>({
  * model type by id. This interface is extended to include
  * any additional interface properties.
  */
-export interface State extends EntityState<Blog>{
+export interface State extends EntityState<Blog> {
   selectedBlogId: string;
   blogList?: Blog[];
   pendingBlogList?: Blog[];
+  relatedBlogList?: Blog[];
   isLoading?: boolean;
   loaded?: boolean;
   error?: any;
@@ -39,6 +40,7 @@ export const initialState: State = blogAdapter.getInitialState({
   selectedBlogId: null,
   blogList: [],
   pendingBlogList: [],
+  relatedBlogList: [],
   isLoading: false,
   loaded: false,
   error: null

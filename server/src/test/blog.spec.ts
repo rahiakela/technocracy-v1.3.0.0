@@ -37,7 +37,17 @@ describe('Blog API[/api/blog] Test Suite', () => {
             });
     });
 
-    it('4 > Get Blog Written By Author API[/all/:writtenBy]: should return the list of blog', () => {
+    it('4 > Related Blog API[/predict/classification]: should return the list of blog', function () {
+        chai.request(BASE_URL).get('/predict/classification')
+            .send({'title': 'NgRx —  A Best Practice Guide for Enterprise Angular Applications'})
+            .then(res => {
+                expect(res.body[0].title).length.greaterThan(0);
+                expect(res.body[0].content).length.greaterThan(0);
+                expect(res.body[0].status).to.be.equal('published');
+            });
+    });
+
+    it('5 > Get Blog Written By Author API[/all/:writtenBy]: should return the list of blog', () => {
         chai.request(BASE_URL).get('/all/59945ee3d3a8604780c6e4a8')
             .set('x-access-token', JWT_TOKEN)
             .then(res => {
@@ -46,7 +56,7 @@ describe('Blog API[/api/blog] Test Suite', () => {
             });
     });
 
-    it('5 > Get Pending Blog List API[/all/pending/list]: should return the list of blog', () => {
+    it('6 > Get Pending Blog List API[/all/pending/list]: should return the list of blog', () => {
         chai.request(BASE_URL).get('/all/pending/list')
             .set('x-access-token', JWT_TOKEN)
             .then(res => {

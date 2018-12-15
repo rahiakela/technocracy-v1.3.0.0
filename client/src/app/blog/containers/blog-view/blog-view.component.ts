@@ -10,7 +10,7 @@ import {User} from '../../../shared/models/user-model';
 @Component({
   selector: 'tech-blog-view-container',
   template: `
-    <tech-blog-view 
+    <tech-blog-view
       [blog]="blog"
       (onBlogActionTriggered)="blogActionHandler($event)"
     >
@@ -44,7 +44,6 @@ export class BlogViewComponent implements OnInit, OnChanges {
           this.activeRoute.params.subscribe(params => {
             // loading blog data from route resolver
             this.blog = this.activeRoute.snapshot.data['blog'];
-            // console.log('Blog:', this.blog);
           });
         }
       });
@@ -52,6 +51,11 @@ export class BlogViewComponent implements OnInit, OnChanges {
     // select authenticated user
     this.store$.pipe(select(AuthSelectors.selectAuthenticatedUser))
       .subscribe(user => this.authenticatedUser = user);
+
+    // get related blog list
+    if (this.blog) {
+      this.loadRelatedBlog(this.blog.title);
+    }
   }
 
   ngOnChanges() {
@@ -61,18 +65,23 @@ export class BlogViewComponent implements OnInit, OnChanges {
         // if the blog is not already loaded then loading blog data from route resolver
         if (blog) {
           this.blog = blog;
+          // this.loadRelatedBlog(this.blog.title);
         } else {
           this.activeRoute.params.subscribe(params => {
             // loading blog data from route resolver
             this.blog = this.activeRoute.snapshot.data['blog'];
-            // console.log('Blog:', this.blog);
+            // this.loadRelatedBlog(this.blog.title);
           });
         }
       });
   }
 
+  loadRelatedBlog(title: string) {
+    this.store$.dispatch(new BlogActions.GetRelatedBlog({title: title}));
+  }
+
   // handle blog actions such as like, comment and reply and dispatch action to store
-  blogActionHandler(data : any) {
+  blogActionHandler(data: any) {
     switch (data.action) {
 
       case 'like' :

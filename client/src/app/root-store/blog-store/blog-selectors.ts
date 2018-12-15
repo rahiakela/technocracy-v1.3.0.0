@@ -20,6 +20,9 @@ export const getBlogList  = (state: State): Blog[] => state.blogList;
 // Returns the pending blog list state.
 export const getPendingBlogList  = (state: State): Blog[] => state.pendingBlogList;
 
+// Returns the related blog list state.
+export const getRelatedBlogList  = (state: State): Blog[] => state.relatedBlogList;
+
 // Returns the blog state.
 const selectBlogState: MemoizedSelector<object, State> = createFeatureSelector('blog');
 
@@ -61,4 +64,5 @@ export const selectBlogListWrittenByAuthor: MemoizedSelector<object, Blog[]> = c
 // Returns the pending blog list.
 export const selectPendingBlogList: MemoizedSelector<object, Blog[]> = createSelector(selectBlogState, getPendingBlogList);
 
-
+// Returns the related blog list.
+export const selectRelatedBlogList: MemoizedSelector<object, Blog[]> = createSelector(selectBlogState, getRelatedBlogList);

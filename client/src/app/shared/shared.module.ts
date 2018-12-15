@@ -4,13 +4,14 @@ import {ShareComponent} from './share/share.component';
 import {ShareModule} from '@ngx-share/core';
 import {HttpClientModule} from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {SafeHtmlPipe} from "./pipe/html-sanitizer";
+import {SafeHtmlPipe} from './pipe/html-sanitizer';
 import {FromNowPipe} from './pipe/from-now.pipe';
 import {CommentsComponent, ConfirmationDialog} from './comments/comments.component';
 import { UserIconComponent } from './user-icon/user-icon.component';
-import {EditorComponent} from "./rich-text-editor/editor.component";
-import {QuillModule} from "ngx-quill";
-import {SharedMaterial} from "./shared-material.module";
+import {EditorComponent} from './rich-text-editor/editor.component';
+import {QuillModule} from 'ngx-quill';
+import {SharedMaterial} from './shared-material.module';
+import {AdSenseComponent} from './ad-sense/ad-sense.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import {SharedMaterial} from "./shared-material.module";
     CommentsComponent,
     UserIconComponent,
     EditorComponent,
-    ConfirmationDialog
+    ConfirmationDialog,
+    AdSenseComponent
   ],
   exports: [
     ShareComponent,
@@ -36,7 +38,8 @@ import {SharedMaterial} from "./shared-material.module";
     FromNowPipe,
     CommentsComponent,
     UserIconComponent,
-    EditorComponent
+    EditorComponent,
+    AdSenseComponent
   ],
   entryComponents: [ConfirmationDialog]
 })
