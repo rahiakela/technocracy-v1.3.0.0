@@ -71,6 +71,10 @@ module.exports.getMLDocuments = () => {
         Machine learning, which assists humans with their day-to-day tasks, personally or commercially without having complete control of the output. Such machine learning is used in different ways such as Virtual Assistant, Data analysis, software solutions. The primary user is to reduce errors due to human bias.
         Machine learning, which works entirely autonomously in any field without the need for any human intervention. For example, robots performing the essential process steps in manufacturing plants.
         Machine learning gives terrific results for visual pattern recognition, opening up many potential applications in physical inspection and maintenance across the entire supply chain network.
+        Deep learning is a type of machine learning that’s growing at an almost frightening pace. Nearly every projection has the deep learning industry expanding massively over the next decade. This market research report, for example, expects deep learning to grow 71x in the US and more than that globally over the next ten years. There’s never been a better time than now to get started.
+        Deep learning methods are proving very good at text classification, achieving state-of-the-art results on a suite of standard academic benchmark problems.
+        The modus operandi for text classification involves the use of a word embedding for representing words and a Convolutional Neural Network (CNN) for learning how to discriminate documents on classification problems.
+        Yoon Kim in his study of the use of pre-trained word vectors for classification tasks with Convolutional Neural Networks found that using pre-trained static word vectors does very well. He suggests that pre-trained word embeddings that were trained on very large text corpora, such as the freely available word2vec vectors trained on 100 billion tokens from Google news may offer good universal features for use in natural language processing.
     `;
 
     const mlDocuments = [
