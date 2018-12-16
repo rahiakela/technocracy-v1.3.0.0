@@ -1,5 +1,5 @@
 
-module.exports.getNoSQLDocuments = () => {
+module.exports.getDockerDevOpsDocuments = () => {
     const doc1 = `
         
         `;
@@ -16,9 +16,9 @@ module.exports.getNoSQLDocuments = () => {
         
         `;
 
-    const noSQLDocuments = [
+    const dockerDevopsDocuments = [
         doc1, doc2, doc3, doc4, doc5
     ];
 
-    return noSQLDocuments;
+    return dockerDevopsDocuments;
 };

@@ -31,4 +31,22 @@ module.exports.getNodeDocuments = () => {
        
   `;
 
+   const doc4 = `
+      Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+      Express provides a thin layer of fundamental web application features, without obscuring Node.js features that you know and love.
+      You define routing using methods of the Express app object that correspond to HTTP methods; for example, app.get() to handle GET requests and app.post to handle POST requests. For a full list, see app.METHOD. You can also use app.all() to handle all HTTP methods and app.use() to specify middleware as the callback function.
+      Express supports methods that correspond to all HTTP request methods: get, post, and so on. For a full list, see app.METHOD.
+      Use the express.Router class to create modular, mountable route handlers. A Router instance is a complete middleware and routing system; for this reason, it is often referred to as a “mini-app”.
+      When running an Express app behind a proxy, set (by using app.set()) the application variable trust proxy to one of the values listed in the following table.
+      Express 4 is a breaking change from Express 3. That means an existing Express 3 app will not work if you update the Express version in its dependencies.
+      Express 5.0 is still in the alpha release stage, but here is a preview of the changes that will be in the release and how to migrate your Express 4 app to Express 5.
+      Express 5 is not very different from Express 4: The changes to the API are not as significant as from 3.0 to 4.0. Although the basic API remains the same, there are still breaking changes; in other words an existing Express 4 program might not work if you update it to use Express 5.
+      Express 5 no longer supports the app.del() function. If you use this function an error is thrown. For registering HTTP DELETE routes, use the app.delete() function instead.
+   `;
+
+   const nodeDocuments = [
+       doc1, doc2, doc3, doc4
+   ];
+
+   return nodeDocuments;
 };
