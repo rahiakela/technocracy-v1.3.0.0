@@ -13,7 +13,7 @@ classifier.addDocuments(angularDocuments.getAngularDocuments(), 'angular');
 classifier.addDocuments(hibernateDocuments.getHibernateDocuments(), 'hibernate');
 classifier.addDocuments(mlDocuments.getMLDocuments(),'machine learning');
 classifier.addDocuments(pythonDocuments.getPythonDocuments(), 'python django flask tornado SQLAlchemy');
-classifier.addDocuments(nodeDocuments.getNodeDocuments(), 'node.js express.js');
+classifier.addDocuments(nodeDocuments.getNodeDocuments(), 'node.js express.js javascript');
 
 // train the classifier
 classifier.train();
