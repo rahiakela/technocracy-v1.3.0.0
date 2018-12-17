@@ -10,6 +10,8 @@ const nodeDocuments = require('./documents/node-documents');
 const htmlCssDocuments = require('./documents/html-css-documents');
 const javaDocuments = require('./documents/java-documents');
 const springDocuments = require('./documents/spring-documents');
+const reduxNgrxRxjsDocuments = require('./documents/redux-ngrx-rxjs-documents');
+const securityDocuments = require('./documents/security-documents');
 
 // add documents to the classifier
 classifier.addDocuments(angularDocuments.getAngularDocuments(), 'angular');
@@ -20,6 +22,8 @@ classifier.addDocuments(nodeDocuments.getNodeDocuments(), 'node.js express.js ja
 classifier.addDocuments(htmlCssDocuments.getHTMLCSSDocuments(),'html css');
 classifier.addDocuments(javaDocuments.getJavaDocuments(),'java servlet jsp jpa jdbc');
 classifier.addDocuments(springDocuments.getSpringDocuments(),'spring');
+classifier.addDocuments(reduxNgrxRxjsDocuments.getReduxNgrxRxjsDocuments(), 'redux ngrx rxjs');
+classifier.addDocuments(securityDocuments.getSecurityDocuments(), 'security JWT JSON Web Token');
 
 // train the classifier
 classifier.train();

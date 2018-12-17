@@ -1,20 +1,58 @@
 
 module.exports.getSecurityDocuments = () => {
     const doc1 = `
-        
-        `;
+      Spring Security is a powerful and highly customizable authentication and access-control framework. It is the de-facto standard for securing Spring-based applications.
+      Spring Security is a framework that focuses on providing both authentication and authorization to Java applications. Like all Spring projects, the real power of Spring Security is found in how easily it can be extended to meet custom requirements.
+      Spring Security OAuth provides support for using Spring Security with OAuth (1a) and OAuth2 using standard Spring and Spring Security programming models and configuration idioms.
+      Applying security to an application is not for the faint of heart, and OAuth is no exception. Before you get started, you’re going to want to make sure you understand OAuth and the problem it’s designed to address. There is good documentation at the OAuth site. You will also want to make sure you understand how Spring and Spring Security work.
+      You’re going to want to be quite familiar with both OAuth (and/or OAuth2) and Spring Security, to maximize the effectiveness of this developers guide. OAuth for Spring Security is tightly tied to both technologies, so the more familiar you are with them, the more likely you’ll be to recognize the terminology and patterns that are used.
+      Spring Security Extension allows seamless combination of SAML 2.0 and other authentication and federation mechanisms in a single application.
+      Spring Security SAML Extension allows seamless combination of SAML 2.0 and authentication and federation mechanisms in a single application. All products supporting SAML 2.0 in Identity Provider mode (e.g. ADFS, Okta, Shibboleth, OpenAM, Efecte EIM or Ping Federate) can be used to connect with the extension.
+      This chapter will guide you through steps required to easily integrate Spring Security SAML Extension with ssocircle.com's IDP service using SAML 2.0 protocol. When done you will have a working example of Web SSO against a single Identity Provider. The steps will guide you through deployment of the sample application, configuration of IDP metadata (XML document describing how to connect to the IDP server using SAML 2.0 protocol) and SP metadata (XML document describing your own service) and testing of web single sign-on and single logout.    
+    `;
     const doc2 = `
-        
-        `;
+      Python Security is a free, open source, OWASP project that aims at creating a hardened version of python that makes it easier for security professionals and developers to write applications more resilient to attacks and manipulations.
+      This project source code is licensed under the Apache 2.0 license, which has no restriction except for attribution, and allows proprietary modifications and proprietary forks of this project. The project documentation is licensed under the Creative Commons license. You can use or modify PySec however you want, even include it in commercial products.
+      The Python Software Foundation and the Python developer community take security vulnerabilities very seriously. A Python Security Response Team has been formed that does triage on all reported vulnerabilities and recommends appropriate countermeasures. To reach the response team, send email to security at python dot org. Only the response team members will see your email, and it will be treated confidentially.
+      Welcome to my first blog in the Python for Cybersecurity web course!Wondering why specific focus is being given to cybersecurity or why should you bother? Well, the answer is pretty simple.
+      In this article we are going to learn about securing our REST API with JSON Web Tokens. JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties. JWT happens to be backed by companies like Firebase, Google, Microsoft, and Zendesk.
+      JSON Web Signatre specification are followed to generate the final signed token. JWT Header, the encoded claim are combined, and an encryption algorithm, such as HMAC SHA-256 is applied. The signatures's secret key is held by the server so it will be able to verify existing tokens.
+      API Keys depend on a central storage and a service. JWT can be self-issued or an external service can issue it with allowed scopes and expiration.
+    `;
     const doc3 = `
-        
-        `;
+      JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with HMAC algorithm) or a public/private key pair using RSA.
+      Introduction to JSON Web Tokens is great by itself, so here I'll show how to implement trivial JWT authentication in Python.
+      We will use aiohttp as http library, gunicorn as development server with --reload. pyjwt is python implementation of JWT standard. Requirements for the tutorial are listed at requirements.txt on github page. Install it in virtualenv with:
+      JSON Web Tokens (or JWTs) provide a means of transmitting information from the client to the server in a stateless, secure way.
+      On the server, JWTs are generated by signing user information via a secret key, which are then securely stored on the client. This form of auth works well with modern, single page applications. For more on this, along with the pros and cons of using JWTs vs. session and cookie-based auth, please review the following articles.
+      In this tutorial, we went through the process of adding authentication to a Flask app with JSON Web Tokens. Turn back to the objectives from the beginning of this tutorial. Can you put each one into action? What did you learn?
+      JSON Web Tokens (or JWTs) provide a means of transmitting information from the client to the server in a stateless, secure way.          
+    `;
     const doc4 = `
-        
-        `;
+      JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
+      Although JWTs can be encrypted to also provide secrecy between parties, we will focus on signed tokens. Signed tokens can verify the integrity of the claims contained within it, while encrypted tokens hide those claims from other parties. When tokens are signed using public/private key pairs, the signature also certifies that only the party holding the private key is the one that signed it.
+      Authorization: This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
+      Information Exchange: JSON Web Tokens are a good way of securely transmitting information between parties. Because JWTs can be signed—for example, using public/private key pairs—you can be sure the senders are who they say they are. Additionally, as the signature is calculated using the header and the payload, you can also verify that the content hasn't been tampered with.
+      In authentication, when the user successfully logs in using their credentials, a JSON Web Token will be returned. Since tokens are credentials, great care must be taken to prevent security issues. In general, you should not keep tokens longer than required.
+      Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the Authorization header using the Bearer schema. The content of the header should look like the following.
+      This can be, in certain cases, a stateless authorization mechanism. The server's protected routes will check for a valid JWT in the Authorization header, and if it's present, the user will be allowed to access protected resources. If the JWT contains the necessary data, the need to query the database for certain operations may be reduced, though this may not always be the case.
+      If the token is sent in the Authorization header, Cross-Origin Resource Sharing (CORS) won't be an issue as it doesn't use cookies.    
+    `;
     const doc5 = `
-        
-        `;
+      Let's talk about the benefits of JSON Web Tokens (JWT) when compared to Simple Web Tokens (SWT) and Security Assertion Markup Language Tokens (SAML).
+      As JSON is less verbose than XML, when it is encoded its size is also smaller, making JWT more compact than SAML. This makes JWT a good choice to be passed in HTML and HTTP environments.
+      Security-wise, SWT can only be symmetrically signed by a shared secret using the HMAC algorithm. However, JWT and SAML tokens can use a public/private key pair in the form of a X.509 certificate for signing. Signing XML with XML Digital Signature without introducing obscure security holes is very difficult when compared to the simplicity of signing JSON.
+      JSON parsers are common in most programming languages because they map directly to objects. Conversely, XML doesn't have a natural document-to-object mapping. This makes it easier to work with JWT than SAML assertions.
+      Regarding usage, JWT is used at Internet scale. This highlights the ease of client-side processing of the JSON Web token on multiple platforms, especially mobile.
+      If you want to read more about JSON Web Tokens and even start using them to perform authentication in your own applications, browse to the JSON Web Token landing page at Auth0.
+      JSON Web Token (JWT, sometimes pronounced) is a JSON-based open standard (RFC 7519) for creating access tokens that assert some number of claims. For example, a server could generate a token that has the claim "logged in as admin" and provide that to a client. The client could then use that token to prove that it is logged in as admin. The tokens are signed by one party's private key (usually the server's), so that both parties (the other already being, by some suitable and trustworthy means, in possession of the corresponding public key) are able to verify that the token is legitimate. The tokens are designed to be compact,[2] URL-safe,[3] and usable especially in a web-browser single-sign-on (SSO) context. JWT claims can be typically used to pass identity of authenticated users between an identity provider and a service provider, or any other type of claims as required by business processes.
+      In this article, the fundamentals of what JSON Web Tokens (JWT) are, and why they are used will be explained. JWT are an important piece in ensuring trust and security in your application. JWT allow claims, such as user data, to be represented in a secure manner.
+      A JSON Web Token (JWT) is a JSON object that is defined in RFC 7519 as a safe way to represent a set of information between two parties. The token is composed of a header, a payload, and a signature.
+      To show how and why JWT are actually used, we will use a simple 3 entity example (see the below diagram). The entities in this example are the user, the application server, and the authentication server. The authentication server will provide the JWT to the user. With the JWT, the user can then safely communicate with the application.
+      The payload component of the JWT is the data that‘s stored inside the JWT (this data is also referred to as the “claims” of the JWT). In our example, the authentication server creates a JWT with the user information stored inside of it, specifically the user ID.
+      It should also be noted that JWT should be sent over HTTPS connections (not HTTP). Having HTTPS helps prevents unauthorized users from stealing the sent JWT by making it so that the communication between the servers and the user cannot be intercepted .
+      Also, having an expiration in your JWT payload, a short one in particular, is important so that if old JWT ever get compromised, they will be considered invalid and can no longer be used.   
+    `;
 
     const securityDocuments = [
         doc1, doc2, doc3, doc4, doc5
