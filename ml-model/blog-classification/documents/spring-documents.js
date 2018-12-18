@@ -4,8 +4,8 @@ module.exports.getSpringDocuments = () => {
         Spring is a lightweight framework. It can be thought of as a framework of frameworks because it provides support to various frameworks such as Struts, Hibernate, Tapestry, EJB, JSF etc. The framework, in broader sense, can be defined as a structure where we find solution of the various technical problems.
         The Spring framework comprises several modules such as IOC, AOP, DAO, Context, ORM, WEB MVC etc. We will learn these modules in next page. Let's understand the IOC and Dependency Injection first.
         Dependency Injection (DI) is a design pattern that removes the dependency from the programming code so that it can be easy to manage and test the application. Dependency Injection makes our programming code loosely coupled. To understand the DI better, Let's understand the Dependency Lookup (DL) first:
-        We can inject the dependency by constructor. The <constructor-arg> subelement of <bean> is used for constructor injection. Here we are going to inject.
-        We can inject the dependency by setter method also. The <property> subelement of <bean> is used for setter injection. Here we are going to inject.
+        We can inject the dependency by constructor. The constructor-arg subelement of bean is used for constructor injection. Here we are going to inject.
+        We can inject the dependency by setter method also. The property subelement of bean is used for setter injection. Here we are going to inject.
         Autowiring feature of spring framework enables you to inject the object dependency implicitly. It internally uses setter or constructor injection.
         The constructor mode injects the dependency by calling the constructor of the class. It calls the constructor having large number of parameters.
         The Spring Framework is an application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE platform.

@@ -12,6 +12,10 @@ const javaDocuments = require('./documents/java-documents');
 const springDocuments = require('./documents/spring-documents');
 const reduxNgrxRxjsDocuments = require('./documents/redux-ngrx-rxjs-documents');
 const securityDocuments = require('./documents/security-documents');
+const databaseDocuments = require('./documents/database-documents');
+const nosqlDocuments = require('./documents/nosql-documents');
+const scalaDocuments = require('./documents/scala-documents');
+const dockerDevOpsDocuments = require('./documents/docker-devops-documents');
 
 // add documents to the classifier
 classifier.addDocuments(angularDocuments.getAngularDocuments(), 'angular');
@@ -24,6 +28,10 @@ classifier.addDocuments(javaDocuments.getJavaDocuments(),'java servlet jsp jpa j
 classifier.addDocuments(springDocuments.getSpringDocuments(),'spring');
 classifier.addDocuments(reduxNgrxRxjsDocuments.getReduxNgrxRxjsDocuments(), 'redux ngrx rxjs');
 classifier.addDocuments(securityDocuments.getSecurityDocuments(), 'security JWT JSON Web Token');
+classifier.addDocuments(databaseDocuments.getDatabaseDocuments(),'database sql trigger transaction');
+classifier.addDocuments(nosqlDocuments.getNoSQLDocuments(),'nosql mongodb cassandra graphql neo4j')
+classifier.addDocuments(scalaDocuments.getScalaDocuments(),'scala');
+classifier.addDocuments(dockerDevOpsDocuments.getDockerDevOpsDocuments(),'docker devops jenkins splunk jira git');
 
 // train the classifier
 classifier.train();
