@@ -2,6 +2,8 @@ import {NextFunction, Request, Response} from 'express';
 import {Question} from "../models/question.model";
 import {MailSender} from "../mail/mail.sender";
 import {User} from "../models/user.model";
+import {Subscription} from "../models/subscription.model";
+import {UserUtils} from "../utils/user-utils";
 
 /**
  * @class QuestionController: Define question related operation like fetching/saving/updating question and question related statistics etc.
@@ -257,6 +259,7 @@ export class QuestionController {
             // send question mail notification to user/subscriber according to action type
             switch (actionType) {
                 case 'published':
+
                     User.find({})
                         .where("subscription").equals("Y") // filter the user who has subscribed to mail notification
                         .exec()
@@ -264,11 +267,23 @@ export class QuestionController {
                             users.forEach(user => {
                                 // don't send this notification to the user who has asked the question
                                 if(user._id.toString() !== question.askedBy._id.toString()) {
-                                    MailSender.sendMail("publish-question", mailOptions.set("recipient", user));
+                                    mailOptions.set("user", user);
+                                    MailSender.sendMail("publish-question", mailOptions.set("recipient", UserUtils.getUserName(user)));
                                 }
                             });
                         })
                         .catch(next);
+
+                    // send blog published mail notification to all subscribers
+                    Subscription.find({})
+                        .where('notification')
+                        .equals('Y')
+                        .exec()
+                        .then((sub: any) => {
+                            MailSender.sendMail("publish-question", mailOptions.set("recipient", sub.email));
+                        })
+                        .catch(next);
+
                     break;
                 case 'pending':
                     // send new question post mail notification to editors

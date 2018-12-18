@@ -3,6 +3,8 @@ import {User} from '../models/user.model';
 import {Blog} from '../models/blog.model';
 import {Reply} from '../models/comment.model';
 import {MailSender} from '../mail/mail.sender';
+import {UserUtils} from "../utils/user-utils";
+import {Subscription} from "../models/subscription.model";
 
 // load classifier and model
 const BayesClassifier = require('bayes-classifier');
@@ -295,6 +297,7 @@ export class BlogController {
         // send blog mail notification to user/subscriber according to action type
         switch (actionType) {
           case 'published':
+
             // filter the user who has subscribed to mail notification
             User.find({})
               .where('subscription')
@@ -304,11 +307,22 @@ export class BlogController {
                 users.forEach(user => {
                   if (user._id.toString() !== blog.toString()) {
                     // don't send this notification to the profile who has written this blog
-                    MailSender.sendMail('publish-blog', mailOptions.set('recipient', user));
+                    MailSender.sendMail('publish-blog', mailOptions.set('recipient', UserUtils.getUserEmail(user)));
                   }
                 });
               })
               .catch(next);
+
+            // send blog published mail notification to all subscribers
+            Subscription.find({})
+                .where('notification')
+                .equals('Y')
+                .exec()
+                .then((sub: any) => {
+                    MailSender.sendMail('publish-blog', mailOptions.set('recipient', sub.email));
+                })
+                .catch(next);
+
             break;
           case 'pending':
             // send new blog post mail notification to editors

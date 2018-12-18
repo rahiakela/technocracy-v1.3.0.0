@@ -72,12 +72,10 @@ export class MailSender {
         toMailId = UserUtils.getUserEmail(recipient);
         break;
       case 'publish-blog':
-        htmlContent = BlogPublishMailTemplate.getBlogPublishMailTemplate(
-          mailOption.get('blog'), UserUtils.getUserEmail(mailOption.get("recipient"))
-        );
+        htmlContent = BlogPublishMailTemplate.getBlogPublishMailTemplate(mailOption.get('blog'), mailOption.get('recipient'));
         fromContent = 'Technocracy Blog <editors@tecknocracy.com>';
         subject = mailOption.get('blog').title;
-        toMailId = UserUtils.getUserEmail(recipient);
+        toMailId = mailOption.get('recipient');
         break;
       case 'post-question':
         htmlContent = QuestionPostMailTemplate.getQuestionPostMailTemplate(
@@ -106,7 +104,8 @@ export class MailSender {
       case 'publish-question':
         htmlContent = QuestionPublishMailTemplate.getQuestionPublishMailTemplate(
           mailOption.get('question'),
-          recipient,
+          mailOption.get('recipient'),
+          mailOption.get('user'),
           UserUtils.getUserName(mailOption.get('question').askedBy)
         );
         fromContent = 'Technocracy Question <editors@tecknocracy.com>';

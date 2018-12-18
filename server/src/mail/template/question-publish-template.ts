@@ -4,11 +4,7 @@ import {UserUtils} from "../../utils/user-utils";
 
 export class QuestionPublishMailTemplate {
 
-  public static getQuestionPublishMailTemplate(
-    question: any,
-    recipient: any,
-    askedByUser: string
-  ): string {
+  public static getQuestionPublishMailTemplate(question: any, recipient: any, user: any, askedByUser: string): string {
     let content = `
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -223,11 +219,7 @@ export class QuestionPublishMailTemplate {
                                                                         <td align='left' valign='middle' style="width: 90px;">
                                                                             <div class="contentEditableContainer contentImageEditable">
                                                                                 <div class="contentEditable" >
-                                                                                    <img src="${
-                                                                                      process
-                                                                                        .env
-                                                                                        .CLOUD_IMAGE_PATH
-                                                                                    }/images/tech-logo.png" style="width: 80px; height: 70px;" alt='Compagnie logo' data-default="placeholder" data-max-width="300" width='129' height='22'>
+                                                                                    <img src="${process.env.CLOUD_IMAGE_PATH}/images/tech-logo.png" style="width: 80px; height: 70px;" alt='Compagnie logo' data-default="placeholder" data-max-width="300" width='129' height='22'>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
@@ -262,10 +254,7 @@ export class QuestionPublishMailTemplate {
                                                             <div class="contentEditableContainer contentImageEditable">
                                                                 <div class="contentEditable" >
                                                                     <a href="https://www.tecknocracy.com/">
-                                                                        <img class="banner" src="${
-                                                                          process.env
-                                                                            .CLOUD_IMAGE_PATH
-                                                                        }/images/tech-blog-logo.jpg" alt='featured image' data-default="placeholder" data-max-width="560" height='200' width='560' border="0">
+                                                                        <img class="banner" src="${process.env.CLOUD_IMAGE_PATH}/images/tech-blog-logo.jpg" alt='featured image' data-default="placeholder" data-max-width="560" height='200' width='560' border="0">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -294,26 +283,17 @@ export class QuestionPublishMailTemplate {
                                                                                                     <div class="contentEditable">
         `;
     // send different notification content to the user who has asked the question
-    if (recipient._id.toString() === question.askedBy._id.toString()) {
+    if (user._id.toString() === question.askedBy._id.toString()) {
       content += `
                                                                                                         <br/>
-                                                                                                        <p>Hey <strong>${UserUtils.getUserName(
-                                                                                                          recipient
-                                                                                                        )}</strong>,</p>
-                                                                                                        <p>The question, you have asked on ${moment(
-                                                                                                          question.createdOn
-                                                                                                        ).format(
-                                                                                                          'LLLL'
-                                                                                                        )}, now it is publicly visible to other technocrats after auditing.We will keep you updated, if any technocrat responds on this question.</p>
-
+                                                                                                        <p>Hey <strong>${UserUtils.getUserName(user)}</strong>,</p>
+                                                                                                        <p>The question, you have asked on ${moment(question.createdOn).format('LLLL')}, now it is publicly visible to other technocrats after auditing.We will keep you updated, if any technocrat responds on this question.</p>
                                                                                                         <br/>
         `;
     } else {
       content += `
                                                                                                         <br/>
-                                                                                                        <p>Hey <strong>${UserUtils.getUserName(
-                                                                                                          recipient
-                                                                                                        )}</strong>,</p>
+                                                                                                        <p>Hey <strong>${UserUtils.getUserName(user)}</strong>,</p>
                                                                                                         <p>This question is just asked by <strong>${askedByUser}</strong> few hours ago.He would be very grateful to you, if you help him to find the better solution.</p>
                                                                                                         <br/>
         `;
@@ -350,11 +330,7 @@ export class QuestionPublishMailTemplate {
                                                         <td style='border-bottom-left-radius:3px;border-bottom-right-radius:3px;' align='left'>
                                                             <div class="contentEditableContainer contentTextEditable" style='display:inline-block;'>
                                                                 <div class="contentEditable" >
-                                                                    <h4 style="color: #007db8; font-family: inherit;"><a href="https://www.tecknocracy.com/question/${
-                                                                      question._id
-                                                                    }" style="text-decoration: none;color: currentColor;">${
-      question.title
-    }</a></h4>
+                                                                    <h4 style="color: #007db8; font-family: inherit;"><a href="https://www.tecknocracy.com/question/${question._id}" style="text-decoration: none;color: currentColor;">${question.title}</a></h4>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -378,9 +354,7 @@ export class QuestionPublishMailTemplate {
                                                                     <div class="contentEditableContainer contentTextEditable">
                                                                         <div class="contentEditable">
                                                                             <p>
-                                                                                ${UserUtils.decodeHTML(
-                                                                                  question.content
-                                                                                )}
+                                                                                ${UserUtils.decodeHTML(question.content)}
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -390,9 +364,7 @@ export class QuestionPublishMailTemplate {
                                                                 <td align='right' valign='top'>
                                                                     <div class="contentEditableContainer contentTextEditable">
                                                                         <div class="contentEditable" >
-                                                                            <a target='_blank' href="http://www.tecknocracy.com/question/${
-                                                                              question._id
-                                                                            }" class='link1'>Read more →</a>
+                                                                            <a target='_blank' href="http://www.tecknocracy.com/question/${question._id}" class='link1'>Read more →</a>
                                                                         </div>
                                                                     </div>
                                                                 </td>
@@ -442,11 +414,7 @@ export class QuestionPublishMailTemplate {
                                                                                 <td valign="middle" width="65" bgcolor='#ffffff' height="52" align="center">
                                                                                     <div class='contentEditableContainer contentFacebookEditable'>
                                                                                         <div class="contentEditable" valign='middle'>
-                                                                                            <a target='_blank' href="https://www.facebook.com/tecknocracy/"><img src="${
-                                                                                              process
-                                                                                                .env
-                                                                                                .CLOUD_IMAGE_PATH
-                                                                                            }/images/facebook.png" alt='https://www.facebook.com/tecknocracy/' data-default="placeholder" data-max-width="37" width='37' height='37' data-customIcon="true"></a>
+                                                                                            <a target='_blank' href="https://www.facebook.com/tecknocracy/"><img src="${process.env.CLOUD_IMAGE_PATH}/images/facebook.png" alt='https://www.facebook.com/tecknocracy/' data-default="placeholder" data-max-width="37" width='37' height='37' data-customIcon="true"></a>
                                                                                         </div>
                                                                                     </div>
                                                                                 </td>
@@ -454,11 +422,7 @@ export class QuestionPublishMailTemplate {
                                                                                 <td valign="middle" width="65" bgcolor='#ffffff' height="52" align="center">
                                                                                     <div class='contentEditableContainer contentTwitterEditable'>
                                                                                         <div class="contentEditable" valign='middle'>
-                                                                                            <a target='_blank' href="https://plus.google.com/u/1/collection/4rqoUE"><img src="${
-                                                                                              process
-                                                                                                .env
-                                                                                                .CLOUD_IMAGE_PATH
-                                                                                            }/images/google.png" alt='https://plus.google.com/u/1/collection/4rqoUE' data-default="placeholder" data-max-width="37" width='37' height='25' data-customIcon="true"></a>
+                                                                                            <a target='_blank' href="https://plus.google.com/u/1/collection/4rqoUE"><img src="${process.env.CLOUD_IMAGE_PATH}/images/google.png" alt='https://plus.google.com/u/1/collection/4rqoUE' data-default="placeholder" data-max-width="37" width='37' height='25' data-customIcon="true"></a>
                                                                                         </div>
                                                                                     </div>
                                                                                 </td>
@@ -474,11 +438,7 @@ export class QuestionPublishMailTemplate {
                                                                                 <td valign="middle" width="65" bgcolor='#ffffff' height="52" align="center">
                                                                                     <div class='contentEditableContainer contentFacebookEditable'>
                                                                                         <div class="contentEditable" valign='middle'>
-                                                                                            <a target='_blank' href="https://twitter.com/tecknocracy_inc"><img src="${
-                                                                                              process
-                                                                                                .env
-                                                                                                .CLOUD_IMAGE_PATH
-                                                                                            }/images/twitter.png" alt='facebook link' data-default="placeholder" data-max-width="37" width='37' height='37' data-customIcon="true"></a>
+                                                                                            <a target='_blank' href="https://twitter.com/tecknocracy_inc"><img src="${process.env.CLOUD_IMAGE_PATH}/images/twitter.png" alt='facebook link' data-default="placeholder" data-max-width="37" width='37' height='37' data-customIcon="true"></a>
                                                                                         </div>
                                                                                     </div>
                                                                                 </td>
@@ -486,11 +446,7 @@ export class QuestionPublishMailTemplate {
                                                                                 <td valign="middle" width="65" bgcolor='#ffffff' height="52" align="center">
                                                                                     <div class='contentEditableContainer contentTwitterEditable'>
                                                                                         <div class="contentEditable" valign='middle'>
-                                                                                            <a target='_blank' href="#"><img src="${
-                                                                                              process
-                                                                                                .env
-                                                                                                .CLOUD_IMAGE_PATH
-                                                                                            }/images/linkedin.png" alt='twitter link' data-default="placeholder" data-max-width="37" width='37' height='30' data-customIcon="true"></a>
+                                                                                            <a target='_blank' href="#"><img src="${process.env.CLOUD_IMAGE_PATH}/images/linkedin.png" alt='twitter link' data-default="placeholder" data-max-width="37" width='37' height='30' data-customIcon="true"></a>
                                                                                         </div>
                                                                                     </div>
                                                                                 </td>
@@ -542,11 +498,8 @@ export class QuestionPublishMailTemplate {
                                                         <td valign='top' align='center'>
                                                             <div class="contentEditableContainer contentTextEditable">
                                                                 <div class="contentEditable" >
-                                                                    <p style='color:#A8B0B6; font-size:13px;line-height: 16px;'>This email was sent to <a href="mailto:${UserUtils.getUserName(
-                                                                      recipient
-                                                                    )}" target=\\"_blank\\">${UserUtils.getUserName(
-      recipient
-    )}</a> when you signed up on technocracy.com Please add us to your contacts to ensure the newsletters land in your inbox.
+                                                                    <p style='color:#A8B0B6; font-size:13px;line-height: 16px;'>This email was sent to <a href="mailto:${recipient}" target=\\"_blank\\">${recipient}</a> 
+                                                                        when you signed up on technocracy.com Please add us to your contacts to ensure the newsletters land in your inbox.
                                                                     </p>
                                                                 </div>
                                                             </div>
