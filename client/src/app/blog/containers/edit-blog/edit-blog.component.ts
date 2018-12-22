@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {select, Store} from "@ngrx/store";
+import {select, Store} from '@ngrx/store';
 import {RootStoreState} from '../../../root-store';
 import {BlogActions, BlogSelectors} from '../../../root-store/blog-store';
 import {AuthSelectors} from '../../../root-store/auth-store';
-import {ActivatedRoute} from "@angular/router";
-import {Blog} from "../../../shared/models/blog-model";
-import {Observable} from "rxjs";
-import {User} from "../../../shared/models/user-model";
+import {ActivatedRoute} from '@angular/router';
+import {Blog} from '../../../shared/models/blog-model';
+import {Observable} from 'rxjs';
+import {User} from '../../../shared/models/user-model';
 
 @Component({
   selector: 'tech-edit-blog-container',
@@ -17,7 +17,7 @@ import {User} from "../../../shared/models/user-model";
       [loaded]="loaded | async"
       [error]="error | async"
       (onBlogActionTriggered)="blogActionHandler($event)">
-      
+
     </tech-edit-blog>
   `,
   styles: []
@@ -62,14 +62,14 @@ export class EditBlogComponent implements OnInit {
   }
 
   // handle blog actions such as post, draft
-  blogActionHandler(data : any) {
+  blogActionHandler(data: any) {
     const blog = {
       blogId: this.blogId,
       title: data.title,
       content: data.content,
       tags: data.tags
     };
-    this.store$.dispatch(new BlogActions.EditBlog({blogId: blog.blogId ,blog: blog}));
+    this.store$.dispatch(new BlogActions.EditBlog({blogId: blog.blogId, blog: blog}));
   }
 
 }

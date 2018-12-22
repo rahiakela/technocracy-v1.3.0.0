@@ -11,7 +11,7 @@ import {
 import {Blog} from '../../../shared/models/blog-model';
 import * as moment from 'moment';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'tech-my-blog',
@@ -47,7 +47,7 @@ export class MyBlogComponent implements OnInit, OnChanges {
   ngOnChanges() {
     let i = 0;
     const ELEMENT_DATA: BlogElement[] = Object.values(this.blogList).map((blog: any) => {
-      return {position: ++i, title: blog.title, status: blog.status, createdOn: blog.createdOn}
+      return {position: ++i, title: blog.title, status: blog.status, createdOn: blog.createdOn };
     });
 
     this.dataSource = new MatTableDataSource<BlogElement>(ELEMENT_DATA);

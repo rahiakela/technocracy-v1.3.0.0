@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {select, Store} from "@ngrx/store";
-import { RootStoreState} from "../../../root-store";
+import {select, Store} from '@ngrx/store';
+import { RootStoreState} from '../../../root-store';
 import { AuthActions, AuthSelectors } from '../../../root-store/auth-store';
-import {Observable} from "rxjs";
-import {User} from "../../../shared/models/user-model";
-import {ActivatedRoute} from "@angular/router";
+import {Observable} from 'rxjs';
+import {User} from '../../../shared/models/user-model';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'tech-profile-container',
   template: `
-    <tech-profile 
+    <tech-profile
       [user]="authenticatedUser"
       [loading]="loading | async"
       [loaded]="loaded | async"
@@ -48,12 +48,19 @@ export class ProfileComponent implements OnInit {
   }
 
   // handle profile actions such as save
-  profileActionHandler(data : any) {
-    console.log(data);
+  profileActionHandler(data: any) {
     if (this.profileId === 'create') {
-      this.store$.dispatch(new AuthActions.CreateProfile({user: this.authenticatedUser, profile: data}));
+      if (data.action === 'updateProfileImage') {
+        this.store$.dispatch(new AuthActions.UpdateProfilePhoto({userId: data.userId, user: data.user}));
+      } else {
+        this.store$.dispatch(new AuthActions.CreateProfile({user: this.authenticatedUser, profile: data}));
+      }
     } else {
-      this.store$.dispatch(new AuthActions.UpdateProfile({user: this.authenticatedUser, profile: data}));
+      if (data.action === 'updateProfileImage') {
+        this.store$.dispatch(new AuthActions.UpdateProfilePhoto({userId: data.userId, user: data.user}));
+      } else {
+        this.store$.dispatch(new AuthActions.UpdateProfile({user: this.authenticatedUser, profile: data}));
+      }
     }
   }
 

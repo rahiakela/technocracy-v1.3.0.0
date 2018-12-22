@@ -27,11 +27,11 @@ classifier.addDocuments(htmlCssDocuments.getHTMLCSSDocuments(),'html css');
 classifier.addDocuments(javaDocuments.getJavaDocuments(),'java servlet jsp jpa jdbc');
 classifier.addDocuments(springDocuments.getSpringDocuments(),'spring');
 classifier.addDocuments(reduxNgrxRxjsDocuments.getReduxNgrxRxjsDocuments(), 'redux ngrx rxjs');
-classifier.addDocuments(securityDocuments.getSecurityDocuments(), 'security JWT JSON Web Token');
+classifier.addDocuments(securityDocuments.getSecurityDocuments(), 'security SSL JWT JSON Web Token');
 classifier.addDocuments(databaseDocuments.getDatabaseDocuments(),'database sql trigger transaction');
-classifier.addDocuments(nosqlDocuments.getNoSQLDocuments(),'nosql mongodb cassandra graphql neo4j')
+classifier.addDocuments(nosqlDocuments.getNoSQLDocuments(),'nosql mongodb cassandra graphql neo4j');
 classifier.addDocuments(scalaDocuments.getScalaDocuments(),'scala');
-classifier.addDocuments(dockerDevOpsDocuments.getDockerDevOpsDocuments(),'docker devops jenkins splunk jira git');
+classifier.addDocuments(dockerDevOpsDocuments.getDockerDevOpsDocuments(),'docker devops jenkins kubernetes');
 
 // train the classifier
 classifier.train();

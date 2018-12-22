@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {User} from "../models/user-model";
-import {UtilService} from "../../core/services/util.service";
+import {User} from '../models/user-model';
+import {UtilService} from '../../core/services/util.service';
 
 @Component({
   selector: 'tech-user-icon',

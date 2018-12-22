@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../../../environments/environment';
 import * as AWS from 'aws-sdk';
-import {UtilService} from "./util.service";
-import { Store} from "@ngrx/store";
-import { RootStoreState} from "../../root-store";
+import {UtilService} from './util.service';
+import { Store} from '@ngrx/store';
+import { RootStoreState} from '../../root-store';
 import { AuthActions } from '../../root-store/auth-store';
 
 /* references

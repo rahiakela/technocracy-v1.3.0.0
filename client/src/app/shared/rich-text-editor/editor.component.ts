@@ -9,9 +9,9 @@ import {
   ViewChild
 } from '@angular/core';
 import { QuillEditorComponent } from 'ngx-quill';
-import {debounceTime, distinctUntilChanged} from "rxjs/operators";
-import {FileUploadService} from "../../core/services/file-upload.service";
-import {UtilService} from "../../core/services/util.service";
+import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
+import {UtilService} from '../../core/services/util.service';
+import {GoogleFileUploadService} from '../../core/services/google-file-upload.service';
 
 /* reference:
   https://github.com/KillerCodeMonkey/ngx-quill
@@ -46,7 +46,7 @@ export class EditorComponent implements OnInit, OnChanges {
 
   editorConfig = {};
 
-  constructor(private fileUploadService: FileUploadService, private utilService: UtilService) {
+  constructor(private fileUploadService: GoogleFileUploadService, private utilService: UtilService) {
     this.editorConfig = {
       toolbar: [
         ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
@@ -90,7 +90,7 @@ export class EditorComponent implements OnInit, OnChanges {
   }
 
   onEditorCreated(editorInstance: any) {
-    let toolbar = editorInstance.getModule('toolbar');
+    const toolbar = editorInstance.getModule('toolbar');
     toolbar.addHandler('image', () => {
       /**
        * Step1. select local image
@@ -113,7 +113,8 @@ export class EditorComponent implements OnInit, OnChanges {
           /**
            * Step2. save to server
            */
-          const imagePath = `images/${this.editorType}s/${this.contentId}`;
+          // construct the file path using editor type like blog or question and content type like blog id or question id
+          const imagePath = `technocracy/images/${this.editorType}s/${this.contentId}`;
           // this is callback data: url
           this.fileUploadService.upload(editorInstance, file, imagePath);
           console.log('Done...');
@@ -124,7 +125,7 @@ export class EditorComponent implements OnInit, OnChanges {
     });
   }
 
-  getHeight(): string{
+  getHeight(): string {
     switch (this.editorType) {
       case 'comment':
         return '150px';

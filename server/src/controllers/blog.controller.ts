@@ -345,7 +345,7 @@ export class BlogController {
   }
 
   /**
-   * Edit blog against blog id.
+   * Edit or Update blog against blog id with latest technologies content.
    * @response: return json of updated blog object
    */
   public editBlog(req: Request, res: Response, next: NextFunction) {
@@ -364,7 +364,6 @@ export class BlogController {
         title: title,
         content: content,
         tags: tags,
-        status: 'draft',
         updatedOn: Date.now(),
       }, // data to update
       { new: true } // options: return updated one

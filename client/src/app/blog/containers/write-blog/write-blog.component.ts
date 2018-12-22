@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {select, Store} from "@ngrx/store";
+import {select, Store} from '@ngrx/store';
 import {RootStoreState} from '../../../root-store';
 import {BlogActions, BlogSelectors} from '../../../root-store/blog-store';
 import {AuthSelectors} from '../../../root-store/auth-store';
-import {User} from "../../../shared/models/user-model";
-import {Router} from "@angular/router";
-import {Observable} from "rxjs";
+import {User} from '../../../shared/models/user-model';
+import {Router} from '@angular/router';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'tech-write-blog-container',
   template: `
-    <tech-write-blog 
+    <tech-write-blog
       [loading]="loading | async"
       [loaded]="loaded | async"
       [error]="error | async"
       (onBlogActionTriggered)="blogActionHandler($event)">
-      
     </tech-write-blog>
   `,
   styles: []
@@ -50,7 +49,7 @@ export class WriteBlogComponent implements OnInit {
   }
 
   // handle blog actions such as post, draft
-  blogActionHandler(data : any) {
+  blogActionHandler(data: any) {
     const blog = {
       action : data.action,
       profileId: this.authenticatedUser.profile._id,

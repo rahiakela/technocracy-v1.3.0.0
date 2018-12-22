@@ -17,8 +17,11 @@ import { PrivacyPolicyComponent } from './auth/signup/signup.component';
 import { ForgotPassComponent } from './auth/forgot-pass/forgot-pass.component';
 import { MenuBarComponent } from './layout/menu-bar/menu-bar.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RECAPTCHA_SETTINGS, RecaptchaModule, RecaptchaSettings} from "ng-recaptcha";
-import {RecaptchaFormsModule} from "ng-recaptcha/forms";
+import {RECAPTCHA_SETTINGS, RecaptchaModule, RecaptchaSettings} from 'ng-recaptcha';
+import {RecaptchaFormsModule} from 'ng-recaptcha/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
+import {environment} from '../../environments/environment';
 import { AccountVerificationComponent } from './auth/account-verification/account-verification.component';
 import { AccountActivateComponent } from './auth/account-activate/account-activate.component';
 import { ResetPassComponent } from './auth/reset-pass/reset-pass.component';
@@ -27,10 +30,10 @@ import {
   FacebookLoginProvider,
   GoogleLoginProvider,
   SocialLoginModule
-} from "angularx-social-login";
-import {UserAuthObserver} from "./observer/user-auth-observer";
-import {SubscribeComponent} from "./subscription/subscribe/subscribe.component";
-import {UnsubscribeComponent} from "./subscription/unsubscribe/unsubscribe.component";
+} from 'angularx-social-login';
+import {UserAuthObserver} from './observer/user-auth-observer';
+import {SubscribeComponent} from './subscription/subscribe/subscribe.component';
+import {UnsubscribeComponent} from './subscription/unsubscribe/unsubscribe.component';
 
 // ref: https://www.npmjs.com/package/ng-recaptcha
 const GLOBAL_RECAPTCHA_SETTINGS: RecaptchaSettings = { siteKey: '6LdMVz4UAAAAAClv3WheCRrgtoDyPUtFfGhikGu4' };
@@ -65,6 +68,8 @@ export function socialConfig() {
     RecaptchaModule.forRoot(),
     SocialLoginModule,
     RecaptchaFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule,
     AppMaterialModule,
     SharedModule
   ],
@@ -96,7 +101,8 @@ export function socialConfig() {
   providers: [
     UserAuthObserver,
     {provide: RECAPTCHA_SETTINGS, useValue: GLOBAL_RECAPTCHA_SETTINGS}, // Google reCaptcha settings
-    {provide: AuthServiceConfig, useFactory: socialConfig} // Social oAuth settings
+    {provide: AuthServiceConfig, useFactory: socialConfig}, // Social oAuth settings
+    {provide: StorageBucket, useValue: 'technocracy-157812.appspot.com'}
   ]
 })
 export class CoreModule {

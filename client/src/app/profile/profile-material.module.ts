@@ -7,8 +7,8 @@ import {
   MatDialogModule, MatDividerModule,
   MatFormFieldModule, MatGridListModule,
   MatIconModule,
-  MatInputModule, MatMenuModule, MatNativeDateModule, MatSelectModule, MatTabsModule
-} from "@angular/material";
+  MatInputModule, MatMenuModule, MatNativeDateModule, MatProgressBarModule, MatSelectModule, MatTabsModule
+} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -26,7 +26,8 @@ import {
     MatNativeDateModule,
     MatSelectModule,
     MatMenuModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatProgressBarModule
   ],
   exports: [
     MatButtonModule,
@@ -43,7 +44,8 @@ import {
     MatNativeDateModule,
     MatSelectModule,
     MatMenuModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatProgressBarModule
   ],
   declarations: []
 })

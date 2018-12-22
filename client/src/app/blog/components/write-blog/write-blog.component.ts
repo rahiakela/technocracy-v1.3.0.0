@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {UtilService} from "../../../core/services/util.service";
-import {User} from "../../../shared/models/user-model";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UtilService} from '../../../core/services/util.service';
+import {User} from '../../../shared/models/user-model';
 
 @Component({
   selector: 'tech-write-blog',
@@ -63,7 +63,7 @@ export class WriteBlogComponent implements OnInit {
     return !this.title.valid || !this.tags.valid || !this.recaptcha.valid || !this.editorContent || this.editorContent.length < 1000;
   }
 
-  getCurrentUser() : User {
+  getCurrentUser(): User {
     return this.utilService.getCurrentUser();
   }
 

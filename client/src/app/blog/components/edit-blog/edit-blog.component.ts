@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {User} from "../../../shared/models/user-model";
-import {UtilService} from "../../../core/services/util.service";
-import {Blog} from "../../../shared/models/blog-model";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {User} from '../../../shared/models/user-model';
+import {UtilService} from '../../../core/services/util.service';
+import {Blog} from '../../../shared/models/blog-model';
 
 @Component({
   selector: 'tech-edit-blog',
@@ -57,7 +57,7 @@ export class EditBlogComponent implements OnInit {
     return !this.title.valid || !this.tags.valid || !this.recaptcha.valid || !this.editorContent || this.editorContent.length < 500;
   }
 
-  getCurrentUser() : User {
+  getCurrentUser(): User {
     return this.utilService.getCurrentUser();
   }
 

@@ -7,11 +7,12 @@
         <div class="tech-profile-image-upload">
           <div class="circle">
             <!-- User Profile Image -->
-            <img #profilePhoto class="profile-pic" src="{{getUserImage() !== '' ? getUserImage() : 'https://s3.amazonaws.com/tecknocracy/images/profiles/no-profile.png'}}" height="150" width="130">
+            <img #profilePhoto class="profile-pic" src="{{getUserImage() !== '' ? getUserImage() : 'https://storage.googleapis.com/technocracy-157812.appspot.com/technocracy/images/profiles/no-profile.png'}}" height="150" width="130">
           </div>
           <div class="p-image">
             Update image<i (click)="chooseFile($event)" class="fa fa-camera upload-button pull-right"></i>
             <input #fileUpload class="file-upload" type="file" (change)="uploadImage($event.target.files)" accept="image/*"/>
+            <mat-progress-bar *ngIf="uploadPercent" mode="determinate" value="{{uploadPercent | async}}"></mat-progress-bar>
           </div>
         </div>
         <div>
