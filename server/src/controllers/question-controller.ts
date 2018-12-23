@@ -279,8 +279,10 @@ export class QuestionController {
                         .where('notification')
                         .equals('Y')
                         .exec()
-                        .then((sub: any) => {
-                            MailSender.sendMail("publish-question", mailOptions.set("recipient", sub.email));
+                        .then((subs: any) => {
+                            subs.forEach(sub => {
+                                MailSender.sendMail("publish-question", mailOptions.set("recipient", sub.email));
+                            });
                         })
                         .catch(next);
 

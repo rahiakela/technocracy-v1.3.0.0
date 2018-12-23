@@ -20,7 +20,7 @@ const dockerDevOpsDocuments = require('./documents/docker-devops-documents');
 // add documents to the classifier
 classifier.addDocuments(angularDocuments.getAngularDocuments(), 'angular');
 classifier.addDocuments(hibernateDocuments.getHibernateDocuments(), 'hibernate');
-classifier.addDocuments(mlDocuments.getMLDocuments(),'machine learning');
+classifier.addDocuments(mlDocuments.getMLDocuments(),'machine learning, keras, tensorflow, neural networks, deep learning');
 classifier.addDocuments(pythonDocuments.getPythonDocuments(), 'python django flask tornado SQLAlchemy');
 classifier.addDocuments(nodeDocuments.getNodeDocuments(), 'node.js express.js javascript');
 classifier.addDocuments(htmlCssDocuments.getHTMLCSSDocuments(),'html css');

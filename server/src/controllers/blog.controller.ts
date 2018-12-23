@@ -318,8 +318,10 @@ export class BlogController {
                 .where('notification')
                 .equals('Y')
                 .exec()
-                .then((sub: any) => {
-                    MailSender.sendMail('publish-blog', mailOptions.set('recipient', sub.email));
+                .then((subs: any) => {
+                    subs.forEach(sub => {
+                        MailSender.sendMail('publish-blog', mailOptions.set('recipient', sub.email));
+                    });
                 })
                 .catch(next);
 

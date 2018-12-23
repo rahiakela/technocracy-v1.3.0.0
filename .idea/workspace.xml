@@ -2,32 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11298fe7-28bb-42a6-952b-dfe0a97fa1a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ml-model/html-encoder-decoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/tslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/blog/blog.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog/blog.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/blog/components/edit-blog/edit-blog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog/components/edit-blog/edit-blog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/blog/components/my-blog/my-blog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog/components/my-blog/my-blog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/blog/components/write-blog/write-blog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog/components/write-blog/write-blog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/blog/containers/edit-blog/edit-blog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog/containers/edit-blog/edit-blog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/blog/containers/write-blog/write-blog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog/containers/write-blog/write-blog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/core/core.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/core/core.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/core/services/file-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/core/services/file-upload.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/core/subscription/popup/subscription-dialog.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/core/subscription/popup/subscription-dialog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/profile/components/profile/profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/profile/containers/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/profile/containers/profile/profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/profile/profile-material.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/profile/profile-material.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/shared/rich-text-editor/editor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shared/rich-text-editor/editor.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/shared/user-icon/user-icon.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shared/user-icon/user-icon.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/shared/share/share.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shared/share/share.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/environments/environment.prod.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/environments/environment.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ml-model/blog-classification/blog-classifier-model.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml-model/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ml-model/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/blog-classifier-model.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/blog-classifier-model.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controllers/blog.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/blog.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/question-controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/question-controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/blog-onhold-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/blog-onhold-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/blog-publish-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/blog-publish-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/blog-rejected-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/blog-rejected-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/blog-save-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/blog-save-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/comment-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/comment-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/mail-activate-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/mail-activate-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/password-reset-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/password-reset-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/prod-error-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/prod-error-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/question-onhold-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/question-onhold-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/question-post-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/question-post-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/question-publish-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/question-publish-template.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mail/template/question-rejected-template.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mail/template/question-rejected-template.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,38 +40,50 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/environments/environment.ts">
+        <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="3" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="19" selection-end-column="3" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="629">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/environments/environment.prod.ts">
+        <entry file="file://$PROJECT_DIR$/ml-model/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/.env">
+        <entry file="file://$PROJECT_DIR$/client/src/app/app-routing.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="238">
+              <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tech-logo.png</find>
+      <find>favicon.ico</find>
+      <find>content.description</find>
+      <find>content.content.description</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>favicon.ico</replace>
+      <replace>description</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,9 +91,31 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/environments/environment.ts" />
-        <option value="$PROJECT_DIR$/client/src/environments/environment.prod.ts" />
         <option value="$PROJECT_DIR$/server/.env" />
+        <option value="$PROJECT_DIR$/client/src/environments/environment.prod.ts" />
+        <option value="$PROJECT_DIR$/client/src/environments/environment.ts" />
+        <option value="$PROJECT_DIR$/client/src/environments/.gitignore" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/question-publish-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/blog-onhold-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/blog-rejected-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/comment-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/mail-activate-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/password-reset-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/prod-error-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/question-onhold-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/question-post-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/question-rejected-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/controllers/blog.controller.ts" />
+        <option value="$PROJECT_DIR$/server/src/controllers/question-controller.ts" />
+        <option value="$PROJECT_DIR$/client/src/index.html" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/blog-publish-template.ts" />
+        <option value="$PROJECT_DIR$/server/src/mail/template/blog-save-template.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/shared/share/share.component.ts" />
+        <option value="$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js" />
+        <option value="$PROJECT_DIR$/ml-model/package.json" />
+        <option value="$PROJECT_DIR$/client/angular.json" />
+        <option value="$PROJECT_DIR$/client/src/robots.txt" />
       </list>
     </option>
   </component>
@@ -89,6 +124,9 @@
     <option name="y" value="30" />
     <option name="width" value="1890" />
     <option name="height" value="960" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -102,16 +140,6 @@
               <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="technocracy-v1.3.0.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="technocracy-v1.3.0.0" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -122,7 +150,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/myworks/pwa-projects/pwa-angular-social-application" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="D:\technocracy\technocracy-v1.3.0.0\client\node_modules\tslint" />
@@ -140,6 +168,14 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="run-server" type="NodeJSConfigurationType" path-to-js-file="dist/server.js" working-dir="$PROJECT_DIR$/server">
+      <envs>
+        <env name="NODE_ENV" value="prod" />
+      </envs>
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -151,32 +187,35 @@
       <option name="presentableId" value="Default" />
       <updated>1545397664344</updated>
       <workItem from="1545397668972" duration="1108000" />
-      <workItem from="1545455253991" duration="412000" />
+      <workItem from="1545455253991" duration="9704000" />
+      <workItem from="1545547763108" duration="1567000" />
+      <workItem from="1545560912962" duration="31000" />
+      <workItem from="1545561430675" duration="534000" />
+      <workItem from="1545566229608" duration="1887000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1520000" />
+    <option name="totallyTimeSpent" value="14831000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24244833" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24244833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32149202" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -212,28 +251,313 @@
       </list>
     </option>
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>subs</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sub</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sub.email</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>email.email</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>email</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sub[0].email</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/client/src/environments/environment.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="3" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="19" selection-end-column="3" />
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/environments/.gitignore" />
     <entry file="file://$PROJECT_DIR$/client/src/environments/environment.prod.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        <state relative-caret-position="238">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/welcome-template.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/question-controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="285" column="26" lean-forward="true" selection-start-line="285" selection-start-column="26" selection-end-line="285" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+            <element signature="n#!!block;n#getQuestions#0;n#QuestionController#0" />
+            <element signature="n#!!block;n#getQuestion#0;n#QuestionController#0" />
+            <element signature="n#!!block;n#getQuestionsAskedByUser#0;n#QuestionController#0" />
+            <element signature="n#!!block;n#getAllPendingQuestions#0;n#QuestionController#0" />
+            <element signature="n#!!block;n#saveQuestion#0;n#QuestionController#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/blog-publish-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="314" column="87" selection-start-line="314" selection-start-column="87" selection-end-line="314" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/blog-onhold-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="341" column="120" selection-start-line="341" selection-start-column="112" selection-end-line="341" selection-end-column="120" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/comment-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="235" column="104" selection-start-line="235" selection-start-column="104" selection-end-line="235" selection-end-column="104" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#a#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/blog-save-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="341" column="98" selection-start-line="341" selection-start-column="87" selection-end-line="341" selection-end-column="98" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/blog-rejected-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="220" column="148" selection-start-line="220" selection-start-column="148" selection-end-line="220" selection-end-column="148" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#a#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/mail-activate-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="223" column="104" selection-start-line="223" selection-start-column="104" selection-end-line="223" selection-end-column="104" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#a#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/password-reset-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="223" column="32" selection-start-line="223" selection-start-column="32" selection-end-line="223" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#a#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/prod-error-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="223" column="32" selection-start-line="223" selection-start-column="32" selection-end-line="223" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#a#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/question-onhold-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="221" column="148" selection-start-line="221" selection-start-column="148" selection-end-line="221" selection-end-column="148" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#a#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/question-post-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="225" column="104" selection-start-line="225" selection-start-column="104" selection-end-line="225" selection-end-column="104" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#a#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/question-publish-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32">
+          <caret line="221" column="127" selection-start-line="221" selection-start-column="127" selection-end-line="221" selection-end-column="127" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#a#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/question-rejected-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="221" column="148" selection-start-line="221" selection-start-column="148" selection-end-line="221" selection-end-column="148" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#a#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/mail/template/subscribed-template.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/shared/share/share.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/blog/components/blog-view/blog-view.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="160" column="76" selection-start-line="160" selection-start-column="6" selection-end-line="160" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/blog.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="326" selection-start-line="326" selection-end-line="326" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+            <element signature="n#!!block;n#getBlogs#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getBlog#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getBlogListWrittenByAuthor#0;n#BlogController#0" />
+            <element signature="n#!!block;n#getAllPendingBlogs#0;n#BlogController#0" />
+            <element signature="n#!!block;n#saveBlog#0;n#BlogController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ml-model/blog-classification/blog-classifier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ml-model/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ngsw-config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/robots.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

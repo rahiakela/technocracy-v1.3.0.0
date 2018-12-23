@@ -45,4 +45,6 @@
 
 # package lock file
 */package-lock.json
-*/src/environments/**
+client/src/environments/environment.prod.ts
+client/src/environments/environment.ts
+server/.env

@@ -223,7 +223,7 @@ export class BlogPublishMailTemplate {
                                                                             <img src="${
                                                                               process.env
                                                                                 .CLOUD_IMAGE_PATH
-                                                                            }/images/tech-logo.png" style="width: 80px; height: 70px;" alt='Compagnie logo' data-default="placeholder" data-max-width="300" width='129' height='22'>
+                                                                            }/images/favicon.ico" style="width: 80px; height: 70px;" alt='Compagnie logo' data-default="placeholder" data-max-width="300" width='129' height='22'>
                                                                         </div>
                                                                       </div>
                                                                     </td>
@@ -304,7 +304,7 @@ export class BlogPublishMailTemplate {
                                                                     <div class="contentEditableContainer contentTextEditable">
                                                                       <div class="contentEditable" >
                                                                         <p >
-                                                                            ${blog.content.description}
+                                                                            ${blog.description}
                                                                         </p>
                                                                       </div>
                                                                     </div>

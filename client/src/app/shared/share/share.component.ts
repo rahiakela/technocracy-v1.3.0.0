@@ -10,13 +10,6 @@ import {ShareButtons} from "@ngx-share/core";
 export class ShareComponent implements OnInit {
 
   // ref: https://github.com/MurhafSousli/ngx-sharebuttons/wiki/Share-Buttons-Component
-  facebookButton;
-  googleButton;
-  linkedinButton;
-  twitterButton;
-  envelopeButton;
-  whatsappButton;
-
   @Input()
   data: any;
   @Input()
@@ -30,12 +23,6 @@ export class ShareComponent implements OnInit {
               private meta: Meta) { }
 
   ngOnInit() {
-    // ShareButton(button name [provider], template, classes)
-    /*this.facebookButton = new ShareButton(ShareProvider.FACEBOOK, '<i class="fa fa-facebook"></i>', 'facebook');
-    this.googleButton = new  ShareButton(ShareProvider.GOOGLEPLUS, '<i class="fa fa-google-plus"></i>', 'google-plus');
-    this.linkedinButton = new ShareButton(ShareProvider.LINKEDIN, '<i class="fa fa-linkedin"></i>', 'linkedin');
-    this.twitterButton = new ShareButton(ShareProvider.TWITTER, '<i class="fa fa-twitter"></i>', 'twitter');
-    this.whatsappButton = new ShareButton(ShareProvider.WHATSAPP, '<i class="fa fa-whatsapp"></i>', 'whatsapp');*/
 
     // setting page title and meta tag description
     if (this.data) {
@@ -52,7 +39,10 @@ export class ShareComponent implements OnInit {
       //console.log('Title:', this.data.title);
       //console.log('URL:', this.url);
       //console.log('Description:', this.data.description);
-      this.meta.addTag({name: 'description', content: this.data.description});
+      this.meta.addTag({property: 'title', content: this.data.title});
+      this.meta.addTag({property: 'description', content: this.data.description});
+      this.meta.addTag({property: 'image', content: this.data.image});
+      this.meta.addTag({property: 'url', content: this.url});
     }
   }
 

@@ -219,7 +219,7 @@ export class QuestionPublishMailTemplate {
                                                                         <td align='left' valign='middle' style="width: 90px;">
                                                                             <div class="contentEditableContainer contentImageEditable">
                                                                                 <div class="contentEditable" >
-                                                                                    <img src="${process.env.CLOUD_IMAGE_PATH}/images/tech-logo.png" style="width: 80px; height: 70px;" alt='Compagnie logo' data-default="placeholder" data-max-width="300" width='129' height='22'>
+                                                                                    <img src="${process.env.CLOUD_IMAGE_PATH}/images/favicon.ico" style="width: 80px; height: 70px;" alt='Compagnie logo' data-default="placeholder" data-max-width="300" width='129' height='22'>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
